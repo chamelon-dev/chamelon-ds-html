@@ -1,0 +1,282 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Поиск с сайдбаром и фасетом справа - Design Sys</title><link rel="stylesheet" href="../css/docs.css"><style>.show-loader{overflow:hidden;padding-right:17px;}.preloader{background-color:#fff;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000}.preloader-loader{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%)}.preloader-loader .logo{margin:0}.preloader .logo a{padding:12px 48px;color:#fff;background:linear-gradient(to right,#818997 0,#fff 10%,#818997 20%);background-position:0;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s infinite linear;animation-fill-mode:forwards;-webkit-text-size-adjust:none;font-weight:600;text-decoration:none;white-space:nowrap;font-size:36px}.preloader .logo a span{vertical-align:super;top:-.5em;font-size:75%}.preloader .logo+p{text-align:center;color:#dbdfe6}@-moz-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-webkit-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-o-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}</style><script defer="defer" src="../js/theme.js"></script><link href="../css/style.css" rel="stylesheet"></head><body class="layout-sidebar show-loader"><div class="preloader"><div class="preloader-loader"><div class="logo"><a href="/">Design<span>sys</span></a></div><p>Пожалуйста, подождите...</p></div></div><div class="wrapper-outer"><div class="wrapper"><header class="header"><div class="container-fluid"><div class="row"><div class="col-12"><div class="navbar"><div class="logo"><a href="../index.html">Design<sup>sys</sup></a></div><button data-toggle-header class="button button-icon"><i class="icon icon-bars"></i></button><nav class="horizontal-menu"><div class="menu-left"><ul><li><a href="../index.html"><span class="menu-label">Начало</span></a></li><li><a href="../components/template.html"><span class="menu-label">Компоненты</span></a></li><li><a href="../utils/margins.html"><span class="menu-label">Утилиты</span></a></li><li><a href="../examples/index.html" class="active"><span class="menu-label">Примеры</span></a></li></ul></div><div class="menu-right"><div class="switcher"><div data-tooltip="Aqua (по-умолчанию)" data-placement="bottom"><label class="switcher-label theme-default"><input type="radio" name="theme" value="default" class="switcher-input" checked="checked"/> <span class="switcher-check"></span></label></div><div data-tooltip="Flavum" data-placement="bottom"><label class="switcher-label theme-flavum"><input type="radio" name="theme" value="flavum" class="switcher-input"/> <span class="switcher-check"></span></label></div><div data-tooltip="Ferrum" data-placement="bottom"><label class="switcher-label theme-ferrum"><input type="radio" name="theme" value="ferrum" class="switcher-input"/> <span class="switcher-check"></span></label></div></div><div class="version"><span class="d-inline-block mr-8">HTML</span> <label class="toggle"><input type="checkbox" name="version" class="toggle-input"> <span class="toggle-check"></span></label> <span class="d-inline-block ml-8">React</span></div></div></nav></div></div></div></div></header><div class="content"><div class="container h-100"><div class="row h-100"><div class="col-12"><div class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">Начало</a></li><li class="breadcrumbs-item"><a href="/examples/index.html" class="breadcrumbs-link">Примеры</a></li><li class="breadcrumbs-item"><a href="search_sidebar.html" class="breadcrumbs-link">Поиск c сайдбаром и фасетом справа</a></li></ul></div></div><div class="col-12"><div class="title"><h1>Поиск с сайдбаром и фасетом справа</h1><a href="../preview/search_sidebar.html" class="button button button-solid button-primary" target="_blank">Просмотр</a></div></div><div class="col-12 h-100"><section id="s-1"><div class="components-code"><pre>
+                <code class="language-html">
+<textarea>
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <title>Результаты поиска</title>
+        <script defer="defer" src="//ds.dev.cgu.iac.mchs.ru/js/theme.js"></script>
+        <link href="//ds.dev.cgu.iac.mchs.ru/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="layout-sidebar">
+        <div class="wrapper-outer">
+            <aside class="sidebar sidebar-open accent">
+                <div class="sidebar-top">
+                    <button type="button" class="button button-icon" data-toggle-sidebar>
+                        <i class="icon icon-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="sidebar-middle">
+                    ...
+                </div>
+                <div class="sidebar-bottom">
+                    ...
+                </div>
+            </aside>
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="navbar">
+                                    <div class="logo">
+                                        <a href="#">Сервис ведения реестра ЧС</a>
+                                    </div>
+                                    <button data-toggle-header class="button button-icon">
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    <nav class="horizontal-menu">
+                                        <div class="menu-left">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-exclamation-triangle menu-prefix"></i>
+                                                        <span class="menu-label">ЧС</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="active">
+                                                        <i class="icon icon-search-check menu-prefix"></i>
+                                                        <span class="menu-label">Проверки</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-time-back menu-prefix"></i>
+                                                        <span class="menu-label">Уведомления</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-right">
+                                            <ul>
+                                                <li tabindex="0">
+                                                    <a href="#">
+                                                        <i class="icon icon-user menu-prefix"></i>
+                                                        <span class="menu-label">Администратор</span>
+                                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Профиль</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Выход</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container-fluid h-100">
+                        <div class="row h-100">
+                            <div class="col-9">
+                                <div class="d-flex flex-column h-100">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="breadcrumbs">
+                                                <ul class="breadcrumbs-list">
+                                                    <li class="breadcrumbs-item">
+                                                        <a href="#" class="breadcrumbs-link">Главная</a>
+                                                    </li>
+                                                    <li class="breadcrumbs-item">
+                                                        <a href="#" class="breadcrumbs-link">Поиск</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="title">
+                                                <h1>Поиск</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form class="mb-40">
+                                        <div class="row">
+                                            <div class="col-11">
+                                                <div class="field">
+                                                    <div class="field-icon field-icon-both">
+                                                        <i class="icon icon-search field-icon-start"></i>
+                                                        <input type="search" name="" value="Москва" placeholder="Введите значение">
+                                                        <button class="field-button field-button-end d-none" data-clear-field>
+                                                            <i class="icon icon-times"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-1">
+                                                <button type="button" class="button button-solid button-primary w-100">Найти</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card card-search mb-24">
+                                                <div class="card-header">
+                                                    <a href="#">Наводнение в Москве</a>
+                                                </div>
+                                                <div class="card-description">г Москва обл Московская обл Московская, г Химки обл Московская, г Лобня Характер Региональный Статус Активно Код региона 50</div>
+                                            </div>
+                                            <div class="card card-search mb-24">
+                                                <div class="card-header">
+                                                    <a href="#">Туман и непогода в аэропортах Москвы</a>
+                                                </div>
+                                                <div class="card-description">обл Московская, г Домодедово г Москва, п Внуково обл Московская, г Долгопрудный, тер Аэропорт Шереметьево Характер Региональный Статус Активно Код региона 77</div>
+                                            </div>
+                                            <div class="card card-search">
+                                                <div class="card-header">
+                                                    <a href="#">Чрезвычайная ситуация в Москве, Краснодаре и Самаре</a>
+                                                </div>
+                                                <div class="card-description">обл Самарская, г Самара г Москва край Краснодарский, г Краснодар Характер Межрегиональный Статус Активно</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-auto">
+                                        <div class="col-12">
+                                            <footer class="footer">
+                                                <div class="row">
+                                                    <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                                                        <div class="footer-copyrights">© Design<sup>sys</sup>, 2021</div>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="facet facet-right">
+                                    <form>
+                                        <div class="facet-group">
+                                            <div class="facet-title">Характер ЧС</div>
+                                            <div class="facet-content">
+                                                <ul class="checkbox-list">
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">Главное управление МЧС по Московской Области</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">Главное управление МЧС по Московской Области (4)</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">Главное управление МЧС по Московской Области (10)</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">Федеральный (1)</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                        <div class="facet-group">
+                                            <div class="facet-title">Код региона</div>
+                                            <div class="facet-content">
+                                                <ul class="checkbox-list">
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">50 (2)</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">77 (2)</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">63 (1)</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">69 (1)</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="facet-group">
+                                            <div class="facet-title">ФИО подписанта</div>
+                                            <div class="facet-content">
+                                                <ul class="checkbox-list">
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">Иванов Иван Иванович </span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="name" class="checkbox-input">
+                                                            <span class="checkbox-check"></span>
+                                                            <span class="checkbox-text">Баталов Константин Фёдорович</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="facet-footer">
+                                            <button type="button" class="button button-solid button-secondary">Обновить поиск</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre></div></section></div></div></div></div><footer class="footer"><div class="container-fluid"><div class="row"><div class="col-12 col-xxl-6 order-2 order-xxl-1"><div class="footer-copyrights">© Design<sup>sys</sup>, 2022</div></div></div></div></footer></div><div class="scroll-top"><a href="#" class="button button-solid button-primary" data-prevent><i class="icon icon-arrow-up"></i></a></div></div><script defer="defer" src="../js/prism.js"></script><script defer="defer" src="../js/docs.js"></script></body></html>

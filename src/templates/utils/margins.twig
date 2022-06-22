@@ -1,0 +1,189 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'margin' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Отступы{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="margins.html" class="breadcrumbs-link">Отступы</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Отступы</h1>
+    <span class="tagline">Добавление внутренних и внешних отступов к различным элементов интерфейса</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Внешние отступы</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Внутренние отступы</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Внешние отступы</h2>
+            <p>Позволяют задать внешние (margin) отступы элементам</p>
+        </div>
+        <div class="components-options">
+            <p>Внешние отступы задаются элементам путем присвоения класса вида <code>m{sides}-{size}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{sides}</th>
+                            <th>{size}</th>
+                            <th>Пример</th>
+                            <th>Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(пусто)</td>
+                            <td rowspan="7" class="text-center">Любое целое число от 4 до 160, кратное 4</td>
+                            <td><code>&lt;div class="m-32"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементу будет присвоен внешний отступ размером 32px со всех сторон</td>
+                        </tr>
+                        <tr>
+                            <td>t</td>
+                            <td><code>&lt;div class="mt-32"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементу будет присвоен внешний отступ размером 32px сверху</td>
+                        </tr>
+                        <tr>
+                            <td>r</td>
+                            <td><code>&lt;div class="mr-32"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементу будет присвоен внешний отступ размером 32px справа</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td><code>&lt;div class="mb-32"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементу будет присвоен внешний отступ размером 32px снизу</td>
+                        </tr>
+                        <tr>
+                            <td>l</td>
+                            <td><code>&lt;div class="ml-32"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементу будет присвоен внешний отступ размером 32px слева</td>
+                        </tr>
+                        <tr>
+                            <td>v</td>
+                            <td><code>&lt;div class="mv-32"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементу будет присвоен внешний отступ размером 32px сверху и снизу</td>
+                        </tr>
+                        <tr>
+                            <td>h</td>
+                            <td><code>&lt;div class="mh-32"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементу будет присвоен внешний отступ размером 32px слева и справа</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_spacing.scss</code>
+        </div>
+
+    </section>
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Внешние отступы</h2>
+            <p>Позволяют задать внутренние (padding) отступы элементам</p>
+        </div>
+        <div class="components-options">
+            <p>Внутренние  отступы задаются элементам путем присвоения класса вида <code>p{sides}-{size}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{sides}</th>
+                        <th>{size}</th>
+                        <th>Пример</th>
+                        <th>Описание</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>(пусто)</td>
+                        <td rowspan="7" class="text-center">Любое целое число от 4 до 160, кратное 4</td>
+                        <td><code>&lt;div class="p-32"&gt;&lt;/div&gt; </code></td>
+                        <td>Элементу будет присвоен внутренний отступ размером 32px со всех сторон</td>
+                    </tr>
+                    <tr>
+                        <td>t</td>
+                        <td><code>&lt;div class="pt-32"&gt;&lt;/div&gt; </code></td>
+                        <td>Элементу будет присвоен внутренний отступ размером 32px сверху</td>
+                    </tr>
+                    <tr>
+                        <td>r</td>
+                        <td><code>&lt;div class="pr-32"&gt;&lt;/div&gt; </code></td>
+                        <td>Элементу будет присвоен внутренний отступ размером 32px справа</td>
+                    </tr>
+                    <tr>
+                        <td>b</td>
+                        <td><code>&lt;div class="pb-32"&gt;&lt;/div&gt; </code></td>
+                        <td>Элементу будет присвоен внутренний отступ размером 32px снизу</td>
+                    </tr>
+                    <tr>
+                        <td>l</td>
+                        <td><code>&lt;div class="pl-32"&gt;&lt;/div&gt; </code></td>
+                        <td>Элементу будет присвоен внутренний отступ размером 32px слева</td>
+                    </tr>
+                    <tr>
+                        <td>v</td>
+                        <td><code>&lt;div class="pv-32"&gt;&lt;/div&gt; </code></td>
+                        <td>Элементу будет присвоен внутренний отступ размером 32px сверху и снизу</td>
+                    </tr>
+                    <tr>
+                        <td>h</td>
+                        <td><code>&lt;div class="ph-32"&gt;&lt;/div&gt; </code></td>
+                        <td>Элементу будет присвоен внутренний отступ размером 32px слева и справа</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_spacing.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

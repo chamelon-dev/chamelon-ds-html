@@ -1,0 +1,790 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'dropdown' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Выпадающее меню{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="dropdown.html" class="breadcrumbs-link">Выпадающее меню</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Выпадающее меню</h1>
+    <span class="tagline">Компонент позволяет добавить в интерфейс компактный способ отображения нескольких вариантов, которые появляется при взаимодействии с элементом (например, значком или кнопкой).</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Выпадающее меню, иконки + текст</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Выпадающее меню, только текст</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Выпадающее меню, только иконки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Выпадающее меню, только текст, увеличенная ширина</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Выпадающее меню, иконки + текст</h2>
+            <p>Предназначен для создания выпадающего меню, в котором подписи к пунктам меню снабжены иконками. Компонент составной и содержит в себе компоненты <a href="icons.html">иконок</a> и <a href="#">кнопок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="dropdown" tabindex="0">
+                <button type="button" class="button button-icon dropdown-button">
+                    <i class="icon icon-dots"></i>
+                </button>
+                <ul class="dropdown-list">
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-eye"></i>Посмотреть
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-list"></i>Перейти к списку
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-pencil"></i>Изменить
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-trash"></i>Удалить
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="dropdown" tabindex="0">
+    <button type="button" class="button button-icon dropdown-button">
+        <i class="icon icon-dots"></i>
+    </button>
+    <ul class="dropdown-list">
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-eye"></i>Посмотреть
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-list"></i>Перейти к списку
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-pencil"></i>Изменить
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-trash"></i>Удалить
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-star-outline"></i>Добавить в избранное
+            </a>
+        </li>
+    </ul>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_dropdown.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Dropdown, DropdownItem} from "../components/Dropdown";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Dropdown&gt;
+    &lt;DropdownItem icon="eye" title="Посмотреть" /&gt;
+    &lt;DropdownItem icon="list" title="Перейти к списку" /&gt;
+    &lt;DropdownItem icon="pencil" title="Изменить" /&gt;
+    &lt;DropdownItem icon="trash" title="Удалить" /&gt;
+    &lt;DropdownItem icon="star-outline" title="Добавить в избранное" /&gt;
+&lt;/Dropdown&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>icon</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Название иконки<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>title</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Название пункта меню<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Dropdown /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Dropdown.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Выпадающее меню, только текст</h2>
+            <p>Предназначен для создания простого выпадающего меню. Компонент составной и содержит в себе компоненты <a href="icons.html">иконок</a> и <a href="#">кнопок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="dropdown" tabindex="0">
+                <button type="button" class="button button-icon dropdown-button">
+                    <i class="icon icon-dots"></i>
+                </button>
+                <ul class="dropdown-list">
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            Посмотреть
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            Перейти к списку
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            Изменить
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            Удалить
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            Добавить в избранное
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="dropdown" tabindex="0">
+    <button type="button" class="button button-icon dropdown-button">
+        <i class="icon icon-dots"></i>
+    </button>
+    <ul class="dropdown-list">
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                Посмотреть
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                Перейти к списку
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                Изменить
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                Удалить
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                Добавить в избранное
+            </a>
+        </li>
+    </ul>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_dropdown.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Dropdown, DropdownItem} from "../components/Dropdown";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Dropdown&gt;
+    &lt;DropdownItem title="Посмотреть" /&gt;
+    &lt;DropdownItem title="Перейти к списку" /&gt;
+    &lt;DropdownItem title="Изменить" /&gt;
+    &lt;DropdownItem title="Удалить" /&gt;
+    &lt;DropdownItem title="Добавить в избранное" /&gt;
+&lt;/Dropdown&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>title</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Название пункта меню<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Dropdown /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Dropdown.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Выпадающее меню, только иконки</h2>
+            <p>Предназначен для создания простого выпадающего меню. Компонент составной и содержит в себе компоненты <a href="icons.html">иконок</a> и <a href="#">кнопок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="dropdown" tabindex="0">
+                <button type="button" class="button button-icon dropdown-button">
+                    <i class="icon icon-dots"></i>
+                </button>
+                <ul class="dropdown-list dropdown-list-thin">
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-eye"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-list"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-pencil"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-trash"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">
+                            <i class="icon icon-star-outline"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="dropdown" tabindex="0">
+    <button type="button" class="button button-icon dropdown-button">
+        <i class="icon icon-dots"></i>
+    </button>
+    <ul class="dropdown-list dropdown-list-thin">
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-eye"></i>
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-list"></i>
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-pencil"></i>
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-trash"></i>
+            </a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">
+                <i class="icon icon-star-outline"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_dropdown.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Dropdown, DropdownItem} from "../components/Dropdown";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Dropdown width="thin"&gt;
+    &lt;DropdownItem icon="eye" /&gt;
+    &lt;DropdownItem icon="list" /&gt;
+    &lt;DropdownItem icon="pencil" /&gt;
+    &lt;DropdownItem icon="trash" /&gt;
+    &lt;DropdownItem icon="star-outline" /&gt;
+&lt;/Dropdown&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>icon</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Название иконки<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>width</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>auto</td>
+                                            <td>
+                                                Задает ширину выпадающего подменю<br/>
+                                                <code>auto</code> - 240 пикс.<br/>
+                                                <code>thin</code> - 32 пикс.<br/>
+                                                <code>wide</code> - 400 пикс.<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Dropdown /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Dropdown /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Dropdown.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Выпадающее меню, только текст, увеличенная ширина</h2>
+            <p>Предназначен для создания выпадающего меню, с увеличенной шириной. Компонент составной и содержит в себе компоненты <a href="icons.html">иконок</a> и <a href="#">кнопок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="dropdown" tabindex="0">
+                <button type="button" class="button button-icon dropdown-button">
+                    <i class="icon icon-dots"></i>
+                </button>
+                <ul class="dropdown-list dropdown-list-wide">
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">Профиль</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">Редактировать профиль</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">Управление сервисами</a>
+                    </li>
+                    <li class="dropdown-item" data-tooltip="Управление пользовательской моделью и правами пользователей" data-placement="bottom">
+                        <a href="#" class="dropdown-link">Управление пользовательской моделью и правами пользователей</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">Управление ролевой моделью</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-link">Выход</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="dropdown" tabindex="0">
+    <button type="button" class="button button-icon dropdown-button">
+        <i class="icon icon-dots"></i>
+    </button>
+    <ul class="dropdown-list dropdown-list-wide">
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">Профиль</a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">Редактировать профиль</a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">Управление сервисами</a>
+        </li>
+        <li class="dropdown-item" data-tooltip="Управление пользовательской моделью и правами пользователей" data-placement="bottom">
+            <a href="#" class="dropdown-link">Управление пользовательской моделью и правами пользователей</a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">Управление ролевой моделью</a>
+        </li>
+        <li class="dropdown-item">
+            <a href="#" class="dropdown-link">Выход</a>
+        </li>
+    </ul>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_dropdown.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Dropdown, DropdownItem} from "../components/Dropdown";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Dropdown width="wide"&gt;
+    &lt;DropdownItem title="Профиль" /&gt;
+    &lt;DropdownItem title="Редактировать профиль" /&gt;
+    &lt;DropdownItem title="Управление сервисами" /&gt;
+    &lt;DropdownItem title="Управление пользовательской моделью и правами пользователей" /&gt;
+    &lt;DropdownItem title="Управление ролевой моделью" /&gt;
+    &lt;DropdownItem title="Выход" /&gt;
+&lt;/Dropdown&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>title</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Название пункта меню<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;DropdownItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>width</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>auto</td>
+                                            <td>
+                                                Задает ширину выпадающего подменю<br/>
+                                                <code>auto</code> - 240 пикс.<br/>
+                                                <code>thin</code> - 32 пикс.<br/>
+                                                <code>wide</code> - 400 пикс.<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Dropdown /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Dropdown /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Dropdown.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

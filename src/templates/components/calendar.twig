@@ -1,0 +1,203 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'calendar' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Выбор даты{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="calendar.html" class="breadcrumbs-link">Выбор даты</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Выбор даты</h1>
+    <span class="tagline">Добавление в интерфейс удобного способов выбора и ввода даты</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Выбор даты</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Выбор даты</h2>
+            <p>Примеры компонента выбора даты</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <label for="datepicker">Дата поступления</label>
+                <div class="field-icon field-icon-double-postfix">
+                    <input type="text" placeholder="Дата поступления" id="datepicker" value="08.09.2021" data-calendar>
+                    <button type="button" class="field-button field-button-end" data-clear-field>
+                        <i class="icon icon-times"></i>
+                    </button>
+                    <button type="button" class="field-button field-button-end" data-calendar-open>
+                        <i class="icon icon-calendar"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label for="datepicker">Дата поступления</label>
+    <div class="field-icon field-icon-double-postfix">
+        <input type="text" placeholder="Дата поступления" id="datepicker" value="08.09.2021" data-calendar>
+        <button type="button" class="field-button field-button-end" data-clear-field>
+            <i class="icon icon-times"></i>
+        </button>
+        <button type="button" class="field-button field-button-end" data-calendar-open>
+            <i class="icon icon-calendar"></i>
+        </button>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_calendar.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Calendar from "./components/Calendar";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Calendar initialValue="08.09.2021" label="Дата поступления" placeholder="Дата поступления" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>format</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>DD.MM.YYYY</td>
+                                        <td>
+                                            Позволяет задать альтернативный формат даты<br>
+                                            Подробнее о форматах - в <a href="//momentjs.com/docs/#/parsing/string-format/">документации</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>label</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Текстовая метка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Текст-заполнитель</td>
+                                    </tr>
+                                    <tr>
+                                        <td>initialValue</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Дата, которая будет отображаться внутри поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения даты<br>
+                                            В качестве аргумента принимает <a href="https://momentjs.com/docs/" target="_blank">Moment</a>-объект, содержащий информацию о дате
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_calendar.scss</code> и <code>components/Calendar.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

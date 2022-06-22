@@ -1,0 +1,320 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'tooltip' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Подсказки{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="tooltip.html" class="breadcrumbs-link">Подсказки</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Подсказки</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс к различным элементам стилизованной всплывающей подсказки.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Подсказки</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Подсказки</h2>
+            <p>Пример всплывающих подсказок</p>
+        </div>
+        <div class="components-preview d-flex align-items-center">
+            <button type="button" class="button button-icon" data-tooltip="Tooltip up here!" data-placement="top">
+                <i class="icon icon-download"></i>
+            </button>
+            <button type="button" class="button button-icon button-active" data-tooltip="Tooltip way over here!" data-placement="bottom">
+                <i class="icon icon-star-outline"></i>
+            </button>
+            <button type="button" class="button button-icon" data-tooltip="This one is a lefty!" data-placement="left">
+                <i class="icon icon-page"></i>
+            </button>
+            <button type="button" class="button button-icon" data-tooltip="Tooltip right" data-placement="right">
+                <i class="icon icon-download"></i>
+            </button>
+            <button type="button" class="button button-icon" data-tooltip="Tooltip right" data-placement="right">
+                <i class="icon icon-page"></i>
+            </button>
+            <a href="#" data-tooltip="Tooltip right" data-placement="right">Обычная ссылка</a>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<button type="button" class="button button-icon" data-tooltip="Tooltip up here!" data-placement="top">
+                <i class="icon icon-download"></i>
+</button>
+<button type="button" class="button button-icon button-active" data-tooltip="Tooltip way over here!" data-placement="down">
+    <i class="icon icon-star-outline"></i>
+</button>
+<button type="button" class="button button-icon" data-tooltip="This one is a lefty!" data-placement="left">
+    <i class="icon icon-page"></i>
+</button>
+<button type="button" class="button button-icon" data-tooltip="Tooltip right" data-placement="right">
+    <i class="icon icon-download"></i>
+</button>
+<button type="button" class="button button-icon" data-tooltip="Tooltip right" data-placement="right">
+    <i class="icon icon-page"></i>
+</button>
+<a href="#" data-tooltip="Tooltip right" data-placement="right">Обычная ссылка</a>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container mb-24">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>data-атрибут</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="td-content">data-tooltip</div>
+                                        </td>
+                                        <td>
+                                            <div class="td-content">Включает подсказку на элементе и задает текст всплывающей подсказки</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-content">data-placement</div>
+                                        </td>
+                                        <td>
+                                            <div class="td-content">Задает направление всплывающей подсказки</div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="td-content">data-placement</div>
+                                            </th>
+                                            <th>
+                                                <div class="td-content">По-умолчанию</div>
+                                            </th>
+                                            <th>
+                                                <div class="td-content">Направление</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="td-content">left</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Нет</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Слева</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="td-content">top</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Да</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Сверху</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="td-content">right</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Нет</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Справа</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="td-content">bottom</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Нет</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Снизу</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tooltip.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Tooltips from "./components/Tooltips";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tooltips title="Скачать"&gt;
+    &lt;Button variant="icon" icon="download" /&gt;
+&lt;/Tooltips&gt;
+
+&lt;Tooltips placement="bottom" title="Добавить в избранное"&gt;
+    &lt;Button variant="icon" icon="star-outline" utils="button-active" /&gt;
+&lt;/Tooltips&gt;
+
+&lt;Tooltips title="Документ" placement="right"&gt;
+    &lt;Button variant="icon" icon="page" /&gt;
+&lt;/Tooltips&gt;
+
+&lt;Tooltips title="Скачать" placement="left"&gt;
+    &lt;Button variant="icon" icon="download" /&gt;
+&lt;/Tooltips&gt;
+
+&lt;Tooltips title="Документ"&gt;
+    &lt;Button variant="icon" icon="page" /&gt;
+&lt;/Tooltips&gt;
+
+&lt;Tooltips title="Текст подсказки"&gt;
+    &lt;a href="#"&gt;Обычная ссылка&lt;/a&gt;
+&lt;/Tooltips>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="td-content">title</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Строка</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Нет</div>
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <div class="td-content">Текст всплывающей подсказки</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="td-content">placement</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Строка</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Нет</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">top</div>
+                                            </td>
+                                            <td>
+                                                <div class="td-content">Позиция всплывающей подсказки<br>
+                                                    <code>top</code> - сверху<br>
+                                                    <code>bottom</code> - снизу<br>
+                                                    <code>left</code> - слева<br>
+                                                    <code>right</code> - справа<br>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tooltip.scss</code> и <code>sass/components/Tooltips.js</code>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

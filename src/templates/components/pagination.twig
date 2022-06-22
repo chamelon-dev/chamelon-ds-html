@@ -1,0 +1,437 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'pagination' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Пагинация{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="pagination.html" class="breadcrumbs-link">Пагинация</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Пагинация</h1>
+    <span class="tagline">Компонент предназначен для ограничение показа информации, который используется для разбиения солидного массива данных на отдельные веб-страницы.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Обычная пагинация</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Пагинация с пропуском</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с пагинацией</p>
+        </div>
+        <div class="components-options">
+            <p>Если на странице присутствует таблица с количеством строк (или любых других элементов, участвующих в разбиении страниц) равным или более 15, наличие пагинации обязательно</p>
+            <p>Пагинацию с пропуском следует использовать в тех случаях, когда страниц более 7</p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Пагинация</h2>
+            <p>Пример пагинации</p>
+        </div>
+        <div class="components-preview">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <span class="page-link">&laquo;&nbsp;Назад</span>
+                    </li>
+                    <li class="page-item active">
+                        <span class="page-link">1</span>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" rel="next" href="#">Вперед&nbsp;&raquo;</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<nav>
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <span class="page-link">&amp;laquo;&nbsp;Назад</span>
+        </li>
+        <li class="page-item active">
+            <span class="page-link">1</span>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">4</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" rel="next" href="#">Вперед&nbsp;&amp;raquo;</a>
+        </li>
+    </ul>
+</nav>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_pagination.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Pagination from "./components/Pagination";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Pagination total={4} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>total</td>
+                                        <td>Число</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Общее количество страниц</td>
+                                    </tr>
+                                    <tr>
+                                        <td>current</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>1</td>
+                                        <td>Активная страница</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_pagination.scss</code> и <code>components/Pagination.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Пагинация с пропуском</h2>
+            <p>Пример пагинации с пропуском, в котором некоторые элементы скрыты в выпадающий список</p>
+        </div>
+        <div class="components-preview">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <span class="page-link">&laquo;&nbsp;Назад</span>
+                    </li>
+                    <li class="page-item active">
+                        <span class="page-link">1</span>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item page-skip" tabindex="0">
+                        <button type="button" class="page-link">...</button>
+                        <ul class="page-skip-list">
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">6</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">7</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">8</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">9</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">10</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">11</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">12</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">13</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">14</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" rel="next" href="#">Вперед&nbsp;&raquo;</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<nav>
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <span class="page-link">&amp;laquo;&amp;nbsp;Назад</span>
+        </li>
+        <li class="page-item active">
+            <span class="page-link">1</span>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item page-skip" tabindex="0">
+            <button type="button" class="page-link">...</button>
+            <ul class="page-skip-list">
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">6</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">7</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">8</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">9</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">10</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">11</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">12</a>
+                </li>
+            </ul>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">13</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">14</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" rel="next" href="#">Вперед&amp;nbsp;&amp;raquo;</a>
+        </li>
+    </ul>
+</nav>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_pagination.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Pagination from "./components/Pagination";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Pagination total={14} skipable /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>total</td>
+                                        <td>Число</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Общее количество страниц</td>
+                                    </tr>
+                                    <tr>
+                                        <td>current</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>1</td>
+                                        <td>Активная страница</td>
+                                    </tr>
+                                    <tr>
+                                        <td>skipable</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Включает/отключает пропуск элементов, кроме первого двух и последнего двух</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_pagination.scss</code> и <code>components/Pagination.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

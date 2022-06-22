@@ -1,0 +1,259 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'accordion' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Аккордеон{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="accordion.html" class="breadcrumbs-link">Аккордеон</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Аккордеон</h1>
+    <span class="tagline">Представляет собой список с раскрывающимся содержимым. Удобен для создания больших меню из-за компактности, а также для блоков вопросов и ответов.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Аккордеон</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Аккордеон</h2>
+            <p>Примеры обычного аккоредона</p>
+        </div>
+        <div class="components-preview">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h2 class="accordion-title">Вопрос №1</h2>
+                        <i class="icon icon-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h2 class="accordion-title">Вопрос №2</h2>
+                        <i class="icon icon-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h2 class="accordion-title">Вопрос №3</h2>
+                        <i class="icon icon-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h2 class="accordion-title">Вопрос №4</h2>
+                        <i class="icon icon-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="accordion">
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <h2 class="accordion-title">Вопрос №1</h2>
+            <i class="icon icon-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <h2 class="accordion-title">Вопрос №2</h2>
+            <i class="icon icon-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <h2 class="accordion-title">Вопрос №3</h2>
+            <i class="icon icon-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <h2 class="accordion-title">Вопрос №4</h2>
+            <i class="icon icon-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="accordion-inner">
+                Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            В случае необходимости реализовать раскрытие аккордеона при загрузке странице, необходимо соответствующим элементам с классом <code>.accordion-item</code> дополнительно добавить класс <code>.open</code>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_accordion.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Accordion, AccordionPanel} from "../components/Accordion";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Accordion>
+    &lt;AccordionPanel title="Вопрос №1"&gt;Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.&lt;/AccordionPanel&gt;
+    &lt;AccordionPanel title="Вопрос №2"&gt;Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.&lt;/AccordionPanel&gt;
+    &lt;AccordionPanel title="Вопрос №3"&gt;Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.&lt;/AccordionPanel&gt;
+    &lt;AccordionPanel title="Вопрос №4"&gt;Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.&lt;/AccordionPanel&gt;
+&lt;/Accordion&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>title</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Заголовок панели аккордеона<br>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;AccordionPanel /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>currentPanel</td>
+                                            <td>Число</td>
+                                            <td>Нет</td>
+                                            <td>0</td>
+                                            <td>
+                                                Порядковый номер панели, который будет раскрыт при инициализации<br>
+                                                Отсчет ведется с нуля<br>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Accordion /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_avatar.scss</code> и <code>components/Avatar.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

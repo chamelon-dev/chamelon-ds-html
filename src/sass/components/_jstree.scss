@@ -1,0 +1,208 @@
+.jstree {
+  &-default {
+    position: relative;
+    .jstree-open > .jstree-ocl,
+    .jstree-closed > .jstree-ocl {
+      width: rem(32);
+      height: rem(32);
+      display: block;
+      background-image: var(--tree-chevron-icon);
+      background-position: center;
+      position: absolute;
+      cursor:pointer;
+      &:hover {
+        background-color: var(--form-bg-disabled);
+        border-radius: var(--tree-item-border-radius);
+      }
+      &:before {
+
+      }
+    }
+    > .jstree-container-ul > .jstree-node {
+      padding-left:0;
+    }
+    & a {
+      color: var(--tree-text-color);
+      font-size: rem(13);
+    }
+    .jstree-node {
+      min-height: rem(32);
+      line-height: rem(32);
+      padding-left: rem(32);
+      margin: 0 0 rem(8) 0;
+      &:last-child {
+        margin: 0;
+      }
+      .jstree-anchor {
+        transition: background-color 0.15s, box-shadow 0.15s;
+        padding-left: rem(32);
+        line-height: rem(32);
+        text-decoration: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+        &:after {
+          content:'';
+          display: inline-block;
+          height: 100%;
+          transition: background-color .3s, color .3s;
+
+        }
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left:0;
+          right:0;
+          height: 100%;
+          z-index: -1;
+          transform: translateY(0);
+          transition: background-color .3s, color .3s;
+        }
+        &.jstree-clicked{
+          color: var(--tree-clicked-color);
+          background-color: var(--tree-clicked);
+          border-radius: var(--tree-item-border-radius);
+        }
+        &:not(.jstree-clicked):not(.jstree-disabled).jstree-hovered {
+          text-decoration: none;
+          color: var(--tree-text-color);
+          background-color: var(--tree-hovered);
+          border-radius: var(--tree-item-border-radius);
+        }
+        &.jstree-disabled {
+          background: transparent;
+          color: var(--tree-disabled-color);
+          user-select: none;
+          cursor: not-allowed;
+        }
+        .jstree-icon {
+          display: none;
+        }
+      }
+      .jstree-icon {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        display: block;
+        position: absolute;
+        z-index: 1;
+      }
+      &.jstree-leaf {
+        .jstree-icon {
+          background-image: var(--tree-minus-icon);
+        }
+        &[data-jstree="{ \"disabled\" : true }"] {
+          .jstree-icon {
+            opacity: .4;
+          }
+        }
+      }
+      &.jstree-open {
+        > .jstree-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  &-children {
+    margin: rem(8) 0 0 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Pure CSS variant */
+/* https://codepen.io/bisserof/pen/fdtBm */
+.tree {
+  font-size: rem(13);
+  color: #2A2A2A;
+  user-select: none;
+  input[type="checkbox"]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    clip: rect(0, 0, 0, 0);
+    & ~ ul {
+      display: none;
+    }
+    &:checked ~ ul {
+      display: block;
+    }
+    &:checked ~ .tree-label {
+      &::before {
+        content: '\e925';
+      }
+    }
+  }
+  li {
+    position: relative;
+    margin: 0 0 rem(8) 0;
+    line-height: rem(32);
+    border-radius: var(--tree-item-border-radius);
+  }
+  & > li {
+    &:last-child {
+      margin: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  ul {
+    margin: rem(8) 0 0 0;
+    li {
+      margin: 0 0 rem(8) rem(32);
+      line-height: rem(32);
+    }
+  }
+
+  &-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    font-size: rem(13);
+    color: var(--tree-text-color);
+    border-radius: var(--tree-item-border-radius);
+    &:hover {
+      background-color: var(--tree-hovered);
+    }
+    &::before {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      width: rem(32);
+      height: rem(32);
+      color: #818997;
+      content: '\e918';
+      font-family: 'Icon';
+      text-align: center;
+      line-height: rem(32);
+      font-size: rem(32);
+    }
+    &::before {
+      content: '\e918';
+    }
+    &:only-child {
+      &::before {
+        content: '\e92d';
+      }
+    }
+  }
+  &-selected {
+    > .tree-label {
+      background-color: var(--tree-clicked);
+      color: var(--tree-clicked-color)
+    }
+  }
+}

@@ -1,0 +1,626 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'radio' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Радиокнопки{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="radio.html" class="breadcrumbs-link">Радиокнопки</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Радиокнопки</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс стилизованных радиокнопок.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Обычная радиокнопка</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Отмеченная радиокнопка</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Отключенная радиокнопка</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Отключенная отмеченная радиокнопка</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Радиокнопка</h2>
+            <p>Пример группы радиокнопок</p>
+        </div>
+        <div class="components-preview">
+            <label class="radio mr-16">
+                <input type="radio" name="rb1" class="radio-input" value="rb1">
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 1</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="rb1" class="radio-input" value="rb2">
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 2</span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="radio mr-16">
+    <input type="radio" name="rb1" class="radio-input" value="rb1">
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 1</span>
+</label>
+<label class="radio">
+    <input type="radio" name="rb1" class="radio-input" value="rb2">
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 2</span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import RadioGroup from "./components/Radio";
+const items = [
+    {
+        label: 'Радио 1', // Текстовая метка
+        value: 'r1' // Значение
+    },
+    {
+        label: 'Радио 2',
+        value: 'r2'
+    }
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;RadioGroup name="rb" items={items} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Значение поля <code>name</code> для радикнопок</td>
+                                    </tr>
+                                    <tr>
+                                        <td>items</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащий название радиокнопки и ее значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения<br>
+                                            В качестве аргумента принимает Event-объект
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code> и <code>components/Radio.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Отмеченная радиокнопка</h2>
+            <p>Пример группы радиокнопок, одна из которых отмечена</p>
+        </div>
+        <div class="components-preview">
+            <label class="radio mr-16">
+                <input type="radio" name="rb2" class="radio-input" value="rb1">
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 1</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="rb2" class="radio-input" value="rb2" checked>
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 2</span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="radio mr-16">
+    <input type="radio" name="rb2" class="radio-input" value="rb1">
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 1</span>
+</label>
+<label class="radio">
+    <input type="radio" name="rb2" class="radio-input" value="rb2" checked>
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 2</span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import RadioGroup from "./components/Radio";
+const items = [
+    {
+        label: 'Радио 1', // Текстовая метка
+        value: 'r1' // Значение
+    },
+    {
+        label: 'Радио 2',
+        value: 'r2',
+
+    }
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;RadioGroup name="rb" items={items} selected="r2" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Значение поля <code>name</code> для радикнопок</td>
+                                    </tr>
+                                    <tr>
+                                        <td>items</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащий название радиокнопки и ее значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>selected</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Значение радикнопки, которая будет отмеченной<br>
+                                            Должно совпадать с ключом <code>value</code> соответствующей радиокнопки
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения<br>
+                                            В качестве аргумента принимает Event-объект
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code> и <code>components/Radio.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Отключенная радиокнопка</h2>
+            <p>Пример группы радикнопок, одна из которых заблокирована</p>
+        </div>
+        <div class="components-preview">
+            <label class="radio mr-16">
+                <input type="radio" name="rb3" class="radio-input" value="rb1" disabled>
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 1</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="rb3" class="radio-input" value="rb2">
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 2</span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="radio mr-16">
+    <input type="radio" name="rb3" class="radio-input" value="rb1" disabled>
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 1</span>
+</label>
+<label class="radio">
+    <input type="radio" name="rb3" class="radio-input" value="rb2">
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 2</span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import RadioGroup from "./components/Radio";
+const items = [
+    {
+        label: 'Радио 1', // Текстовая метка
+        value: 'r1', // Значение
+        disabled: true // Радиокнопка будет заблокирована
+    },
+    {
+        label: 'Радио 2',
+        value: 'r2',
+
+    }
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;RadioGroup name="rb" items={items} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Значение поля <code>name</code> для радикнопок</td>
+                                    </tr>
+                                    <tr>
+                                        <td>items</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащий название радиокнопки и ее значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code> и <code>components/Radio.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Отключенная отмеченная радиокнопка</h2>
+            <p>Пример отключенной отмеченной радиокнопки</p>
+        </div>
+        <div class="components-preview">
+            <label class="radio mr-16">
+                <input type="radio" name="rb4" class="radio-input" value="rb1" checked disabled>
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 1</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="rb4" class="radio-input" value="rb2">
+                <span class="radio-check"></span>
+                <span class="radio-text">Радио 2</span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="radio mr-16">
+    <input type="radio" name="rb4" class="radio-input" value="rb1" checked disabled>
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 1</span>
+</label>
+<label class="radio">
+    <input type="radio" name="rb4" class="radio-input" value="rb2">
+    <span class="radio-check"></span>
+    <span class="radio-text">Радио 2</span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import RadioGroup from "./components/Radio";
+const items = [
+    {
+        label: 'Радио 1', // Текстовая метка
+        value: 'r1', // Значение
+        disabled: true // Радиокнопка будет заблокирована
+    },
+    {
+        label: 'Радио 2',
+        value: 'r2',
+
+    }
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;RadioGroup name="rb" items={items} selected="r1" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Значение поля <code>name</code> для радикнопок</td>
+                                    </tr>
+                                    <tr>
+                                        <td>items</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащий название радиокнопки и ее значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>selected</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Значение радикнопки, которая будет отмеченной<br>
+                                            Должно совпадать с ключом <code>value</code> соответствующей радиокнопки
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_radio.scss</code> и <code>components/Radio.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

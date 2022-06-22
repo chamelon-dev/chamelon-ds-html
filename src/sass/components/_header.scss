@@ -1,0 +1,14 @@
+.header {
+  position: relative;
+  background-color: var(--header-bg);
+  min-height: rem(64);
+  margin: 0 rem(-8);
+  padding: 0 rem(8);
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  @media(min-width: $breakpoint) {
+    margin: 0 rem(-24);
+    padding: 0 rem(24);
+  }
+}

@@ -1,0 +1,812 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'tree' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Дерево{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="tree.html" class="breadcrumbs-link">Дерево</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Дерево</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс многоуровневого раскрывающегося дерева элементов на основе списка произвольной вложенности. Дополнительная информация - <a href="https://www.jstree.com/" target="_blank">https://www.jstree.com/</a></span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Дерево элементов</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">AJAX-дерево</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Дерево элементов</h2>
+            <p>Пример многоуровневого раскрывающегося дерева на основе списка, существующего в HTML-разметке</p>
+        </div>
+        <div class="components-preview">
+            <div data-jstree>
+                <ul>
+                    <li>по Кировской области
+                        <ul>
+                            <li>Арбатский
+                                <ul>
+                                    <li><a href="//yandex.ru">Item 1</a></li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                </ul>
+                            </li>
+                            <li>Афанасьевский
+                                <ul>
+                                    <li data-jstree='{ "selected" : true }'>Богородский</li>
+                                </ul>
+                            </li>
+                            <li>Верхнекамский
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                </ul>
+                            </li>
+                            <li>Вятскополянский
+                                <ul>
+                                    <li>Вятскополянский 2</li>
+                                    <li>Вятскополянский Центральный</li>
+                                </ul>
+                            </li>
+                            <li data-jstree='{ "opened" : true }'>Даровский
+                                <ul>
+                                    <li data-jstree='{ "disabled" : true }'>Зуевский</li>
+                                </ul>
+                            </li>
+                            <li>Кирово-Чепецкий
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                </ul>
+                            </li>
+                            <li>Кировский
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>по Московской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Ленинградской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Ростовской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Нижегородской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Саратовской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Самарской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Оренбургской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Пензенской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Амурской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Архангельской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                    <li>по Брянской области
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div data-jstree>
+    <ul>
+        <li>по Кировской области
+            <ul>
+                <li>Арбатский
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </li>
+                <li>Афанасьевский
+                    <ul>
+                        <li data-jstree='{ "selected" : true }'>Богородский</li>
+                    </ul>
+                </li>
+                <li>Верхнекамский
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </li>
+                <li>Вятскополянский
+                    <ul>
+                        <li>Вятскополянский 2</li>
+                        <li>Вятскополянский Центральный</li>
+                    </ul>
+                </li>
+                <li data-jstree='{ "opened" : true }'>Даровский
+                    <ul>
+                        <li data-jstree='{ "disabled" : true }'>Зуевский</li>
+                    </ul>
+                </li>
+                <li>Кирово-Чепецкий
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </li>
+                <li>Кировский
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>по Московской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Ленинградской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Ростовской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Нижегородской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Саратовской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Самарской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Оренбургской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Пензенской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Амурской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Архангельской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>по Брянской области
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <p>Следующие параметры могут быть применены к каждому узлу дерева</p>
+                            <div class="table-container mb-24">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Объект</th>
+                                        <th>Описание</th>
+                                        <th>Пример</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{"opened": true / false}</td>
+                                        <td>Раскрывает узел при наличии дочерних узлов при инициализации плагина.</td>
+                                        <td>data-jstree='{ "opened" : true }'<br />data-jstree='{ "opened" : false }'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{"selected": true / false}</td>
+                                        <td>Выбирает узел и отмечает как "выбранный".<br />Если применяется к дочернему узлу, все его родительские узлы будут раскрыты при инициализации плагина.</td>
+                                        <td>data-jstree='{ "selected" : true }'<br />data-jstree='{ "selected" : false }'</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{"disabled": true / false}</td>
+                                        <td>Запрещает выбор узла</td>
+                                        <td>data-jstree='{ "disabled" : true }'<br />data-jstree='{ "disabled" : false }'</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_jstree.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Tree from "./components/Tree";
+const tree = {
+    core: {
+        data: [
+            {text: "по Кировской области", state: {opened: true}, children: [
+                    {text: 'Арбатский', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+                    {text: 'Афанасьевский', state: {opened: true}, children: [
+                            {text: 'Богородский', state: {selected: true}},
+                        ]
+                    },
+                    {text: 'Верхнекамский', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+                    {text: 'Вятскополянский', children: [
+                            {text: 'Вятскополянский 2'},
+                            {text: 'Вятскополянский Центральный'},
+                        ]
+                    },
+                    {text: 'Даровский', state: {opened:  true}, children: [
+                            {text: 'Зуевский', state: {disabled: true}},
+                        ]
+                    },
+                    {text: 'Кирово-Чепецкий', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+                    {text: 'Кировский', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+
+                ]
+            },
+            {text: "по Московской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Ленинградской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Ростовской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Нижегородской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Саратовской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Самарской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Оренбургской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Пензенской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Амурской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Архангельской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Брянской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+        ]
+    }
+};
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tree data={tree} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>tree</td>
+                                        <td>Объект</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Объект элементов, из которых будет построено дерево</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_jstree.scss</code> и <code>components/Tree.js</code>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>AJAX-дерево</h2>
+            <p>Пример многоуровневого раскрывающегося дерева на основе данных, получаемых с сервера</p>
+        </div>
+        <div class="components-preview">
+            <div data-jstree data-tree-ajax="true" data-url-root="../json/root.json" data-url-children="../json/children.json"></div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div data-jstree data-tree-ajax="true" data-url-root="../json/root.json" data-url-children="../json/children.json"></div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container mb-24">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>data-атрибут</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>data-jstree-ajax</td>
+                                            <td>Указывает, что дерево будет построено на основе данных с сервера</td>
+                                        </tr>
+                                        <tr>
+                                            <td>data-url-root</td>
+                                            <td>Ссылка на JSON-ресурс, которая возвращает список всех родителей</td>
+                                        </tr>
+                                        <tr>
+                                            <td>data-url-children</td>
+                                            <td>
+                                                Ссылка на JSON-ресурс, которая возвращает список всех детей<br/>
+                                                По-умолчанию, к этой ссылке будет добавлен GET-параметр идентификатора родителя
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p>Пример структуры JSON-объекта, который должен быть возвращен сервером</p>
+                        </div>
+                        <div class="components-code">
+                             <pre>
+                                <code class="language-html">
+<textarea>
+{
+  id          : "Строка" // обязательно, должно быть уникальным для каждого узла
+  text        : "Строка" // обязательно, название узла
+  state       : {
+    opened    : "Логический"  // раскрытый узел
+    disabled  : "Логический"  // заблокированный узел
+    selected  : "Логический"  // выбранный узел
+  },
+  a_attr      : {}  // атрибуты ссылки, например href или title
+}
+</textarea>
+                                </code>
+                            </pre>
+
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_jstree.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        Coming soon
+                        <div class="components-code d-none">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Tree from "./components/Tree";
+const tree = {
+    core: {
+        data: [
+            {text: "по Кировской области", state: {opened: true}, children: [
+                    {text: 'Арбатский', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+                    {text: 'Афанасьевский', state: {opened: true}, children: [
+                            {text: 'Богородский', state: {selected: true}},
+                        ]
+                    },
+                    {text: 'Верхнекамский', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+                    {text: 'Вятскополянский', children: [
+                            {text: 'Вятскополянский 2'},
+                            {text: 'Вятскополянский Центральный'},
+                        ]
+                    },
+                    {text: 'Даровский', state: {opened:  true}, children: [
+                            {text: 'Зуевский', state: {disabled: true}},
+                        ]
+                    },
+                    {text: 'Кирово-Чепецкий', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+                    {text: 'Кировский', children: [
+                            {text: 'Item 1'},
+                            {text: 'Item 2'},
+                            {text: 'Item 3'},
+                        ]
+                    },
+
+                ]
+            },
+            {text: "по Московской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Ленинградской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Ростовской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Нижегородской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Саратовской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Самарской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Оренбургской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Пензенской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Амурской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Архангельской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+            {text: "по Брянской области", children: [
+                    {text: 'Item 1'},
+                    {text: 'Item 2'},
+                    {text: 'Item 3'},
+                ]
+            },
+        ]
+    }
+};
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tree data={tree} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>tree</td>
+                                        <td>Объект</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Объект элементов, из которых будет построено дерево</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source d-none">
+                            Исходный код этого компонента находится по пути <code>sass/components/_jstree.scss</code> и <code>components/Tree.js</code>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

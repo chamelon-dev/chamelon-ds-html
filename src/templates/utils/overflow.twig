@@ -1,0 +1,110 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'overflow' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Переполнение{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="overflow.html" class="breadcrumbs-link">Переполнение</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Переполнение</h1>
+    <span class="tagline">Управляет отображением содержания блочного элемента, если оно целиком не помещается и выходит за область заданных размеров</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Переполнение</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Переполнение</h2>
+            <p>Позволяет задать или изменить переполнение (overflow) у элементов</p>
+        </div>
+        <div class="components-options">
+            <p>Переполнение задается элементам путем присвоения класса вида <code>overflow-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{type}</th>
+                            <th>Пример</th>
+                            <th>Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>initial</td>
+                            <td><code>&lt;div class="overflow-initial"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает свойство в значение по умолчанию</td>
+                        </tr>
+                        <tr>
+                            <td>auto</td>
+                            <td><code>&lt;div class="overflow-auto"&gt;&lt;/div&gt; </code></td>
+                            <td>Полосы прокрутки добавляются только при необходимости</td>
+                        </tr>
+                        <tr>
+                            <td>visible</td>
+                            <td><code>&lt;div class="overflow-visible"&gt;&lt;/div&gt; </code></td>
+                            <td>Отображается всё содержимое элемента, даже за пределами установленной высоты и ширины</td>
+                        </tr>
+                        <tr>
+                            <td>scroll</td>
+                            <td><code>&lt;div class="overflow-scroll"&gt;&lt;/div&gt; </code></td>
+                            <td>Всегда добавляются полосы прокрутки</td>
+                        </tr>
+                        <tr>
+                            <td>hidden</td>
+                            <td><code>&lt;div class="overflow-hidden"&gt;&lt;/div&gt; </code></td>
+                            <td>Отображается только область внутри элемента, остальное будет скрыто</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_overflow.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

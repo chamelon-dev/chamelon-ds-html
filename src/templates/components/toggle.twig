@@ -1,0 +1,609 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'toggle' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Переключатель{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="toggle.html" class="breadcrumbs-link">Переключатель</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Переключатель</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс стилизованных переключателей.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Обычный переключатель</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Отмеченный переключатель</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Отключенный переключатель</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Отключенный отмеченный переключатель</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Переключатель с текстом</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Переключатель</h2>
+            <p>Пример переключателя</p>
+        </div>
+        <div class="components-preview">
+            <label class="toggle">
+                <input type="checkbox" id="cb-0" name="name" class="toggle-input">
+                <span class="toggle-check"></span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="toggle">
+    <input type="checkbox" id="cb-0" name="name" class="toggle-input">
+    <span class="toggle-check"></span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Toggle from "./components/Toggle";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Toggle  /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения<br>
+                                            В качестве аргумента принимает Event-объект
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code> и <code>components/Toggle.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Отмеченный переключатель</h2>
+            <p>Пример отмеченного переключателя</p>
+        </div>
+        <div class="components-preview">
+            <label class="toggle">
+                <input type="checkbox" name="name" class="toggle-input" checked>
+                <span class="toggle-check"></span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="toggle">
+    <input type="checkbox" name="name" class="toggle-input" checked>
+    <span class="toggle-check"></span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Toggle from "./components/Toggle";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Toggle checked={true}  /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>checked</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Устанавливает переключатель в отмеченное/неотмеченное состояние</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения<br>
+                                            В качестве аргумента принимает Event-объект
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code> и <code>components/Toggle.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Отключенный переключатель</h2>
+            <p>Пример отключенного переключателя</p>
+        </div>
+        <div class="components-preview">
+            <label class="toggle">
+                <input type="checkbox" name="name" class="toggle-input" disabled>
+                <span class="toggle-check"></span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="toggle">
+    <input type="checkbox" name="name" class="toggle-input" disabled>
+    <span class="toggle-check"></span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Toggle from "./components/Toggle";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Toggle disabled={true}  /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>disabled</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Устанавливает переключатель в заблокированное/разблокированное состояние и запрещает изменение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code> и <code>components/Toggle.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Отключенный отмеченный переключатель</h2>
+            <p>Пример отключенного отмеченного переключателя</p>
+        </div>
+        <div class="components-preview">
+            <label class="toggle">
+                <input type="checkbox" name="name" class="toggle-input" checked disabled>
+                <span class="toggle-check"></span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="toggle">
+    <input type="checkbox" name="name" class="toggle-input" checked disabled>
+    <span class="toggle-check"></span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Toggle from "./components/Toggle";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Toggle disabled={true} checked={true} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>disabled</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Устанавливает переключатель в заблокированное/разблокированное состояние и запрещает изменение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>checked</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Устанавливает переключатель в отмеченное/неотмеченное состояние</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения<br>
+                                            В качестве аргумента принимает Event-объект
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code> и <code>components/Toggle.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Переключатель с текстом</h2>
+            <p>Пример переключателя с произвольной текстовой меткой</p>
+        </div>
+        <div class="components-preview">
+            <label class="toggle">
+                <input type="checkbox" name="name" class="toggle-input">
+                <span class="toggle-check"></span>
+                <span class="toggle-text">Переключатель</span>
+            </label>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-5-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-5-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-5-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<label class="toggle">
+    <input type="checkbox" name="name" class="toggle-input">
+    <span class="toggle-check"></span>
+    <span class="toggle-text">Переключатель</span>
+</label>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-5-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Toggle from "./components/Toggle";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Toggle text="Переключатель" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Устанавливает произвольную текстовую метку</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения<br>
+                                            В качестве аргумента принимает Event-объект
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_toggle.scss</code> и <code>components/Toggle.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

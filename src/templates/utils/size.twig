@@ -1,0 +1,185 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'size' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Размеры{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="size.html" class="breadcrumbs-link">Размеры</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Размеры</h1>
+    <span class="tagline">Устанавливает ширину или высоту содержимого элемента</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Ширина</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Высота</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Ширина</h2>
+            <p class="overflow-">Позволяет задать или изменить ширину (width) у элементов. Рассчитывается относительно родительского элемента в процентах. Если родитель явно не указан, то в его качестве выступает окно браузера</p>
+        </div>
+        <div class="components-options">
+            <p>Ширина задается элементам путем присвоения класса вида <code>w-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{type}</th>
+                            <th>Пример</th>
+                            <th>Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>25</td>
+                            <td><code>&lt;div class="w-25"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает ширину, равную 25% ширины родителя</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td><code>&lt;div class="w-50"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает ширину, равную 50% ширины родителя</td>
+                        </tr>
+                        <tr>
+                            <td>75</td>
+                            <td><code>&lt;div class="w-75"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает ширину, равную 75% ширины родителя</td>
+                        </tr>
+                        <tr>
+                            <td>auto</td>
+                            <td><code>&lt;div class="w-auto"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает ширину, исходя из типа и содержимого элемента</td>
+                        </tr>
+                        <tr>
+                            <td>100vw</td>
+                            <td><code>&lt;div class="w-100vw"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает ширину, равную 100vw (всей ширине области просмотра)</td>
+                        </tr>
+                        <tr>
+                            <td>max-100</td>
+                            <td><code>&lt;div class="w-max-100"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает максимальную ширину элемента 100%</td>
+                        </tr>
+                        <tr>
+                            <td>min-100</td>
+                            <td><code>&lt;div class="w-min-100"&gt;&lt;/div&gt; </code></td>
+                            <td>Устанавливает минимальную ширину элемента 100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_sizing.scss</code>
+        </div>
+
+    </section>
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Высота</h2>
+            <p>Позволяет задать или изменить высоту (height) у элементов. Рассчитывается относительно родительского элемента в процентах. Если родитель явно не указан, то в его качестве выступает окно браузера</p>
+        </div>
+        <div class="components-options">
+            <p>Высота задается элементам путем присвоения класса вида <code>h-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{type}</th>
+                        <th>Пример</th>
+                        <th>Описание</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>25</td>
+                        <td><code>&lt;div class="h-25"&gt;&lt;/div&gt; </code></td>
+                        <td>Устанавливает высоту, равную 25% ширины родителя</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td><code>&lt;div class="h-50"&gt;&lt;/div&gt; </code></td>
+                        <td>Устанавливает высоту, равную 50% ширины родителя</td>
+                    </tr>
+                    <tr>
+                        <td>75</td>
+                        <td><code>&lt;div class="h-75"&gt;&lt;/div&gt; </code></td>
+                        <td>Устанавливает высоту, равную 75% ширины родителя</td>
+                    </tr>
+                    <tr>
+                        <td>auto</td>
+                        <td><code>&lt;div class="h-auto"&gt;&lt;/div&gt; </code></td>
+                        <td>Устанавливает высоту, исходя из типа и содержимого элемента</td>
+                    </tr>
+                    <tr>
+                        <td>100vw</td>
+                        <td><code>&lt;div class="h-100vh"&gt;&lt;/div&gt; </code></td>
+                        <td>Устанавливает высоту, равную 100vh (всей высоте области просмотра)</td>
+                    </tr>
+                    <tr>
+                        <td>max-100</td>
+                        <td><code>&lt;div class="h-max-100"&gt;&lt;/div&gt; </code></td>
+                        <td>Устанавливает максимальную высоту элемента 100%</td>
+                    </tr>
+                    <tr>
+                        <td>min-100</td>
+                        <td><code>&lt;div class="h-min-100"&gt;&lt;/div&gt; </code></td>
+                        <td>Устанавливает минимальную высоту элемента 100%</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_sizing.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

@@ -1,0 +1,62 @@
+.accordion {
+  background-color: var(--accordion-bg);
+  padding: rem(24);
+  border-radius: var(--accordion-border-radius);
+  &-item {
+    border-top: 2px solid var(--accordion-border-color);
+    padding: rem(8) 0;
+    &:last-child {
+      border-bottom: 2px solid var(--accordion-border-color);
+    }
+    &.open {
+      .accordion-header {
+        color: var(--accordion-header-open-color);
+        background-color: var(--accordion-header-open-bg);
+        & .icon {
+          color: var(--accordion-header-open-icon-color);
+          transform: rotate(180deg);
+        }
+      }
+      .accordion-content {
+        opacity: 1;
+      }
+      .accordion-inner {
+        margin: rem(8) 0 0 0;
+      }
+    }
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--accordion-border-radius);
+    padding: 0 0 0 rem(12);
+    cursor: pointer;
+    transition: background-color .3s ease;
+    & .icon {
+      color: var(--accordion-header-icon-color);
+      transition: transform .3s ease-in-out;
+    }
+    &:hover {
+      background-color: var(--accordion-header-hover-bg);
+    }
+  }
+  &-title {
+    font-size: rem(13);
+    line-height: rem(16);
+    font-weight: 700;
+  }
+  &-content {
+    font-size: rem(13);
+    line-height: rem(16);
+    display: none; // In React version must be a "block" or absent
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+  &-inner {
+    padding: 0 rem(12);
+    overflow: hidden;
+    will-change: height;
+    transition: height .3s ease-in-out;
+  }
+}

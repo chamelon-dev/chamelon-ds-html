@@ -1,0 +1,258 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set heder_menu_active_item = 'examples' %}
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="/" class="breadcrumbs-link">Начало</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="{{ app.request.getBaseURL() }}/examples/index.html" class="breadcrumbs-link">Примеры</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="profile.html" class="breadcrumbs-link">Профиль пользователя</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+    <div class="title">
+        <h1>Профиль пользователя</h1>
+        <a href="../preview/profile.html" class="button button button-solid button-primary" target="_blank">Просмотр</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Профиль</title>
+        <script defer src="//sitename/js/theme.js"></script>
+        <link href="//sitename/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="layout-center">
+        <div class="wrapper-outer">
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="navbar">
+                                    <div class="logo">
+                                        <a href="#">Паспортная система</a>
+                                    </div>
+                                    <button data-toggle-header class="button button-icon">
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    <nav class="horizontal-menu">
+                                        <div class="menu-right">
+                                            <ul>
+                                                <li tabindex="0">
+                                                    <a href="#">
+                                                        <i class="icon icon-user menu-prefix"></i>
+                                                        <span class="menu-label">Администратор</span>
+                                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="active">
+                                                                    <span class="menu-label">Профиль</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Выход</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="title">
+                                    <h1 class="d-flex align-items-center">
+                                        Профиль
+                                        <a href="#" class="button button-icon ml-8">
+                                            <i class="icon icon-pencil"></i>
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <div class="infoblock accent mb-16">
+                                            <div class="infoblock-title">
+                                                <h3>Данные пользователя</h3>
+                                            </div>
+                                            <div class="infoblock-content">
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="avatar avatar-80">
+                                                                <img src="/images/no-photo.svg"
+                                                                     alt="Фото профиля отсутствует"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Логин</strong></div>
+                                                        <div class="col-8">administrator</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Ldap ФИО</strong></div>
+                                                        <div class="col-8">Лисицин Юрий Алексеевич</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="infoblock accent mb-16">
+                                            <div class="infoblock-title">
+                                                <h3>Персональные данные</h3>
+                                            </div>
+                                            <div class="infoblock-content">
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Имя</strong></div>
+                                                        <div class="col-8">Иван</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Фамилия</strong></div>
+                                                        <div class="col-8">Иванов</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Отчество</strong></div>
+                                                        <div class="col-8">Иванович</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Подразделение</strong></div>
+                                                        <div class="col-8">по г. Москве</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Должность</strong></div>
+                                                        <div class="col-8">Руководитель</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Дата рождения</strong></div>
+                                                        <div class="col-8">19.01.2021</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="infoblock accent mb-16">
+                                            <div class="infoblock-title">
+                                                <h3>Контакты</h3>
+                                            </div>
+                                            <div class="infoblock-content">
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (моб.)</strong></div>
+                                                        <div class="col-8">+79213675448</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Факс</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (раб. внутр.)</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (раб. внеш.)</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (раб. моб.)</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Адрес</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                                <div class="footer-copyrights">&copy; Chamel<sup>on</sup>, 2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

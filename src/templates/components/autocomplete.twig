@@ -1,0 +1,257 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'autocomplete' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Автозаполнение{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="autocomplete.html" class="breadcrumbs-link">Автозаполнение</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Автозаполнение</h1>
+    <span class="tagline">Автозаполнение позволяет легко создавать поля автозаполнения/автоподсказки для полей ввода текста.<br>Дополнительная информация - <a href="https://github.com/devbridge/jQuery-Autocomplete" target="_blank">https://github.com/devbridge/jQuery-Autocomplete</a></span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Автозаполнение</span>
+            </a>
+
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Автозаполнение</h2>
+            <p>Пример компонента, в котором реализован поиск адресов из системы ФИАС. Для примера, попробуйте ввести &laquo;Москва&raquo; или &laquo;Москва Давыдковская 7 стр 2&raquo;</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <div class="field-icon field-icon-both">
+                    <i class="icon icon-search field-icon-start"></i>
+                    <input type="search" placeholder="Что найти?" id="autocomplete" autocomplete="off" data-autocomplete>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <div class="field-icon field-icon-both">
+        <i class="icon icon-search field-icon-start"></i>
+        <input type="search" placeholder="Что найти?" id="autocomplete" autocomplete="off" data-autocomplete>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-js">
+<textarea>
+$(document).ready(function(){
+    $('#autocomplete').autocomplete({
+        serviceUrl: 'https://fias.dev.cgu.iac.mchs.ru/api/search',
+        paramName: 'address',
+        transformResult: function(response) {
+            return {
+                suggestions: $.map(response, function(dataItem) {
+                    return { value: dataItem.address, data: dataItem.guid };
+                })
+            };
+        }
+    });
+})
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Autocomplete from "../components/Autocomplete";
+const transformResult = (response) => {
+    return {
+        suggestions: response.map(function(item) {
+            return { value: item.address, data: item.guid };
+        })
+    };
+}
+const onSelect = (suggestion) => {
+    console.log(suggestion)
+}
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Autocomplete icon="search" url="https://fias.dev.cgu.iac.mchs.ru/api/search" type="search" name="q" placeholder="Что найти?" paramName="address" onSelect={onSelect} transformResult={transformResult} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-code">
+                            <p class="mt-24" style="padding-left: 30px; padding-right: 30px;">Формат ответа от серверной стороны должен быть следующей структуры</p>
+                            <pre>
+                                <code class="language-js">
+<textarea>
+{
+    "suggestions": [
+        { "value": "United Arab Emirates", "data": "AE" },
+        { "value": "United Kingdom",       "data": "UK" },
+        { "value": "United States",        "data": "US" }
+    ]
+}
+</textarea>
+                                </code>
+                            </pre>
+                            <p class="mt-24" style="padding-left: 30px; padding-right: 30px;">Если ответ от серверной стороны отличается, необходимо воспользоваться функцией transformResult()</p>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>icon</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>search</td>
+                                            <td>Название <a href="icons.html">иконки</a>, которая будет добавлена перед полем</td>
+                                        </tr>
+                                        <tr>
+                                            <td>url</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>URL-адрес на стороне сервера</td>
+                                        </tr>
+                                        <tr>
+                                            <td>type</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>search</td>
+                                            <td>Значение атрибута &laquo;type&raquo; поля</td>
+                                        </tr>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>Значение атрибута &laquo;name&raquo; поля</td>
+                                        </tr>
+                                        <tr>
+                                            <td>placeholder</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>Текст-заполнитель</td>
+                                        </tr>
+                                        <tr>
+                                            <td>paramName</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>Ключ GET-параметра, который будет присоединен к URL вместе со значением из поля </td>
+                                        </tr>
+                                        <tr>
+                                            <td>onSelect</td>
+                                            <td>Функция</td>
+                                            <td>Нет</td>
+                                            <td>null</td>
+                                            <td>
+                                                Функция-обработчик выбора предложенного варианта<br>
+                                                В качестве аргумента принимает объект со всеми данными выбранного предложенного варианта
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>transformResult</td>
+                                            <td>Функция</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>
+                                                Функция-обработчик преобразования результатов запроса<br>
+                                                В качестве аргумента принимает объект со всеми данными от сервера
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_autocomplete.scss</code> и  <code>components/Autocomplete.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+
+{% endblock %}

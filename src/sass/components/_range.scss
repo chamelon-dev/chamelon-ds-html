@@ -1,0 +1,109 @@
+.range {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  input[type="range"] {
+    padding: 0;
+    border: none;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    height: 2px;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+    /* webkit */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: var(--range-thumb-bg);
+      cursor: pointer;
+      margin: -7px 0;
+    }
+    &::-webkit-slider-runnable-track {
+      background-color: var(--range-not-fill-bg);
+      height: 2px;
+      background-image: linear-gradient(to right, var(--range-fill-bg) var(--value,0),transparent var(--value,0));
+      cursor: pointer;
+    }
+    /* mozila */
+    &::-moz-range-thumb {
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: var(--range-thumb-bg);
+      cursor: pointer;
+      border: none;
+    }
+    &::-moz-range-track {
+      width: 100%;
+      height: 2px;
+      cursor: pointer;
+      background: var(--range-not-fill-bg);
+      border-radius: 10px
+    }
+    &::-moz-range-progress {
+      background-color: var(--range-fill-bg);
+      border-radius: 10px 0 0 10px;
+      height: 2px;
+    }
+
+    /* IE */
+    &::-ms-thumb {
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: var(--range-thumb-bg);
+      cursor: pointer;
+      border: none;
+    }
+    &::-ms-track {
+      width: 100%;
+      height: 2px;
+      border-width: 7px 0;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+      display: block;
+    }
+    &::-ms-fill-lower {
+      background: var(--range-fill-bg);
+    }
+    &::-ms-fill-upper {
+      background: var(--range-not-fill-bg);
+    }
+    &::-ms-tooltip {
+      display: none;
+    }
+  }
+  &-min,
+  &-max {
+    color: var(--range-output-color);
+    font-size: rem(16);
+    font-weight: 700;
+  }
+  &-min {
+    padding: 0 rem(8) 0 0;
+  }
+  &-max {
+    padding: 0 0 0 rem(8);
+  }
+  input[type="number"] {
+    width: rem(48);
+    padding: 0;
+    text-align: center;
+    font-size: rem(16);
+    font-weight: 700;
+    margin: 0 0 0 rem(24);
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  }
+}

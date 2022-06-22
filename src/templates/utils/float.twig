@@ -1,0 +1,100 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'float' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Обтекание{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="float.html" class="breadcrumbs-link">Обтекание</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Обтекание</h1>
+    <span class="tagline">Определяет, по какой стороне будет выравниваться элемент, при этом остальные элементы будут обтекать его с других сторон</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Обтекание</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Обтекание</h2>
+            <p>Позволяет задать или изменить обтекание (float) у элементов</p>
+        </div>
+        <div class="components-options">
+            <p>Обтекание задается элементам путем присвоения класса вида <code>float-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{type}</th>
+                            <th>Пример</th>
+                            <th>Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>none</td>
+                            <td><code>&lt;div class="float-none"&gt;&lt;/div&gt; </code></td>
+                            <td>Обтекание элемента не задаётся</td>
+                        </tr>
+                        <tr>
+                            <td>left</td>
+                            <td><code>&lt;div class="float-left"&gt;&lt;/div&gt; </code></td>
+                            <td>Выравнивает элемент по левому краю, а все остальные элементы, вроде текста, обтекают его по правой стороне</td>
+                        </tr>
+                        <tr>
+                            <td>right</td>
+                            <td><code>&lt;div class="float-right"&gt;&lt;/div&gt; </code></td>
+                            <td>Выравнивает элемент по правому краю, а все остальные элементы обтекают его по левой стороне</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_float.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

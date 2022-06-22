@@ -1,0 +1,117 @@
+{% set basePath = (base) ? '' : '../' %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %} - Chamel-on</title>
+    {% block head %}
+        <link rel="stylesheet" href="{{ basePath }}css/docs.css">
+    {% endblock %}
+    <style>
+        .show-loader{overflow:hidden;padding-right:17px;}.preloader{background-color:#fff;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000}.preloader-loader{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%)}.preloader-loader .logo{margin:0}.preloader .logo a{padding:12px 48px;color:#fff;background:linear-gradient(to right,#818997 0,#fff 10%,#818997 20%);background-position:0;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s infinite linear;animation-fill-mode:forwards;-webkit-text-size-adjust:none;font-weight:600;text-decoration:none;white-space:nowrap;font-size:36px}.preloader .logo a span{vertical-align:super;top:-.5em;font-size:75%}.preloader .logo+p{text-align:center;color:#dbdfe6}@-moz-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-webkit-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-o-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}
+    </style>
+</head>
+
+<body class="layout-sidebar show-loader">
+        <div class="preloader">
+            <div class="preloader-loader">
+                <div class="logo">
+                    <a href="/">Chamel<span>on</span></a>
+                </div>
+                <p>Пожалуйста, подождите...</p>
+            </div>
+        </div>
+        <div class="wrapper-outer">
+            {% if sidebar %}
+                <aside class="sidebar sidebar-open accent">
+                    <div class="sidebar-top">
+                        <div class="field">
+                            <div class="field-icon field-icon-both">
+                                <i class="icon icon-search field-icon-start"></i>
+                                <input type="search" name="component_search" value="" placeholder="Поиск...">
+                                <button class="field-button field-button-end d-none" data-clear-field>
+                                    <i class="icon icon-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-results d-none p-32 text-center">Ничего не найдено</div>
+                    <div class="sidebar-middle">
+
+                        {% block menu %}
+                            {% embed 'menu.twig' %} {% endembed %}
+                        {% endblock %}
+
+                    </div>
+                </aside>
+            {% endif %}
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="navbar">
+                                    <div class="logo">
+                                        <a href="{{ basePath }}index.html">Chamel<sup>on</sup></a>
+                                    </div>
+                                    <button data-toggle-header class="button button-icon">
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    {% block menu %}
+                                        {% embed 'topnavbar.twig' %} {% endembed %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container{{ (sidebar is defined) ? '-fluid' : ' h-100' }}">
+                        <div class="row{{ (sidebar is defined) ? '' : ' h-100' }}">
+                            {% if block("breadcrumbs") is defined %}
+                                <div class="col-12">
+                                    {% block breadcrumbs %}{% endblock %}
+                                </div>
+                            {% endif %}
+                            {% if block("pagetitle") is defined %}
+                                <div class="col-12">
+                                    {% block pagetitle %}{% endblock %}
+                                </div>
+                            {% endif %}
+                            <div class="col-{{ (secondary_sidebar) ? '9' : '12 h-100' }}">
+                                {% block content %}{% endblock %}
+                            </div>
+                            {% if secondary_sidebar %}
+                                <div class="col-3">
+                                    <div class="secondary_sidebar">
+                                        <h4 class="mb-24">Содержание:</h4>
+                                        {% block secondary_sidebar %}{% endblock %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                                <div class="footer-copyrights">© Chamel<sup>on</sup>, {{ "now"|date("Y") }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <div class="scroll-top">
+                <a href="#" class="button button-solid button-primary" data-prevent><i class="icon icon-arrow-up"></i></a>
+            </div>
+        </div>
+
+{% block scripts %}
+    <script defer src="{{ basePath }}js/prism.js"></script>
+    <script defer src="{{ basePath }}js/docs.js"></script>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+//.tooltip {
+//  position: absolute;
+//  z-index: 1070;
+//  opacity: 0;
+//  &.in {
+//    opacity: 1;
+//  }
+//  &.tooltip-top {
+//    margin: -14px 0 0 0;
+//    .tooltip-arrow {
+//      bottom: -4px;
+//      left: 50%;
+//      transform: translateX(-50%) rotate(45deg);
+//      border-width: 0 2px 2px 0;
+//    }
+//  }
+//  &.tooltip-right {
+//    margin: 0 0 0 14px;
+//    .tooltip-arrow {
+//      top: 50%;
+//      left: -4px;
+//      transform: translateY(-50%) rotate(45deg);
+//      border-width: 0 0 2px 2px;
+//    }
+//  }
+//  &.tooltip-bottom {
+//    margin: 14px 0 0 0;
+//    .tooltip-arrow {
+//      top: -4px;
+//      left: 50%;
+//      transform: translateX(-50%) rotate(45deg);
+//      border-width: 2px 0 0 2px;
+//    }
+//  }
+//  &.tooltip-left {
+//    margin: 0 0 0 -14px;
+//    .tooltip-arrow {
+//      top: 50%;
+//      right: -4px;
+//      transform: translateY(-50%) rotate(45deg);
+//      border-width: 2px 2px 0 0;
+//    }
+//  }
+//  &-inner {
+//    max-width: rem(240);
+//    color: var(--tooltip-color-text);
+//    text-align: left;
+//    background-color: var(--tooltip-bg);
+//    border-radius: var(--tooltip-border-radius);
+//    border-style: solid;
+//    border-width: 2px;
+//    border-color: var(--tooltip-border-color);
+//    font-weight: 400;
+//    padding: rem(8) rem(12);
+//    font-size: rem(13);
+//    box-shadow: var(--tooltip-shadow);
+//    line-height: 1;
+//  }
+//  &-arrow {
+//    position: absolute;
+//    width: 9px;
+//    height: 9px;
+//    border-color: var(--tooltip-border-color);
+//    border-style: solid;
+//    background-color: var(--tooltip-bg);
+//  }
+//}
+
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Applies to all tooltips */
+[data-tooltip]::before,
+[data-tooltip]::after {
+  text-transform: none;
+  font-size: rem(13);
+  line-height: rem(16);
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  letter-spacing: 0.02em;
+}
+
+[data-tooltip]::before {
+  content: "";
+  display: block;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  max-width: rem(212);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: rem(8) rem(12);
+  box-shadow: var(--tooltip-shadow);
+  background: var(--tooltip-bg);
+  color: var(--tooltip-color-text);
+  z-index: 2;
+  border-radius: var(--tooltip-border-radius);
+  font-weight: 400;
+  border: 2px solid var(--tooltip-border-color);
+
+}
+
+/* Make the tooltips respond to hover */
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[data-tooltip=""]::before,
+[data-tooltip=""]::after {
+  display: none !important;
+}
+
+/* FLOW: UP */
+[data-tooltip]:not([data-placement])::before,
+[data-tooltip][data-placement^="top"]::before {
+  bottom: calc(100% + 8px);
+  background-image: var(--tooltip-corner-bottom);
+  width: 16px;
+  height: 8px;
+  background-position: bottom center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-tooltip]:not([data-placement])::after,
+[data-tooltip][data-placement^="top"]::after {
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* FLOW: DOWN */
+[data-tooltip][data-placement^="bottom"]::before {
+  top: calc(100% + 8px);
+  background-image: var(--tooltip-corner-top);
+  width: 16px;
+  height: 8px;
+  background-position: top center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-tooltip][data-placement^="bottom"]::after {
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[data-tooltip][data-placement^="bottom"]::before,
+[data-tooltip][data-placement^="bottom"]::after {
+  left: 50%;
+  transform: translate(-50%, 0.5em);
+}
+
+/* FLOW: LEFT */
+[data-tooltip][data-placement^="left"]::before {
+  background-image: var(--tooltip-corner-right);
+  width: 10px;
+  height: 16px;
+  background-position: center right;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+
+[data-tooltip][data-placement^="left"]::after {
+  top: 50%;
+  right: calc(100% + 16px);
+  transform: translateY(-50%);
+}
+
+/* FLOW: RIGHT */
+[data-tooltip][data-placement^="right"]::before {
+  background-image: var(--tooltip-corner-left);
+  width: 10px;
+  height: 16px;
+  background-position: center left;
+  top: 50%;
+  right: -18px;
+  transform: translateY(-50%);
+}
+
+[data-tooltip][data-placement^="right"]::after {
+  top: 50%;
+  left: calc(100% + 16px);
+  transform: translateY(-50%);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */
+[data-tooltip]:not([data-placement]):hover::before,
+[data-tooltip]:not([data-placement]):hover::after,
+[data-tooltip][data-placement^="top"]:hover::before,
+[data-tooltip][data-placement^="top"]:hover::after,
+[data-tooltip][data-placement^="bottom"]:hover::before,
+[data-tooltip][data-placement^="bottom"]:hover::after {
+  animation: tooltips-vert .3s ease-out forwards;
+}
+
+[data-tooltip][data-placement^="left"]:hover::before,
+[data-tooltip][data-placement^="left"]:hover::after,
+[data-tooltip][data-placement^="right"]:hover::before,
+[data-tooltip][data-placement^="right"]:hover::after {
+  animation: tooltips-horz .3s ease-out forwards;
+}

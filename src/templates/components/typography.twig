@@ -1,0 +1,600 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'typography' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Типографика{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="typography.html" class="breadcrumbs-link">Типографика</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Типографика</h1>
+    <span class="tagline">Документация и примеры типографики, включая глобальные настройки, заголовки, основной текст, списки и другое.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Заголовки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Выравнивание текста</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Текст заглавными буквами</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Начертания</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Абзац</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-6">
+                <span class="menu-label">Списки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-7">
+                <span class="menu-label">Контекстуальные цвета</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-8">
+                <span class="menu-label">Список-спойлер</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Заголовки</h2>
+            <p>Примеры заголовков</p>
+        </div>
+        <div class="components-preview">
+            <h1>Заголовок 1 уровня</h1>
+            <h2>Заголовок 2 уровня</h2>
+            <h3>Заголовок 3 уровня</h3>
+            <h4>Заголовок 4 уровня</h4>
+            <h5>Заголовок 5 уровня</h5>
+            <h6>Заголовок 6 уровня</h6>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<h1>Заголовок 1 уровня</h1>
+<h2>Заголовок 2 уровня</h2>
+<h3>Заголовок 3 уровня</h3>
+<h4>Заголовок 4 уровня</h4>
+<h5>Заголовок 5 уровня</h5>
+<h6>Заголовок 6 уровня</h6>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/global/_typography.scss</code>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Выравнивание текста</h2>
+            <p>Примеры различных вариантов выравнивания текста</p>
+        </div>
+        <div class="components-preview">
+            <p class="text-left">Текст, выровненный по левому краю</p>
+            <p class="text-center">Текст, выровненный по центру</p>
+            <p class="text-right">Текст, выровненный по правому краю</p>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<p class="text-left">Текст, выровненный по левому краю</p>
+<p class="text-center">Текст, выровненный по центру</p>
+<p class="text-right">Текст, выровненный по правому краю</p>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/global/_typography.scss</code>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Текст заглавными буквами</h2>
+            <p>Пример текста, имитирующий набор заглавными буквами</p>
+        </div>
+        <div class="components-preview">
+            <p class="text-uppercase">этот пример текста написан заглавными буквами</p>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<p class="text-uppercase">этот пример текста написан заглавными буквами</p>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/global/_typography.scss</code>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Начертания</h2>
+            <p>Примеры текста с использованием различных начертаний</p>
+        </div>
+        <div class="components-preview">
+            <p class="text-strong">этот пример текста набран в полужирном начертании</p>
+            <p class="text-italic">этот пример текста набран в курсивном начертании</p>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<p class="text-strong">этот пример текста набран в полужирном начертании</p>
+&lt;!-- Альтернативный вариант --&gt;
+<strong>этот пример текста набран в полужирном начертании</strong>
+
+
+<p class="text-italic">этот пример текста набран в курсивном начертании</p>
+&lt;!-- Альтернативный вариант --&gt;
+<em>этот пример текста набран в курсивном начертании</em>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/global/_typography.scss</code>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Абзац</h2>
+            <p>Примеры обычного текста в абзаце. Абзац представляет собой блок текста, набранный шрифтом Roboto, размером 16px</p>
+        </div>
+        <div class="components-preview">
+            <p>Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов (компьютера и программ-редакторов), специальных языков программирования (HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.). Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов, отдельных элементов Web-страниц), размещаемых в Интернете.</p>
+            <p>Цвет - свойство тел вызывать определенное зрительное ощущение в соответствии со спектральным составом и интенсивностью отражаемого или испускаемого ими видимого излучения. Основные параметры цвета - цветовой тон, насыщенность и светлота. Цветовой тон определяется спектральным составом света, насыщенность - количеством добавляемого серого цвета, а светлота - яркостью.</p>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<p>Web-дизайн - новый жанр изобразительного искусства, основанный на применении специфических инструментов
+(компьютера и программ-редакторов), специальных языков программирования
+(HTML, JavaScript, Java, Perl, C++, PHP и др.) и сетевых технологий (CGI, CSS, SSI и др.).
+Целью Web-дизайна является проектирование (создание) объектов (Web-страниц, баннеров, апплетов, скриптов,
+отдельных элементов Web-страниц), размещаемых в Интернете.</p>
+
+<p>Цвет - свойство тел вызывать определенное зрительное ощущение в соответствии со спектральным составом и
+интенсивностью отражаемого или испускаемого ими видимого излучения. Основные параметры цвета - цветовой тон,
+насыщенность и светлота. Цветовой тон определяется спектральным составом света, насыщенность - количеством
+добавляемого серого цвета, а светлота - яркостью.</p>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/global/_typography.scss</code>
+        </div>
+    </section>
+
+    <section id="s-6">
+        <div class="components-title">
+            <h2>Списки</h2>
+            <p>Примеры маркированного и нумерованного списков</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-4">
+                    <ul class="list-styled">
+                        <li>Первый пункт</li>
+                        <li>Второй пункт</li>
+                        <li>Третий пункт</li>
+                        <li>Четвертый пункт</li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul>
+                        <li>Первый пункт</li>
+                        <li>Второй пункт</li>
+                        <li>Третий пункт</li>
+                        <li>Четвертый пункт</li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ol class="list-styled">
+                        <li>Первый пункт</li>
+                        <li>Второй пункт</li>
+                        <li>Третий пункт</li>
+                        <li>Четвертый пункт</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+&lt;!-- Маркированный список --&gt;
+<ul class="list-styled">
+    <li>Первый пункт</li>
+    <li>Второй пункт</li>
+    <li>Третий пункт</li>
+    <li>Четвертый пункт</li>
+</ul>
+
+&lt;!-- Немаркированный список --&gt;
+<div class="col-4">
+    <ul>
+        <li>Первый пункт</li>
+        <li>Второй пункт</li>
+        <li>Третий пункт</li>
+        <li>Четвертый пункт</li>
+    </ul>
+</div>
+
+&lt;!-- Нумерованный список --&gt;
+<ol class="list-styled">
+    <li>Первый пункт</li>
+    <li>Второй пункт</li>
+    <li>Третий пункт</li>
+    <li>Четвертый пункт</li>
+</ol>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/global/_typography.scss</code>
+        </div>
+    </section>
+
+    <section id="s-7">
+        <div class="components-title">
+            <h2>Контекстуальные цвета</h2>
+            <p>Примеры доступных контекстуальных цветов</p>
+        </div>
+        <div class="components-preview">
+            <p class="text-primary">Пример абзаца с контекстуальным цветом</p>
+            <p class="text-secondary">Пример абзаца с контекстуальным цветом</p>
+            <p class="text-danger">Пример абзаца с контекстуальным цветом</p>
+            <p class="text-success">Пример абзаца с контекстуальным цветом</p>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<p class="text-primary">Пример абзаца с контекстуальным цветом</p>
+<p class="text-secondary">Пример абзаца с контекстуальным цветом</p>
+<p class="text-danger">Пример абзаца с контекстуальным цветом</p>
+<p class="text-success">Пример абзаца с контекстуальным цветом</p>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/global/_typography.scss</code>
+        </div>
+    </section>
+
+    <section id="s-8">
+        <div class="components-title">
+            <h2>Список-спойлер</h2>
+            <p>С помощью компонента можно показать часть контента, а скрытую часть показывать с помощью клика по кнопке</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-6">
+                    <div class="collapsible">
+                        <div class="collapsible-visible">
+                            <ul>
+                                <li>Первый пункт</li>
+                                <li>Второй пункт</li>
+                                <li>Третий пункт</li>
+                                <li>Четвертый пункт</li>
+                            </ul>
+                        </div>
+                        <div class="collapsible-expand">
+                            <ul>
+                                <li>Пятый пункт</li>
+                                <li>Шестой пункт</li>
+                                <li>Седьмой пункт</li>
+                                <li>Восьмой пункт</li>
+                                <li>Девятый пункт</li>
+                                <li>Десятый пункт</li>
+                                <li>Одиннадцатый пункт</li>
+                                <li>Двенадцатый пункт</li>
+                            </ul>
+                        </div>
+                        <div class="collapsible-footer text-center">
+                            <button type="button" class="button button-icon button-active collapsible-button">
+                                <i class="icon icon-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="collapsible">
+                        <div class="collapsible-visible">
+                            <ul>
+                                <li>Первый пункт</li>
+                                <li>Второй пункт</li>
+                                <li>Третий пункт</li>
+                                <li>Четвертый пункт</li>
+                            </ul>
+                        </div>
+                        <div class="collapsible-expand collapsible-hidden">
+                            <ul>
+                                <li>Пятый пункт</li>
+                                <li>Шестой пункт</li>
+                                <li>Седьмой пункт</li>
+                                <li>Восьмой пункт</li>
+                                <li>Девятый пункт</li>
+                                <li>Десятый пункт</li>
+                                <li>Одиннадцатый пункт</li>
+                                <li>Двенадцатый пункт</li>
+                            </ul>
+                        </div>
+                        <div class="collapsible-footer text-center">
+                            <button type="button" class="button button-icon collapsible-button">
+                                <i class="icon icon-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+&lt;!-- Раскрытый список --&gt;
+<div class="collapsible">
+    <div class="collapsible-visible">
+        <ul>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+            <li>Четвертый пункт</li>
+        </ul>
+    </div>
+    <div class="collapsible-expand">
+        <ul>
+            <li>Пятый пункт</li>
+            <li>Шестой пункт</li>
+            <li>Седьмой пункт</li>
+            <li>Восьмой пункт</li>
+            <li>Девятый пункт</li>
+            <li>Десятый пункт</li>
+            <li>Одиннадцатый пункт</li>
+            <li>Двенадцатый пункт</li>
+        </ul>
+    </div>
+    <div class="collapsible-footer text-center">
+        <button type="button" class="button button-icon button-active collapsible-button">
+            <i class="icon icon-chevron-down"></i>
+        </button>
+    </div>
+</div>
+
+&lt;!-- Свернутый список --&gt;
+<div class="collapsible">
+    <div class="collapsible-visible">
+        <ul>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+            <li>Четвертый пункт</li>
+        </ul>
+    </div>
+    <div class="collapsible-expand collapsible-hidden">
+        <ul>
+            <li>Пятый пункт</li>
+            <li>Шестой пункт</li>
+            <li>Седьмой пункт</li>
+            <li>Восьмой пункт</li>
+            <li>Девятый пункт</li>
+            <li>Десятый пункт</li>
+            <li>Одиннадцатый пункт</li>
+            <li>Двенадцатый пункт</li>
+        </ul>
+    </div>
+    <div class="collapsible-footer text-center">
+        <button type="button" class="button button-icon collapsible-button">
+            <i class="icon icon-chevron-down"></i>
+        </button>
+    </div>
+</div>
+</textarea>
+                </code>
+            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_collapsible.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Spoiler, SpoilerHidden, SpoilerVisible} from "../components/Spoiler";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Раскрытый список --&gt;
+<Spoiler buttonPosition="center">
+    <SpoilerVisible>
+        <ul>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+            <li>Четвертый пункт</li>
+        </ul>
+    </SpoilerVisible>
+    <SpoilerHidden>
+        <ul>
+            <li>Пятый пункт</li>
+            <li>Шестой пункт</li>
+            <li>Седьмой пункт</li>
+            <li>Восьмой пункт</li>
+            <li>Девятый пункт</li>
+            <li>Десятый пункт</li>
+            <li>Одиннадцатый пункт</li>
+            <li>Двенадцатый пункт</li>
+        </ul>
+    </SpoilerHidden>
+</Spoiler>
+
+&lt;!-- Свернутый список --&gt;
+<Spoiler buttonPosition="center" expand={false}>
+    <SpoilerVisible>
+        <ul>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+            <li>Четвертый пункт</li>
+        </ul>
+    </SpoilerVisible>
+    <SpoilerHidden>
+        <ul>
+            <li>Пятый пункт</li>
+            <li>Шестой пункт</li>
+            <li>Седьмой пункт</li>
+            <li>Восьмой пункт</li>
+            <li>Девятый пункт</li>
+            <li>Десятый пункт</li>
+            <li>Одиннадцатый пункт</li>
+            <li>Двенадцатый пункт</li>
+        </ul>
+    </SpoilerHidden>
+</Spoiler>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>expand</td>
+                                            <td>Логический</td>
+                                            <td>Нет</td>
+                                            <td>true</td>
+                                            <td>
+                                                Вид списка при инициализации<br>
+                                                <code>true</code> - список будет развернут<br>
+                                                <code>false</code> - список будет свернут<br>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>buttonPosition</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>left</td>
+                                            <td>
+                                                Выравнивание кнопки, переключающей список<br>
+                                                <code>left</code> - кнопка будет выровнена по левому краю<br>
+                                                <code>center</code> - кнопка будет выровнена по центру<br>
+                                                <code>right</code> - кнопка будет выровнена по правому краю
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_collapsible.scss</code> и <code>components/Spoiler.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

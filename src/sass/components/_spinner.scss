@@ -1,0 +1,22 @@
+.spinner {
+  animation: loading-spinner 1s linear infinite;
+  transform-origin: 50% 50%;
+  path {
+    &:first-child {
+      fill: var(--spinner-ring);
+    }
+    &:last-child {
+      fill: var(--spinner-track);
+    }
+  }
+
+}
+
+@keyframes loading-spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

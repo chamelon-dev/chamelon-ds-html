@@ -1,0 +1,236 @@
+.calendar {
+  width: rem(304);
+  height: rem(400);
+  overflow: auto;
+  padding: rem(8);
+  background-color: var(--calendar-bg);
+  border-radius: var(--calendar-border-radius);
+  border: 2px solid var(--calendar-border-color);
+  display: none;
+  position: absolute;
+  //margin: rem(4) 0 0 0;
+  box-shadow: var(--calendar-shadow);
+  user-select: none;
+  flex-direction: column;
+  z-index: 10;
+  table {
+    border-spacing: rem(8);
+    width: 100%;
+    thead {
+      tr {
+        th {
+          width: rem(32);
+          height: rem(32);
+          vertical-align: middle;
+          text-align: center;
+          font-size: rem(16);
+          line-height: rem(16);
+          font-weight: 700;
+          border-radius: var(--calendar-swither-border-radius);
+          cursor: pointer;
+          &.prev-month,
+          &.next-month {
+            color: var(--calendar-prev-next-arrow-color);
+            transition: color .3s ease;
+            &:hover {
+              color: var(--calendar-prev-next-arrow-hover-color);
+            }
+          }
+          &.calendar-switch {
+            font-size: rem(13);
+            transition: background-color .3s ease;
+            text-transform: capitalize;
+            &:hover {
+              background-color: var(--calendar-swither-hover-bg);
+            }
+          }
+          &.dow {
+            font-size: rem(13);
+            line-height: rem(16);
+            color: var(--calendar-dow-color);
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+    tfoot {
+
+    }
+
+  }
+  &-days {
+    table {
+      tbody {
+          tr {
+            td {
+              &.day {
+                width: rem(32);
+                height: rem(32);
+                vertical-align: middle;
+                text-align: center;
+                font-size: rem(16);
+                line-height: rem(16);
+                font-weight: 700;
+                cursor: pointer;
+                border-radius: var(--calendar-current-day-border-radius);
+                color: var(--calendar-current-day-color);
+                transition: background-color.3s ease;
+                &:not(.selected):hover {
+                  background-color: var(--calendar-current-day-hover-bg);
+                  //color: var(--calendar-current-month-day-hover-color);
+                }
+              }
+              &.old,
+              &.new {
+                color: var(--calendar-old-day-color);
+                background-color: var(--calendar-old-day-bg);
+                &:not(.selected):not(.focused):hover {
+                  background-color: var(--calendar-old-day-hover-bg);
+                  color: var(--calendar-old-day-hover-color);
+                }
+              }
+              &.today {
+                color: var(--calendar-today-color) !important;
+                background-color: var(--calendar-today-bg) !important;
+              }
+              &.selected {
+                color: var(--calendar-selected-color);
+                background-color: var(--calendar-selected-bg);
+              }
+            }
+          }
+
+        }
+    }
+  }
+  &-months {
+    table {
+      tbody {
+        td[colspan="7"] {
+          span {
+            width: rem(83.67);
+            display: inline-flex;
+            float: left;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: var(--calendar-current-month-border-radius);
+            transition: background-color .3s ease;
+            margin-bottom: rem(8);
+            height: rem(62);
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: 700;
+            color: var(--calendar-month-color);
+            &:nth-child(2),
+            &:nth-child(5),
+            &:nth-child(8),
+            &:nth-child(11){
+              margin-right: rem(8);
+              margin-left: rem(8)
+            }
+            &:nth-child(10),
+            &:nth-child(11),
+            &:nth-child(12) {
+              margin-bottom: 0;
+            }
+            &:not(.selected):not(.focused):hover {
+              background-color: var(--calendar-month-hover-bg);
+              color: var(--calendar-month-hover-color);
+            }
+            &.focused {
+              color: var(--calendar-focused-month-color);
+              background-color: var(--calendar-focused-month-bg);
+            }
+            &.selected {
+              color: var(--calendar-current-month-color);
+              background-color: var(--calendar-current-month-bg);
+            }
+          }
+        }
+      }
+    }
+  }
+  &-years {
+    table {
+      tbody {
+        td {
+          span {
+            width: calc(25% - 6.25px);
+            display: inline-flex;
+            float: left;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: var(--calendar-current-year-border-radius);
+            transition: background-color .3s ease;
+            margin-right: rem(8);
+            margin-bottom: rem(8);
+            height: rem(62);
+            font-size: 16px;
+            text-transform: capitalize;
+            color: var(--calendar-year-color);
+            font-weight: 700;
+            &:nth-child(4),
+            &:nth-child(8),
+            &:nth-child(12),
+            &:nth-child(16) {
+              margin-right: 0;
+            }
+            &:nth-child(13),
+            &:nth-child(14),
+            &:nth-child(15) {
+              margin-bottom: 0;
+            }
+            &:nth-child(16) {
+              margin-right: 0;
+              margin-bottom: 0;
+            }
+
+            &:not(.selected):not(.focused):hover {
+              background-color: var(--calendar-year-hover-bg);
+              color: var(--calendar-year-hover-color);
+            }
+            &.focused {
+              color: var(--calendar-focused-year-color);
+              background-color: var(--calendar-focused-year-bg);
+            }
+            &.selected {
+              color: var(--calendar-current-year-color);
+              background-color: var(--calendar-current-year-bg);
+            }
+          }
+        }
+      }
+    }
+  }
+  &-buttons {
+    padding: rem(8) rem(8) rem(0) rem(8);
+    text-align: center;
+    button {
+      padding: rem(12) 0;
+    }
+  }
+  &-open {
+    display: flex;
+  }
+  &-position-top {
+    margin: {
+      top: 0;
+      right: 0;
+      bottom: var(--calendar-margin);
+      left: 0;
+    }
+  }
+  &-position-bottom {
+    margin: rem(4) 0 0 0;
+    margin: {
+      top: var(--calendar-margin);
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}

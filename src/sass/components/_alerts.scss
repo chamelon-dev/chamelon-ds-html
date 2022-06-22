@@ -1,0 +1,73 @@
+.alert {
+  border-radius: var(--alerts-border-radius);
+  min-height: rem(40);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: rem(16) 0;
+  &:only-child {
+    margin: rem(40) 0 0 0 !important;
+  }
+  &:first-child {
+    margin: rem(40) 0 rem(16) 0;
+  }
+  &:last-child {
+    margin: rem(16) 0 0 0;
+  }
+  &-content {
+    padding: rem(12);
+    font-size: rem(13);
+    line-height: rem(16);
+    font-weight: 400;
+    a {
+      font-weight: 500;
+    }
+  }
+
+  &.alert-blue {
+    background-color: var(--alert-blue-bg-color);
+    color: var(--alert-blue-color);
+
+    a {
+      color: var(--alert-blue-color);
+    }
+  }
+  &.alert-green {
+    background-color: var(--alert-green-bg-color);
+    color: var(--alert-green-color);
+
+    a {
+      color: var(--alert-green-color);
+    }
+  }
+  &.alert-yellow {
+    background-color: var(--alert-yellow-bg-color);
+    color: var(--alert-yellow-color);
+
+    a {
+      color: var(--alert-yellow-color);
+    }
+  }
+  &.alert-red {
+    background-color: var(--alert-red-bg-color);
+    color: var(--alert-red-color);
+
+    a {
+      color: var(--alert-red-color);
+    }
+  }
+  &.alert-violet {
+    background-color: var(--alert-violet-bg-color);
+    color: var(--alert-violet-color);
+
+    a {
+      color: var(--alert-violet-color);
+    }
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    color: var(--alert-close-button-color);
+    margin: 0 rem(4) 0 0;
+  }
+}

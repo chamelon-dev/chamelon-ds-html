@@ -1,0 +1,135 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'display' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Отображение{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="display.html" class="breadcrumbs-link">Отображение</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Отображение</h1>
+    <span class="tagline">Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Отображение</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Отображение</h2>
+            <p>Позволяет задать или изменить отображение (display) элементам</p>
+        </div>
+        <div class="components-options">
+            <p>Отображение задается элементам путем присвоения класса вида <code>d-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{type}</th>
+                            <th>Пример</th>
+                            <th>Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>none</td>
+                            <td><code>&lt;div class="d-none"&gt;&lt;/div&gt; </code></td>
+                            <td>Временно удаляет элемент из документа. Занимаемое место не резервируется, страница ведет так, словно элемента и не было</td>
+                        </tr>
+                        <tr>
+                            <td>inline</td>
+                            <td><code>&lt;div class="d-inline"&gt;&lt;/div&gt; </code></td>
+                            <td>Элемент отображается как встроенный</td>
+                        </tr>
+                        <tr>
+                            <td>inline-block</td>
+                            <td><code>&lt;div class="d-inline-block"&gt;&lt;/div&gt; </code></td>
+                            <td>Это значение генерирует блочный элемент, который обтекается другими элементами веб-страницы подобно встроенному элементу</td>
+                        </tr>
+                        <tr>
+                            <td>block</td>
+                            <td><code>&lt;div class="d-block"&gt;&lt;/div&gt; </code></td>
+                            <td>Элемент показывается как блочный</td>
+                        </tr>
+                        <tr>
+                            <td>table</td>
+                            <td><code>&lt;div class="d-table"&gt;&lt;/div&gt; </code></td>
+                            <td>Определяет, что элемент является блочной таблицей</td>
+                        </tr>
+                        <tr>
+                            <td>table-row</td>
+                            <td><code>&lt;div class="d-table-row"&gt;&lt;/div&gt; </code></td>
+                            <td>Элемент отображается как строка таблицы</td>
+                        </tr>
+                        <tr>
+                            <td>table-col</td>
+                            <td><code>&lt;div class="d-table-column"&gt;&lt;/div&gt; </code></td>
+                            <td>Назначает элемент колонкой таблицы</td>
+                        </tr>
+                        <tr>
+                            <td>table-cell</td>
+                            <td><code>&lt;div class="d-table-cell"&gt;&lt;/div&gt; </code></td>
+                            <td>Указывает, что элемент представляет собой ячейку таблицы</td>
+                        </tr>
+                        <tr>
+                            <td>flex</td>
+                            <td><code>&lt;div class="d-flex"&gt;&lt;/div&gt; </code></td>
+                            <td>Элемент ведёт себя как блочный и выкладывает содержимое согласно флекс-модели</td>
+                        </tr>
+                        <tr>
+                            <td>inline-flex</td>
+                            <td><code>&lt;div class="d-inline-flex"&gt;&lt;/div&gt; </code></td>
+                            <td>Элемент ведёт себя как строчный и выкладывает содержимое согласно флекс-модели</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_display.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

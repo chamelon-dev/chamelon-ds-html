@@ -1,0 +1,23 @@
+.sortable {
+  &-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex: 0 0 100%;
+    margin: 0 0 rem(16) 0;
+    user-select: none;
+    &:last-child {
+      margin: 0;
+    }
+    .icon-dnd {
+      cursor: grab;
+      color: var(--sort-dnd-color);
+    }
+
+  }
+  &-ghost {
+    //background-color: var(--sort-ghost-bg) !important;
+    //border-radius: var(--sort-ghost-border-radius);
+    //padding: rem(8);
+  }
+}

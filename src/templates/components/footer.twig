@@ -1,0 +1,340 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'footer' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Футер{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="footer.html" class="breadcrumbs-link">Футер</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Футер</h1>
+    <span class="tagline">Компонент предназначен для создания нижнего колонтитула страницы. Обычно содержит информацию об авторе раздела, информацию об авторском праве или ссылки на связанные документы.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Футер, фиксированный макет</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Футер, резиновый макет</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Футер, фиксированный макет</h2>
+            <p>Пример футера в шаблонах с фиксированным центрированным макетом, содержащий информацию об авторском праве и контакты. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-xxl-7 order-2 order-xxl-1">
+                            <div class="footer-copyrights">&copy; ООО &laquo;Ромашка&raquo;, 2021</div>
+                        </div>
+                        <div class="col-12 col-xxl-5 order-1 order-xxl-2">
+                            <div class="footer-contacts">
+                                <ul>
+                                    <li>
+                                        <i class="icon icon-phone"></i>+7 (499) 445-75-78
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+    <pre>
+        <code class="language-html">
+<textarea>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-xxl-7 order-2 order-xxl-1">
+                <div class="footer-copyrights">
+                    &amp;copy; ООО &amp;raquo;Ромашка&amp;raquo;, 2021
+                </div>
+            </div>
+            <div class="col-12 col-xxl-5 order-1 order-xxl-2">
+                <div class="footer-contacts">
+                    <ul>
+                        <li>
+                            <i class="icon icon-phone"></i>+7 (499) 445-75-78
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</textarea>
+        </code>
+    </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_footer.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Footer from "./components/Footer";
+const contacts = [
+    {
+        icon: 'phone', // Название иконки, опционально
+        text: '+7 (499) 445-75-78', // Текст
+    },
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Footer contacts={contacts}&gt;&amp;copy; ООО &amp;laquo;Ромашка&amp;raquo;&lt;/Footer&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>contacts</td>
+                                        <td>Массив объектов</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащих контактные данные</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_footer.scss</code> и <code>components/Footer.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Футер, резиновый макет</h2>
+            <p>Пример футера для шаблонах с резиновым макетом и макетах с сайдбаром, содержащий информацию об авторском праве и контакты. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-xxl-7 order-2 order-xxl-1">
+                            <div class="footer-copyrights">&copy; ООО &laquo;Ромашка&raquo;, 2021</div>
+                        </div>
+                        <div class="col-12 col-xxl-5 order-1 order-xxl-2">
+                            <div class="footer-contacts">
+                                <ul>
+                                    <li>
+                                        <a href="mailto:mail@site.ru">
+                                            <i class="icon icon-envelope"></i>mail@site.ru
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-xxl-7 order-2 order-xxl-1">
+                <div class="footer-copyrights">
+                    &amp;copy; ООО &amp;laquo;Ромашка&amp;raquo;, 2021
+                </div>
+            </div>
+            <div class="col-12 col-xxl-5 order-1 order-xxl-2">
+                <div class="footer-contacts">
+                    <ul>
+                        <li>
+                            <a href="mailto:mail@site.ru">
+                                <i class="icon icon-envelope"></i>mail@site.ru
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_footer.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Footer from "./components/Footer";
+const contacts = [
+    {
+        icon: 'envelope', // Название иконки, опционально
+        text: 'mail@site.ru', // Текст
+        link: 'mailto:mail@site.ru', // Ссылка, опционально
+    },
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Footer fluid={true} contacts={contacts}&gt;&amp;copy; ООО &amp;laquo;Ромашка&amp;raquo;&lt;/Footer&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>fluid</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Указывает, что компонент будет растягиваться на 100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>contacts</td>
+                                        <td>Массив объектов</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащих контактные данные</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_footer.scss</code> и <code>components/Footer.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

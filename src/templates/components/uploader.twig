@@ -1,0 +1,561 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'uploader' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Файловый загрузчик{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="/" class="breadcrumbs-link">Начало</a>
+            </li>
+            <li class="breadcrumbs-item">Компоненты</li>
+            <li class="breadcrumbs-item">
+                <a href="uploader.html" class="breadcrumbs-link">Файловый загрузчик</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Файловый загрузчик</h1>
+    <span class="tagline">Добавление в интерфейс функций по работе с файлами путем выбора вручную из диалогового окна или перетаскиванием</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Одиночная загрузка файлов</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Множественная загрузка файлов</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Файловый загрузчик с прикрепленным списком существующих файлов</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Одиночная загрузка файлов</h2>
+            <p>Пример одиночной загрузки файлов с проверкой на загрузку изображений</p>
+        </div>
+        <div class="components-preview">
+            <div class="uploader">
+                <div class="uploader-area">
+                    Перетащите файл сюда или
+                    <label class="uploader-label">
+                        загрузите
+                        <input type="file" name="docs" accept="image/png,image/jpeg,image/jpg" class="uploader-input" id="uploader_docs">
+                    </label>
+                    с устройства
+                </div>
+                <div class="uploader-filelist">
+                    <ul></ul>
+                </div>
+                <div class="uploader-errors text-danger"></div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="uploader">
+    <div class="uploader-area">
+        Перетащите файл сюда или
+        <label class="uploader-label">
+            загрузите
+            <input type="file" name="docs" accept="image/png,image/jpeg,image/jpg" class="uploader-input" id="uploader_docs">
+        </label>
+        с устройства
+    </div>
+    <div class="uploader-filelist">
+        <ul></ul>
+    </div>
+    <div class="uploader-errors text-danger"></div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <p>Для добавления проверки на тип загружаемого файла, рекомендуется указывать атрибут <code>accept</code> для поля выбора файлов, содержащий строку допустимых MIME-типов, при нескольких значениях они перечисляются через запятую. <a href="http://htmlbook.ru/html/input/accept" target="_blank">Подробнее</a></p>
+                            <p>Рекомендуется указывать атрибут <code>id</code> для поля выбора файлов, так как все добавленные файлы будут содержаться в переменной вида files_&lt;ID&gt;. В случае отсутствия атрибута, он будет добелен автоматически</p>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_uploader.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Uploader from "./components/Textarea";
+const accept = ['image/png', 'image/jpeg', 'image/jpg']
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Uploader name="avatar"  onSelect={onSelect} accept={accept} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Имя поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>accept</td>
+                                        <td>Массив</td>
+                                        <td>Нет</td>
+                                        <td>['*'] (все типы)</td>
+                                        <td>Допустимые для загрузки типы файлов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onSelect</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция обработчик выбора файлов<br>
+                                            В качестве аргумента принимает массив, содержащий выбранный файл
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_uploader.scss</code> и <code>components/Uploader.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Множественная загрузка файлов</h2>
+            <p>Пример множественной загрузки файлов с проверкой на загрузку изображений</p>
+        </div>
+        <div class="components-preview">
+            <div class="uploader">
+                <div class="uploader-area">
+                    Перетащите файл сюда или
+                    <label class="uploader-label">
+                        загрузите
+                        <input type="file" name="docs" multiple accept="image/png,image/jpeg,image/jpg" class="uploader-input" data-max="2" id="uploader_multiple_docs">
+                    </label>
+                    с устройства. Максимум 2 файла
+                </div>
+                <div class="uploader-filelist">
+                    <ul></ul>
+                </div>
+                <div class="uploader-errors text-danger"></div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<div class="uploader">
+    <div class="uploader-area">
+        Перетащите файл сюда или
+        <label class="uploader-label">
+            загрузите
+            <input type="file" name="docs" multiple accept="image/png,image/jpeg,image/jpg" class="uploader-input" data-max="2" id="uploader_multiple_docs">
+        </label>
+        с устройства. Максимум 2 файла
+    </div>
+    <div class="uploader-filelist">
+        <ul></ul>
+    </div>
+    <div class="uploader-errors text-danger"></div>
+</div>
+</textarea>
+                </code>
+            </pre>
+                        </div>
+                        <div class="components-options">
+                            <p>Для добавления проверки на тип загружаемого файла, рекомендуется указывать атрибут <code>accept</code> для поля выбора файлов, содержащий строку допустимых MIME-типов, при нескольких значениях они перечисляются через запятую. <a href="http://htmlbook.ru/html/input/accept" target="_blank">Подробнее</a></p>
+                            <p>Для ограничения количества добавляемых файлов, рекомендуется указывать атрибут <code>data-max</code> для поля выбора файлов. Отсутствующий атрибут сделает допустимой загрузку только одно файла </p>
+                            <p>Рекомендуется указывать атрибут <code>id</code> для поля выбора файлов, так как все добавленные файлы будут содержаться в переменной вида files_&lt;ID&gt;. В случае отсутствия атрибута, он будет добелен автоматически</p>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_uploader.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Uploader from "./components/Textarea";
+const accept = ['image/png', 'image/jpeg', 'image/jpg']
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Uploader name="avatar" multiple={true} max={4}  onSelect={onSelect} accept={accept} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Имя поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>accept</td>
+                                        <td>Массив</td>
+                                        <td>Нет</td>
+                                        <td>['*'] (все типы)</td>
+                                        <td>Допустимые для загрузки типы файлов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>multiple</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Разрешает множественную загрузку файлов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>max</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Допустимое количество загружаемых файлов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onSelect</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция обработчик выбора файлов<br>
+                                            В качестве аргумента принимает массив, содержащий выбранный файл
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_uploader.scss</code> и <code>components/Uploader.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Файловый загрузчик с прикрепленным списком существующих файлов</h2>
+            <p>Пример файлового загрузчика со списком существующих файлов</p>
+        </div>
+        <div class="components-preview">
+            <div class="uploader">
+                <div class="uploader-area">
+                    Перетащите файл сюда или
+                    <label class="uploader-label">
+                        загрузите
+                        <input type="file" name="avatar1" accept="image/png,image/jpeg,image/jpg" class="uploader-input">
+                    </label>
+                    с устройства
+                </div>
+                <div class="uploader-filelist uploader-exist">
+                    <ul>
+                        <li>
+                            <div class="avatar avatar-24 avatar-rounded mv-4 mr-4">
+                                <img src="/images/photo.jpg" alt="Фото" title="Фото" />
+                            </div>
+                            <a href="#">
+                                <span class="uploader-filename">photo.jpg</span>
+                            </a>
+                            <span class="uploader-filesize">(256 КБ)</span>
+                            <button type="button" class="button button-icon" data-tooltip title="Удалить">
+                                <i class="icon icon-trash"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="uploader-filelist">
+                    <ul></ul>
+                </div>
+                <div class="uploader-errors text-danger"></div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="uploader">
+    <div class="uploader-area">
+        Перетащите файл сюда или
+        <label class="uploader-label">
+            загрузите
+            <input type="file" name="avatar1" accept="image/png,image/jpeg,image/jpg" class="uploader-input">
+        </label>
+        с устройства
+    </div>
+    <div class="uploader-filelist uploader-exist">
+        <ul>
+            <li>
+                <div class="avatar avatar-24 avatar-rounded mv-4 mr-4">
+                    <img src="/images/photo.jpg" alt="Фото" title="Фото" />
+                </div>
+                <span class="uploader-filename">photo.jpg</span>&nbsp;<span class="uploader-filename">(256 КБ)</span>
+                <button type="button" class="button button-icon" data-tooltip title="Удалить">
+                    <i class="icon icon-trash"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="uploader-filelist">
+        <ul></ul>
+    </div>
+    <div class="uploader-errors text-danger"></div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <p>Список прикрепленных существующих файлов не влияет на количество вновь добавляемых файлов. Все вновь добавленные файлы будут отображаться после списка существующих файлов</p>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_uploader.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Uploader from "./components/Textarea";
+const accept = ['image/png', 'image/jpeg', 'image/jpg']
+const existFiles = [
+    {
+        file_id: 52,
+        name: 'Photo555.jpg', // Имя файла
+        size: '10245', // Размер файла
+        link: '#', // Ссылка, при наличии
+        type: 'image/jpeg', // MIME-тип файла
+        src: '/static/images/photo.jpg' // Ссылка на файл
+    }
+]
+
+const onDeleteExist = (file_id) => {
+    console.log(file_id)
+}
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Uploader name="avatar"  onSelect={onSelect} accept={accept} files={existFiles} onDeleteExist={onDeleteExist} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Имя поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>accept</td>
+                                        <td>Массив</td>
+                                        <td>Нет</td>
+                                        <td>['*'] (все типы)</td>
+                                        <td>Допустимые для загрузки типы файлов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>files</td>
+                                        <td>Массив объектов</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Список существующих файлов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onSelect</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция обработчик выбора файлов<br>
+                                            В качестве аргумента принимает массив, содержащий выбранный файл
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onDeleteExist</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция обработчик выбора удаления существующих файлов<br>
+                                            В качестве аргумента принимает идентификатор удаляемого файла
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_uploader.scss</code> и <code>components/Uploader.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

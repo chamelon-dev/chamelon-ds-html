@@ -1,0 +1,207 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'sidebar' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Сайдбар{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="sidebar.html" class="breadcrumbs-link">Сайдбар</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Сайдбар</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс боковой панели, зафиксированной слева и занимающей 100% высоты.</span>
+</div>
+{% endblock %}
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Простейший сайдбар</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с сайдбаром</p>
+        </div>
+        <div class="components-options">
+            <p>Если внутри Сайдбара используется меню, у пунктов меню которых отсутствуют какие либо иконки (смысловые либо заглушки), рекомендуется не включать в сайдбар шапку, содержащую кнопку управления Сайдбаром (элемент <code>&lt;div class="sidebar-top"&gt;</code>)</p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Сайдбар</h2>
+            <p>Пример сайдбара. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a>, <a href="accent.html">акцент</a> и <a href="buttons.html">кнопок</a></p>
+        </div>
+        <div class="components-preview">
+            <div style="height: 350px;">
+                <aside class="sidebar sidebar-open accent" style="z-index: 2">
+                    <div class="sidebar-top">
+                        <button type="button" class="button button-icon" data-toggle-sidebar>
+                            <i class="icon icon-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar-middle">
+                        Сайдбар (середина)
+                    </div>
+                    <div class="sidebar-bottom">
+                        Сайдбар (футер)
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<aside class="sidebar sidebar-open accent">
+    <div class="sidebar-top">
+        <button type="button" class="button button-icon" data-toggle-sidebar>
+            <i class="icon icon-arrow-right"></i>
+        </button>
+    </div>
+    <div class="sidebar-middle">
+        Сайдбар (середина)
+    </div>
+    <div class="sidebar-bottom">
+        Сайдбар (футер)
+    </div>
+</aside>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_sidebar.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Sidebar, SidebarTop, SidebarBottom, SidebarMiddle} from "./components/Sidebar";
+import Button from "./components/Button";
+const [isSidebarOpen, setSidebarIsOpen] = useState(true);
+const openCloseSidebar = () => {
+    setSidebarIsOpen(!isSidebarOpen)
+}
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Sidebar open={isSidebarOpen}&gt;
+    &lt;SideBarTop&gt;
+        &lt;Button variant="icon" icon="arrow-right" onClick={openCloseSidebar} /&gt;
+    &lt;/SideBarTop&gt;
+    &lt;SidebarMiddle&gt;
+        ...
+    &lt;/SidebarMiddle&gt;
+    &lt;SidebarBottom&gt;
+        ...
+    &lt;/SidebarBottom&gt;
+&lt;/Sidebar&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>open</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>true</td>
+                                        <td>Устанавливает сайдбар в открытое/закрытое состояние</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onClick</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик клика по кнопке открытия/закрытия сайдбара<br>
+                                            В случае отсутствия, кнопка открытия/закрытия сайдбара отображаться не будет
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-options">
+                            <p>Если внутри Сайдбара используется меню, у пунктов меню которых отсутствуют какие либо иконки (смысловые либо заглушки), рекомендуется не включать в сайдбар шапку, содержащую кнопку управления Сайдбаром (компонент <code>&lt;SidebarTop /&gt;</code>)</p>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabs.scss</code> и <code>components/Tabs.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

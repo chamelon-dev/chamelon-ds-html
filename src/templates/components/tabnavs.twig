@@ -1,0 +1,998 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'tabnavs' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Таб-навигация{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="tabnavs.html" class="breadcrumbs-link">Таб-навигация</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Таб-навигация</h1>
+    <span class="tagline">Компонент предназначен для создания элемент интерфейса, который позволяет добавить навигацию, визуально похожую на вкладки, но работающий как обычные ссылки на страницы.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Таб-навигация, текстовая</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Таб-навигация, текстовая навигация + счетчик</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Таб-навигация, иконки + текстовая навигация</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Таб-навигация, иконки + текстовая навигация + счетчик</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Таб-навигация с выпадающим меню</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Таб-навигация, текстовая</h2>
+            <p>Пример таб-навигации</p>
+        </div>
+        <div class="components-preview">
+            <div class="tabnav">
+                <nav class="tabnav-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <span class="tabnav-label">Yandex</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Google</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Github</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="tabnav">
+    <nav class="tabnav-menu">
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <span class="tabnav-label">Yandex</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="tabnav-label">Google</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="tabnav-label">Github</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Tabnav, TabNavLink} from "./components/Tabnav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tabnav&gt;
+    &lt;TabNavLink title="Yandex" link="//yandex.ru" isActive={true} /&gt;
+    &lt;TabNavLink title="Google" link="//google.ru" /&gt;
+    &lt;TabNavLink title="Yandex" link="//github.com" /&gt;
+&lt;/Tabnav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Название ссылки<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>link</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Ссылка<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>isActive</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Указывает, является ли данный элемент активным<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;TabNav /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code> и <code>components/Tabnav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Таб-навигация, текстовая навигация + счетчик</h2>
+            <p>Пример таб-навигации со счетчиком</p>
+        </div>
+        <div class="components-preview">
+            <div class="tabnav">
+                <nav class="tabnav-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <span class="tabnav-label">Yandex</span>
+                                <span class="tabnav-counter">25</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Google</span>
+                                <span class="tabnav-counter">63</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Github</span>
+                                <span class="tabnav-counter">11</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="tabnav">
+    <nav class="tabnav-menu">
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <span class="tabnav-label">Yandex</span>
+                    <span class="tabnav-counter">25</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="tabnav-label">Google</span>
+                    <span class="tabnav-counter">63</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="tabnav-label">Github</span>
+                    <span class="tabnav-counter">11</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</textarea>
+                            </code>
+                         </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Tabnav, TabNavLink} from "./components/Tabnav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tabnav&gt;
+    &lt;TabNavLink title="Yandex" link="//yandex.ru" counter={25} isActive={true} /&gt;
+    &lt;TabNavLink title="Google" link="//google.ru" counter={63} /&gt;
+    &lt;TabNavLink title="Yandex" link="//github.com" counter={11} /&gt;
+&lt;/Tabnav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Название ссылки<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>link</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Ссылка<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>counter</td>
+                                        <td>Число / Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Счетчик<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>isActive</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Указывает, является ли данный элемент активным<br>
+                                            В данном компоненте применимо только в дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;TabNav /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code> и <code>components/Tabnav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Таб-навигация, иконки + текстовая навигация</h2>
+            <p>Пример таб-навигации, в котором элементы снабжены иконками. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="tabnav">
+                <nav class="tabnav-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <i class="icon icon-vehicle tabnav-prefix"></i>
+                                <span class="tabnav-label">Транспорт</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-classifiers tabnav-prefix"></i>
+                                <span class="tabnav-label">Классификаторы</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-users tabnav-prefix"></i>
+                                <span class="tabnav-label">Пользователи</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="tabnav">
+    <nav class="tabnav-menu">
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <i class="icon icon-vehicle tabnav-prefix"></i>
+                    <span class="tabnav-label">Транспорт</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon icon-classifiers tabnav-prefix"></i>
+                    <span class="tabnav-label">Классификаторы</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon icon-users tabnav-prefix"></i>
+                    <span class="tabnav-label">Пользователи</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Tabnav, TabNavLink} from "./components/Tabnav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tabnav&gt;
+    &lt;TabNavLink title="Транспорт" link="#" icon="vehicle" isActive={true} /&gt;
+    &lt;TabNavLink title="Классификаторы" link="#" icon="classifiers" /&gt;
+    &lt;TabNavLink title="Пользователи" link="#" icon="users" /&gt;
+&lt;/Tabnav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Название ссылки<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>link</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Ссылка<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>icon</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название иконки<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>isActive</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Указывает, является ли данный элемент активным<br>
+                                            В данном компоненте применимо только в дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;TabNav /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code> и <code>components/Tabnav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Таб-навигация, иконки + текстовая навигация + счетчик</h2>
+            <p>Пример таб-навигации, в котором элементы таб-навигации снабжены иконками и счетчиком. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="tabnav">
+                <nav class="tabnav-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <i class="icon icon-vehicle tabnav-prefix"></i>
+                                <span class="tabnav-label">Транспорт</span>
+                                <span class="tabnav-counter">89899</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-classifiers tabnav-prefix"></i>
+                                <span class="tabnav-label">Классификаторы</span>
+                                <span class="tabnav-counter">1545</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-users tabnav-prefix"></i>
+                                <span class="tabnav-label">Пользователи</span>
+                                <span class="tabnav-counter">1247</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="tabnav">
+    <nav class="tabnav-menu">
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <i class="icon icon-vehicle tabnav-prefix"></i>
+                    <span class="tabnav-label">Транспорт</span>
+                    <span class="tabnav-counter">89899</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon icon-classifiers tabnav-prefix"></i>
+                    <span class="tabnav-label">Классификаторы</span>
+                    <span class="tabnav-counter">1545</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon icon-users tabnav-prefix"></i>
+                    <span class="tabnav-label">Пользователи</span>
+                    <span class="tabnav-counter">1247</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</textarea>
+                            </code>
+                         </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Tabnav, TabNavLink} from "./components/Tabnav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tabnav&gt;
+    &lt;TabNavLink title="Транспорт" link="#" icon="vehicle" counter={89899} isActive={true} /&gt;
+    &lt;TabNavLink title="Классификаторы" link="#" icon="classifiers" counter={1545} /&gt;
+    &lt;TabNavLink title="Пользователи" link="#" icon="users" counter={1247} /&gt;
+&lt;/Tabnav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Название ссылки<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>link</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Ссылка<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>icon</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название иконки<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>counter</td>
+                                        <td>Число / Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Счетчик<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>isActive</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Указывает, является ли данный элемент активным<br>
+                                            В данном компоненте применимо только в дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;TabNav /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code> и <code>components/Tabnav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Таб-навигация с выпадающим меню</h2>
+            <p>Пример таб-навигации, в котором имеется выпадающее меню. Удобно при создании навигаций, содержащих большое количество пунктов меню</p>
+        </div>
+        <div class="components-preview">
+            <div class="tabnav">
+                <nav class="tabnav-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <span class="tabnav-label">Транспорт</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-prevent>
+                                <span class="tabnav-label">Классификаторы</span>
+                                <i class="icon icon-chevron-down tabnav-postfix"></i>
+                            </a>
+                            <div class="tabnav-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="tabnav-label">Пункт 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="tabnav-label">Пункт 1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="tabnav-label">Пункт 1</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Пользователи</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="tabnav">
+    <nav class="tabnav-menu">
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <span class="tabnav-label">Транспорт</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-prevent>
+                    <span class="tabnav-label">Классификаторы</span>
+                    <i class="icon icon-chevron-down tabnav-postfix"></i>
+                </a>
+                <div class="tabnav-submenu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Пункт 1</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Пункт 1</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="tabnav-label">Пункт 1</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="tabnav-label">Пользователи</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</textarea>
+                            </code>
+                         </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Tabnav, TabNavDropdown, TabNavLink} from "./components/Tabnav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tabnav&gt;
+    &lt;TabNavLink title="Транспорт" link="#" isActive={true} /&gt;
+    &lt;TabNavLink title="Классификаторы" link="#"&gt;
+        &lt;TabNavDropdown&gt;
+            &lt;TabNavLink title="Пункт 1" link="#" /&gt;
+            &lt;TabNavLink title="Пункт 1" link="#" /&gt;
+            &lt;TabNavLink title="Пункт 1" link="#" /&gt;
+        &lt;/TabNavDropdown&gt;
+    &lt;/TabNavLink&gt;
+    &lt;TabNavLink title="Пользователи" link="#" /&gt;
+&lt;/Tabnav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>title</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>
+                                                Название ссылки<br>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>
+                                                Ссылка<br>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>isActive</td>
+                                            <td>Логический</td>
+                                            <td>Нет</td>
+                                            <td>false</td>
+                                            <td>
+                                                Указывает, является ли данный элемент активным<br>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;TabNavLink /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;TabNav /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabnav.scss</code> и <code>components/Tabnav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

@@ -1,0 +1,218 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'range' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Выбор из диапазона{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="range.html" class="breadcrumbs-link">Выбор из диапазона</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Выбор из диапазона</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс элемента формы, позволяющего пользователю определить числовое значение, которое должно быть в пределах указанного промежутка.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Выбор из диапазона</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Выбор из диапазона</h2>
+            <p>Пример обычных выбора из диапазона</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <label>Выберите процент скидки</label>
+                <div class="range">
+                    <span class="range-min">0</span>
+                    <input type="range" name="discount" min="0" max="100" value="25">
+                    <span class="range-max">100</span>
+                    <input type="number" value="25">
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label>Выберите процент скидки</label>
+    <div class="range">
+        <span class="range-min">0</span>
+        <input type="range" name="discount" min="0" max="100" value="25">
+        <span class="range-max">100</span>
+        <input type="number" value="25">
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <p>Рекомендуется обязательно указывать атрибуты <code>min</code>, <code>max</code> и <code>value</code></p>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_range.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Range from "./components/Range";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Range value={25} label="Выберите процент скидки" name="discount"/&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>min</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>0</td>
+                                        <td>Минимальное допустимое значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>max</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>100</td>
+                                        <td>Максимальное допустимое значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>50</td>
+                                        <td>Значение поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>step</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>1</td>
+                                        <td>Шаг изменения числа</td>
+                                    </tr>
+                                    <tr>
+                                        <td>label</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Текстовая метка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>range</td>
+                                        <td>Имя поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>output</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>true</td>
+                                        <td>Разрешает или запрещает выводить текущее значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения значения<br>
+                                            В качестве аргумента принимает значение поля
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_range.scss</code> и <code>components/Range.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

@@ -1,0 +1,92 @@
+.dropdown {
+  display: inline-flex;
+  position: relative;
+
+  &-item {
+    margin: 0 0 rem(8) 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &-link {
+    display: block;
+    color: var(--dropdown-menu-item-color);
+    text-decoration: none;
+    transition: color .3s, background-color .3s;
+    height: rem(32);
+    line-height: rem(32);
+    padding: 0 rem(12);
+    font-size: rem(13);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    .icon {
+      color: var(--dropdown-menu-item-icon-color);
+      margin: var(--dropdown-menu-item-icon-margin);
+    }
+    &:hover {
+      text-decoration: none;
+      background-color: var(--dropdown-menu-item-hover-bg);
+      .icon {
+        color: var(--dropdown-menu-item-icon-hover-color);
+      }
+    }
+  }
+  &-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--dropdown-menu-bg);
+    box-shadow: var(--dropdown-menu-shadow);
+    padding: rem(8) 0;
+    margin: var(--dropdown-menu-margin);
+    border-radius: var(--dropdown-menu-border-radius);
+    overflow: hidden;
+    border-style: solid;
+    border-width: var(--dropdown-menu-border-width);
+    border-color: var(--dropdown-menu-border-color);
+    z-index: 2;
+    width: rem(240);
+    &-thin {
+      width: rem(32);
+      .dropdown-link {
+        text-overflow: initial;
+      }
+      .icon {
+        margin: var(--dropdown-menu-item-icon-margin);
+      }
+    }
+    &-wide {
+      width: rem(400);
+    }
+
+  }
+  &:focus-within {
+    .dropdown-button{
+      background-color: var(--button-icon-active-bg);
+      color: var(--button-icon-active-color);
+    }
+    .dropdown-list {
+      display: block;
+    }
+  }
+  [data-tooltip]::after {
+    background: var(--dropdown-tooltip-bg);
+  }
+  [data-tooltip]:not([data-placement])::before,
+  [data-tooltip][data-placement^="top"]::before {
+    background-image: var(--dropdown-tooltip-corner-bottom);
+  }
+  [data-tooltip][data-placement^="bottom"]::before {
+    background-image: var(--dropdown-tooltip-corner-top);
+  }
+  [data-tooltip][data-placement^="left"]::before {
+    background-image: var(--tooltip-tooltip-corner-right);
+  }
+  [data-tooltip][data-placement^="right"]::before {
+    background-image: var(--dropdown-tooltip-corner-left);
+  }
+}
+
+

@@ -1,0 +1,109 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'position' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Позиционирование{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="position.html" class="breadcrumbs-link">Позиционирование</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Позиционирование</h1>
+    <span class="tagline">Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Позиционирование</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Позиционирование</h2>
+            <p>Позволяет задать или изменить позиционирование (position) элементам</p>
+        </div>
+        <div class="components-options">
+            <p>Позиционирование задается элементам путем присвоения класса вида <code>position-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{type}</th>
+                            <th>Пример</th>
+                            <th>Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>static</td>
+                            <td><code>&lt;div class="position-static"&gt;&lt;/div&gt; </code></td>
+                            <td>Элементы отображаются как обычно</td>
+                        </tr>
+                        <tr>
+                            <td>relative</td>
+                            <td><code>&lt;div class="position-relative"&gt;&lt;/div&gt; </code></td>
+                            <td>Положение элемента устанавливается относительно его исходного места</td>
+                        </tr>
+                        <tr>
+                            <td>absolute</td>
+                            <td><code>&lt;div class="position-absolute"&gt;&lt;/div&gt; </code></td>
+                            <td>Указывает, что элемент абсолютно позиционирован</td>
+                        </tr>
+                        <tr>
+                            <td>fixed</td>
+                            <td><code>&lt;div class="d-block"&gt;&lt;/div&gt; </code></td>
+                            <td>Указывает, что элемент зафиксирован на странице</td>
+                        </tr>
+                        <tr>
+                            <td>sticky</td>
+                            <td><code>&lt;div class="d-table"&gt;&lt;/div&gt; </code></td>
+                            <td>Сочетание относительного и фиксированного позиционирования</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_position.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+.facet {
+  background-color: var(--facet-bg);
+  padding: rem(24);
+  height: 100%;
+  &-group {
+    margin: 0 0 rem(36) 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &-content {
+    margin: 0 0 0 rem(12);
+  }
+  &-title {
+    font-weight: 500;
+    font-size: rem(20);
+    line-height: rem(24);
+    letter-spacing: 0.02em;
+    margin: 0 0 rem(28) 0;
+  }
+  &-footer {
+    margin: rem(36) 0 0 0;
+  }
+  &-left {
+    margin: 0 0 0 rem(-32);
+    padding: rem(24) rem(24) rem(24) rem(32);
+  }
+  &-right {
+    margin: 0 rem(-32) 0 0;
+  }
+}

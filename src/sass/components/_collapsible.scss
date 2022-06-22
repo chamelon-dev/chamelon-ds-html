@@ -1,0 +1,17 @@
+.collapsible {
+  ul {
+    li {
+      line-height: rem(32);
+    }
+  }
+  &-hidden {
+    display: none;
+  }
+  &-expand {
+    &:not(.collapsible-hidden) ~ .collapsible-footer {
+      button {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,326 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'modal' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Модальные окна{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="modal.html" class="breadcrumbs-link">Модальные окна</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Модальные окна</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс различных модальных окон</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Модальные сообщения</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Модальные окна</h2>
+            <p>Пример обычного модального окна, вызываемого кликом по кнопке и содержащим кнопку закрытия этого окна. Модальное окно также можно закрыть с помощью клавиши Esc клавиатуры</p>
+        </div>
+        <div class="components-preview">
+            <button type="button" class="button button-solid button-primary" data-toggle="modal" data-target="#modal">
+                Показать модальное окно
+            </button>
+            <div class="modal" id="modal" tabindex="-1">
+                <div class="modal-dialog" data-modal-size="70">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Заголовок модального окна</h3>
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+&lt;!-- Кнопка, вызывающая показ модального окна --&gt;
+<button type="button" class="button button-solid button-primary" data-toggle="modal" data-target="#modal">
+    Показать модальное окно
+</button>
+&lt;!-- Модальное окно --&gt;
+<div class="modal" id="modal" tabindex="-1">
+    <div class="modal-dialog" data-modal-size="70">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Заголовок модального окна</h3>
+                <button type="button" class="close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                </code>
+            </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container mb-24">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>data-атрибут</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            data-toggle="modal"
+                                        </td>
+                                        <td>Указывает, что элементом с этим атрибутом должен показать модальное окно</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            data-target="#modal"
+                                        </td>
+                                        <td>Указывает на идентификатор модального окна, которое должно быть показано (должно совпадать с идентификатором модального окна)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            data-modal-size="70"
+                                        </td>
+                                        <td>
+                                            Задает размер модального окна в процентах. Допустимые значения: 40, 70<br>
+                                            По-умолчанию, размер модального окна равен 40% ширины окна
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-container mb-24">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Метод</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            $('#modal').modal('show')
+                                        </td>
+                                        <td>Открывает модальное окно вручную</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            $('#modal').modal('hide')
+                                        </td>
+                                        <td>Скрывает модальное окно вручную</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            $('#modal').modal('toggle')
+                                        </td>
+                                        <td>Переключает модальное окно вручную</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-container mb-24">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Событие</th>
+                                        <th>Описание</th>
+                                        <th>Пример</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <code>show.modal</code>
+                                        </td>
+                                        <td>Событие запускается немедленно при вызове метода <code>show</code> экземпляра.<br />Если это вызвано кликом, выбранный элемент доступен как <code>relatedTarget</code> свойство события.</td>
+                                        <td>$('#modal').on('show.modal', function (){ ... })</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>shown.modal</code>
+                                        </td>
+                                        <td>Событие запускается, когда модальное окно становится видимым для пользователя (будет ожидать завершения переходов CSS).<br />Если это вызвано кликом, выбранный элемент доступен как <code>relatedTarget</code> свойство события.</td>
+                                        <td>$('#modal').on('shown.modal', function (){ ... })</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>hide.modal</code>
+                                        </td>
+                                        <td>Событие запускается немедленно при вызове метода <code>hide</code> экземпляра</td>
+                                        <td>$('#modal').on('hide.modal', function (){ ... })</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <code>hidden.modal</code>
+                                        </td>
+                                        <td>Событие запускается, когда модальное окно становится полностью невидимым для пользователя (будет ожидать завершения переходов CSS)</td>
+                                        <td>$('#modal').on('hidden.modal', function (){ ... })</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_modal.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Button from "./components/Button";
+import {Modal, ModalBody, ModalFooter} from "./components/Modal";
+
+const [openModal, setOpenModal] = useState(false)
+
+const toggleModal = () => {
+    setOpenModal(!openModal)
+}
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Button onClick={toggleModal}>Показать модальное окно&lt;/Button&gt;
+
+&lt;Modal visible={openModal} title="Заголовок модального окна" closeHandler={toggleModal}&gt;
+    &lt;ModalBody&gt;...&lt;/ModalBody&gt;
+    &lt;ModalFooter&gt;...&lt;/ModalFooter&gt;
+&lt;/Modal&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>visible</td>
+                                        <td>Логический</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Управляет видимостью модального окна</td>
+                                    </tr>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>Заголовок модального окна</td>
+                                        <td>Устанавливает заголовок модального окна</td>
+                                    </tr>
+                                    <tr>
+                                        <td>closeHandler</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция закрытия модального окна.<br>
+                                            При отсутствии - кнопка закрытия модального окна в заголовке также будет отсутствовать
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                            В данном компоненте применимо только в дочернему компоненту <code>&lt;ModalFooter /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_modal.scss</code> и <code>components/Modal.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script>
+
+    </script>
+
+{% endblock %}

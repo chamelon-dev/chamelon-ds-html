@@ -1,0 +1,96 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set heder_menu_active_item = 'examples' %}
+{% block title %}Ошибка 404{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="/" class="breadcrumbs-link">Начало</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="{{ app.request.getBaseURL() }}/examples/index.html" class="breadcrumbs-link">Примеры</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="e404.html" class="breadcrumbs-link">Ошибка 404</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+    <div class="title">
+        <h1>Ошибка 404</h1>
+        <a href="../preview/e404.html" class="button button button-solid button-primary" target="_blank">Просмотр</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>Ошибка 404</title>
+        <script defer src="//sitename/js/theme.js"></script>
+        <link href="//sitename/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="layout-fluid">
+        <div class="wrapper-outer">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="container-fluid h-100">
+                        <div class="row h-100">
+                            <div class="col-12 h-100">
+                                <div class="e404">
+                                    <div class="e404-top">
+                                        <div class="row h-100">
+                                            <div class="col-12">
+                                                <div class="e404-image">
+                                                    <object type="image/svg+xml" data="../images/404_a_css.svg"></object>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="e404-bottom">
+                                        <div class="row">
+                                            <div class="col-12 col-xl-10 offset-xl-1">
+                                                <div class="e404-title">Страница не нашлась</div>
+                                                <div class="e404-description">Хотя мы очень старались</div>
+                                                <div class="e404-button">
+                                                    <a href="#" class="button button-solid button-primary">Начать заново</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

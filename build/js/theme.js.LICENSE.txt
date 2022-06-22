@@ -1,0 +1,94 @@
+/*!
+					'themes' : {
+						'name' : this.get_theme(),
+						'icons' : this._data.core.themes.icons,
+						'dots' : this._data.core.themes.dots
+					},
+					*/
+
+/*!
+			oi = obj.children("i:visible"),
+			ai = a.children("i:visible"),
+			w1 = oi.width() * oi.length,
+			w2 = ai.width() * ai.length,
+			*/
+
+/*!
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=4cc52633a8e49b1aac11)
+ * Config saved to config.json and https://gist.github.com/4cc52633a8e49b1aac11
+ */
+
+/*!
+ * Select2 4.1.0-rc.0
+ * https://select2.github.io
+ *
+ * Released under the MIT license
+ * https://github.com/select2/select2/blob/master/LICENSE.md
+ */
+
+/*!
+ * Sizzle CSS Selector Engine v2.3.6
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://js.foundation/
+ *
+ * Date: 2021-02-16
+ */
+
+/*!
+ * if using jslint please allow for the jQuery global and use following options:
+ * jslint: loopfunc: true, browser: true, ass: true, bitwise: true, continue: true, nomen: true, plusplus: true, regexp: true, unparam: true, todo: true, white: true
+ */
+
+/*!
+ * jQuery JavaScript Library v3.6.0
+ * https://jquery.com/
+ *
+ * Includes Sizzle.js
+ * https://sizzlejs.com/
+ *
+ * Copyright OpenJS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2021-03-02T17:08Z
+ */
+
+/*!
+ * jQuery SmartWizard v5.1.1
+ * The awesome jQuery step wizard plugin
+ * http://www.techlaboratory.net/jquery-smartwizard
+ *
+ * Created by Dipu Raj
+ * http://dipu.me
+ *
+ * @license Licensed under the terms of the MIT License
+ * https://github.com/techlab/jquery-smartwizard/blob/master/LICENSE
+ */
+
+/*!
+ * jsTree {{VERSION}}
+ * http://jstree.com/
+ *
+ * Copyright (c) 2014 Ivan Bozhanov (http://vakata.com)
+ *
+ * Licensed same as jquery - under the terms of the MIT License
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
+
+/*!
+* jquery.inputmask.bundle.js
+* https://github.com/RobinHerbots/jquery.inputmask
+* Copyright (c) 2010 - 2016 Robin Herbots
+* Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+* Version: 3.3.4-108
+*/
+
+/*! Select2 4.1.0-rc.0 | https://github.com/select2/select2/blob/master/LICENSE.md */
+
+/**
+ * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
+ * Released under MIT license, http://github.com/requirejs/almond/LICENSE
+ */

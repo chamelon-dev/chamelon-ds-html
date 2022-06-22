@@ -1,0 +1,3099 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'cards' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Карточки{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="cards.html" class="breadcrumbs-link">Карточки</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Карточки</h1>
+    <span class="tagline">Компонент интерфейса, который предоставляет краткую справку и точку входа для дополнительной информации. Включают в себя объекты мультимедиа, заголовки, текст и действия.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Карточки узкие, с меню, без обложки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Карточки широкие, с меню, без обложки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Карточки узкие, с меню и кастомной обложкой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Карточки широкие, с меню и кастомной обложкой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Карточки широкие, с меню и обложкой, загруженной пользователем</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-6">
+                <span class="menu-label">Карточки широкие, с одной кнопкой, занимающие половину ширины карточки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-7">
+                <span class="menu-label">Карточки широкие, без меню и кастомной обложкой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-8">
+                <span class="menu-label">Карточки широкие, с тремя кнопками #1</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-9">
+                <span class="menu-label">Карточки широкие, с тремя кнопками #2</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-10">
+                <span class="menu-label">Карточки с бейджами</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-11">
+                <span class="menu-label">Карточки-заглушки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-12">
+                <span class="menu-label">Поисковые карточки</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с карточками</p>
+        </div>
+        <div class="components-options">
+            <p>Карточки должны быть вложены в колонки <a href="grid.html">сетки</a>: узкие карточки - в 2 колонки, широкие карточки - в 3 колонки, поисковые - в 12 колонок (т.е. на всю ширину). Большее число колонок для карточек не предусмотрено настоящей дизайн-системой</p>
+            <p>Действия (например, удалить/изменить/) предпочтительно разрабатывать с помощью компонента <a href="dropdown.html">Выпадающее меню</a> и располагать в правом верхнем углу карточки</p>
+            <p>Если в ряду не хватает карточек, для заполнения до целого ряда необходимо использовать карточки-заглушки</p>
+            <p>Все кнопки в карточке должны иметь дополнительный класс <code>.w-100</code></p>
+            <p>В случае, если в карточке предполагается более чем одна кнопка, все кнопки необходимо располагать внутри <a href="grid.html">сетки</a>, которую в свою очередь необходимо распологать в блоке с классом <code>.card-footer</code>.</p>
+            <p>Не допускается использование более 3-х кнопок в одной карточке</p>
+            <p>По-умолчанию, у карточек отсутствует внешний отступ снизу. Для их добавления необходимо использовать утилитные CSS-классы <a href="../utils/margins.html">отступов</a> и применять к блоку <code>.row</code> компонента сетки</p>
+            <p>Все обложки в карточках в обязательном порядке должны быть снабжены атрибутом <code>alt</code></p>
+            <p>Контентная часть карточки (блок с классом <code>.card-body</code>) по-умолчанию растягивается на 100% высоты. Это позволяет добиться одинаковых высот всех карточек в ряду, независимо от количества контента в каждой, и прижать футер с кнопками книзу</p>
+            <p>В случае, если карточка содержит только заголовок и футер с кнопками, необходимо добавить между ними пустой блок с классом <code>.card-body</code></p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Карточки узкие, с меню, без обложки</h2>
+            <p>Пример узких карточек, содержащих в себе меню, с одной кнопкой, без обложки</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Максимально длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-2">
+        <div class="card">
+            <div class="card-dropdown">
+                <div class="dropdown" tabindex="0">
+                    <button type="button" class="button button-icon dropdown-button">
+                        <i class="icon icon-dots"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-pencil"></i>Редактировать
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-star-outline"></i>Добавить в избранное
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-trash"></i>Удалить
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-header">Длинный заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={2}&gt;
+        &lt;Cards>
+            &lt;CardsDropdown&gt;
+                &lt;Dropdown&gt;
+                    &lt;DropdownItem icon="pencil" title="Редактировать" /&gt;
+                    &lt;DropdownItem icon="star-outline" title="Добавить в избранное" /&gt;
+                    &lt;DropdownItem icon="trash" title="Удалить" /&gt;
+                &lt;/Dropdown&gt;
+            &lt;/CardsDropdown&gt;
+            &lt;CardsHeader&gt;Длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Карточки широкие, с меню, без обложки</h2>
+            <p>Пример широких карточек, содержащих в себе меню, с одной кнопкой, без обложки</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-16">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Максимально длинный заголовок карточки</div>
+                        <div class="card-body">Короткий текст описания карточки.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-dropdown">
+                <div class="dropdown" tabindex="0">
+                    <button type="button" class="button button-icon dropdown-button">
+                        <i class="icon icon-dots"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-pencil"></i>Редактировать
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-star-outline"></i>Добавить в избранное
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-trash"></i>Удалить
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-header">Длинный заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsDropdown&gt;
+                &lt;Dropdown&gt;
+                    &lt;DropdownItem icon="pencil" title="Редактировать" /&gt;
+                    &lt;DropdownItem icon="star-outline" title="Добавить в избранное" /&gt;
+                    &lt;DropdownItem icon="trash" title="Удалить" /&gt;
+                &lt;/Dropdown&gt;
+            &lt;/CardsDropdown&gt;
+            &lt;CardsHeader&gt;Длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Карточки узкие, с меню и кастомной обложкой</h2>
+            <p>Пример узких карточек, содержащих в себе меню, с одной кнопкой, c кастомной обложкой</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v1.svg" alt="" />
+                        </div>
+                        <div class="card-header">Максимально длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-2">
+        <div class="card">
+            <div class="card-dropdown">
+                <div class="dropdown" tabindex="0">
+                    <button type="button" class="button button-icon dropdown-button">
+                        <i class="icon icon-dots"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-pencil"></i>Редактировать
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-star-outline"></i>Добавить в избранное
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-trash"></i>Удалить
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Длинный заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={2}&gt;
+        &lt;Cards>
+            &lt;CardsDropdown&gt;
+                &lt;Dropdown&gt;
+                    &lt;DropdownItem icon="pencil" title="Редактировать" /&gt;
+                    &lt;DropdownItem icon="star-outline" title="Добавить в избранное" /&gt;
+                    &lt;DropdownItem icon="trash" title="Удалить" /&gt;
+                &lt;/Dropdown&gt;
+            &lt;/CardsDropdown&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" /&gt;
+            &lt;CardsHeader&gt;Длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Карточки широкие, с меню и кастомной обложкой</h2>
+            <p>Пример широких карточек, содержащих в себе меню, с одной кнопкой, с кастомной обложкой</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-16">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v1.svg" alt="" />
+                        </div>
+                        <div class="card-header">Максимально длинный заголовок карточки</div>
+                        <div class="card-body">Короткий текст описания карточки.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-dropdown">
+                <div class="dropdown" tabindex="0">
+                    <button type="button" class="button button-icon dropdown-button">
+                        <i class="icon icon-dots"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-pencil"></i>Редактировать
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-star-outline"></i>Добавить в избранное
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-trash"></i>Удалить
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+             &lt;CardsDropdown&gt;
+                &lt;Dropdown&gt;
+                    &lt;DropdownItem icon="pencil" title="Редактировать" /&gt;
+                    &lt;DropdownItem icon="star-outline" title="Добавить в избранное" /&gt;
+                    &lt;DropdownItem icon="trash" title="Удалить" /&gt;
+                &lt;/Dropdown&gt;
+            &lt;/CardsDropdown&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" /&gt;
+            &lt;CardsHeader&gt;Длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Карточки  широкие, с меню и обложкой, загруженной пользователем</h2>
+            <p>Пример широких карточек, содержащих в себе меню, с одной кнопкой, с обложкой, загруженной пользователем</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-16">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_sample_cover_v1.jpg" alt="" />
+                        </div>
+                        <div class="card-header">Длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_sample_cover_v2.jpg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Максимально длинный заголовок карточки</div>
+                        <div class="card-body">Короткий текст описания карточки.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_sample_cover_v4.jpg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-dropdown">
+                            <div class="dropdown" tabindex="0">
+                                <button type="button" class="button button-icon dropdown-button">
+                                    <i class="icon icon-dots"></i>
+                                </button>
+                                <ul class="dropdown-list">
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-pencil"></i>Редактировать
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-star-outline"></i>Добавить в избранное
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a href="#" class="dropdown-link">
+                                            <i class="icon icon-trash"></i>Удалить
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-cover">
+                            <img src="../images/card_sample_cover_v3.jpg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-5-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-5-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-5-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-dropdown">
+                <div class="dropdown" tabindex="0">
+                    <button type="button" class="button button-icon dropdown-button">
+                        <i class="icon icon-dots"></i>
+                    </button>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-pencil"></i>Редактировать
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-star-outline"></i>Добавить в избранное
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="icon icon-trash"></i>Удалить
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cover">
+                <img src="../images/card_sample_cover_v1.jpg" alt="" />
+            </div>
+            <div class="card-header">Длинный заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-5-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsDropdown&gt;
+                &lt;Dropdown&gt;
+                    &lt;DropdownItem icon="pencil" title="Редактировать" /&gt;
+                    &lt;DropdownItem icon="star-outline" title="Добавить в избранное" /&gt;
+                    &lt;DropdownItem icon="trash" title="Удалить" /&gt;
+                &lt;/Dropdown&gt;
+            &lt;/CardsDropdown&gt;
+            &lt;CardsCover src="/static/images/card_sample_cover_v1.jpg" alt="" /&gt;
+            &lt;CardsHeader&gt;Длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-6">
+        <div class="components-title">
+            <h2>Карточки широкие, с одной кнопкой, занимающие половину ширины карточки</h2>
+            <p>Пример широких карточек, содержащих меню, с одной кнопкой, занимающей половину ширины карточки</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-16">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система управления цифровыми процессами</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#" class="button button-solid button-secondary w-100">Перейти</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Электронный документооборот</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#" class="button button-solid button-secondary w-100">Перейти</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v1.svg" alt="" />
+                        </div>
+                        <div class="card-header">Единая система классификации и кодирования</div>
+                        <div class="card-body">Короткий текст описания карточки.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#" class="button button-solid button-secondary w-100">Перейти</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Цифровые реестры</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#" class="button button-solid button-secondary w-100">Перейти</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система тестирования</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#" class="button button-solid button-secondary w-100">Перейти</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-6-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-6-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-6-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Система управления цифровыми процессами</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="#" class="button button-solid button-secondary w-100">Перейти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-6-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" /&gt;
+            &lt;CardsHeader&gt;Длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                &lt;Row&gt;
+                    &lt;Column col={6}&gt;
+                        <a href="#" className="button button-solid button-secondary w-100">Перейти</a>
+                    &lt;/Column&gt;
+                &lt;/Row&gt;
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-7">
+        <div class="components-title">
+            <h2>Карточки широкие, без меню и кастомной обложкой</h2>
+            <p>Пример широких карточек, без меню, с одной кнопкой, с кастомной обложкой</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-16">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система управления цифровыми процессами</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Электронный документооборот</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v1.svg" alt="" />
+                        </div>
+                        <div class="card-header">Единая система классификации и кодирования</div>
+                        <div class="card-body">Короткий текст описания карточки.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Цифровые реестры</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система тестирования</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-7-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-7-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-7-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Система управления цифровыми процессами</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-7-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" /&gt;
+            &lt;CardsHeader&gt;Длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-8">
+        <div class="components-title">
+            <h2>Карточки широкие, с тремя кнопками #1</h2>
+            <p>Пример широких карточек, без меню, с тремя кнопкам и кастомной обложкой</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-16">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система управления цифровыми процессами</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Электронный документооборот</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v1.svg" alt="" />
+                        </div>
+                        <div class="card-header">Единая система классификации и кодирования</div>
+                        <div class="card-body">Короткий текст описания карточки.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Цифровые реестры</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система тестирования</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-8-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-8-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-8-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Система управления цифровыми процессами</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#" class="button button-outline button-primary w-100">Удалить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-8-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" /&gt;
+            &lt;CardsHeader&gt;Система управления цифровыми процессами&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                &lt;Row&gt;
+                    &lt;Column col={4}&gt;
+                        <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+                    &lt;/Column&gt;
+                    &lt;Column col={4}&gt;
+                        <a href="#" className="button button-solid button-secondary w-100">Обновить</a>
+                    &lt;/Column&gt;
+                    &lt;Column col={4}&gt;
+                        <a href="#" className="button button-outline button-primary w-100">Удалить</a>
+                    &lt;/Column&gt;
+                &lt;/Row&gt;
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-9">
+        <div class="components-title">
+            <h2>Карточки широкие, с тремя кнопками #2</h2>
+            <p>Пример широких карточек, без меню, с тремя кнопкам и кастомной обложкой</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-16">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система управления цифровыми процессами</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-success w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-danger w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Электронный документооборот</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-success w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-danger w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v1.svg" alt="" />
+                        </div>
+                        <div class="card-header">Единая система классификации и кодирования</div>
+                        <div class="card-body">Короткий текст описания карточки.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-success w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-danger w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Цифровые реестры</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-success w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-danger w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система тестирования</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-success w-100">Обновить</a>
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" class="button button-outline button-danger w-100">Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-9-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-9-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-9-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Система управления цифровыми процессами</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="#" class="button button-outline button-primary w-100">Перейти</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#" class="button button-outline button-success w-100">Обновить</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#" class="button button-outline button-danger w-100">Удалить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    ...
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-9-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" /&gt;
+            &lt;CardsHeader&gt;Система управления цифровыми процессами&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                &lt;Row&gt;
+                    &lt;Column col={4}&gt;
+                        <a href="#" className="button button-outline button-primary w-100">Перейти</a>
+                    &lt;/Column&gt;
+                    &lt;Column col={4}&gt;
+                        <a href="#" className="button button-outline button-success w-100">Обновить</a>
+                    &lt;/Column&gt;
+                    &lt;Column col={4}&gt;
+                        <a href="#" className="button button-outline button-danger w-100">Удалить</a>
+                    &lt;/Column&gt;
+                &lt;/Row&gt;
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+    ...
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-10">
+        <div class="components-title">
+            <h2>Карточки с бейджами</h2>
+            <p>Пример карточек различной ширины с бейджами в различных цветовых вариантах</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-badge card-badge-red">Последний шанс</div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Система управления цифровыми процессами</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-badge card-badge-violet">Новая версия!</div>
+                        <div class="card-cover">
+                            <img src="../images/card_sample_cover_v3.jpg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-badge card-badge-green">Скидка 15%</div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v1.svg" alt="" />
+                        </div>
+                        <div class="card-header">Максимально длинный заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-badge card-badge-blue">Скидка 15%</div>
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v3.svg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-badge card-badge-yellow">Скидка 45%</div>
+                        <div class="card-cover">
+                            <img src="../images/card_sample_cover_v3.jpg" alt="" />
+                        </div>
+                        <div class="card-header">Заголовок карточки</div>
+                        <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+                        <div class="card-footer">
+                            <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-10-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-10-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-10-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    &lt;!-- Широкая карточка с красным бейджем и кастомной обложкой --&gt;
+    <div class="col-3">
+        <div class="card">
+            <div class="card-badge card-badge-red">Последний шанс</div>
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Система управления цифровыми процессами</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+
+    &lt;!-- Широкая карточка с фиолетовым бейджем и обложкой, загруженной пользователем --&gt;
+    <div class="col-3">
+        <div class="card">
+            <div class="card-badge card-badge-violet">Новая версия!</div>
+            <div class="card-cover">
+                <img src="../images/card_sample_cover_v3.jpg" alt="" />
+            </div>
+            <div class="card-header">Заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    &lt;!-- Узкая карточка с зеленым бейджем и кастомной обложкой --&gt;
+    <div class="col-2">
+        <div class="card">
+            <div class="card-badge card-badge-green">Скидка 15%</div>
+            <div class="card-cover">
+                <img src="../images/card_empty_v1.svg" alt="" />
+            </div>
+            <div class="card-header">Максимально длинный заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец...</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+
+    &lt;!-- Узкая карточка с синим бейджем и кастомной обложкой --&gt;
+    <div class="col-2">
+        <div class="card">
+            <div class="card-badge card-badge-blue">Скидка 15%</div>
+            <div class="card-cover">
+                <img src="../images/card_empty_v3.svg" alt="" />
+            </div>
+            <div class="card-header">Заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+
+    &lt;!-- Узкая карточка с желтым бейджем и обложкой, загруженной пользователем --&gt;
+    <div class="col-2">
+        <div class="card">
+            <div class="card-badge card-badge-yellow">Скидка 45%</div>
+            <div class="card-cover">
+                <img src="../images/card_sample_cover_v3.jpg" alt="" />
+            </div>
+            <div class="card-header">Заголовок карточки</div>
+            <div class="card-body">Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.</div>
+            <div class="card-footer">
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-10-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsBody, CardsFooter, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;!-- Широкая карточка с красным бейджем и кастомной обложкой --&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsBadge variant="red">Последний шанс&lt;/CardsBadge&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" />
+            &lt;CardsHeader&gt;Система управления цифровыми процессами&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" className="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+
+    &lt;!-- Широкая карточка с фиолетовым бейджем и обложкой, загруженной пользователем --&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards&gt;
+            &lt;CardsBadge variant="violet">Новая версия!&lt;/CardsBadge&gt;
+            &lt;CardsCover src="/static/images/card_sample_cover_v3.svg" alt="" />
+            &lt;CardsHeader&gt;Заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                &lt;Row&gt;
+                    &lt;Column col={6}&gt;
+                        <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+                    &lt;/Column>
+                    &lt;Column col={6}&gt;
+                        <a href="#" class="button button-solid button-secondary w-100">Обновить</a>
+                    &lt;/Column>
+                &lt;/Row&gt;
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+
+    &lt;!-- Узкая карточка с зеленым бейджем и кастомной обложкой --&gt;
+    &lt;Column col={2}&gt;
+        &lt;Cards&gt;
+            &lt;CardsBadge variant="green">Скидка 15%&lt;/CardsBadge&gt;
+            &lt;CardsCover src="/static/images/card_empty_v1.svg" alt="" />
+            &lt;CardsHeader&gt;Максимально длинный заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец...&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+
+    &lt;!-- Узкая карточка с синим бейджем и кастомной обложкой --&gt;
+    &lt;Column col={2}&gt;
+        &lt;Cards&gt;
+            &lt;CardsBadge variant="blue">Скидка 15%&lt;/CardsBadge&gt;
+            &lt;CardsCover src="/static/images/card_empty_v3.svg" alt="" />
+            &lt;CardsHeader&gt;Заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+
+    &lt;!-- Узкая карточка с желтым бейджем и обложкой, загруженной пользователем --&gt;
+    &lt;Column col={2}&gt;
+        &lt;Cards&gt;
+            &lt;CardsBadge variant="yellow">Скидка 45%&lt;/CardsBadge&gt;
+            &lt;CardsCover src="/static/images/card_sample_cover_v3.svg" alt="" />
+            &lt;CardsHeader&gt;Заголовок карточки&lt;/CardsHeader&gt;
+            &lt;CardsBody&gt;Длинный текст описания карточки, написанный для того чтобы образец выглядел правдоподобно.&lt;/CardsBody&gt;
+            &lt;CardsFooter&gt;
+                <a href="#" class="button button-solid button-primary w-100">Перейти</a>
+            &lt;/CardsFooter&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-11">
+        <div class="components-title">
+            <h2>Карточки-заглушки</h2>
+            <p>Пример карточек-заглушек, которыми необходимо дополнять до целого ряда</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-empty">
+                        <div class="card-cover">
+                            <img src="../images/card_empty_v2.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-11-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-11-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-11-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">
+        <div class="card card-empty">
+            <div class="card-cover">
+                <img src="../images/card_empty_v2.svg" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="card card-empty">
+            <div class="card-cover">
+                <img src="../images/card_empty_v2.svg" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="card card-empty">
+            <div class="card-cover">
+                <img src="../images/card_empty_v2.svg" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-11-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsEmpty} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;
+        &lt;Cards variant="empty"&gt;
+            &lt;CardsEmpty /&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+
+    &lt;Column col={3}&gt;
+        &lt;Cards variant="empty"&gt;
+            &lt;CardsEmpty /&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+
+    &lt;Column col={3}&gt;
+        &lt;Cards variant="empty"&gt;
+            &lt;CardsEmpty /&gt;
+        &lt;/Cards&gt;
+    &lt;/Column&gt;
+&lt;/Row&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>variant</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>1</td>
+                                        <td>
+                                            Вариант картинки-заглушки<br><br>
+                                            <code>1</code> - pen<br>
+                                            <code>2</code> - mail<br>
+                                            <code>3</code> - file<br>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;CardsEmpty /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-12">
+        <div class="components-title">
+            <h2>Поисковые карточки</h2>
+            <p>Предназначены для формирования поисковой выдачи</p>
+        </div>
+        <div class="components-preview">
+            <div class="card card-search">
+                <div class="card-header">
+                    <a href="#">Пожар в башне Останкино (не горит)</a>
+                </div>
+                <div class="card-description">г Москва, ул Академика Королева, дом 15 к 1 г Москва, ул Академика Королева, дом 12 Характер Региональный Статус Активно Код региона 77</div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-12-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-12-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-12-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-12">
+        <div class="card card-search">
+            <div class="card-header">
+                <a href="#">Пожар в башне Останкино (не горит)</a>
+            </div>
+            <div class="card-description">г Москва, ул Академика Королева, дом 15 к 1 г Москва, ул Академика Королева, дом 12 Характер Региональный Статус Активно Код региона 77</div>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-12-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import {Grid, Row} from "./components/Grid";
+import {Cards, CardsDescription, CardsHeader} from "../components/Cards";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Row>&gt;
+    &lt;Column col={12}>&gt;
+        &lt;Cards variant="search"&gt;
+            &lt;CardsHeader link="#"&gt;Пожар в башне Останкино (не горит)&lt;/CardsHeader&gt;
+            &lt;CardsDescription>г Москва, ул Академика Королева, дом 15 к 1 г Москва, ул Академика Королева, дом 12 Характер Региональный Статус Активно Код региона 77&lt;/CardsDescription&gt;
+        &lt;/Cards&gt;
+    &lt;/Column>&gt;
+&lt;/Row>&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>link</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Ссылка<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;CardsHeader /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_card.scss</code> и <code>components/Cards.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

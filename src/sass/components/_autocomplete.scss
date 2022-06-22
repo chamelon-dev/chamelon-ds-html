@@ -1,0 +1,32 @@
+.autocomplete {
+  &-suggestions {
+    border-radius: var(--autocomplete-border-radius);
+    border-style: solid;
+    border-width: var(--autocomplete-border-width);
+    border-color: var(--autocomplete-border-color);
+    margin: var(--autocomplete-margin);
+    box-shadow: var(--autocomplete-shadow);
+    background-color: var(--autocomplete-bg);
+    padding: rem(8) 0;
+  }
+  &-suggestion {
+    padding: rem(8) rem(12);
+    font-size: rem(16);
+    line-height: rem(16);
+    color: var(--autocomplete-suggestion-color);
+    margin: 0 0 rem(8) 0;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+      background-color: var(--autocomplete-suggestion-hover-bg);
+    }
+    &:last-child {
+      margin: 0;
+    }
+    &.autocomplete-selected {
+      //background-color: var();
+    }
+  }
+}

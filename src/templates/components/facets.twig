@@ -1,0 +1,422 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'facets' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Фасеты{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="facets.html" class="breadcrumbs-link">Фасеты</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Фасеты</h1>
+    <span class="tagline">Компонент предназначен для построения различных фильтров в поисковой выдаче.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Фасеты</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с фасетами</p>
+        </div>
+        <div class="components-options">
+            <p>При наличии на странице сайдбара фасеты должны располагаться справа, занимать 3 колонки и иметь дополнительный класс <code>.facet-right</code></p>
+            <p>При отсутствии на странице сайдабара и расположении фасета слева, фасет должен занимать 2 колонки и иметь дополнительный класс <code>.facet-left</code></p>
+            <p>При отсутствии на странице сайдабара и расположении фасета справа, фасет должен занимать 3 колонки и иметь дополнительный класс <code>.facet-right</code></p>
+            <p>Допускается формировать поисковую выдачу без фасетов</p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Фасеты</h2>
+            <p>Пример обычного фасета с набором различных фильтров. В примере показан фасет, содержащий в себе компоненты <a href="buttons.html">Кнопок</a> и <a href="checkbox.html#s-6">Списка из чекбоксов</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-6">
+                    <div class="facet">
+                        <form>
+                            <div class="facet-group">
+                                <div class="facet-title">Наименование</div>
+                                <div class="facet-content">
+                                    <ul class="checkbox-list">
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">по Московской Области</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">по Московской Области (4)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">по Московской Области (10)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">Федеральный (1)</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="facet-group">
+                                <div class="facet-title">Код региона</div>
+                                <div class="facet-content">
+                                    <ul class="checkbox-list">
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">50 (2)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">77 (2)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">63 (1)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">69 (1)</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="facet-group">
+                                <div class="facet-title">ФИО подписанта</div>
+                                <div class="facet-content">
+                                    <ul class="checkbox-list">
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">Иванов Иван Иванович</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">Баталов Константин Фёдорович</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="facet-footer">
+                                <button type="button" class="button button-solid button-secondary">Обновить поиск</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="facet">
+    <form>
+        <div class="facet-group">
+            <div class="facet-title">Наименование</div>
+            <div class="facet-content">
+                <ul class="checkbox-list">
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">по Московской Области</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">по Московской Области (4)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">по Московской Области (10)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">Федеральный (1)</span>
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="facet-group">
+            <div class="facet-title">Код региона</div>
+            <div class="facet-content">
+                <ul class="checkbox-list">
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">50 (2)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">77 (2)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">63 (1)</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">69 (1)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="facet-group">
+            <div class="facet-title">ФИО подписанта</div>
+            <div class="facet-content">
+                <ul class="checkbox-list">
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">Иванов Иван Иванович</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="checkbox">
+                            <input type="checkbox" name="name" class="checkbox-input">
+                            <span class="checkbox-check"></span>
+                            <span class="checkbox-text">Баталов Константин Фёдорович</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="facet-footer">
+            <button type="button" class="button button-solid button-secondary">Обновить поиск</button>
+        </div>
+    </form>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_facet.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Facet, FacetFooter, FacetGroup} from "../components/Facet";
+import Button from "../components/Button";
+import {Checkbox, CheckboxList} from "../components/Checkbox";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Facet>
+    &lt;FacetGroup title="Наименование"&gt;
+        &lt;CheckboxList&gt;
+            &lt;Checkbox text="по Московской Области" /&gt;
+            &lt;Checkbox text="по Московской Области (4)" /&gt;
+            &lt;Checkbox text="по Московской Области (10)" /&gt;
+            &lt;Checkbox text="Федеральный (1)" /&gt;
+        &lt;/CheckboxList&gt;
+    &lt;/FacetGroup&gt;
+    &lt;FacetGroup title="Код региона"&gt;
+        &lt;CheckboxList&gt;
+            &lt;Checkbox text="50 (2)" /&gt;
+            &lt;Checkbox text="77 (2)" /&gt;
+            &lt;Checkbox text="63 (1)" /&gt;
+            &lt;Checkbox text="69 (1)" /&gt;
+        &lt;/CheckboxList&gt;
+    &lt;/FacetGroup&gt;
+    &lt;FacetGroup title="ФИО подписанта"&gt;
+        &lt;CheckboxList&gt;
+            &lt;Checkbox text="Иванов Иван Иванович" /&gt;
+            &lt;Checkbox text="Баталов Константин Фёдорович" /&gt;
+        &lt;/CheckboxList&gt;
+    &lt;/FacetGroup&gt;
+    &lt;FacetFooter&gt;
+        &lt;Button color="secondary" type="submit"&gt;Обновить поиск&lt;/Button&gt;
+    &lt;/FacetFooter&gt;
+&lt;/Facet&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>position</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Позиция фасета<br>
+                                                <code>left</code> - слева<br/>
+                                                <code>right</code> - справа
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>method</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>POST</td>
+                                            <td>Атрибут &laquo;method&raquo; формы</td>
+                                        </tr>
+                                        <tr>
+                                            <td>action</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>Атрибут &laquo;action&raquo; формы</td>
+                                        </tr>
+                                        <tr>
+                                            <td>title</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>Заголовок группы фасетов</td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо к родительскому компоненту <code>&lt;Facet /&gt;</code><br>
+                                                и дочерним компонентам <code>&lt;FacetGroup /&gt;</code> и <code>&lt;FacetFooter /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_facet.scss</code> и <code>components/Facet.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

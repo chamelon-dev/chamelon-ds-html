@@ -1,0 +1,252 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'number' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Числовые поля{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="number.html" class="breadcrumbs-link">Числовые поля</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Числовые поля</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс различных числовых полей.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Числовые поля</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Обычное цифровое поле</h2>
+            <p>Пример обычного числового поля с кнопками увеличения и уменьшения значения</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <label>Введите количество</label>
+                <div class="numeric">
+                    <button type="button" class="button button-icon" data-decrease>
+                        <i class="icon icon-minus"></i>
+                    </button>
+                    <input type="number" name="quantity" value="4" min="2" max="20" step="2" readonly>
+                    <button type="button" class="button button-icon" data-increase>
+                        <i class="icon icon-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="field">
+                <label>Введите количество</label>
+                <div class="numeric">
+                    <button type="button"class="button button-icon" data-decrease>
+                        <i class="icon icon-chevron-left"></i>
+                    </button>
+                    <input type="number" name="counter" value="2" min="2" max="10" step="2">
+                    <button type="button" class="button button-icon" data-increase>
+                        <i class="icon icon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label>Введите количество</label>
+    <div class="numeric">
+        <button type="button" class="button button-icon" data-decrease>
+            <i class="icon icon-minus"></i>
+        </button>
+        <input type="number" name="quantity" value="4" min="2" max="20" step="2" readonly>
+        <button type="button" class="button button-icon" data-increase>
+            <i class="icon icon-plus"></i>
+        </button>
+    </div>
+</div>
+
+<div class="field">
+    <label>Введите количество</label>
+    <div class="numeric">
+        <button type="button"class="button button-icon" data-decrease>
+            <i class="icon icon-chevron-left"></i>
+        </button>
+        <input type="number" name="counter" value="2" min="2" max="10" step="2" readonly>
+        <button type="button" class="button button-icon" data-increase>
+            <i class="icon icon-chevron-right"></i>
+        </button>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_number.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Number from "./components/Number";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Number label="Введите количество" name="quantity" value={4} min={2} max={20} step={2} /&gt;
+
+&lt;Number label="Введите количество" name="quantity" value={4} min={2} max={20} step={2} variant="math" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>min</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>0</td>
+                                        <td>Минимальное допустимое значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>max</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>Infinity</td>
+                                        <td>Максимальное допустимое значение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>0</td>
+                                        <td>Значение поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>step</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>1</td>
+                                        <td>Шаг изменения числа</td>
+                                    </tr>
+                                    <tr>
+                                        <td>label</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Текстовая метка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>number</td>
+                                        <td>Имя поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>variant</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>chevron</td>
+                                        <td>
+                                            Вариант стиля кнопок<br>
+                                            <code>chevron</code> - кнопки вида &laquo;&lt;&raquo; и &laquo;&gt;&raquo;<br>
+                                            <code>math</code> - кнопки вида &laquo;+&raquo; и &laquo;-&raquo;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onChange</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения значения<br>
+                                            В качестве аргумента принимает значение поля
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_number.scss</code> и <code>components/Number.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

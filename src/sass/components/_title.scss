@@ -1,0 +1,15 @@
+.title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: rem(40) 0;
+  h1 {
+    line-height: rem(40);
+    color: var(--h1-font-color);
+  }
+  .tagline {
+    color: #8F96A3;
+    font-size: rem(18);
+    line-height: 135%;
+  }
+}

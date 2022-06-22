@@ -1,0 +1,96 @@
+.breadcrumbs {
+  margin: rem(16) 0 0 0;
+  line-height: 1;
+  &-list {
+    display: flex;
+    font-size: 0;
+    flex-wrap: wrap;
+  }
+  &-item {
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 0.875rem;
+    color: var(--breadcrumbs-link-color);
+    line-height: rem(16);
+    &::before {
+      content: '/';
+      font-size: rem(14);
+      padding: 0 rem(4) 0 rem(6);
+      color: var(--breadcrumbs-link-color);
+      display: inline-flex;
+      float: left;
+    }
+    &-active,
+    &:last-child {
+      color: var(--breadcrumbs-link-active-color);
+      .breadcrumbs-link {
+        color: var(--breadcrumbs-link-active-color);
+      }
+    }
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &-link {
+    color: var(--breadcrumbs-link-color);
+    font-size: rem(14);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &-skip {
+    overflow: visible;
+    &-list {
+      display: none;
+      position: absolute;
+      top: calc(100% + #{rem(8)});
+      width: rem(240);
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--breadcrumbs-skip-bg);
+      border-radius: var(--breadcrumbs-skip-border-radius);
+      border-style: solid;
+      border-width: var(--breadcrumbs-skip-border-width);
+      border-color: var(--breadcrumbs-skip-border-color);
+      box-shadow: var(--breadcrumbs-skip-shadow);
+      padding: rem(12) 0;
+      z-index: 9;
+      font-size: 0;
+      li {
+        display: block;
+        margin: 0 0 rem(8) 0;
+        &:last-child {
+          margin: 0;
+        }
+        a {
+          display: block;
+          color: var(--breadcrumbs-skip-link-color);
+          padding: rem(8) rem(12);
+          font-size: rem(13);
+          transition: background-color .3s;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+            background-color: var(--breadcrumbs-skip-link-hover-bg);
+          }
+        }
+      }
+    }
+    &:focus-within {
+      ul {
+        display: block;
+      }
+    }
+  }
+}

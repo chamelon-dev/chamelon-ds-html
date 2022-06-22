@@ -1,0 +1,658 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'notify' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Уведомления{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="notify.html" class="breadcrumbs-link">Уведомления</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Уведомления</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс сообщений, предназначенных для информирования пользователей о важных действиях.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Стандартные уведомления</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Уведомления с датой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Отсутствующие уведомления</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с уведомлениями</p>
+        </div>
+        <div class="components-options">
+            <p>Количество видимых уведомлений не должно превышать 5</p>
+            <p>Отступы слева и справа от кнопку раскрытия уведомлений должны составлять не менее 16 пикс. Для установки отступов рекомендуется применять <a href=../utils/margins.html#s-1>CSS-утилиты</a> внешних отступов</p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Уведомления</h2>
+            <p>Пример обычных уведомлений</p>
+        </div>
+        <div class="components-preview">
+            <div class="d-flex align-items-center justify-content-end">
+                <div class="notify">
+                    <button type="button" class="button button-icon" tabindex="0">
+                        <i class="icon icon-bell"></i>
+                        <span class="button-counter">12</span>
+                    </button>
+                    <div class="notify-dropdown">
+                        <div class="notify-content">
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                </a>
+                            </div>
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                </a>
+                            </div>
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                </a>
+                            </div>
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                </a>
+                            </div>
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="notify-footer">
+                            <a href="#">
+                                Показать все<span class="notify-counter">7</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="notify">
+    <button type="button" class="button button-icon" tabindex="0">
+        <i class="icon icon-bell"></i>
+        <span class="button-counter">12</span>
+    </button>
+    <div class="notify-dropdown">
+        <div class="notify-content">
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                </a>
+            </div>
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                </a>
+            </div>
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                </a>
+            </div>
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                </a>
+            </div>
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                </a>
+            </div>
+        </div>
+        <div class="notify-footer">
+            <a href="#">
+                Показать все<span class="notify-counter">7</span>
+            </a>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_notify.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Notify, NotifyDescription, NotifyItem, NotifyTitle} from "../components/Notify";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Notify counter={12} total={7} viewAllLink="#"&gt;
+    &lt;NotifyItem link="#">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+        &lt;NotifyDescription>Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+        &lt;NotifyDescription>Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+    &lt;/NotifyItem>
+    &lt;NotifyItem link="#">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+        &lt;NotifyDescription>Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+        &lt;NotifyDescription>Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+    &lt;/NotifyItem>
+    &lt;NotifyItem link="#">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+        &lt;NotifyDescription>Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+        &lt;NotifyDescription>Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+    &lt;/NotifyItem>
+    &lt;NotifyItem link="#">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+        &lt;NotifyDescription>Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+        &lt;NotifyDescription>Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+    &lt;/NotifyItem>
+    &lt;NotifyItem link="#">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+    &lt;/NotifyItem>
+&lt;/Notify>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>counter</td>
+                                            <td>Число</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Общее число всех уведомлений<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>total</td>
+                                            <td>Число</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Число уведомлений, доступных для просмотра<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>viewAllLink</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка на страницу просмотра всех уведомлений<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка на страницу просмотра уведомления<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NotifyItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>date</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Дата/дата и время уведомления<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NotifyItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_notify.scss</code> и <code>components/Notify.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Уведомления с датой</h2>
+            <p>Пример обычных уведомлений, содержащих дату</p>
+        </div>
+        <div class="components-preview">
+            <div class="d-flex align-items-center justify-content-end">
+                <div class="notify">
+                    <button type="button" class="button button-icon" tabindex="0">
+                        <i class="icon icon-bell"></i>
+                        <span class="button-counter">3</span>
+                    </button>
+                    <div class="notify-dropdown">
+                        <div class="notify-content">
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-date">16.02.2022 13:48</span>
+                                </a>
+                            </div>
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-date">16.02.2022 13:48</span>
+                                </a>
+                            </div>
+                            <div class="notify-item">
+                                <a href="#" class="notify-link">
+                                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                                    <span class="notify-date">16.02.2022 13:48</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="notify-footer">
+                            <a href="#">
+                                Посмотреть все
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="notify">
+    <button type="button" class="button button-icon" tabindex="0">
+        <i class="icon icon-bell"></i>
+        <span class="button-counter">3</span>
+    </button>
+    <div class="notify-dropdown">
+        <div class="notify-content">
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-date">16.02.2022 13:48</span>
+                </a>
+            </div>
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-date">16.02.2022 13:48</span>
+                </a>
+            </div>
+            <div class="notify-item">
+                <a href="#" class="notify-link">
+                    <span class="notify-title">Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен</span>
+                    <span class="notify-description">Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-description">Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"</span>
+                    <span class="notify-date">16.02.2022 13:48</span>
+                </a>
+            </div>
+        </div>
+        <div class="notify-footer">
+            <a href="#">
+                Посмотреть все
+            </a>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_notify.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Notify, NotifyDescription, NotifyItem, NotifyTitle} from "../components/Notify";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Notify counter={3} viewAllLink="#"&gt;
+    &lt;NotifyItem link="#" date="16.02.2022 13:48">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+        &lt;NotifyDescription>Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+        &lt;NotifyDescription>Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+    &lt;/NotifyItem>
+    &lt;NotifyItem link="#" date="16.02.2022 13:48">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+        &lt;NotifyDescription>Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+        &lt;NotifyDescription>Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+    &lt;/NotifyItem>
+    &lt;NotifyItem link="#" date="16.02.2022 13:48">
+        &lt;NotifyTitle>Классификатор "ФГПН. Лицензирование. Виды проверяемых документов" обновлен&lt;/NotifyTitle>
+        &lt;NotifyDescription>Значение поля "name" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+        &lt;NotifyDescription>Значение поля "fullName" было изменено с "ФГПН. Лицензирование. Виды проверяемых документов." на "ФГПН. Лицензирование. Виды проверяемых документов"&lt;/NotifyDescription>
+    &lt;/NotifyItem>
+&lt;/Notify>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>counter</td>
+                                            <td>Число</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Общее число всех уведомлений<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>total</td>
+                                            <td>Число</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Число уведомлений, доступных для просмотра<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>viewAllLink</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка на страницу просмотра всех уведомлений<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка на страницу просмотра уведомления<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NotifyItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>date</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Дата/дата и время уведомления<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NotifyItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Notify /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_notify.scss</code> и <code>components/Notify.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Отсутствующие уведомления</h2>
+            <p>Пример отсутствующих уведомлений</p>
+        </div>
+        <div class="components-preview">
+            <div class="d-flex align-items-center justify-content-end">
+                <div class="notify">
+                    <button type="button" class="button button-icon" tabindex="0">
+                        <i class="icon icon-bell"></i>
+                    </button>
+                    <div class="notify-dropdown">
+                        <div class="notify-content">
+                            <div class="notify-empty">Новых уведомлений нет</div>
+                        </div>
+                        <div class="notify-footer">
+                            <a href="#">Показать все</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="notify">
+    <button type="button" class="button button-icon" tabindex="0">
+        <i class="icon icon-bell"></i>
+    </button>
+    <div class="notify-dropdown">
+        <div class="notify-content">
+            <div class="notify-empty">Новых уведомлений нет</div>
+        </div>
+        <div class="notify-footer">
+            <a href="#">Показать все</a>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_notify.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Notify} from "../components/Notify";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Notify /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_notify.scss</code> и <code>components/Notify.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

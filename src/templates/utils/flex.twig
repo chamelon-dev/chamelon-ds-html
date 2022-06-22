@@ -1,0 +1,328 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'flex' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Флексбокс{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="flex.html" class="breadcrumbs-link">Флекс</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Флексбокс</h1>
+    <span class="tagline">Устанавливает выравнивание и направление флекс-элементов</span>
+
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Выравнивание в перпендикулярном направлении</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Выравнивание вдоль главной оси</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Направление</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <div class="alert alert-yellow mb-32">
+        <div class="alert-content">Описываемые на этой странице утилиты доступны только для флекс-элементов. Чтобы сделать любой элемент интерфейса флекс-элементом, достаточно добавить этому элементу классс <code>.d-flex</code> утилиты <a href="display.html">отображения</a></div>
+    </div>
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Выравнивание в перпендикулярном направлении</h2>
+            <p>Позволяет выравнивать флекс-элементы внутри контейнера в перпендикулярном направлении (align-items)</p>
+        </div>
+        <div class="components-preview">
+            <div class="d-flex" id="align-items-test" style="align-items: flex-start">
+                <div style="background-color: rgb(254, 229, 219); padding: 20px;">1</div>
+                <div style="background-color: rgb(228, 239, 199); padding: 20px; font-size: 1.5em;">2</div>
+                <div style="background-color: rgb(200, 234, 245); padding: 20px; font-size: 2em;">3</div>
+            </div>
+        </div>
+        <div class="components-options">
+            <p>Задается флекс-родителю путем присвоения класса вида <code>align-items-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{type}</th>
+                            <th>Пример</th>
+                            <th>Описание</th>
+                            <th>Тест</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>start</td>
+                            <td><code>&lt;div class="align-items-start"&gt;&lt;/div&gt; </code></td>
+                            <td>Флекс-элементы выравниваются в начале поперечной оси контейнера</td>
+                            <td>
+                                <label for="ai-0" class="radio">
+                                    <input type="radio" id="ai-0" name="ai" value="start" class="radio-input" checked>
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>end</td>
+                            <td><code>&lt;div class="align-items-end"&gt;&lt;/div&gt; </code></td>
+                            <td>Флекс-элементы выравниваются в конце поперечной оси контейнера</td>
+                            <td>
+                                <label for="ai-1" class="radio">
+                                    <input type="radio" id="ai-1" name="ai" value="end" class="radio-input">
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>center</td>
+                            <td><code>&lt;div class="align-items-center"&gt;&lt;/div&gt; </code></td>
+                            <td>Флекс-элементы выравниваются по линии поперечной оси</td>
+                            <td>
+                                <label for="ai-2" class="radio">
+                                    <input type="radio" id="ai-2" name="ai" value="center" class="radio-input">
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>baseline</td>
+                            <td><code>&lt;div class="align-items-baseline"&gt;&lt;/div&gt; </code></td>
+                            <td>Флекс-элементы выравниваются по их базовой линии</td>
+                            <td>
+                                <label for="ai-3" class="radio">
+                                    <input type="radio" id="ai-3" name="ai" value="baseline" class="radio-input">
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>stretch</td>
+                            <td><code>&lt;div class="align-items-stretch"&gt;&lt;/div&gt; </code></td>
+                            <td>Флекс-элементы растягиваются таким образом, чтобы занять всё доступное пространство контейнера</td>
+                            <td>
+                                <label for="ai-4" class="radio">
+                                    <input type="radio" id="ai-4" name="ai" value="stretch" class="radio-input">
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_flex.scss</code>
+        </div>
+
+    </section>
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Выравнивание вдоль главной оси</h2>
+            <p>Определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера (justify-content)</p>
+        </div>
+        <div class="components-preview">
+            <div class="d-flex" id="justify-content-test" style="justify-content: flex-start">
+                <div style="background-color: rgb(254, 229, 219); padding: 20px;">1</div>
+                <div style="background-color: rgb(228, 239, 199); padding: 20px; font-size: 1.5em;">2</div>
+                <div style="background-color: rgb(200, 234, 245); padding: 20px; font-size: 2em;">3</div>
+            </div>
+        </div>
+        <div class="components-options">
+            <p>Задается флекс-родителю путем присвоения класса вида <code>justify-content-{type}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{type}</th>
+                        <th>Пример</th>
+                        <th>Описание</th>
+                        <th>Тест</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>start</td>
+                        <td><code>&lt;div class="justify-content-start"&gt;&lt;/div&gt; </code></td>
+                        <td>Флекс-элементы прижаты к началу строки</td>
+                        <td>
+                            <label for="jc-0" class="radio">
+                                <input type="radio" id="jc-0" name="jc" value="start" class="radio-input" checked>
+                                <span class="radio-check"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>end</td>
+                        <td><code>&lt;div class="justify-content-end"&gt;&lt;/div&gt; </code></td>
+                        <td>Флекс-элементы прижаты к концу строки</td>
+                        <td>
+                            <label for="jc-1" class="radio">
+                                <input type="radio" id="jc-1" name="jc" value="end" class="radio-input">
+                                <span class="radio-check"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>center</td>
+                        <td><code>&lt;div class="justify-content-center"&gt;&lt;/div&gt; </code></td>
+                        <td>Флекс-элементы выравниваются по центру строки</td>
+                        <td>
+                            <label for="jc-2" class="radio">
+                                <input type="radio" id="jc-2" name="jc" value="center" class="radio-input">
+                                <span class="radio-check"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>between</td>
+                        <td><code>&lt;div class="justify-content-between"&gt;&lt;/div&gt; </code></td>
+                        <td>Флекс-элементы равномерно распределяются по всей строке<br />Первый и последний элемент прижимаются к соответствующим краям контейнера</td>
+                        <td>
+                            <label for="jc-3" class="radio">
+                                <input type="radio" id="jc-3" name="jc" value="space-between" class="radio-input">
+                                <span class="radio-check"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>around</td>
+                        <td><code>&lt;div class="justify-content-around"&gt;&lt;/div&gt; </code></td>
+                        <td>Флекс-элементы равномерно распределяются по всей строке<br />Пустое пространство перед первым и после последнего элементов равно половине пространства между двумя соседними элементами</td>
+                        <td>
+                            <label for="jc-4" class="radio">
+                                <input type="radio" id="jc-4" name="jc" value="space-around" class="radio-input">
+                                <span class="radio-check"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_flex.scss</code>
+        </div>
+
+    </section>
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Напраление</h2>
+            <p>Задаёт направление основных осей в контейнере и тем самым определяет положение флекс-элементов в контейнере (flex-direction)</p>
+        </div>
+        <div class="components-preview">
+            <div class="d-flex" id="flex-direction-test" style="justify-content: flex-start">
+                <div style="background-color: rgb(254, 229, 219); padding: 20px;">1</div>
+                <div style="background-color: rgb(228, 239, 199); padding: 20px; font-size: 1.5em;">2</div>
+                <div style="background-color: rgb(200, 234, 245); padding: 20px; font-size: 2em;">3</div>
+            </div>
+        </div>
+        <div class="components-options">
+            <p>Задается флекс-родителю путем присвоения класса вида <code>flex-{direction}</code></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                        <th>{direction}</th>
+                        <th>Пример</th>
+                        <th>Описание</th>
+                        <th>Тест</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>row</td>
+                            <td><code>&lt;div class="flex-row"&gt;&lt;/div&gt; </code></td>
+                            <td>Главная ось направлена так же, как и ориентация текста, по умолчанию слева направо</td>
+                            <td>
+                                <label for="fd-0" class="radio">
+                                    <input type="radio" id="fd-0" name="fd" value="row" class="radio-input" checked>
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>row-reverse</td>
+                            <td><code>&lt;div class="flex-row-reverse"&gt;&lt;/div&gt; </code></td>
+                            <td>Изменяет местами начальную и конечную точки и главная ось направлена справа налево</td>
+                            <td>
+                                <label for="fd-1" class="radio">
+                                    <input type="radio" id="fd-1" name="fd" value="row-reverse" class="radio-input">
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>column</td>
+                            <td><code>&lt;div class="flex-column"&gt;&lt;/div&gt; </code></td>
+                            <td>Главная ось располагается вертикально и направлена сверху вниз</td>
+                            <td>
+                                <label for="fd-2" class="radio">
+                                    <input type="radio" id="fd-2" name="fd" value="column" class="radio-input">
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>column-reverse</td>
+                            <td><code>&lt;div class="flex-column-reverse"&gt;&lt;/div&gt; </code></td>
+                            <td>Изменяет положение начальной и конечной точек и ось направлена снизу вверх</td>
+                            <td>
+                                <label for="fd-3" class="radio">
+                                    <input type="radio" id="fd-3" name="fd" value="column-reverse" class="radio-input">
+                                    <span class="radio-check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_flex.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

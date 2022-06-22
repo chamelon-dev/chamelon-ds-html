@@ -1,0 +1,103 @@
+{% extends "base.twig" %}
+{% set base = true %}
+{% set heder_menu_active_item = 'start' %}
+{% block title %}Начало{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+<div class="row h-100">
+    <div class="col-8 ml-auto mr-auto h-100">
+        <div class="d-flex h-100 flex-column">
+            <div class="title align-items-center justify-content-center">
+                <h1>Добро пожаловать!</h1>
+            </div>
+            <p>В этом руководстве содержится вся необходимая информация для разработки интерфейсов различных сервисов организации.</p>
+            <p>В разделе «Компоненты» содержится информация обо всех доступных на момент релиза компонентов, их основная HTML-разметка, необходимые опции и параметры для корректного отображения, а также их предварительный просмотр в режиме реального времени.</p>
+            <p>В разделе «Утилиты» содержится информация о дополнительных классовых утилитах, позволяющие легко модифицировать или расширить существующие компоненты</p>
+            <p>В разделе «Примеры» приведены примеры некоторых типовых страниц внутренних сервисов с полной HTML-разметкой и живым просмотром.</p>
+            <section id="s-2">
+                <div class="components-title">
+                    <h2>Начало работы</h2>
+                    <p>Используйте эти примеры в качестве отправной точки, чтобы создать свое первое приложение</p>
+                </div>
+                <div class="components-tabs">
+                    <div class="tabs">
+                        <nav class="tabs-menu">
+                            <ul>
+                                <li class="active">
+                                    <a href="#tab-html-2-1">HTML</a>
+                                </li>
+                                <li>
+                                    <a href="#tab-react-2-2">React</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="tabs-content">
+                            <div class="tab active" id="tab-html-2-1">
+                                <div class="components-code">
+                                <pre>
+                                    <code class="language-html">
+<textarea>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Заголовок страницы</title>
+
+        &lt;!-- Подключение необходимых JS-файлов --&gt;
+        <script defer src="//sitename/js/theme.js"></script>
+        &lt;!-- Подключение необходимых CSS-стилей --&gt;
+        <link href="//sitename/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        ...
+    </body>
+</html>
+</textarea>
+                                    </code>
+                                </pre>
+                                </div>
+
+                            </div>
+                            <div class="tab" id="tab-react-2-2">
+                                <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import './scss/index.scss';
+</textarea>
+                            </code>
+                        </pre>
+                                    <pre>
+                            <code class="language-html">
+<textarea>
+const App = () => {
+    return (
+        <div className="d-flex h-100 flex-column">
+            <div className="title align-items-center justify-content-center">
+                <h1>Добро пожаловать!</h1>
+            </div>
+        </div>
+    )
+}
+</textarea>
+                            </code>
+                        </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

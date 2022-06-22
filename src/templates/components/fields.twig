@@ -1,0 +1,2306 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'fields' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Текстовые поля{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="fields.html" class="breadcrumbs-link">Текстовые поля</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+    <div class="title d-block">
+        <h1>Тестовые поля</h1>
+        <span class="tagline">Компонент предназначен для добавления в интерфейс различных текстовых полей.</span>
+    </div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Обычное текстовое поле</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Заблокированное текстовое поле</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Текстовое поле с меткой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Текстовое поле с подсказкой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Текстовое поле с подсказкой и меткой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-6">
+                <span class="menu-label">Текстовое поле с иконкой слева</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-7">
+                <span class="menu-label">Текстовое поле с иконкой справа</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-8">
+                <span class="menu-label">Текстовое поле с иконкой слева и справа</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-9">
+                <span class="menu-label">Текстовое поле с кнопкой для очистки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-10">
+                <span class="menu-label">Текстовое поле с неуспешной валидацией</span>
+            </a>
+        </li>
+        <li class="d-none">
+            <a href="#s-11">
+                <span class="menu-label">Текстовое поле с успешной валидацией</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-12">
+                <span class="menu-label">Текстовая область</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-13">
+                <span class="menu-label">Маски ввода</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с текстовыми полями</p>
+        </div>
+        <div class="components-options">
+            <p>Все поля в обязательном порядке должны содержать текст-заполнитель (атрибут <code>placeholder</code>)</p>
+            <p>Если отсутствует возможность указать смысловой текст-заполнитель, то он должен совпадать с текстовой меткой поля (элемент <code>label</code>)</p>
+            <p>Если обстоятельствами не предусмотрено наличие текста-заполнителя, в качестве его значения используется пробел</p>
+            <p>Все поля в обязательном порядке должны быть обернуты в блок с классом <code>.field</code>. К нему же должны применяться <a href="../utils/margins.html">CSS-утилиты</a></p>
+            <p>Кнопка очистки поля не совместима с иконками валидации</p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Обычное текстовое поле</h2>
+            <p>Пример обычного тестового поля</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона" />
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона" />
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldInput} from "../components/Field";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" /&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>type</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>
+                                                Тип поля<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>
+                                                Имя поля<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>value</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td></td>
+                                            <td>
+                                                Значение поля<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>placeholder</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Текст-заполнитель<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Заблокированное текстовое поле</h2>
+            <p>Пример заблокированного текстового поля</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона" disabled>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона" disabled>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldInput} from "../components/Field";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" disabled={true} /&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>disabled</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Устанавливает поле в заблокированное состояние<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Текстовое поле с меткой</h2>
+            <p>Пример обычного текстового поля со связанной меткой</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <label for="phone-1">Номер телефона</label>
+                <input type="text" name="name" value="" placeholder="Введите ваш номер телефона" id="phone-1">
+            </div>
+            <div class="field">
+                <label for="phone-2" class="required">Номер телефона</label>
+                <input type="text" name="name" value="" placeholder="Введите ваш номер телефона" id="phone-2">
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label for="phone-1">Номер телефона</label>
+    <input type="text" name="name" value="" placeholder="Введите ваш номер телефона" id="phone-1">
+</div>
+
+<div class="field">
+    <label for="phone-2" class="required">Номер телефона</label>
+    <input type="text" name="name" value="" placeholder="Введите ваш номер телефона" id="phone-2">
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldInput, FieldLabel} from "../components/Field";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;FieldLabel id="phone-1"&gt;Номер телефона&lt;/FieldLabel&gt;
+    &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" id="phone-1" /&gt;
+&lt;/Field&gt;
+
+&lt;Field&gt;
+    &lt;FieldLabel id="phone-2" required={true}&gt;Номер телефона&lt;/FieldLabel&gt;
+    &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" id="phone-2" /&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>id</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            В компоненте <code>&lt;FieldInput /&gt;</code> присваивает идентификатор полю<br/>
+                                            В компоненте <code>&lt;FieldLabel /&gt;</code> устанавливает атрибут &laquo;for&raquo;<br/>
+                                            Для корректной связи метки с полем идентификаторы у обоих компонентов должны совпадать
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>required</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            В компоненте <code>&lt;FieldInput /&gt;</code> устанавливает поле формы обязательным для заполнения<br/>
+                                            В компоненте <code>&lt;FieldLabel /&gt;</code> устанавливает дополнительный класс <code>.required</code>>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Текстовое поле с подсказкой</h2>
+            <p>Пример обычного текстового поля с подсказкой</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                <small class="field-hint">Текст подсказки поля ввода</small>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+    <small class="field-hint">Текст подсказки поля ввода</small>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldInput, FieldHint} from "../components/Field";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" /&gt;
+    &lt;FieldHint>Текст подсказки поля ввода&lt;/FieldHint&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Текстовое поле с подсказкой и меткой</h2>
+            <p>Пример обычного текстового поля со связанной меткой и подсказкой</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <label for="phone-3">Текстовая метка</label>
+                <input type="text" name="name" value="" placeholder="Введите значение" id="phone-3">
+                <small class="field-hint">Текст подсказки поля ввода</small>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-5-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-5-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-5-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label for="phone-3">Текстовая метка</label>
+    <input type="text" name="name" value="" placeholder="Введите значение" id="phone-3">
+    <small class="field-hint">Текст подсказки поля ввода</small>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-5-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldLabel, FieldInput, FieldHint} from "../components/Field";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;FieldLabel id="phone-3"&gt;Номер телефона&lt;/FieldLabel&gt;
+    &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" id="phone-3" />
+    &lt;FieldHint&gt;Текст подсказки поля ввода&lt;/FieldHint&gt;
+&lt;/Field>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>id</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            В компоненте <code>&lt;FieldInput /&gt;</code> присваивает идентификатор полю<br/>
+                                            В компоненте <code>&lt;FieldLabel /&gt;</code> устанавливает атрибут &laquo;for&raquo;<br/>
+                                            Для корректной связи метки с полем идентификаторы у обоих компонентов должны совпадать
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-6">
+        <div class="components-title">
+            <h2>Текстовое поле с иконкой слева</h2>
+            <p>Пример обычного текстового поля с иконкой слева. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-icon field-icon-prefix">
+                    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    <i class="icon icon-eye field-icon-start"></i>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-icon field-icon-prefix">
+                    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    <button type="button" class="field-button field-button-start">
+                        <i class="icon icon-eye"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-react-6-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-6-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-react-6-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Поле с иконкой слева --&gt;
+<div class="field">
+    <div class="field-icon field-icon-prefix">
+        <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+        <i class="icon icon-eye field-icon-start"></i>
+    </div>
+</div>
+
+&lt;!-- Поле с кнопкой с иконкой слева --&gt;
+<div class="field">
+    <div class="field-icon field-icon-prefix">
+        <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+        <button type="button" class="field-button field-button-start">
+            <i class="icon icon-eye"></i>
+        </button>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-6-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, FieldButton} from "../components/Field";
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Поле с иконкой слева --&gt;
+&lt;Field&gt;
+    &lt;FieldGroup iconPosition="prefix"&gt;
+        &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone"/&gt;
+        &lt;Icons name="search" utils="field-icon-start" /&gt;
+    &lt;/FieldGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Поле с кнопкой с иконкой слева --&gt;
+&lt;Field&gt;
+    &lt;FieldGroup iconPosition="prefix"&gt;
+        &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone"/&gt;
+        &lt;FieldButton position="start"&gt;
+            &lt;Icons name="search" /&gt;
+        &lt;/FieldButton&gt;
+    &lt;/FieldGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>iconPosition</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки<br/>
+                                            <code>prefix</code> - слева<br/>
+                                            <code>postfix</code> - справа<br/>
+                                            <code>both</code> - слева и справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldGroup /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>position</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки/кнопки с иконкой внутри группы<br/>
+                                            <code>start</code> - слева<br/>
+                                            <code>end</code> - справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldButton /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code> и <code>&lt;Icons /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-7">
+        <div class="components-title">
+            <h2>Текстовое поле с иконкой справа</h2>
+            <p>Пример обычного текстового поля с иконкой справа. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-icon field-icon-postfix">
+                    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    <i class="icon icon-eye field-icon-end"></i>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-icon field-icon-postfix">
+                    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    <button type="button" class="field-button field-button-end">
+                        <i class="icon icon-eye"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-7-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-7-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-7-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Поле с иконкой справа --&gt;
+<div class="field">
+    <div class="field-icon field-icon-postfix">
+        <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+        <i class="icon icon-eye field-icon-end"></i>
+    </div>
+</div>
+
+&lt;!-- Поле с кнопкой с иконкой справа --&gt;
+<div class="field">
+    <div class="field-icon field-icon-postfix">
+        <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+        <button type="button" class="field-button field-button-end">
+            <i class="icon icon-eye"></i>
+        </button>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-7-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, FieldButton} from "../components/Field";
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Поле с иконкой справа --&gt;
+&lt;Field&gt;
+    &lt;FieldGroup iconPosition="postfix"&gt;
+        &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone"/&gt;
+        &lt;Icons name="star-outline" utils="field-icon-end" /&gt;
+    &lt;/FieldGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Поле с кнопкой с иконкой справа --&gt;
+&lt;Field&gt;
+    &lt;FieldGroup iconPosition="postfix"&gt;
+        &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone"/&gt;
+        &lt;FieldButton position="end"&gt;
+            &lt;Icons name="star-outline" /&gt;
+        &lt;/FieldButton&gt;
+    &lt;/FieldGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>iconPosition</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки<br/>
+                                            <code>prefix</code> - слева<br/>
+                                            <code>postfix</code> - справа<br/>
+                                            <code>both</code> - слева и справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldGroup /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>position</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки/кнопки с иконкой внутри группы<br/>
+                                            <code>start</code> - слева<br/>
+                                            <code>end</code> - справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldButton /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code> и <code>&lt;Icons /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-8">
+        <div class="components-title">
+            <h2>Текстовое поле с иконкой слева и справа</h2>
+            <p>Пример обычного текстового поля с иконкой слева и справа. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-icon field-icon-both">
+                    <i class="icon icon-star-outline field-icon-start"></i>
+                    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    <i class="icon icon-star-fill field-icon-end"></i>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-icon field-icon-both">
+                    <button type="button"  class="field-button field-button-start">
+                        <i class="icon icon-star-outline"></i>
+                    </button>
+                    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    <button type="button" class="field-button field-button-end">
+                        <i class="icon icon-star-fill"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-8-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-8-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-8-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Поле с иконками слева и справа --&gt;
+<div class="field-icon field-icon-both">
+    <i class="icon icon-star-outline field-icon-start"></i>
+    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+    <i class="icon icon-star-fill field-icon-end"></i>
+</div>
+
+&lt;!-- Поле с кнопками с иконками слева и справа --&gt;
+<div class="field">
+    <div class="field-icon field-icon-both">
+        <button type="button"  class="field-button field-button-start">
+            <i class="icon icon-star-outline"></i>
+        </button>
+        <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+        <button type="button" class="field-button field-button-end">
+            <i class="icon icon-star-fill"></i>
+        </button>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-8-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, FieldButton} from "../components/Field";
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Поле с иконкой слева и справа --&gt;
+&lt;Field&gt;
+    &lt;FieldGroup iconPosition="both"&gt;
+        &lt;Icons name="star-outline" utils="field-icon-start" /&gt;
+        &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone"/&gt;
+        &lt;Icons name="star-fill" utils="field-icon-end" /&gt;
+    &lt;/FieldGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Поле с кнопкой с иконкой слева и справа --&gt;
+&lt;Field&gt;
+    &lt;FieldGroup iconPosition="both"&gt;
+        &lt;FieldButton position="start"&gt;
+            &lt;Icons name="star-outline" /&gt;
+        &lt;/FieldButton&gt;
+        &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone"/&gt;
+        &lt;FieldButton position="end"&gt;
+            &lt;Icons name="star-fill" /&gt;
+        &lt;/FieldButton&gt;
+    &lt;/FieldGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>iconPosition</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки<br/>
+                                            <code>prefix</code> - слева<br/>
+                                            <code>postfix</code> - справа<br/>
+                                            <code>both</code> - слева и справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldGroup /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>position</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки/кнопки с иконкой внутри группы<br/>
+                                            <code>start</code> - слева<br/>
+                                            <code>end</code> - справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldButton /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code> и <code>&lt;Icons /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Fields.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-9">
+        <div class="components-title">
+            <h2>Текстовое поле с кнопкой для очистки</h2>
+            <p>Пример обычного текстового поля с кнопкой для очистки. Если поле уже содержит введенный текст - кнопка будет показана. Если поле пустое - по мере ввода данных кнопка очистки будет показана. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a>, <a href="buttons.html">кнопок</a> и <a href="display.html">отображения</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <div class="field-icon field-icon-both">
+                    <i class="icon icon-search field-icon-start"></i>
+                    <input type="search" name="q" value="Поисковый запрос" placeholder="Что найти?">
+                    <button class="field-button field-button-end d-none" data-clear-field>
+                        <i class="icon icon-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-9-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-9-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-9-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <div class="field-icon field-icon-both">
+        <i class="icon icon-search field-icon-start"></i>
+        <input type="search" name="q" value="Поисковый запрос" placeholder="Что найти?">
+        <button class="field-button field-button-end d-none" data-clear-field>
+            <i class="icon icon-times"></i>
+        </button>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-9-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput} from "../components/Field";
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;FieldGroup iconPosition="both"&gt;
+        &lt;Icons name="search" /&gt;
+        &lt;FieldInput type="text" placeholder="Что найти?" value="Поисковый запрос" name="q" clearable={true} /&gt;
+    &lt;/FieldGroup&gt;
+&lt;/Field>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>clearable</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Устанавливает поле очищаемым при нажатии на кнопку очистки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>iconPosition</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки<br/>
+                                            <code>prefix</code> - слева<br/>
+                                            <code>postfix</code> - справа<br/>
+                                            <code>both</code> - слева и справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldGroup /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code> и <code>&lt;Icons /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-10">
+        <div class="components-title">
+            <h2>Текстовое поле с неуспешной валидацией</h2>
+            <p>Пример обычного текстового поля при неуспешной валидации. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="field validation-error">
+                <div class="field-icon field-icon-postfix">
+                    <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+                    <i class="icon icon-error field-icon-end"></i>
+                </div>
+                <small class="field-hint">Ошибка валидации</small>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-10-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-10-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-10-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field validation-error">
+    <div class="field-icon field-icon-postfix">
+        <input type="text" name="phone" value="" placeholder="Введите ваш номер телефона">
+        <i class="icon icon-error field-icon-end"></i>
+    </div>
+    <small class="field-hint">Ошибка валидации</small>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>sass/components/_validation.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-10-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, FieldHint} from "../components/Field";
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+<Field validation="error">
+    <FieldGroup iconPosition="postfix">
+        <FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" />
+        <Icons name="error" utils="field-icon-end" />
+    </FieldGroup>
+    <FieldHint>Ошибка валидации</FieldHint>
+</Field>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>iconPosition</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Расположение иконки<br/>
+                                            <code>prefix</code> - слева<br/>
+                                            <code>postfix</code> - справа<br/>
+                                            <code>both</code> - слева и справа<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldGroup /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>validation</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Статут с валидации<br/>
+                                            <code>error</code> - неуспешная валидация<br/>
+                                            <code>success</code> - успешная валидация<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code> и <code>&lt;Icons /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-11" class="d-none">
+        <div class="components-title">
+            <h2>Текстовое поле с успешной валидацией</h2>
+            <p>Пример обычного текстового поля при успешной валидации</p>
+        </div>
+        <div class="components-preview">
+            <div class="field validation-success">
+                <input type="text" name="name" value="" placeholder="Введите значение">
+                <span class="field-hint">Поле заполнено корректно</span>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-11-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-11-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-11-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field validation-success">
+    <input type="text" name="" value="" placeholder="Введите значение">
+    <span class="field-hint">Поле заполнено корректно</span>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>sass/components/_validation.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-11-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Fields from "./components/Fields";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Fields placeholder="Введите значение" name="" value="" validation={true} hint="Поле заполнено корректно" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>text</td>
+                                        <td>Тип поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Имя поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Значение поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Текст-заполнитель</td>
+                                    </tr>
+                                    <tr>
+                                        <td>validation</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>undefined</td>
+                                        <td>Валидация: false - неуспешная, true - успешная</td>
+                                    </tr>
+                                    <tr>
+                                        <td>hint</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Текст подсказки поля ввода</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Fields.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-12">
+        <div class="components-title">
+            <h2>Текстовая область</h2>
+            <p>Текстовая область представляет собой элемент формы для создания области, в которую можно вводить несколько строк текста</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <label for="ta-1">Комментарий</label>
+                <textarea placeholder="Ваш комментарий" name="comment" id="ta-1">Бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текстбесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно</textarea>
+                <small class="field-hint">Не более 10000 символов</small>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-12-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-12-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-12-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label for="ta-1">Комментарий</label>
+    &lt;textarea placeholder="Ваш комментарий" name="comment" id="ta-1"&gt;Бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текстбесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно длинный введённый текст бесконечно&lt;/textarea&gt;
+    <small class="field-hint">Не более 10000 символов</small>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-12-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Textarea, TextareaHint, TextareaInput, TextareaLabel} from "../components/Textarea";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Textarea&gt;
+    &lt;TextareaLabel id="ta-1">Комментарий&lt;/TextareaLabel&gt;
+    &lt;TextareaInput placeholder="Ваш комментарий" name="comment" value="Бесконечно длинный введённый текст..." id="ta-1" /&gt;
+    &lt;TextareaHint>Не более 10000 символов&lt;/TextareaHint&gt;
+&lt;/Textarea&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя текстовой области<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TextareaInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TextareaInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;TextareaInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>id</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            В компоненте <code>&lt;TextareaInput /&gt;</code> присваивает идентификатор текстовой области<br/>
+                                            В компоненте <code>&lt;TextareaLabel /&gt;</code> устанавливает атрибут &laquo;for&raquo;<br/>
+                                            Для корректной связи метки с текстовой областью идентификаторы у обоих компонентов должны совпадать
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>required</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            В компоненте <code>&lt;TextareaInput /&gt;</code> устанавливает текстовую область обязательным для заполнения<br/>
+                                            В компоненте <code>&lt;TextareaLabel /&gt;</code> устанавливает дополнительный класс <code>.required</code>>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Textarea /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Textarea.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-13">
+        <div class="components-title">
+            <h2>Маски ввода</h2>
+            <p>Позволяют установить маски ввода на текстовое поле</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <label for="snils">СНИЛС</label>
+                <input type="text" name="snils" placeholder="___-___-___ __" data-mask="999-999-999 99" id="snils">
+            </div>
+            <div class="field mb-24">
+                <label for="ogrn">ОГРН</label>
+                <input type="text" name="ogrn" placeholder="_ ___ __ __ _____ _" data-mask="9 999 99 99 99999 9" id="ogrn">
+            </div>
+            <div class="field">
+                <label for="phone">Номер телефона</label>
+                <input type="text" name="phone" placeholder="Введите ваш номер телефона" data-mask="+7(999) 999-99-99" id="phone">
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-13-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-13-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-13-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label for="snils">СНИЛС</label>
+    <input type="text" name="snils" placeholder="___-___-___ __" data-mask="999-999-999 99" id="snils">
+</div>
+
+<div class="field">
+    <label for="ogrn">ОГРН</label>
+    <input type="text" name="ogrn" placeholder="_ ___ __ __ _____ _" data-mask="9 999 99 99 99999 9" id="ogrn">
+</div>
+
+<div class="field">
+    <label for="phone">Номер телефона</label>
+    <input type="text" name="phone" placeholder="Введите ваш номер телефона" data-mask="+7(999) 999-99-99" id="phone">
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-13-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldInput, FieldLabel} from "../components/Field";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;FieldLabel id="snils"&gt;СНИЛС&lt;/FieldLabel&gt;
+    &lt;FieldInput type="text" placeholder="___-___-___ __" value="" name="snils" mask="999-999-999 99" id="snils" /&gt;
+&lt;/Field&gt;
+
+&lt;Field&gt;
+    &lt;FieldLabel id="ogrn"&gt;ОГРН&lt;/FieldLabel&gt;
+    &lt;FieldInput type="text" placeholder="_ ___ __ __ _____ _" value="" name="ogrn" mask="9 999 99 99 9999 9" id="ogrn" /&gt;
+&lt;/Field&gt;
+
+&lt;Field&gt;
+    &lt;FieldLabel id="phone-7"&gt;Номер телефона&lt;/FieldLabel&gt;
+    &lt;FieldInput type="text" placeholder="Введите ваш номер телефона" value="" name="phone" mask="+7(999) 999-99-99" id="phone-7" /&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Тип поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Имя поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Значение поля<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Текст-заполнитель<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>id</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            В компоненте <code>&lt;FieldInput /&gt;</code> присваивает идентификатор полю<br/>
+                                            В компоненте <code>&lt;FieldLabel /&gt;</code> устанавливает атрибут &laquo;for&raquo;<br/>
+                                            Для корректной связи метки с полем идентификаторы у обоих компонентов должны совпадать
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>mask</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Формат маски. Следующие символы определяют формат маски:<br>
+                                            <code>9</code> - числа 0-9<br>
+                                            <code>a</code> - буквы (кроме спецсимволов)<br>
+                                            <code>*</code> - числа и буквы (кроме спецсимволов)<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;FieldInput /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Field /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

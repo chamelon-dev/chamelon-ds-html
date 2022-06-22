@@ -1,0 +1,297 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'color' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Выбор цвета{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="calendar.html" class="breadcrumbs-link">Выбор цвета</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Выбор цвета</h1>
+    <span class="tagline">Добавление в интерфейс удобного способа выбора цвета</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Выбор цвета</span>
+            </a>
+            <a href="#s-2">
+                <span class="menu-label">Предустановленное значение</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Выбор цвета</h2>
+            <p>Пример компонента выбора цвета</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <label for="colorpicker">Цвет</label>
+                <div class="field-icon field-icon-postfix">
+                    <input type="text" name="name" placeholder="Выберите цвет" data-colorpicker autocomplete="off" />
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label for="colorpicker">Цвет</label>
+    <div class="field-icon field-icon-postfix">
+        <input type="text" name="name" placeholder="Выберите цвет" data-colorpicker autocomplete="off" />
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_colorpicker.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Color from "../components/Color";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Color label="Цвет" placeholder="Выберите цвет" name="name" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>label</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>Текстовая метка</td>
+                                        </tr>
+                                        <tr>
+                                            <td>placeholder</td>
+                                            <td>Строка</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>Текст-заполнитель </td>
+                                        </tr>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>color</td>
+                                            <td>Значение атрибута &laquo;name&raquo; поля</td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_colorpicker.scss</code> и <code>components/Color.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Предустановленное значение</h2>
+            <p>Пример компонента выбора цвета, в поле которого имеется заранее заданный цвет</p>
+        </div>
+        <div class="components-preview">
+            <div class="field">
+                <label for="colorpicker">Цвет</label>
+                <div class="field-icon field-icon-postfix">
+                    <input type="text" name="name_predefined" placeholder="Выберите цвет" data-colorpicker autocomplete="off" value="#1D59C9" />
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="field">
+    <label for="colorpicker">Цвет</label>
+    <div class="field-icon field-icon-postfix">
+        <input type="text" name="name_predefined" placeholder="Выберите цвет" data-colorpicker autocomplete="off" value="#1D59C9" />
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_colorpicker.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Color from "../components/Color";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Color label="Цвет" placeholder="Выберите цвет" name="name" color="#1D59C9" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>label</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Текстовая метка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>placeholder</td>
+                                        <td>Строка</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Текст-заполнитель </td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>color</td>
+                                        <td>Значение атрибута &laquo;name&raquo; поля</td>
+                                    </tr>
+                                    <tr>
+                                        <td>color</td>
+                                        <td>Строка</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Предустановленное значение цвета в формате HEX</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_colorpicker.scss</code> и <code>components/Color.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

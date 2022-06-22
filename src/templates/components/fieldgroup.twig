@@ -1,0 +1,4132 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'fieldgroup' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Группы элементов форм{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="fieldgroup.html" class="breadcrumbs-link">Группы элементов форм</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Группы элементов форм</h1>
+    <span class="tagline">Группировка различных элементов форм с кнопками и текстовыми подписями</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Текстовые подписи, одинарные, в начале</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Текстовые подписи, двойные, в начале</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Текстовые подписи, одинарные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Текстовые подписи, двойные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Текстовые подписи, одинарные, в конце и в начале</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-6">
+                <span class="menu-label">Кнопки, одинарные, в начале</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-7">
+                <span class="menu-label">Кнопки, двойные, в начале</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-8">
+                <span class="menu-label">Кнопки, одинарные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-9">
+                <span class="menu-label">Кнопки, двойные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-10">
+                <span class="menu-label">Кнопки, одинарные, в конце и в начале</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-11">
+                <span class="menu-label">Текстовые подписи, одинарные, в начале и кнопки, одинарные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-12">
+                <span class="menu-label">Текстовые подписи, одинарные, в начале и кнопки, двойные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-13">
+                <span class="menu-label">Кнопки, одинарные, в начале и текстовые подписи, одинарные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-14">
+                <span class="menu-label">Кнопки, двойные, в начале и текстовые подписи, одинарные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-15">
+                <span class="menu-label">Текстовые подписи и кнопки, одинарные, в начале</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-16">
+                <span class="menu-label">Текстовые подписи и кнопки, одинарные, в конце</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-17">
+                <span class="menu-label">Радиокнопки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-18">
+                <span class="menu-label">Чекбоксы</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-19">
+                <span class="menu-label">Комбо</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Текстовые подписи, одинарные, в начале</h2>
+            <p>Примеры группировки элементов форм с одинарными текстовыми подписями в начале</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-start">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-group-start">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-start">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-group-start">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix} from "../components/Field";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="start"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup groupPosition="start"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Текстовые подписи, двойные, в начале</h2>
+            <p>Примеры группировки элементов форм с двойными текстовыми подписями в начале</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-start">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-group-start">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-start">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-group-start">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix} from "../components/Field";
+const prefixes = ['Пример текста', 'Пример текста'];
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text={prefixes} /&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="start"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text={prefixes} /&gt;
+        &lt;FieldGroup groupPosition="start"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Текстовые подписи, одинарные, в конце</h2>
+            <p>Примеры группировки элементов форм с одинарными текстовыми подписями в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-icon field-icon-postfix field-group-end">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-end">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-icon field-icon-postfix field-group-end">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-end">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPostfix} from "../components/Field";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="end"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup groupPosition="end"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPostfix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Текстовые подписи, двойные, в конце</h2>
+            <p>Примеры группировки элементов форм с двойными текстовыми подписями в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-icon field-icon-postfix field-group-end">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-end">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-icon field-icon-postfix field-group-end">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-end">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPostfix} from "../components/Field";
+const prefixes = ['Пример текста', 'Пример текста'];
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="end"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text={prefixes} /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup groupPosition="end"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text={prefixes} /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPostfix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Текстовые подписи, одинарные, в конце и в начале</h2>
+            <p>Примеры группировки элементов форм с одинарными текстовыми подписями в начале и в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-both">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-group-both">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-5-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-5-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-5-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-both">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-group-both">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-5-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, InputGroupPostfix} from "../components/Field";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="both"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup groupPosition="both"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code> и <code>&lt;InputGroupPostfix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-6">
+        <div class="components-title">
+            <h2>Кнопки, одинарные, в начале</h2>
+            <p>Примеры группировки элементов форм с одинарными кнопками в начале</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-start">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-group-start">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <label class="button button-solid button-secondary" for="file-1">Выбрать</label>
+                    </div>
+                    <div class="upload upload-group-start">
+                        <input type="file" id="file-1" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-6-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-6-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-6-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-start">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-group-start">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <label class="button button-solid button-secondary" for="file-1">Выбрать</label>
+        </div>
+        <div class="upload upload-group-start">
+            <input type="file" id="file-1" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-6-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="start"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup groupPosition="start"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+    
+&lt;!-- Файловый загрузчик (альтернативный) --&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="start"/&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-7">
+        <div class="components-title">
+            <h2>Кнопки, двойные, в начале</h2>
+            <p>Примеры группировки элементов форм с двойными кнопками в начале</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-start">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-group-start">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <label class="button button-solid button-secondary" for="file-2">Выбрать</label>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="upload upload-group-start">
+                        <input type="file" id="file-2" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-7-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-7-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-7-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-start">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-group-start">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <label class="button button-solid button-secondary" for="file-2">Выбрать</label>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="upload upload-group-start">
+            <input type="file" id="file-2" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-7-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="start"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup groupPosition="start"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный) --&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="start"/&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-8">
+        <div class="components-title">
+            <h2>Кнопки, одинарные, в конце</h2>
+            <p>Примеры группировки элементов форм с одинарными кнопками в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-icon field-icon-postfix field-group-end">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-end">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="upload upload-group-end">
+                        <input type="file" id="file-3" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <label class="button button-solid button-secondary" for="file-3">Выбрать</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-8-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-8-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-8-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field mb-24">
+    <div class="field-group">
+        <div class="field-icon field-icon-postfix field-group-end">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field mb-24">
+    <div class="field-group">
+        <div class="field-group-end">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="upload upload-group-end">
+            <input type="file" id="file-3" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <label class="button button-solid button-secondary" for="file-3">Выбрать</label>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-8-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="end"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup groupPosition="end"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="end"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-9">
+        <div class="components-title">
+            <h2>Кнопки, двойные, в конце</h2>
+            <p>Примеры группировки элементов форм с двойными кнопками в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-icon field-icon-postfix field-group-end">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-end">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="upload upload-group-end">
+                        <input type="file" id="file-4" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <label class="button button-solid button-secondary" for="file-4">Выбрать</label>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-9-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-9-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-9-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-icon field-icon-postfix field-group-end">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-end">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="upload upload-group-end">
+            <input type="file" id="file-4" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <label class="button button-solid button-secondary" for="file-4">Выбрать</label>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-9-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="end"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup groupPosition="end"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="end"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-10">
+        <div class="components-title">
+            <h2>Кнопки, одинарные, в конце и в начале</h2>
+            <p>Примеры группировки элементов форм с одинарными кнопками в начале и в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-both">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-group-both">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <label class="button button-solid button-secondary" for="file-5">Выбрать</label>
+                    </div>
+                    <div class="upload upload-group-both">
+                        <input type="file" id="file-5" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-10-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-10-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-10-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-both">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-group-both">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <label class="button button-solid button-secondary" for="file-5">Выбрать</label>
+        </div>
+        <div class="upload upload-group-both">
+            <input type="file" id="file-5" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-10-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="both"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup groupPosition="both"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="both"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-11">
+        <div class="components-title">
+            <h2>Текстовые подписи, одинарные, в начале и кнопки, одинарные, в конце</h2>
+            <p>Примеры группировки элементов форм с одинарными текстовыми подписями в начале и в одинарными кнопками в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-both">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-group-both">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="upload upload-group-both">
+                        <input type="file" id="file-7" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <label class="button button-solid button-secondary" for="file-7">Выбрать</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-11-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-11-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-11-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field ">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-both">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-group-both">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="upload upload-group-both">
+            <input type="file" id="file-7" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <label class="button button-solid button-secondary" for="file-7">Выбрать</label>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-11-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="both"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup groupPosition="both"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="both"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-12">
+        <div class="components-title">
+            <h2>Текстовые подписи, одинарные, в начале и кнопки, двойные, в конце</h2>
+            <p>Примеры группировки элементов форм с одинарными текстовыми подписями в начале и в двойными кнопками в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-both">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="field-group-both">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                    <div class="upload upload-group-both">
+                        <input type="file" id="file-8" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <label class="button button-solid button-secondary" for="file-8">Выбрать</label>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-12-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-12-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-12-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-both">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="field-group-both">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+        <div class="upload upload-group-both">
+            <input type="file" id="file-8" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <label class="button button-solid button-secondary" for="file-8">Выбрать</label>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-12-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="both"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup groupPosition="both"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста" /&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="both"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-13">
+        <div class="components-title">
+            <h2>Кнопки, одинарные, в начале и текстовые подписи, одинарные, в конце</h2>
+            <p>Примеры группировки элементов форм с одинарными кнопками в начале и текстовыми подписями, одинарными, в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-both">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-group-both">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <label class="button button-solid button-secondary" for="file-9">Выбрать</label>
+                    </div>
+                    <div class="upload upload-group-both">
+                        <input type="file" id="file-9" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-13-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-13-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-13-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-both">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-group-both">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <label class="button button-solid button-secondary" for="file-9">Выбрать</label>
+        </div>
+        <div class="upload upload-group-both">
+            <input type="file" id="file-9" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-13-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="both"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup groupPosition="both"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+        &lt;/InputGroupPostfix&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="both"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-14">
+        <div class="components-title">
+            <h2>Кнопки, двойные, в начале и текстовые подписи, одинарные, в конце</h2>
+            <p>Примеры группировки элементов форм с двойными кнопками в начале и текстовыми подписями, одинарными, в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-both">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-group-both">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <label class="button button-solid button-secondary" for="file-10">Выбрать</label>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="upload upload-group-both">
+                        <input type="file" id="file-10" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-14-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-14-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-14-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-both">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-group-both">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <label class="button button-solid button-secondary" for="file-10">Выбрать</label>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="upload upload-group-both">
+            <input type="file" id="file-10" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-14-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="start"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup groupPosition="start"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="both"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста" /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-15">
+        <div class="components-title">
+            <h2>Текстовые подписи и кнопки, одинарные, в начале</h2>
+            <p>Примеры группировки элементов форм с одинарными кнопками и текстовыми подписями в начале</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-icon field-icon-postfix field-group-start">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                    </div>
+                    <div class="field-group-start">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="field-group-prefix">
+                        <span class="field-group-text">Пример текста</span>
+                        <label class="button button-solid button-secondary" for="file-11">Выбрать</label>
+                    </div>
+                    <div class="upload upload-group-start">
+                        <input type="file" id="file-11" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-15-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-15-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-15-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-icon field-icon-postfix field-group-start">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+        </div>
+        <div class="field-group-start">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-prefix">
+            <span class="field-group-text">Пример текста</span>
+            <label class="button button-solid button-secondary" for="file-11">Выбрать</label>
+        </div>
+        <div class="upload upload-group-start">
+            <input type="file" id="file-11" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-15-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPrefix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста"&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="start"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста"&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup groupPosition="start"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;InputGroupPrefix text="Пример текста"&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+        &lt;/InputGroupPrefix&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="start"/&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPrefix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-16">
+        <div class="components-title">
+            <h2>Текстовые подписи и кнопки, одинарные, в конце</h2>
+            <p>Примеры группировки элементов форм с одинарными кнопками и текстовыми подписями в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-icon field-icon-postfix field-group-end">
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field mb-24">
+                <div class="field-group">
+                    <div class="field-group-end">
+                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                            <option value="1">Пункт 1</option>
+                            <option value="2">Пункт 2</option>
+                            <option value="3">Пункт 3</option>
+                            <option value="3">Пункт 4</option>
+                        </select>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group">
+                    <div class="upload upload-group-end">
+                        <input type="file" id="file-12" />
+                        <div class="upload-file"></div>
+                        <button class="button button-icon d-none" data-clear-file>
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <label class="button button-solid button-secondary" for="file-12">Выбрать</label>
+                        <span class="field-group-text">Пример текста</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-16-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-16-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-16-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-icon field-icon-postfix field-group-end">
+            <input type="text" placeholder="Введите значение">
+            <button class="field-button field-button-end d-none" data-clear-field>
+                <i class="icon icon-times"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="field-group-end">
+            <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">
+                <option value="1">Пункт 1</option>
+                <option value="2">Пункт 2</option>
+                <option value="3">Пункт 3</option>
+                <option value="3">Пункт 4</option>
+            </select>
+        </div>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-solid button-secondary">Пример кнопки</button>
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+<div class="field">
+    <div class="field-group">
+        <div class="upload upload-group-end">
+            <input type="file" id="file-12" />
+            <div class="upload-file"></div>
+            <button class="button button-icon d-none" data-clear-file>
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+        <div class="field-group-postfix">
+            <label class="button button-solid button-secondary" for="file-12">Выбрать</label>
+            <span class="field-group-text">Пример текста</span>
+        </div>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-16-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field, FieldGroup, FieldInput, InputGroup, InputGroupPostfix, Button} from "../components/Field";
+import {SingleUploader} from "../components/Uploader";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Текстовое поле--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup iconPosition="postfix" groupPosition="end"&gt;
+            &lt;FieldInput type="text" placeholder="Что найти?" clearable={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста"&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup groupPosition="end"&gt;
+            &lt;Select data={options} name="elements" width="100%" allowClear={true} /&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста"&gt;
+            &lt;Button color="secondary"&gt;Пример кнопки&lt;/Button&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+
+&lt;!-- Файловый загрузчик (альтернативный)--&gt;
+&lt;Field&gt;
+    &lt;InputGroup&gt;
+        &lt;FieldGroup&gt;
+            &lt;SingleUploader id="file-1" groupPosition="end"/&gt;
+        &lt;/FieldGroup&gt;
+        &lt;InputGroupPostfix text="Пример текста"&gt;
+            &lt;label htmlFor="file-1" className="button button-solid button-secondary"&gt;Выбрать&lt;/label&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка | Массив</td>
+                                        <td>Текстовая(-ые) подпись(-и)</td>
+                                        <td></td>
+                                        <td>
+                                            Текстовые подписи<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;InputGroupPostfix /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-17">
+        <div class="components-title">
+            <h2>Радиокнопки</h2>
+            <p>Примеры радикнопок</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group field-group-outline">
+                    <label class="radio">
+                        <input type="radio" name="rb" class="radio-input" value="rb1">
+                        <span class="radio-check"></span>
+                        <span class="radio-text">Радиокнопка</span>
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group field-group-outline">
+                    <label class="radio">
+                        <input type="radio" name="rb" class="radio-input" value="rb2" checked>
+                        <span class="radio-check"></span>
+                        <span class="radio-text">Радиокнопка</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-16-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-16-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-16-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Обычная радиокнопка--&gt;
+<div class="field">
+    <div class="field-group field-group-outline">
+        <label class="radio">
+            <input type="radio" name="rb" class="radio-input" value="rb1">
+            <span class="radio-check"></span>
+            <span class="radio-text">Радиокнопка</span>
+        </label>
+    </div>
+</div>
+
+&lt;!-- Выбранная радиокнопка--&gt;
+<div class="field">
+    <div class="field-group field-group-outline">
+        <label class="radio">
+            <input type="radio" name="rb" class="radio-input" value="rb2" checked>
+            <span class="radio-check"></span>
+            <span class="radio-text">Радиокнопка</span>
+        </label>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-16-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field} from "../components/Field";
+import RadioGroup from "./components/Radio";
+const items = [
+    {
+        label: 'Радио 1', // Текстовая метка
+        value: 'r1', // Значение
+    },
+    {
+        label: 'Радио 2',
+        value: 'r2',
+
+    }
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;RadioGroup name="rb" items={items} selected="r2" outline={true} utils="mb-24" /&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-18">
+        <div class="components-title">
+            <h2>Чекбоксы</h2>
+            <p>Примеры чекбоксов</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group field-group-outline">
+                    <label class="checkbox">
+                        <input type="checkbox" name="cb" class="checkbox-input">
+                        <span class="checkbox-check"></span>
+                        <span class="checkbox-text">Чекбокс</span>
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group field-group-outline">
+                    <label class="checkbox">
+                        <input type="checkbox" name="cb" class="checkbox-input" checked>
+                        <span class="checkbox-check"></span>
+                        <span class="checkbox-text">Чекбокс</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-18-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-18-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-18-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Обычный чекбокс--&gt;
+<div class="field">
+    <div class="field-group field-group-outline">
+        <label class="checkbox">
+            <input type="checkbox" name="cb" class="checkbox-input">
+            <span class="checkbox-check"></span>
+            <span class="checkbox-text">Чекбокс</span>
+        </label>
+    </div>
+</div>
+
+&lt;!-- Выбранный чекбокс--&gt;
+<div class="field">
+    <div class="field-group field-group-outline">
+        <label class="checkbox">
+            <input type="checkbox" name="cb" class="checkbox-input" checked>
+            <span class="checkbox-check"></span>
+            <span class="checkbox-text">Чекбокс</span>
+        </label>
+    </div>
+</div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-18-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Field} from "../components/Field";
+import Checkbox from "./components/Checkbox";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Field&gt;
+    &lt;InputGroup outline={true} utils="mb-24"&gt;
+        &lt;Checkbox text="Чекбокс" /&gt;
+    &lt;/InputGroup&gt;
+    &lt;InputGroup outline={true}&gt;
+        &lt;Checkbox text="Чекбокс" checked={true} /&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-19">
+        <div class="components-title">
+            <h2>Комбо</h2>
+            <p>Комбинация селектов и произвольных кнопок-иконок в конце</p>
+        </div>
+        <div class="components-preview">
+            <div class="field mb-24">
+                <div class="field-group field-group-combo">
+                    <select data-select2-width="100%" data-placeholder="Выберите из списка">
+                        <option value=""></option>
+                        <option value="1">Пункт 1</option>
+                        <option value="2">Пункт 2</option>
+                        <option value="3">Пункт 3</option>
+                        <option value="3">Пункт 4</option>
+                    </select>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-icon">
+                            <i class="icon icon-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-group field-group-combo">
+                    <select data-select2-width="100%" data-placeholder="Выберите из списка">
+                        <option value="1">Пункт 1</option>
+                        <option value="2">Пункт 2</option>
+                        <option value="3">Пункт 3</option>
+                        <option value="3">Пункт 4</option>
+                    </select>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-icon">
+                            <i class="icon icon-pencil"></i>
+                        </button>
+                        <button type="button" class="button button-icon">
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="field d-none">
+                <div class="field-group field-group-combo">
+                    <div class="field-icon field-icon-both field-group-end">
+                        <i class="icon icon-eye field-icon-start"></i>
+                        <input type="text" placeholder="Введите значение">
+                        <button class="field-button field-button-end d-none" data-clear-field>
+                            <i class="icon icon-times"></i>
+                        </button>
+                    </div>
+                    <div class="field-group-postfix">
+                        <button type="button" class="button button-icon">
+                            <i class="icon icon-pencil"></i>
+                        </button>
+                        <button type="button" class="button button-icon">
+                            <i class="icon icon-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-19-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-19-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-19-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Невыбранный селект--&gt;
+<div class="field mb-24">
+    <div class="field-group field-group-combo">
+        <select data-select2-width="100%" data-placeholder="Выберите из списка">
+            <option value=""></option>
+            <option value="1">Пункт 1</option>
+            <option value="2">Пункт 2</option>
+            <option value="3">Пункт 3</option>
+            <option value="3">Пункт 4</option>
+        </select>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-icon">
+                <i class="icon icon-plus"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+&lt;!-- Селект с выбранным значением--&gt;
+<div class="field">
+    <div class="field-group field-group-combo">
+        <select data-select2-width="100%" data-placeholder="Выберите из списка">
+            <option value="1">Пункт 1</option>
+            <option value="2">Пункт 2</option>
+            <option value="3">Пункт 3</option>
+            <option value="3">Пункт 4</option>
+        </select>
+        <div class="field-group-postfix">
+            <button type="button" class="button button-icon">
+                <i class="icon icon-pencil"></i>
+            </button>
+            <button type="button" class="button button-icon">
+                <i class="icon icon-trash"></i>
+            </button>
+        </div>
+    </div>
+    </div>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>components/_forms.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-19-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Select from "./components/Select";
+import {Field} from "../components/Field";
+const options = [
+    {text: 'Пункт 1', id: '1'},
+    {text: 'Пункт 2', id: '2'},
+    {text: 'Пункт 3', id: '3'},
+    {text: 'Пункт 4', id: '4'}
+];
+
+const value = ['1'] // id опции
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Невыбранный селект--&gt;
+&lt;Field&gt;
+    &lt;InputGroup combo={true}&gt;
+        &lt;Select data={options} width="100%" placeholder="Выберите из списка" /&gt;
+        &lt;InputGroupPostfix>
+            &lt;Button variant="icon" icon="plus" /&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+
+&lt;!-- Селект с выбранным значением--&gt;
+&lt;Field&gt;
+    &lt;InputGroup combo={true}&gt;
+        &lt;Select data={options} width="100%" placeholder="Выберите из списка" value={value} /&gt;
+        &lt;InputGroupPostfix>
+            &lt;Button variant="icon" icon="plus" /&gt;
+            &lt;Button variant="icon" icon="trash" /&gt;
+        &lt;/InputGroupPostfix&gt;
+    &lt;/InputGroup&gt;
+&lt;/Field&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_forms.scss</code> и <code>components/Field.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="s-100" class="d-none">
+{#            // текстовые + текст (в конце и в начале, двойные)#}
+{#            <div class="field mb-24">#}
+{#                <div class="field-group">#}
+{#                    <div class="field-group-prefix">#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                    </div>#}
+{#                    <div class="field-icon field-icon-postfix field-group-both">#}
+{#                        <input type="text" placeholder="Введите значение">#}
+{#                        <button class="field-button field-button-end d-none" data-clear-field>#}
+{#                            <i class="icon icon-times"></i>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                    <div class="field-group-postfix">#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+{#            // селект + текст (в конце и в начале, двойные)#}
+{#            <div class="field mb-24">#}
+{#                <div class="field-group">#}
+{#                    <div class="field-group-prefix">#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                    </div>#}
+{#                    <div class="field-group-both">#}
+{#                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">#}
+{#                            <option value="1">Пункт 1</option>#}
+{#                            <option value="2">Пункт 2</option>#}
+{#                            <option value="3">Пункт 3</option>#}
+{#                            <option value="3">Пункт 4</option>#}
+{#                        </select>#}
+{#                    </div>#}
+{#                    <div class="field-group-postfix">#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                        <span class="field-group-text">Пример текста</span>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+            {#            // текстовые + кнопка (в конце и в начале, двойные)#}
+{#            <div class="field mb-24">#}
+{#                <div class="field-group">#}
+{#                    <div class="field-group-prefix">#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                    </div>#}
+{#                    <div class="field-icon field-icon-postfix field-group-both">#}
+{#                        <input type="text" placeholder="Введите значение">#}
+{#                        <button class="field-button field-button-end d-none" data-clear-field>#}
+{#                            <i class="icon icon-times"></i>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                    <div class="field-group-postfix">#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+{#            // селект + кнопка (в конце и в начале, двойные)#}
+{#            <div class="field mb-24">#}
+{#                <div class="field-group">#}
+{#                    <div class="field-group-prefix">#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                    </div>#}
+{#                    <div class="field-icon field-icon-postfix field-group-both">#}
+{#                        <select data-select2-width="100%" data-select2-clear="true" data-placeholder="Выберите из списка">#}
+{#                            <option value="1">Пункт 1</option>#}
+{#                            <option value="2">Пункт 2</option>#}
+{#                            <option value="3">Пункт 3</option>#}
+{#                            <option value="3">Пункт 4</option>#}
+{#                        </select>#}
+{#                    </div>#}
+{#                    <div class="field-group-postfix">#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+{#            // загрузчик + кнопка (в конце и в начале, двойные)#}
+{#            <div class="field mb-24">#}
+{#                <div class="field-group">#}
+{#                    <div class="field-group-prefix">#}
+{#                        <label class="button button-solid button-secondary">#}
+{#                            Пример кнопки#}
+{#                            <input type="file" id="file-1" data-files="#filelist-6" />#}
+{#                        </label>#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                    </div>#}
+
+{#                    <div class="upload upload-group-both" id="filelist-6">#}
+{#                        <div class="upload-file"></div>#}
+{#                        <button class="button button-icon d-none" data-clear-file>#}
+{#                            <i class="icon icon-trash"></i>#}
+{#                        </button>#}
+{#                    </div>#}
+{#                    <div class="field-group-postfix">#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                        <button type="button" class="button button-solid button-secondary">Пример кнопки</button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+
+{% endblock %}

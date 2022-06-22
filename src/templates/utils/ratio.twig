@@ -1,0 +1,103 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'ratio' %}
+{% set heder_menu_active_item = 'utils' %}
+{% block title %}Соотношение сторон{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">Утилиты</li>
+        <li class="breadcrumbs-separator">/</li>
+        <li class="breadcrumbs-item">
+            <a href="ratio.html" class="breadcrumbs-link">Соотношение сторон</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Соотношение сторон</h1>
+    <span class="tagline">Управляет соотношением сторон</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Соотношение сторон</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Соотношение сторон</h2>
+            <p>Устанавливает предпочтительное соотношение сторон для блока, которое будет использоваться при вычислении автоматических размеров и некоторых других функциях компоновки</p>
+        </div>
+        <div class="components-preview">
+            <div class="row mb-24">
+                <div class="col-4">
+                    <div class="ratio-1-1" style="display: flex; align-items: center; justify-content: center; background-color: rgb(254, 229, 219);">1:1</div>
+                </div>
+                <div class="col-4">
+                    <div class="ratio-16-9" style="display: flex; align-items: center; justify-content: center; background-color: rgb(254, 229, 219);">16:9</div>
+                </div>
+                <div class="col-4">
+                    <div class="ratio-9-16" style="display: flex; align-items: center; justify-content: center; background-color: rgb(254, 229, 219);">9:16</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="ratio-4-3" style="display: flex; align-items: center; justify-content: center; background-color: rgb(254, 229, 219);">4:3</div>
+                </div>
+                <div class="col-4">
+                    <div class="ratio-3-4" style="display: flex; align-items: center; justify-content: center; background-color: rgb(254, 229, 219);">3:4</div>
+                </div>
+            </div>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<div class="ratio-1-1">1:1</div>
+<div class="ratio-16-9">16:9</div>
+<div class="ratio-9-16">9:16</div>
+<div class="ratio-4-3">4:3</div>
+<div class="ratio-3-4">3:4</div>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/uils/_ratio.scss</code>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

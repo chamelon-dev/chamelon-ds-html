@@ -1,0 +1,560 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Редактирование заявления ГИМС - Design Sys</title><link rel="stylesheet" href="../css/docs.css"><style>.show-loader{overflow:hidden;padding-right:17px;}.preloader{background-color:#fff;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000}.preloader-loader{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%)}.preloader-loader .logo{margin:0}.preloader .logo a{padding:12px 48px;color:#fff;background:linear-gradient(to right,#818997 0,#fff 10%,#818997 20%);background-position:0;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s infinite linear;animation-fill-mode:forwards;-webkit-text-size-adjust:none;font-weight:600;text-decoration:none;white-space:nowrap;font-size:36px}.preloader .logo a span{vertical-align:super;top:-.5em;font-size:75%}.preloader .logo+p{text-align:center;color:#dbdfe6}@-moz-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-webkit-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-o-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}</style><script defer="defer" src="../js/theme.js"></script><link href="../css/style.css" rel="stylesheet"></head><body class="layout-sidebar show-loader"><div class="preloader"><div class="preloader-loader"><div class="logo"><a href="/">Design<span>sys</span></a></div><p>Пожалуйста, подождите...</p></div></div><div class="wrapper-outer"><div class="wrapper"><header class="header"><div class="container-fluid"><div class="row"><div class="col-12"><div class="navbar"><div class="logo"><a href="../index.html">Design<sup>sys</sup></a></div><button data-toggle-header class="button button-icon"><i class="icon icon-bars"></i></button><nav class="horizontal-menu"><div class="menu-left"><ul><li><a href="../index.html"><span class="menu-label">Начало</span></a></li><li><a href="../components/template.html"><span class="menu-label">Компоненты</span></a></li><li><a href="../utils/margins.html"><span class="menu-label">Утилиты</span></a></li><li><a href="../examples/index.html" class="active"><span class="menu-label">Примеры</span></a></li></ul></div><div class="menu-right"><div class="switcher"><div data-tooltip="Aqua (по-умолчанию)" data-placement="bottom"><label class="switcher-label theme-default"><input type="radio" name="theme" value="default" class="switcher-input" checked="checked"/> <span class="switcher-check"></span></label></div><div data-tooltip="Flavum" data-placement="bottom"><label class="switcher-label theme-flavum"><input type="radio" name="theme" value="flavum" class="switcher-input"/> <span class="switcher-check"></span></label></div><div data-tooltip="Ferrum" data-placement="bottom"><label class="switcher-label theme-ferrum"><input type="radio" name="theme" value="ferrum" class="switcher-input"/> <span class="switcher-check"></span></label></div></div><div class="version"><span class="d-inline-block mr-8">HTML</span> <label class="toggle"><input type="checkbox" name="version" class="toggle-input"> <span class="toggle-check"></span></label> <span class="d-inline-block ml-8">React</span></div></div></nav></div></div></div></div></header><div class="content"><div class="container h-100"><div class="row h-100"><div class="col-12"><div class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">Начало</a></li><li class="breadcrumbs-item"><a href="/examples/index.html" class="breadcrumbs-link">Примеры</a></li><li class="breadcrumbs-item"><a href="application_gims_edit.html" class="breadcrumbs-link">Редактирование заявления ГИМС</a></li></ul></div></div><div class="col-12"><div class="title"><h1>Редактирование заявления ГИМС</h1><a href="../preview/application_gims_edit.html" class="button button button-solid button-primary" target="_blank">Просмотр</a></div></div><div class="col-12 h-100"><section id="s-1"><div class="components-code"><pre>
+                <code class="language-html">
+<textarea>
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Заявление № ГИМС-03-146 от 15.09.2021</title>
+        <script defer="defer" src="//ds.dev.cgu.iac.mchs.ru/js/theme.js"></script>
+        <link href="//ds.dev.cgu.iac.mchs.ru/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="layout-center">
+        <div class="wrapper-outer">
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="navbar">
+                                    <div class="logo">
+                                        <a href="#">Название системы</a>
+                                    </div>
+                                    <button data-toggle-header class="button button-icon">
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    <nav class="horizontal-menu">
+                                        <div class="menu-left">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-image menu-prefix"></i>
+                                                        <span class="menu-label">Пункт 1</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="active">
+                                                        <i class="icon icon-image menu-prefix"></i>
+                                                        <span class="menu-label">Пункт 2</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-image menu-prefix"></i>
+                                                        <span class="menu-label">Пункт 3</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-image menu-prefix"></i>
+                                                        <span class="menu-label">Пункт 4</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-right">
+                                            <ul>
+                                                <li tabindex="0">
+                                                    <a href="#">
+                                                        <i class="icon icon-user menu-prefix"></i>
+                                                        <span class="menu-label">Администратор</span>
+                                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Профиль</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Выход</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="breadcrumbs">
+                                    <ul class="breadcrumbs-list">
+                                        <li class="breadcrumbs-item">
+                                            <a href="#" class="breadcrumbs-link">Главная</a>
+                                        </li>
+                                        <li class="breadcrumbs-item">
+                                            <a href="#" class="breadcrumbs-link">Пункт 2</a>
+                                        </li>
+                                        <li class="breadcrumbs-item">
+                                            <a href="#" class="breadcrumbs-link">Заявление № ГИМС-03-146 от 15.09.2021</a>
+                                        </li>
+                                        <li class="breadcrumbs-item">Редактирование</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="title">
+                                    <h1 class="d-flex align-items-center">
+                                        Заявление № ГИМС-03-146 от 15.09.2021
+                                        <a href="#" class="button button-icon button-active ml-8">
+                                            <i class="icon icon-pencil"></i>
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="tabnav">
+                                    <nav class="tabnav-menu justify-content-between">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="active">Заявление</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Управление отображением</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Выписки</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Начисления</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Редакции</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Тесты</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Devel</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Активность</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6">
+                                            <div class="infoblock infoblock-editable accent mb-16">
+                                                <div class="infoblock-title">
+                                                    <h3>Регистрационная информация</h3>
+                                                </div>
+                                                <div class="infoblock-content">
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="LA7mW6w">Id</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="id" id="LA7mW6w" value="9881dfa2-d8f2-11eb-9976-c23858e58c75">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="IDtjRxI">Государственная услуга</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Государственная услуга" id="IDtjRxI" value="Получение удостоверения на право управления маломерным судном">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12 pb-16">
+                                                                <div class="field">
+                                                                    <label for="N24BPJk">Организация</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Организация" id="N24BPJk" value="ГУ МЧС России по Тверской области">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="srcB3CP">Подразделение</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Подразделение" id="srcB3CP" value="Тверское инспекторское отделения">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12 pb-16">
+                                                                <div class="field">
+                                                                    <label for="Fxl7XPa">Поступление заявления</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Поступление заявления" id="Fxl7XPa" value="Личный приём">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12 pb-16">
+                                                                <div class="field">
+                                                                    <label for="NEdGfkm">Дата поступления</label>
+                                                                    <div class="field-icon field-icon-double-postfix">
+                                                                        <input placeholder="Дата поступления" id="NEdGfkm" value="08.09.2021" data-calendar>
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                        <button type="button" class="field-button field-button-end" data-calendar-open>
+                                                                            <i class="icon icon-calendar"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="6gxz8q0">Дата регистрации</label>
+                                                                    <div class="field-icon field-icon-double-postfix">
+                                                                        <input placeholder="Дата регистрации" id="6gxz8q0" value="15.09.2021" data-calendar>
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                        <button type="button" class="field-button field-button-end" data-calendar-open>
+                                                                            <i class="icon icon-calendar"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="A2wCbDA">Номер регистрации</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Номер регистрации" id="A2wCbDA" value="ГИМС-03-146">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="a21WQ4X">Регистратор заявления</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Регистратор заявления" id="a21WQ4X" value="Груздева Светлана Владимировна">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="FFvCPWe">Ответственный исполнитель</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Ответственный исполнитель" id="FFvCPWe" value="Груздева Светлана Владимировна">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="07XAXaK">Статус</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Статус" id="07XAXaK" value="На исполнении">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <div class="infoblock infoblock-editable accent mb-16">
+                                                <div class="infoblock-title">
+                                                    <h3>Заявитель</h3>
+                                                </div>
+                                                <div class="infoblock-content">
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="5Rrwko3">Заявитель</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Заявитель" id="5Rrwko3" value="Шкипарев Дмитрий Владимирович">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="uploader">
+                                                                    <label>Фото</label>
+                                                                    <div class="uploader-area">Перетащите файл сюда или
+                                                                        <label class="uploader-label">загрузите
+                                                                            <input type="file" name="avatar" class="uploader-input">
+                                                                        </label>
+                                                                        с устройства.
+                                                                    </div>
+                                                                    <div class="uploader-filelist uploader-exist">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <div class="avatar avatar-24 avatar-rounded mv-4 mr-4">
+                                                                                    <img src="/images/photo.jpg" alt="Photo555.jpg" title="Photo555.jpg">
+                                                                                </div>
+                                                                                <a href="#" title="Photo555.jpg"><span>Photo555.jpg</span></a>
+                                                                                &nbsp;<span>(10 КБ)</span>
+                                                                                <button type="button" class="button button-icon" data-tooltip="Удалить" data-flow="up-right">
+                                                                                    <i class="icon icon-trash"></i>
+                                                                                </button>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="uploader-filelist">
+                                                                        <ul></ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="infoblock infoblock-editable accent mb-16">
+                                                <div class="infoblock-title">
+                                                    <h3>Аттестация</h3>
+                                                </div>
+                                                <div class="infoblock-content">
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label for="KtZJZK4">Ситуация</label>
+                                                                    <div class="field-icon field-icon-postfix">
+                                                                        <input placeholder="Ситуация" id="KtZJZK4" value="Первичное получение права на управление маломерным судном">
+                                                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                                                            <i class="icon icon-times"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label>Разрешённые районы плавания</label>
+                                                                    <select multiple="multiple" name="name1" data-select2-width="100%">
+                                                                        <option value="1" selected="selected">Внутренние воды</option>
+                                                                        <option value="2" selected="selected">Внутренние морские воды и территории</option>
+                                                                        <option value="3" selected="selected">Внутренние водные пути Российской Федерации</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="field pb-16">
+                                                                    <label>Разрешённые типы судов</label>
+                                                                    <select multiple="multiple" name="name2" data-select2-width="100%">
+                                                                        <option value="1" selected="selected">Маломерное моторное судно</option>
+                                                                        <option value="2" selected="selected">Гидроцикл</option>
+                                                                        <option value="3" selected="selected">Лайнер</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="infoblock infoblock-editable accent">
+                                                <div class="infoblock-title">
+                                                    <h3>Приложенные документы</h3>
+                                                </div>
+                                                <div class="infoblock-content">
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="uploader">
+                                                                    <label>Медицинская справка</label>
+                                                                    <div class="uploader-area">Перетащите файл сюда или
+                                                                        <label class="uploader-label">загрузите
+                                                                            <input type="file" name="medical" class="uploader-input"></label>
+                                                                        с устройства.
+                                                                    </div>
+                                                                    <div class="uploader-filelist">
+                                                                        <ul></ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="uploader">
+                                                                    <label>Заявление</label>
+                                                                    <div class="uploader-area">
+                                                                        Перетащите файл сюда или
+                                                                        <label class="uploader-label">загрузите
+                                                                            <input type="file" name="declaration" class="uploader-input">
+                                                                        </label>
+                                                                        с устройства.
+                                                                    </div>
+                                                                    <div class="uploader-filelist uploader-exist">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <i class="icon icon-file"></i>
+                                                                                <a href="#" title="Заявление.pdf"><span>Заявление.pdf</span></a>
+                                                                                &nbsp;<span>(1021 Б)</span>
+                                                                                <button type="button" class="button button-icon" data-tooltip="Удалить" data-flow="up-right">
+                                                                                    <i class="icon icon-trash"></i>
+                                                                                </button>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="uploader-filelist">
+                                                                        <ul></ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-row">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="uploader">
+                                                                    <label>Документ об оплате пошлины</label>
+                                                                    <div class="uploader-area">Перетащите файл сюда или
+                                                                        <label class="uploader-label">
+                                                                            загрузите
+                                                                            <input type="file" name="tax" class="uploader-input">
+                                                                        </label>
+                                                                        с устройства.
+                                                                    </div>
+                                                                    <div class="uploader-filelist uploader-exist">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <i class="icon icon-file"></i>
+                                                                                <a href="#" title="Шкипарев квитанция.pdf"><span>Шкипарев квитанция.pdf</span></a>
+                                                                                &nbsp;<span>(46.73 КБ)</span>
+                                                                                <button type="button" class="button button-icon" data-tooltip="Удалить" data-flow="up-right">
+                                                                                    <i class="icon icon-trash"></i>
+                                                                                </button>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="uploader-filelist">
+                                                                        <ul></ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sticky-footer">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="d-flex align-items-center">
+                                                            <a href="#" class="button button-solid button-secondary mr-16">Отмена</a>
+                                                            <button type="submit" class="button button-solid button-primary" form="form">Сохранить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                                <div class="footer-copyrights">&copy; Design<sup>sys</sup>, 2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre></div></section></div></div></div></div><footer class="footer"><div class="container-fluid"><div class="row"><div class="col-12 col-xxl-6 order-2 order-xxl-1"><div class="footer-copyrights">© Design<sup>sys</sup>, 2022</div></div></div></div></footer></div><div class="scroll-top"><a href="#" class="button button-solid button-primary" data-prevent><i class="icon icon-arrow-up"></i></a></div></div><script defer="defer" src="../js/prism.js"></script><script defer="defer" src="../js/docs.js"></script></body></html>

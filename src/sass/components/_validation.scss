@@ -1,0 +1,33 @@
+.validation {
+  &-message {
+    margin: rem(8) 0 0 0;
+    font-size: rem(12);
+    line-height: 70%;
+  }
+  &-error {
+    .field-hint {
+      color: var(--form-validation-error-message-color);
+    }
+    input:not([type='checkbox']),
+    input:not([type='radio']){
+      border-color: var(--form-validation-error-border-color) !important;
+      background-color: var(--form-validation-error-bg) !important;
+    }
+    .icon {
+      color: var(--form-validation-error-message-color) !important;
+    }
+  }
+  &-success {
+    .field-hint {
+      color: var(--form-validation-success-message-color);
+    }
+    input:not([type='checkbox']),
+    input:not([type='radio']){
+      border-color: var(--form-validation-success-border-color) !important;
+      background-color: var(--form-success-error-bg) !important;
+    }
+    .icon {
+      color: var(--form-validation-success-message-color) !important;
+    }
+  }
+}

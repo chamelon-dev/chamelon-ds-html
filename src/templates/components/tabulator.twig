@@ -1,0 +1,775 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'tabulator' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Табулатор{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+    <script src="https://unpkg.com/tabulator-tables@5.1.0/dist/js/tabulator.min.js"></script>
+    <script>
+        let tableData = [
+            {name: '<a href="#">по Кировской области</a>', fo: 'Приволжский ФО', garnizon: '—', _children: [
+                    {name: '<a href="#">Арбатский</a>', fo: 'Приволжский ФО', garnizon: 'Арбатский'},
+                    {name: '<a href="#">Афанасьевский</a>', fo: 'Приволжский ФО', garnizon: 'Афанасьевский'},
+                    {name: '<a href="#">Верхнекамский</a>', fo: 'Приволжский ФО', garnizon: 'Верхнекамский'},
+                    {name: '<a href="#">Вятскополянский</a>', fo: 'Приволжский ФО', garnizon: 'Вятскополянский', _children: [
+                            {name: '<a href="#">Вятскополянский 2</a>', fo: 'Приволжский ФО', garnizon: 'Кирово-Чепецкий'},
+                            {name: '<a href="#">Вятскополянский Центральный</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+                        ]},
+                    {name: '<a href="#">Даровский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский', _children: [
+                            {name: '<a href="#">Зуевский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+                        ]},
+                ]},
+            {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+        ]
+    </script>
+{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="tabulator.html" class="breadcrumbs-link">Табулатор</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Табулатор</h1>
+    <span class="tagline">Компонент позволяет создавать интерактивные таблицы за секунды из любой таблицы HTML, массива JavaScript, источника данных AJAX или данных в формате JSON.<br>Дополнительная информация - <a href="http://tabulator.info/" target="_blank">http://tabulator.info/</a></span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Интерактивная таблица (js)</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Таблица с вложенными данными (js)</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Интерактивная таблица (html)</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Интерактивная таблица (js)</h2>
+            <p>Пример использования интерактивной таблицы, построенной из JSON-объекта</p>
+        </div>
+        <div class="components-preview">
+            <div id="example-table"></div>
+            <script>
+                let table = new Tabulator("#example-table", {
+                    data: tableData,
+                    layout: 'fitColumns',
+                    pagination: 'local',
+                    paginationSize: 10,
+                    paginationSizeSelector:[2, 25, 50, 100],
+                    paginationCounter: "pages",
+                    locale: 'ru-ru',
+                    resizableColumns: false,
+                    columns: [
+                        {title: "Формирования", field: "name", formatter: 'html', },
+                        {title: "Федеральный округ РФ ", field: "fo", },
+                        {title: "Местное управление ", field: "garnizon", },
+                    ],
+                    langs: {
+                        'ru-ru': {
+                            'pagination':{
+                                'first': '<i class="icon icon-first"></i>',
+                                'first_title': 'Первая страница',
+                                'last': '<i class="icon icon-last"></i>',
+                                'last_title': 'Последняя страница',
+                                'prev': '<i class="icon icon-chevron-left"></i>',
+                                'prev_title': 'Назад',
+                                'next': '<i class="icon icon-chevron-right"></i>',
+                                'next_title': 'Вперед',
+                                'page_title': 'Страница ',
+                                'all': 'Все',
+                                'page_size': 'Результатов на странице',
+                                'counter': {
+                                    'showing': 'Страница',
+                                    'of': 'из',
+                                    'rows': 'rows',
+                                    'pages': '',
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Подключения плагина --&gt;
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
+
+&lt;!-- Элемент, в который будет вставлена построенная таблица --&gt;
+<div id="example-table"></div>
+
+<script>
+// JSON-объект, из которого будет построена таблица
+let tableData = [
+    {name: '<a href="#">по Кировской области</a>', fo: 'Приволжский ФО', garnizon: '—', _children: [
+        {name: '<a href="#">Арбатский</a>', fo: 'Приволжский ФО', garnizon: 'Арбатский'},
+        {name: '<a href="#">Афанасьевский</a>', fo: 'Приволжский ФО', garnizon: 'Афанасьевский'},
+        {name: '<a href="#">Верхнекамский</a>', fo: 'Приволжский ФО', garnizon: 'Верхнекамский'},
+        {name: '<a href="#">Вятскополянский</a>', fo: 'Приволжский ФО', garnizon: 'Вятскополянский', _children: [
+                {name: '<a href="#">Вятскополянский 2</a>', fo: 'Приволжский ФО', garnizon: 'Кирово-Чепецкий'},
+                {name: '<a href="#">Вятскополянский Центральный</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        {name: '<a href="#">Даровский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский', _children: [
+                {name: '<a href="#">Зуевский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        ]
+    },
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'}
+]
+
+// Инициализация плагина с параметрами
+let table = new Tabulator("#example-table", {
+    data: tableData,
+    layout: 'fitDataFill',
+    pagination: 'local',
+    paginationSize: 10,
+    paginationSizeSelector:[2, 25, 50, 100],
+    paginationCounter: "pages",
+    locale: 'ru-ru',
+    resizableColumns: false,
+    columns: [
+        {title: "Формирования", field: "name", formatter: 'html'},
+        {title: "Федеральный округ РФ ", field: "fo"},
+        {title: "Местное управление ", field: "garnizon"},
+    ],
+    langs: {
+        'ru-ru': {
+            'pagination':{
+                'first': '<i class="icon icon-first"></i>',
+                'first_title': 'Первая страница',
+                'last': '<i class="icon icon-last"></i>',
+                'last_title': 'Последняя страница',
+                'prev': '<i class="icon icon-chevron-left"></i>',
+                'prev_title': 'Назад',
+                'next': '<i class="icon icon-chevron-right"></i>',
+                'next_title': 'Вперед',
+                'page_title': 'Страница ',
+                'all': 'Все',
+                'page_size': 'Результатов на странице',
+                'counter': {
+                    'showing': 'Страница',
+                    'of': 'из',
+                    'rows': 'rows',
+                    'pages': '',
+                }
+            }
+        }
+    }
+});
+</script>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabulator.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Tabulator from "./components/Tabulator";
+let tableData = [
+    {name: '<a href="#">по Кировской области</a>', fo: 'Приволжский ФО', garnizon: '—', _children: [
+        {name: '<a href="#">Арбатский</a>', fo: 'Приволжский ФО', garnizon: 'Арбатский'},
+        {name: '<a href="#">Афанасьевский</a>', fo: 'Приволжский ФО', garnizon: 'Афанасьевский'},
+        {name: '<a href="#">Верхнекамский</a>', fo: 'Приволжский ФО', garnizon: 'Верхнекамский'},
+        {name: '<a href="#">Вятскополянский</a>', fo: 'Приволжский ФО', garnizon: 'Вятскополянский', _children: [
+                {name: '<a href="#">Вятскополянский 2</a>', fo: 'Приволжский ФО', garnizon: 'Кирово-Чепецкий'},
+                {name: '<a href="#">Вятскополянский Центральный</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        {name: '<a href="#">Даровский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский', _children: [
+                {name: '<a href="#">Зуевский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        ]
+    },
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'}
+]
+
+const columns = [
+    {title: "Формирования", field: "name", formatter: 'html'},
+    {title: "Федеральный округ РФ ", field: "fo"},
+    {title: "Местное управление ", field: "garnizon"},
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tabulator data={tableData} columns={columns} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>data</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов,содержащих строки и ячейки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>columns</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащих название колонок</td>
+                                    </tr>
+                                    <tr>
+                                        <td>paginationSize</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>10</td>
+                                        <td>Количество строк на каждой странице</td>
+                                    </tr>
+                                    <tr>
+                                        <td>resizableColumns</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Разрешить изменять размер столбцов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>layout</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>fitDataFill</td>
+                                        <td>
+                                            Расположение столбцов в таблице<br><br>
+                                            <code>fitData</code> - подогнать столбцы к данным<br>
+                                            <code>fitDataFill</code> - подобрать столбцы по размеру данных и заполнить<br>
+                                            <code>fitDataStretch</code> - подогнать столбцы к данным и растянуть последний столбец<br>
+                                            <code>fitDataTable</code> - подогнать таблицу и столбцы к данным<br>
+                                            <code>fitColumns</code> - подобрать столбцы по ширине таблицы
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabulator.scss</code> и <code>components/Tabulator.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Таблица с вложенными данными (js)</h2>
+            <p>Пример использования интерактивной таблицы c вложенными данными, построенной из JSON-объекта</p>
+        </div>
+        <div class="components-preview">
+            <div id="example-tree"></div>
+            <script>
+                let tableTree = new Tabulator("#example-tree", {
+                    data: tableData,
+                    dataTree: true,
+                    dataTreeChildIndent: 0,
+                    layout: 'fitColumns',
+                    pagination: 'local',
+                    paginationSize: 10,
+                    locale: 'ru-ru',
+                    resizableColumns: false,
+                    columns: [
+                        {title: "Формирования", field: "name", formatter: 'html'},
+                        {title: "Федеральный округ РФ ", field: "fo", formatter: 'html'},
+                        {title: "Местное управление ", field: "garnizon", formatter: 'html'},
+                    ],
+                    langs: {
+                        'ru-ru': {
+                            'pagination':{
+                                'first': '<i class="icon icon-first"></i>',
+                                'first_title': 'Первая страница',
+                                'last': '<i class="icon icon-last"></i>',
+                                'last_title': 'Последняя страница',
+                                'prev': '<i class="icon icon-chevron-left"></i>',
+                                'prev_title': 'Назад',
+                                'next': '<i class="icon icon-chevron-right"></i>',
+                                'next_title': 'Вперед',
+                                'page_title': 'Страница ',
+                                'all': 'Все',
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Подключения плагина --&gt;
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
+
+&lt;!-- Элемент, в который будет вставлена построенная таблица --&gt;
+<div id="example-tree"></div>
+
+<script>
+// JSON-объект, из которого будет построена таблица
+let tableData = [
+    {name: '<a href="#">по Кировской области</a>', fo: 'Приволжский ФО', garnizon: '—', _children: [
+        {name: '<a href="#">Арбатский</a>', fo: 'Приволжский ФО', garnizon: 'Арбатский'},
+        {name: '<a href="#">Афанасьевский</a>', fo: 'Приволжский ФО', garnizon: 'Афанасьевский'},
+        {name: '<a href="#">Верхнекамский</a>', fo: 'Приволжский ФО', garnizon: 'Верхнекамский'},
+        {name: '<a href="#">Вятскополянский</a>', fo: 'Приволжский ФО', garnizon: 'Вятскополянский', _children: [
+                {name: '<a href="#">Вятскополянский 2</a>', fo: 'Приволжский ФО', garnizon: 'Кирово-Чепецкий'},
+                {name: '<a href="#">Вятскополянский Центральный</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        {name: '<a href="#">Даровский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский', _children: [
+                {name: '<a href="#">Зуевский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        ]
+    },
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'}
+]
+
+// Инициализация плагина с параметрами
+let table = new Tabulator("#example-tree", {
+    data: tableData,
+    dataTree: true,
+    dataTreeChildIndent: 0,
+    layout: 'fitDataFill',
+    pagination: 'local',
+    paginationSize: 10,
+    locale: 'ru-ru',
+    resizableColumns: false,
+    columns: [
+        {title: "Формирования", field: "name", formatter: 'html'},
+        {title: "Федеральный округ РФ ", field: "fo"},
+        {title: "Местное управление ", field: "garnizon"},
+    ],
+    langs: {
+        'ru-ru': {
+            'pagination':{
+                'first': '<i class="icon icon-first"></i>',
+                'first_title': 'Первая страница',
+                'last': '<i class="icon icon-last"></i>',
+                'last_title': 'Последняя страница',
+                'prev': '<i class="icon icon-chevron-left"></i>',
+                'prev_title': 'Назад',
+                'next': '<i class="icon icon-chevron-right"></i>',
+                'next_title': 'Вперед',
+                'page_title': 'Страница ',
+                'all': 'Все',
+            }
+        }
+    }
+});
+</script>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabulator.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Tabulator from "./components/Tabulator";
+const tableData = [
+    {name: '<a href="#">по Кировской области</a>', fo: 'Приволжский ФО', garnizon: '—', _children: [
+        {name: '<a href="#">Арбатский</a>', fo: 'Приволжский ФО', garnizon: 'Арбатский'},
+        {name: '<a href="#">Афанасьевский</a>', fo: 'Приволжский ФО', garnizon: 'Афанасьевский'},
+        {name: '<a href="#">Верхнекамский</a>', fo: 'Приволжский ФО', garnizon: 'Верхнекамский'},
+        {name: '<a href="#">Вятскополянский</a>', fo: 'Приволжский ФО', garnizon: 'Вятскополянский', _children: [
+                {name: '<a href="#">Вятскополянский 2</a>', fo: 'Приволжский ФО', garnizon: 'Кирово-Чепецкий'},
+                {name: '<a href="#">Вятскополянский Центральный</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        {name: '<a href="#">Даровский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский', _children: [
+                {name: '<a href="#">Зуевский</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+            ]},
+        ]
+    },
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Московской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+    {name: '<a href="#">по Ленинградской области</a>', fo: 'Приволжский ФО', garnizon: 'Кировский'},
+]
+
+const columns = [
+    {title: "Формирования", field: "name", formatter: 'html'},
+    {title: "Федеральный округ РФ ", field: "fo"},
+    {title: "Местное управление ", field: "garnizon"},
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Tabulator data={tableData} columns={columns} dataTree={true} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>data</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов,содержащих строки и ячейки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>columns</td>
+                                        <td>Массив объектов</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащих название колонок</td>
+                                    </tr>
+                                    <tr>
+                                        <td>dataTree</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Включить макет раскрывающегося дерева</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_tabulator.scss</code> и <code>components/Tabulator.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Интерактивная таблица (html)</h2>
+            <p>Пример использования интерактивной таблицы, построенной из HTML-таблицы</p>
+        </div>
+        <div class="components-preview">
+            <table id="example-html">
+                <thead>
+                    <tr>
+                        <th tabulator-formatter="html">Название</th>
+                        <th> Характер</th>
+                        <th>Зона</th>
+                        <th>Статус </th>
+                        <th>Дата начала </th>
+                        <th>Дата регистрации </th>
+                        <th>Дата завершения </th>
+                        <th>Код ЕСНСИ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">Тестовое </a></td>
+                        <td>Межрегиональный</td>
+                        <td>г Москва</td>
+                        <td>Активно</td>
+                        <td>30.07.2021</td>
+                        <td>30.07.2021</td>
+                        <td>30.07.2021</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Тестовое </a></td>
+                        <td>Межрегиональный</td>
+                        <td>г Москва</td>
+                        <td>Активно</td>
+                        <td>30.07.2021</td>
+                        <td>30.07.2021</td>
+                        <td>30.07.2021</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Тестовое </a></td>
+                        <td>Межрегиональный</td>
+                        <td>г Москва</td>
+                        <td>Активно</td>
+                        <td>30.07.2021</td>
+                        <td>30.07.2021</td>
+                        <td>30.07.2021</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script>
+                let tableHtml = new Tabulator("#example-html", {
+                    layout: 'fitColumns',
+                    pagination: 'local',
+                    paginationSize: 10,
+                    locale: 'ru-ru',
+                    resizableColumns: false,
+                    langs: {
+                        'ru-ru': {
+                            'pagination':{
+                                'first': '<i class="icon icon-first"></i>',
+                                'first_title': 'Первая страница',
+                                'last': '<i class="icon icon-last"></i>',
+                                'last_title': 'Последняя страница',
+                                'prev': '<i class="icon icon-chevron-left"></i>',
+                                'prev_title': 'Назад',
+                                'next': '<i class="icon icon-chevron-right"></i>',
+                                'next_title': 'Вперед',
+                                'page_title': 'Страница ',
+                                'all': 'Все',
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+&lt;!-- Подключения плагина --&gt;
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
+
+&lt;!-- HTML-таблица из которых будет построена новая, интерактивная таблица --&gt;
+<table id="example-table">
+    <thead>
+        <tr>
+            <th tabulator-formatter="html">Название</th>
+            <th> Характер</th>
+            <th>Зона</th>
+            <th>Статус </th>
+            <th>Дата начала </th>
+            <th>Дата регистрации </th>
+            <th>Дата завершения </th>
+            <th>Код ЕСНСИ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#">Тестовое </a></td>
+            <td>Межрегиональный</td>
+            <td>г Москва</td>
+            <td>Активно</td>
+            <td>30.07.2021</td>
+            <td>30.07.2021</td>
+            <td>30.07.2021</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td><a href="#">Тестовое </a></td>
+            <td>Межрегиональный</td>
+            <td>г Москва</td>
+            <td>Активно</td>
+            <td>30.07.2021</td>
+            <td>30.07.2021</td>
+            <td>30.07.2021</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td><a href="#">Тестовое </a></td>
+            <td>Межрегиональный</td>
+            <td>г Москва</td>
+            <td>Активно</td>
+            <td>30.07.2021</td>
+            <td>30.07.2021</td>
+            <td>30.07.2021</td>
+            <td>2</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+// Инициализация плагина с параметрами
+let table = new Tabulator("#example-table", {
+    layout: 'fitDataFill',
+    pagination: 'local',
+    paginationSize: 10,
+    locale: 'ru-ru',
+    resizableColumns: false,
+    langs: {
+        'ru-ru': {
+            'pagination':{
+                'first': '<i class="icon icon-first"></i>',
+                'first_title': 'Первая страница',
+                'last': '<i class="icon icon-last"></i>',
+                'last_title': 'Последняя страница',
+                'prev': '<i class="icon icon-chevron-left"></i>',
+                'prev_title': 'Назад',
+                'next': '<i class="icon icon-chevron-right"></i>',
+                'next_title': 'Вперед',
+                'page_title': 'Страница ',
+                'all': 'Все',
+            }
+        }
+    }
+});
+</script>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/components/_tabulator.scss</code>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

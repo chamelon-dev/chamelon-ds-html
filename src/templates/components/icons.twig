@@ -1,0 +1,583 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'icons' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Иконки{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="icons.html" class="breadcrumbs-link">Иконки</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block pagetitle %}
+    <div class="title d-block">
+        <h1>Иконки</h1>
+        <span class="tagline">Компонент предназначен для добаления в интерфейс графических элементов, способствующих улучшению восприятия представленной информации.</span>
+    </div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Иконки форм</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Иконки действия в таблицах</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Иконки управления</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Иконки-иллюстрации</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+{% block content %}
+
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Иконки форм</h2>
+            <p>Предназначены для использования с элементами форм</p>
+        </div>
+        <div class="components-preview">
+            <i class="icon icon-calendar"></i>
+            <i class="icon icon-search"></i>
+            <i class="icon icon-chevron-down"></i>
+            <i class="icon icon-chevron-up"></i>
+            <i class="icon icon-chevron-left"></i>
+            <i class="icon icon-chevron-right"></i>
+            <i class="icon icon-warning"></i>
+            <i class="icon icon-question"></i>
+            <i class="icon icon-error"></i>
+            <i class="icon icon-minus"></i>
+            <i class="icon icon-plus"></i>
+            <i class="icon icon-check"></i>
+            <i class="icon icon-file"></i>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-html">
+<textarea>
+<i class="icon icon-calendar"></i>
+<i class="icon icon-search"></i>
+<i class="icon icon-chevron-down"></i>
+<i class="icon icon-chevron-up"></i>
+<i class="icon icon-chevron-left"></i>
+<i class="icon icon-chevron-right"></i>
+<i class="icon icon-warning"></i>
+<i class="icon icon-question"></i>
+<i class="icon icon-error"></i>
+<i class="icon icon-minus"></i>
+<i class="icon icon-plus"></i>
+<i class="icon icon-check"></i>
+<i class="icon icon-file"></i>
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                            <pre>
+                                <code class="language-js">
+<textarea>
+import Icons from "./components/Icons";
+</textarea>
+                                </code>
+                            </pre>
+                            <pre>
+                                <code class="language-html">
+<textarea>
+&lt;Icons name="calendar" /&gt;
+&lt;Icons name="search" /&gt;
+&lt;Icons name="chevron-down" /&gt;
+&lt;Icons name="chevron-up" /&gt;
+&lt;Icons name="chevron-left" /&gt;
+&lt;Icons name="chevron-right" /&gt;
+&lt;Icons name="chevron-warning" /&gt;
+&lt;Icons name="chevron-question" /&gt;
+&lt;Icons name="chevron-error" /&gt;
+&lt;Icons name="minus" /&gt;
+&lt;Icons name="plus" /&gt;
+&lt;Icons name="check" /&gt;
+&lt;Icons name="file" /&gt;
+</textarea>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Имя иконки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code> и <code>components/Icons.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Иконки действия в таблицах</h2>
+            <p>Предназначены для использования в элементах действия внутри табличных данных</p>
+        </div>
+        <div class="components-preview">
+            <i class="icon icon-dots"></i>
+            <i class="icon icon-eye"></i>
+            <i class="icon icon-list"></i>
+            <i class="icon icon-pencil"></i>
+            <i class="icon icon-trash"></i>
+            <i class="icon icon-star-outline"></i>
+            <i class="icon icon-star-fill"></i>
+            <i class="icon icon-fire"></i>
+            <i class="icon icon-hide"></i>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<i class="icon icon-dots"></i>
+<i class="icon icon-eye"></i>
+<i class="icon icon-list"></i>
+<i class="icon icon-pencil"></i>
+<i class="icon icon-trash"></i>
+<i class="icon icon-star-outline"></i>
+<i class="icon icon-star-fill"></i>
+<i class="icon icon-fire"></i>
+<i class="icon icon-hide"></i>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Icons name="dots" /&gt;
+&lt;Icons name="eye" /&gt;
+&lt;Icons name="list" /&gt;
+&lt;Icons name="pencil" /&gt;
+&lt;Icons name="trash" /&gt;
+&lt;Icons name="star-outline" /&gt;
+&lt;Icons name="star-fill" /&gt;
+&lt;Icons name="fire" /&gt;
+&lt;Icons name="hide" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Имя иконки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code> и <code>components/Icons.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Иконки управления</h2>
+            <p>Предназначены для использования управления состояниями в различных компонентах и взаимодействия с интерфейсом</p>
+        </div>
+        <div class="components-preview">
+            <i class="icon icon-times"></i>
+            <i class="icon icon-arrow-left"></i>
+            <i class="icon icon-arrow-right"></i>
+            <i class="icon icon-arrow-up"></i>
+            <i class="icon icon-arrow-down"></i>
+            <i class="icon icon-filters"></i>
+            <i class="icon icon-triangle-left"></i>
+            <i class="icon icon-triangle-right"></i>
+            <i class="icon icon-triangle-up"></i>
+            <i class="icon icon-triangle-down"></i>
+            <i class="icon icon-download"></i>
+            <i class="icon icon-settings"></i>
+            <i class="icon icon-bars"></i>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<i class="icon icon-times"></i>
+<i class="icon icon-arrow-left"></i>
+<i class="icon icon-arrow-right"></i>
+<i class="icon icon-arrow-up"></i>
+<i class="icon icon-arrow-down"></i>
+<i class="icon icon-triangle-left"></i>
+<i class="icon icon-triangle-right"></i>
+<i class="icon icon-triangle-up"></i>
+<i class="icon icon-triangle-down"></i>
+<i class="icon icon-download"></i>
+<i class="icon icon-settings"></i>
+<i class="icon icon-bars"></i>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Icons name="times" /&gt;
+&lt;Icons name="arrow-left" /&gt;
+&lt;Icons name="arrow-right" /&gt;
+&lt;Icons name="arrow-up" /&gt;
+&lt;Icons name="arrow-down" /&gt;
+&lt;Icons name="triangle-left" /&gt;
+&lt;Icons name="triangle-right" /&gt;
+&lt;Icons name="triangle-up" /&gt;
+&lt;Icons name="triangle-down" /&gt;
+&lt;Icons name="download" /&gt;
+&lt;Icons name="settings" /&gt;
+&lt;Icons name="bars" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Имя иконки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code> и <code>components/Icons.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Иконки-иллюстрации</h2>
+        </div>
+        <div class="components-preview">
+            <i class="icon icon-vehicle"></i>
+            <i class="icon icon-image"></i>
+            <i class="icon icon-page"></i>
+            <i class="icon icon-map-tree"></i>
+            <i class="icon icon-classifiers"></i>
+            <i class="icon icon-users"></i>
+            <i class="icon icon-user"></i>
+            <i class="icon icon-phone"></i>
+            <i class="icon icon-envelope"></i>
+            <i class="icon icon-map-pin"></i>
+            <i class="icon icon-check-circle"></i>
+            <i class="icon icon-times-circle"></i>
+            <i class="icon icon-minus-circle"></i>
+            <i class="icon icon-history-circle"></i>
+            <i class="icon icon-exclamation-triangle"></i>
+            <i class="icon icon-search-check"></i>
+            <i class="icon icon-time-back"></i>
+            <i class="icon icon-lock"></i>
+            <i class="icon icon-bell"></i>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<i class="icon icon-vehicle"></i>
+<i class="icon icon-image"></i>
+<i class="icon icon-page"></i>
+<i class="icon icon-map-tree"></i>
+<i class="icon icon-classifiers"></i>
+<i class="icon icon-users"></i>
+<i class="icon icon-user"></i>
+<i class="icon icon-phone"></i>
+<i class="icon icon-envelope"></i>
+<i class="icon icon-map-pin"></i>
+<i class="icon icon-check-circle"></i>
+<i class="icon icon-times-circle"></i>
+<i class="icon icon-minus-circle"></i>
+<i class="icon icon-history-circle"></i>
+<i class="icon icon-exclamation-triangle"></i>
+<i class="icon icon-search-check"></i>
+<i class="icon icon-time-back"></i>
+<i class="icon icon-lock"></i>
+<i class="icon icon-bell"></i>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Icons from "./components/Icons";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Icons name="vehicle" /&gt;
+&lt;Icons name="image" /&gt;
+&lt;Icons name="page" /&gt;
+&lt;Icons name="map-tree" /&gt;
+&lt;Icons name="classifiers" /&gt;
+&lt;Icons name="users" /&gt;
+&lt;Icons name="user" /&gt;
+&lt;Icons name="phone" /&gt;
+&lt;Icons name="envelope" /&gt;
+&lt;Icons name="map-pin" /&gt;
+&lt;Icons name="check-circle" /&gt;
+&lt;Icons name="times-circle" /&gt;
+&lt;Icons name="minus-circle" /&gt;
+&lt;Icons name="history-circle" /&gt;
+&lt;Icons name="exclamation-triangle" /&gt;
+&lt;Icons name="search-check" /&gt;
+&lt;Icons name="time-back" /&gt;
+&lt;Icons name="lock" /&gt;
+&lt;Icons name="bell" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Имя иконки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_icons.scss</code> и <code>components/Icons.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

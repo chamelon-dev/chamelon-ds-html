@@ -1,0 +1,157 @@
+.login {
+  margin: 0 rem(-24);
+  padding: rem(36) 0 0 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 100%;
+  @media(min-width: 768px) {
+    margin: 0;
+    padding: rem(167) 0 0 0;
+  }
+  @media(min-width: 1920px) {
+    margin: 0;
+    padding: rem(111) 0 0 0;
+  }
+  &-logo {
+    display: flex;
+    height: rem(64);
+    width: rem(64);
+    flex: 0 0 rem(64);
+    margin: 0 auto rem(16);
+    border-radius: 50%;
+    background-color: var(--login-logo-bg);
+    align-items: center;
+    justify-content: center;
+    @media(min-width: 768px) {
+      height: rem(80);
+      width: rem(80);
+      flex: 0 0 rem(80);
+    }
+    @media(min-width: 1920px) {
+      height: rem(112);
+      width: rem(112);
+      flex: 0 0 rem(112);
+    }
+    img {
+      width: 38px;
+      height: auto;
+      display: block;
+      @media(min-width: 768px) {
+        width: 48px;
+      }
+      @media(min-width: 1920px) {
+        width: 68px;
+      }
+    }
+  }
+  &-title {
+    color: var(--login-title-color);
+    font-weight: 700;
+    font-family: 'Golos';
+    margin: 0 0 rem(40) 0;
+    text-align: center;
+    @media(min-width: 1920px) {
+      margin: 0 0 rem(64) 0;
+    }
+    h1 {
+      font-size: rem(24);
+      line-height: rem(40);
+      white-space: nowrap;
+      @media(min-width: 768px) {
+        font-size: rem(36);
+        line-height: rem(58);
+      }
+    }
+  }
+  &-form {
+    width: 100%;
+    margin: 0 0 rem(32) 0;
+  }
+  &-reset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 rem(64) 0;
+    @media(min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    a {
+      margin: 0 0 rem(24) 0;
+      @media(min-width: 768px){
+        margin: 0;
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  &-version {
+    text-align: center;
+    margin: 0 0 rem(32) 0;
+    font-size: rem(13);
+    line-height: rem(16);
+    color: var(--login-ver-text)
+  }
+  &-support {
+    text-align: center;
+    margin: 0 0 rem(8) 0;
+    font-size: rem(13);
+    line-height: rem(16);
+    color: var(--login-support-text);
+  }
+  &-contacts {
+    ul {
+      display: flex;
+      li {
+        margin: 0 rem(16) 0 0;
+        &:last-child {
+          margin: 0;
+        }
+        a {
+          text-decoration: none;
+          color: var(--login-contacts-text);
+          .icon {
+            color: var(--login-contacts-icon-color);
+          }
+        }
+      }
+    }
+  }
+
+
+
+  // override
+  .alert {
+    //display: none;
+  }
+  label {
+    font-size: rem(14);
+    line-height: rem(12);
+    margin: 0 0 rem(12) 0;
+  }
+  .field {
+    margin: 0 0 rem(40) 0;
+    @media(min-width: 1920px) {
+      margin: 0 0 rem(56) 0;
+    }
+    &:last-of-type {
+      margin: 0 0 rem(56) 0;
+      @media(min-width: 1920px) {
+        margin: 0 0 rem(72) 0;
+      }
+    }
+  }
+  input, .button{
+    height: rem(40);
+    font-size: rem(16);
+    @media(min-width: 1920px) {
+      height: rem(48);
+      font-size: rem(20);
+    }
+  }
+}

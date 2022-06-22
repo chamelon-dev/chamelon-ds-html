@@ -1,0 +1,18 @@
+.badge {
+  border-radius: rem(8);
+  color: #FBFCFE;
+  display: inline-flex;
+  padding: 0 rem(8);
+  font-size: rem(12);
+  font-weight: 700;
+  line-height: 1;
+  height: rem(16);
+  align-items: center;
+  opacity: .7;
+  &-green {
+    background-color: #39AC91;
+  }
+  &-blue {
+    background-color: #3647E2;
+  }
+}

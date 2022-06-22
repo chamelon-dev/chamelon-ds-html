@@ -1,0 +1,1191 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set heder_menu_active_item = 'examples' %}
+{% block title %}Записи{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="/" class="breadcrumbs-link">Начало</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="{{ app.request.getBaseURL() }}/examples/index.html" class="breadcrumbs-link">Примеры</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="records.html" class="breadcrumbs-link">Записи</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+    <div class="title">
+        <h1>Записи</h1>
+        <a href="../preview/records.html" class="button button button-solid button-primary" target="_blank">Просмотр</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>Записи - Style Guide</title>
+        <script defer src="//sitename/js/theme.js"></script>
+        <link href="//sitename/css/style.css" rel="stylesheet">
+    </head>
+    <body class="layout-center">
+        <div class="wrapper-outer">
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="navbar">
+                                    <div class="logo">
+                                        <a href="#">Управа</a>
+                                    </div>
+                                    <button data-toggle-header class="button button-icon">
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    <nav class="horizontal-menu">
+                                        <div class="menu-left">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="active">
+                                                        <i class="icon icon-page menu-prefix"></i>
+                                                        <span class="menu-label">Записи</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-map-tree menu-prefix"></i>
+                                                        <span class="menu-label">Формирования</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-classifiers menu-prefix"></i>
+                                                        <span class="menu-label">Классификаторы</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-users menu-prefix"></i>
+                                                        <span class="menu-label">Пользователи</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-right">
+                                            <ul>
+                                                <li tabindex="0">
+                                                    <a href="#">
+                                                        <i class="icon icon-user menu-prefix"></i>
+                                                        <span class="menu-label">Администратор</span>
+                                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Профиль</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Выход</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="breadcrumbs">
+                                    <ul class="breadcrumbs-list">
+                                        <li class="breadcrumbs-item">
+                                            <a href="#" class="breadcrumbs-link">Главная</a>
+                                        </li>
+                                        <li class="breadcrumbs-item">
+                                            <a href="#" class="breadcrumbs-link">Записи</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="title">
+                                    <h1>Записи</h1>
+                                    <button type="button" class="button button-solid button-primary" data-toggle="modal" data-target="#test">Добавить запись</button>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="tabnav">
+                                    <nav class="tabnav-menu justify-content-between">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="active">Все <span class="tabnav-counter">21785</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Проверенные <span class="tabnav-counter">25</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Не проверенные <span class="tabnav-counter">21760</span></a>
+                                            </li>
+                                        </ul>
+                                        <button type="button" class="button button-icon" data-toggle-filter data-filter="#filter-1">
+                                            <i class="icon icon-filters"></i>
+                                            <span class="button-counter">2</span>
+                                        </button>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="filter d-none" id="filter-1">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-12 col-xl-2">
+                                                <div class="field mb-16">
+                                                    <div class="field-icon field-icon-prefix">
+                                                        <i class="icon icon-search field-icon-start"></i>
+                                                        <input type="search" placeholder="Найти" name="field_name" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-2">
+                                                <div class="mb-16">
+                                                    <select name="field_name" data-placeholder="Федеральный округ" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-1">
+                                                <div class="mb-16">
+                                                    <select name="field_name" data-placeholder="Вид ПО" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>oneoneoneoneoneoneoneoneoneoneone</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-1">
+                                                <div class="mb-16">
+                                                    <div class="field">
+                                                        <div class="field-icon field-icon-postfix">
+                                                            <input type="text" placeholder="Дата">
+                                                            <i class="icon icon-calendar field-icon-end"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-2">
+                                                <div class="mb-16">
+                                                    <div class="field">
+                                                        <div class="field-icon field-icon-postfix">
+                                                            <input type="text" placeholder="Дата проверки">
+                                                            <i class="icon icon-calendar field-icon-end"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-2">
+                                                <div class="mb-16">
+                                                    <select name="field_name" data-placeholder="Федеральный округ" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-2">
+                                                <div class="field mb-16">
+                                                    <div class="field-icon field-icon-prefix">
+                                                        <i class="icon icon-search field-icon-end"></i>
+                                                        <input type="search" placeholder="Найти" name="field_name" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-2">
+                                                <div class="mb-16">
+                                                    <select name="field_name" data-placeholder="Федеральный округ" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-1">
+                                                <div class="mb-16">
+                                                    <select name="field_name" data-placeholder="Вид ПО" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>oneoneoneoneoneoneoneoneoneoneone</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-1">
+                                                <div class="mb-16">
+                                                    <div class="field">
+                                                        <div class="field-icon field-icon-postfix">
+                                                            <input type="text" placeholder="Дата">
+                                                            <i class="icon icon-calendar field-icon-end"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-2">
+                                                <div class="mb-16">
+                                                    <div class="field">
+                                                        <div class="field-icon field-icon-postfix">
+                                                            <input type="text" placeholder="Дата проверки">
+                                                            <i class="icon icon-calendar field-icon-end"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-2">
+                                                <div class="mb-16">
+                                                    <select name="field_name" data-placeholder="Федеральный округ" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-1">
+                                                <div class="mb-16">
+                                                    <button type="submit" class="button button-solid button-secondary">Найти</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-none mb-16 show-selected-row">
+                                    <div class="d-flex justify-content-end">
+                                        <button type="button" class="button button-outline button-primary text-uppercase">
+                                            <i class="icon icon-download mr-4"></i>
+                                            pdf
+                                        </button>
+                                        <button type="button" class="button button-outline button-primary text-uppercase ml-16">
+                                            <i class="icon icon-download mr-4"></i>
+                                            json
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="table-container">
+                                    <table class="table-empty-cells" data-fix-right-col="true">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Дата</th>
+                                                <th>Дата проверки</th>
+                                                <th>ПСЧ</th>
+                                                <th>Федеральный округ РФ</th>
+                                                <th>Территориальный орган</th>
+                                                <th>Местное управление</th>
+                                                <th>Вид ПО</th>
+                                                <th>Наименование ПЧ</th>
+                                                <th>Осн. итого</th>
+                                                <th>Осн. итого (руб.)</th>
+                                                <th>Спец. итого (руб.)</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label for="t1c1" class="checkbox">
+                                                        <input type="checkbox" id="t1c1" name="name" class="checkbox-input">
+                                                        <span class="checkbox-check"></span>
+                                                    </label>
+                                                </td>
+                                                <td>12.05.2021</td>
+                                                <td></td>
+                                                <td class="pv-8">
+                                                    <i class="icon icon-fire text-light-grey"></i>
+                                                </td>
+                                                <td>Приволжский ФО</td>
+                                                <td>по Кировской области</td>
+                                                <td>Арбатский</td>
+                                                <td>ФПС</td>
+                                                <td>32 ПСЧ 4 ПСО</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>1</td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link" data-toggle="modal" data-target="#modal"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link" data-toggle="modal" data-target="#dialog"><i class="icon icon-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label for="t1c2" class="checkbox">
+                                                        <input type="checkbox" id="t1c2" name="name" class="checkbox-input">
+                                                        <span class="checkbox-check"></span>
+                                                    </label>
+                                                </td>
+                                                <td>12.05.2021</td>
+                                                <td></td>
+                                                <td class="pv-8">
+                                                    <i class="icon icon-fire text-light-grey"></i>
+                                                </td>
+                                                <td>Приволжский ФО</td>
+                                                <td>по Кировской области</td>
+                                                <td>Арбатский</td>
+                                                <td>ФПС</td>
+                                                <td>32 ПСЧ 4 ПСО</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>1</td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link" data-toggle="modal" data-target="#modal"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link" data-toggle="modal" data-target="#dialog"><i class="icon icon-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="pagenav">
+                                    <div class="row">
+                                        <div class="col-12 col-xl-6">
+                                            <div class="pagenav-counter">Страница 1 из 179</div>
+                                            <div class="pagenav-results">
+                                                Результатов на странице
+                                                <select name="page_count" data-placeholder="Выберите из списка" data-select2-search="false" data-select2-width="85px">
+                                                    <option value="1">30</option>
+                                                    <option value="2">60</option>
+                                                    <option value="3">90</option>
+                                                    <option value="4">120</option>
+                                                    <option value="5">Все</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xl-6">
+                                            <div class="pagenav-pagination">
+                                                <nav>
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled">
+                                                            <span class="page-link">«&nbsp;Назад</span>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <span class="page-link">1</span>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">4</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" rel="next" href="#">Вперед&nbsp;»</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                                <div class="footer-copyrights">&copy; Chamel<sup>on</sup>, 2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div class="modal" id="modal" tabindex="-1">
+            <div class="modal-dialog" data-modal-size="90">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Редактирование строевой записки</h3>
+                        <button type="button" class="close" data-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="wizard" id="wizard-1" data-wizard-footer="false">
+                            <ul class="wizard-nav mv-40">
+                                <li class="wizard-item">
+                                    <a class="wizard-link" href="#step-1">Основная информация</a>
+                                </li>
+                                <li class="wizard-item">
+                                    <a class="wizard-link" href="#step-2">Подсчёт единиц техники и личного состава</a>
+                                </li>
+                                <li class="wizard-item">
+                                    <a class="wizard-link" href="#step-3">Дата проверки и утверждения</a>
+                                </li>
+                            </ul>
+                            <div class="wizard-content p-32 mb-40">
+                                <div id="step-1" class="wizard-pane">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="field mb-52">
+                                                <label for="fo" class="d-block">Федеральный откруг</label>
+                                                <select data-placeholder="Выберите федеральный округ" id="fo" data-select2-width="100%">
+                                                    <option label="Select a state"></option>
+                                                    <option>one</option>
+                                                    <option selected>Дальневосточный ФО</option>
+                                                    <option>tree</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="field mb-52">
+                                                <label for="gu" class="d-block">Главное управление</label>
+                                                <select data-placeholder="Выберите управление" id="gu" data-select2-width="100%">
+                                                    <option label="Select a state"></option>
+                                                    <option>one</option>
+                                                    <option selected>по Амурской области</option>
+                                                    <option>tree</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="field mb-52">
+                                                <label for="date">Дата</label>
+                                                <div class="field-icon field-icon-double-postfix">
+                                                    <input type="text" name="date" id="date" placeholder="Дата" data-calendar>
+                                                    <button type="button" class="field-button field-button-end" data-clear-field>
+                                                        <i class="icon icon-times"></i>
+                                                    </button>
+                                                    <button type="button" class="field-button field-button-end" data-calendar-open>
+                                                        <i class="icon icon-calendar"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="field">
+                                                <label for="garnizon" class="d-block">Местное управление</label>
+                                                <select data-placeholder="Выберите гарнизон" id="garnizon" data-select2-width="100%">
+                                                    <option label="Select a state"></option>
+                                                    <option>one</option>
+                                                    <option selected>Архаринский</option>
+                                                    <option>tree</option>
+                                                </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="field">
+                                            <label for="vp" class="d-block">Вид подразделения</label>
+                                            <select data-placeholder="Выберите подразделение" id="vp" data-select2-width="100%">
+                                                <option label="Select a state"></option>
+                                                <option>one</option>
+                                                <option selected>ДПК</option>
+                                                <option>tree</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="field">
+                                            <label for="name" class="d-block">Наименование</label>
+                                            <input type="text" name="date" id="name" placeholder="Наименование">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="step-2" class="wizard-pane">
+                                <div class="tabs">
+                                    <nav class="tabs-menu mb-48">
+                                        <ul>
+                                            <li class="active">
+                                                <a href="#tab-1"><i class="icon icon-vehicle"></i>Техника</a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab-2"><i class="icon icon-image"></i>Личный состав/ Средства защиты</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="tabs-content">
+                                        <div class="tab active" id="tab-1">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="table-container table-modal">
+                                                        <table class="">
+                                                            <caption>Основная</caption>
+                                                            <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-center">Расчет</th>
+                                                                <th class="text-center">
+                                                                <span class="d-flex justify-content-around">
+                                                                    <span>Резерв</span>
+                                                                    <span>ТО</span>
+                                                                    <span>Ремонт</span>
+                                                                </span>
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="text-right">АЦЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>3</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АЦЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>5</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АЦЛ (ПСА)</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АПП</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АНР</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АП</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АПТ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АКТ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">ПНС</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">НРК</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">Иные</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="row-highlight">
+                                                                <td class="text-right strong">Всего</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>8</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="table-container table-modal">
+                                                        <table>
+                                                            <caption>Специальная</caption>
+                                                            <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-center">Расчет</th>
+                                                                <th class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>Резерв</span>
+                                                                        <span>ТО</span>
+                                                                        <span>Ремонт</span>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="text-right">АЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АПК</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АР</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АСА</td>
+                                                                <td class="text-center">1</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>1</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АГ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АД</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АШ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АСО</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">Иные</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>2</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="row-highlight">
+                                                                <td class="text-right strong">Всего</td>
+                                                                <td class="text-center">1</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>3</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="table-container table-modal mb-24">
+                                                        <table>
+                                                            <caption>Вспомогательная</caption>
+                                                            <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-center">Расчет</th>
+                                                                <th class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>Резерв</span>
+                                                                        <span>ТО</span>
+                                                                        <span>Ремонт</span>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="text-right">АЦЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>3</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АПК</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АР</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АСА</td>
+                                                                <td class="text-center">1</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>1</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АГ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АД</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АШ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="row-highlight">
+                                                                <td class="text-right strong">Всего</td>
+                                                                <td class="text-center">1</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>4</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="table-container table-modal">
+                                                        <table>
+                                                            <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-center">Расчет</th>
+                                                                <th class="text-center">Не расчет</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="text-right">Пожар. поезд</td>
+                                                                <td class="text-center">2</td>
+                                                                <td class="text-center">0</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="table-container table-modal mb-24">
+                                                        <table>
+                                                            <caption>Приспособления и др.</caption>
+                                                            <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-center">Расчет</th>
+                                                                <th class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>Резерв</span>
+                                                                        <span>ТО</span>
+                                                                        <span>Ремонт</span>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="text-right">АЦЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АПС (ПСА)</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АЦЛ</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">АПС (ПСА)</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="row-highlight">
+                                                                <td class="text-right strong">Всего</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                        <span>0</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="table-container table-modal">
+                                                        <table>
+                                                            <caption>Огнетушащие вещества</caption>
+                                                            <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-center">ПА</th>
+                                                                <th class="text-center">Резерв</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="text-right">Пенообраз-ль</td>
+                                                                <td class="text-center">2</td>
+                                                                <td class="text-center">0</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">Порошок</td>
+                                                                <td class="text-center">0</td>
+                                                                <td class="text-center">0</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab" id="tab-2">Dynamic tabbed interfaces, as described in the WAI ARIA Authoring Practices, require role="tablist", role="tab", role="tabpanel", and additional aria- attributes in order to convey their structure, functionality and current state to users of assistive technologies (such as screen readers). As a best practice, we recommend using</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="step-3" class="wizard-pane">
+                                <div class="row mb-52">
+                                    <div class="col-2">
+                                        <div class="d-flex align-items-center h-100 mt-16">
+                                            <label for="check" class="checkbox">
+                                                <input type="checkbox" id="check" name="name" class="checkbox-input" checked>
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">Проверено</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="garnizon_local-1">Местное управление</label>
+                                        <input placeholder="Местное управление" type="text" id="garnizon_local-1" value="Благовещенск_Р" />
+                                    </div>
+                                    <div class="col-1">
+                                        <label for="time-1">Время</label>
+                                        <input placeholder="Время" type="text" id="time-1" value="12:05" />
+                                    </div>
+                                    <div class="col-1">
+                                        <label for="quarter-1">Квартал</label>
+                                        <input placeholder="Квартал" type="text" id="quarter-1" value="2" />
+                                    </div>
+                                    <div class="col-1">
+                                        <label for="year-1">Год</label>
+                                        <input placeholder="Год" type="text" id="year-1" value="2021" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="d-flex align-items-center h-100 mt-16">
+                                            <label for="verify" class="checkbox">
+                                                <input type="checkbox" id="verify" name="name" class="checkbox-input">
+                                                <span class="checkbox-check"></span>
+                                                <span class="checkbox-text">Утверждено</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="garnizon_local">Местное управление</label>
+                                        <input placeholder="Местное управление" type="text" id="garnizon_local" value="Благовещенск_Р" disabled />
+                                    </div>
+                                    <div class="col-1">
+                                        <label for="time">Время</label>
+                                        <input placeholder="Время" type="text" id="time" value="12:05" disabled />
+                                    </div>
+                                    <div class="col-1">
+                                        <label for="quarter">Квартал</label>
+                                        <input placeholder="Квартал" type="text" id="quarter" value="2" disabled />
+                                    </div>
+                                    <div class="col-1">
+                                        <label for="year">Год</label>
+                                        <input placeholder="Год" type="text" id="year" value="2021" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <div class="left">
+                        <div class="flex justify-content-end">
+                            <button type="button" class="button button-solid button-secondary" data-wizard-prev data-wizard="#wizard-1">Назад</button>
+                            <button type="button" class="button button-solid button-primary ml-16" data-wizard-next data-wizard="#wizard-1">Далее</button>
+                        </div>
+                    </div>
+                    <div class="right d-flex">
+                        <a href="#" class="button button-outline button-primary mr-16" data-dismiss="modal">Отменить</a>
+                        <div class="show-only-on-3-step d-none">
+                            <button type="button" class="button button-outline button-success mr-16">Создать Excel</button>
+                            <button type="button" class="button button-outline button-danger">Заявить об ошибке</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

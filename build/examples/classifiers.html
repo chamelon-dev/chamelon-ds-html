@@ -1,0 +1,417 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Список классификаторов - Design Sys</title><link rel="stylesheet" href="../css/docs.css"><style>.show-loader{overflow:hidden;padding-right:17px;}.preloader{background-color:#fff;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000}.preloader-loader{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%)}.preloader-loader .logo{margin:0}.preloader .logo a{padding:12px 48px;color:#fff;background:linear-gradient(to right,#818997 0,#fff 10%,#818997 20%);background-position:0;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s infinite linear;animation-fill-mode:forwards;-webkit-text-size-adjust:none;font-weight:600;text-decoration:none;white-space:nowrap;font-size:36px}.preloader .logo a span{vertical-align:super;top:-.5em;font-size:75%}.preloader .logo+p{text-align:center;color:#dbdfe6}@-moz-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-webkit-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-o-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}</style><script defer="defer" src="../js/theme.js"></script><link href="../css/style.css" rel="stylesheet"></head><body class="layout-sidebar show-loader"><div class="preloader"><div class="preloader-loader"><div class="logo"><a href="/">Design<span>sys</span></a></div><p>Пожалуйста, подождите...</p></div></div><div class="wrapper-outer"><div class="wrapper"><header class="header"><div class="container-fluid"><div class="row"><div class="col-12"><div class="navbar"><div class="logo"><a href="../index.html">Design<sup>sys</sup></a></div><button data-toggle-header class="button button-icon"><i class="icon icon-bars"></i></button><nav class="horizontal-menu"><div class="menu-left"><ul><li><a href="../index.html"><span class="menu-label">Начало</span></a></li><li><a href="../components/template.html"><span class="menu-label">Компоненты</span></a></li><li><a href="../utils/margins.html"><span class="menu-label">Утилиты</span></a></li><li><a href="../examples/index.html" class="active"><span class="menu-label">Примеры</span></a></li></ul></div><div class="menu-right"><div class="switcher"><div data-tooltip="Aqua (по-умолчанию)" data-placement="bottom"><label class="switcher-label theme-default"><input type="radio" name="theme" value="default" class="switcher-input" checked="checked"/> <span class="switcher-check"></span></label></div><div data-tooltip="Flavum" data-placement="bottom"><label class="switcher-label theme-flavum"><input type="radio" name="theme" value="flavum" class="switcher-input"/> <span class="switcher-check"></span></label></div><div data-tooltip="Ferrum" data-placement="bottom"><label class="switcher-label theme-ferrum"><input type="radio" name="theme" value="ferrum" class="switcher-input"/> <span class="switcher-check"></span></label></div></div><div class="version"><span class="d-inline-block mr-8">HTML</span> <label class="toggle"><input type="checkbox" name="version" class="toggle-input"> <span class="toggle-check"></span></label> <span class="d-inline-block ml-8">React</span></div></div></nav></div></div></div></div></header><div class="content"><div class="container h-100"><div class="row h-100"><div class="col-12"><div class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">Начало</a></li><li class="breadcrumbs-item"><a href="/examples/index.html" class="breadcrumbs-link">Примеры</a></li><li class="breadcrumbs-item"><a href="classifiers.html" class="breadcrumbs-link">Список классификаторов</a></li></ul></div></div><div class="col-12"><div class="title"><h1>Список классификаторов</h1><a href="../preview/classifiers.html" class="button button button-solid button-primary" target="_blank">Просмотр</a></div></div><div class="col-12 h-100"><section id="s-1"><div class="components-code"><pre>
+                <code class="language-html">
+<textarea>
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <title>Список классификаторов</title>
+        <script defer="defer" src="//ds.dev.cgu.iac.mchs.ru/js/theme.js"></script>
+        <link href="//ds.dev.cgu.iac.mchs.ru/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="layout-center">
+        <div class="wrapper-outer">
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="navbar">
+                                    <div class="logo">
+                                        <a href="#">Гарнизон</a>
+                                    </div>
+                                    <button class="button button-icon" data-toggle-header>
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    <nav class="horizontal-menu">
+                                        <div class="menu-left">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-page menu-prefix"></i>
+                                                        <span class="menu-label">Строевые записки</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-map-tree menu-prefix"></i>
+                                                        <span class="menu-label">Формирования</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="active" href="#">
+                                                        <i class="icon icon-classifiers menu-prefix"></i>
+                                                        <span class="menu-label">Классификаторы</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-users menu-prefix"></i>
+                                                        <span class="menu-label">Пользователи</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-right">
+                                            <ul>
+                                                <li tabindex="0">
+                                                    <a href="#">
+                                                        <i class="icon icon-user menu-prefix"></i>
+                                                        <span class="menu-label">Администратор</span>
+                                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Профиль</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Выход</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="breadcrumbs">
+                                    <ul class="breadcrumbs-list">
+                                        <li class="breadcrumbs-item">
+                                            <a class="breadcrumbs-link" href="#">Главная</a>
+                                        </li>
+                                        <li class="breadcrumbs-item">
+                                            <a class="breadcrumbs-link" href="#">Классификаторы</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="title">
+                                    <h1>Список классификаторов</h1>
+                                    <button class="button button-solid button-primary" type="button">Создать классификатор
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-start justify-content-end mb-24">
+                                    <button class="button button-icon" data-filter="#filter" data-toggle-filter type="button">
+                                        <i class="icon icon-filters"></i>
+                                        <span class="button-counter">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="filter d-none" id="filter">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <div class="field mb-16">
+                                                    <div class="field-icon field-icon-prefix">
+                                                        <i class="icon icon-search field-icon-start"></i>
+                                                        <input type="search" placeholder="Найти" name="field_name" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="mb-16">
+                                                    <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="field mb-16">
+                                                    <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="field mb-16">
+                                                    <div class="field-icon field-icon-prefix">
+                                                        <i class="icon icon-search field-icon-start"></i>
+                                                        <input type="search" placeholder="Найти" name="field_name" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="mb-16">
+                                                    <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="field mb-16">
+                                                    <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="field mb-16">
+                                                    <div class="field-icon field-icon-prefix">
+                                                        <i class="icon icon-search field-icon-start"></i>
+                                                        <input type="search" placeholder="Найти" name="field_name" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="mb-16">
+                                                    <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="field mb-16">
+                                                    <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                        <option label="Select a state"></option>
+                                                        <option>one</option>
+                                                        <option>two</option>
+                                                        <option>tree</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="filed mb-16">
+                                                    <button type="submit" class="button button-solid button-secondary">Найти</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-container">
+                                    <table data-fix-right-col="true">
+                                        <thead>
+                                            <tr>
+                                                <th>Машинное имя</th>
+                                                <th>Код</th>
+                                                <th>Наименование</th>
+                                                <th class="th-sortable">
+                                                    <a href="#" class="sortable">Дата создания</a>
+                                                </th>
+                                                <th class="th-sortable">
+                                                    <a href="#" class="asc">Дата изменения</a>
+                                                </th>
+                                                <th>Владелец</th>
+                                                <th class="th-sortable">
+                                                    <a href="#" class="desc">Статус</a></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>chs_character </td>
+                                                <td>CHS_CHARACTER</td>
+                                                <td>Характер ЧС</td>
+                                                <td>20.07.2021 16:34</td>
+                                                <td>20.07.2021 16:37</td>
+                                                <td>administrator</td>
+                                                <td class="pv-8">
+                                                    <span class="status status-success"><i class="icon icon-check-circle"></i> Активный</span>
+                                                </td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-eye"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-list"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-star-fill"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>chs_character </td>
+                                                <td>CHS_CHARACTER</td>
+                                                <td>Характер ЧС</td>
+                                                <td>20.07.2021 16:34</td>
+                                                <td>20.07.2021 16:37</td>
+                                                <td>administrator</td>
+                                                <td class="pv-8">
+                                                    <span class="status status-default"><i class="icon icon-check-circle"></i>Архивный</span>
+                                                </td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-eye"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-list"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-star-outline"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>chs_character </td>
+                                                <td>CHS_CHARACTER</td>
+                                                <td>
+                                                    Характер ЧС<br>
+                                                    <span class="badge badge-green">учёт погибших на воде</span>
+                                                </td>
+                                                <td>20.07.2021 16:34</td>
+                                                <td>20.07.2021 16:37</td>
+                                                <td>administrator</td>
+                                                <td class="pv-8">
+                                                    <span class="status status-danger"><i class="icon icon-times-circle"></i> Архивный</span>
+                                                </td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-eye"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-list"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-star-outline"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>chs_character </td>
+                                                <td>CHS_CHARACTER</td>
+                                                <td>
+                                                    Характер ЧС<br>
+                                                    <span class="badge badge-blue">ГИМС</span>
+                                                </td>
+                                                <td>20.07.2021 16:34</td>
+                                                <td>20.07.2021 16:37</td>
+                                                <td>administrator</td>
+                                                <td class="pv-8">
+                                                    <span class="status status-default">Архивный</span>
+                                                </td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-eye"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-list"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-star-outline"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>chs_character </td>
+                                                <td>CHS_CHARACTER</td>
+                                                <td>Характер ЧС</td>
+                                                <td>20.07.2021 16:34</td>
+                                                <td>20.07.2021 16:37</td>
+                                                <td>administrator</td>
+                                                <td class="pv-8">
+                                                    <span class="status status-danger">Архивный</span>
+                                                </td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-eye"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-list"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-star-outline"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>chs_character </td>
+                                                <td>CHS_CHARACTER</td>
+                                                <td>Характер ЧС</td>
+                                                <td>20.07.2021 16:34</td>
+                                                <td>20.07.2021 16:37</td>
+                                                <td>administrator</td>
+                                                <td class="pv-8">
+                                                    <span class="status status-success">Активный</span>
+                                                </td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-eye"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-list"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-star-fill"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="pagenav">
+                                    <div class="row">
+                                        <div class="col-12 col-xl-6">
+                                            <div class="pagenav-counter">Страница 1 из 179</div>
+                                            <div class="pagenav-results">
+                                                Результатов на странице
+                                                <select data-placeholder="Выберите из списка" data-select2-search="false" data-select2-width="85px" name="count_page">
+                                                    <option value="1">30</option>
+                                                    <option value="2">60</option>
+                                                    <option value="3">90</option>
+                                                    <option value="4">120</option>
+                                                    <option value="5">Все</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-xl-6">
+                                            <div class="pagenav-pagination">
+                                                <nav>
+                                                    <ul class="pagination">
+                                                        <li class="page-item disabled">
+                                                            <span class="page-link">«&nbsp;Назад</span>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <span class="page-link">1</span>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">2</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">4</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" rel="next">Вперед&nbsp;»</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                                <div class="footer-copyrights">&copy; Design<sup>sys</sup>, 2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre></div></section></div></div></div></div><footer class="footer"><div class="container-fluid"><div class="row"><div class="col-12 col-xxl-6 order-2 order-xxl-1"><div class="footer-copyrights">© Design<sup>sys</sup>, 2022</div></div></div></div></footer></div><div class="scroll-top"><a href="#" class="button button-solid button-primary" data-prevent><i class="icon icon-arrow-up"></i></a></div></div><script defer="defer" src="../js/prism.js"></script><script defer="defer" src="../js/docs.js"></script></body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+        <title>{% block title %}Раскрывающееся дерево элементов{% endblock %}</title>
+    {% endblock %}
+
+</head>
+
+<body class="layout-center">
+    <div class="wrapper-outer">
+        <div class="wrapper">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="title">
+                                <h1>Раскрывающееся дерево элементов</h1>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <p>Вариант с js-плагином</p>
+                            <div data-jstree>
+                                <ul>
+                                    <li>по Кировской области
+                                        <ul>
+                                            <li>Арбатский
+                                                <ul>
+                                                    <li>Item 1</li>
+                                                    <li>Item 2</li>
+                                                    <li>Item 3</li>
+                                                </ul>
+                                            </li>
+                                            <li>Афанасьевский
+                                                <ul>
+                                                    <li data-jstree='{ "selected" : true }'>Богородский</li>
+                                                </ul>
+                                            </li>
+                                            <li>Верхнекамский
+                                                <ul>
+                                                    <li>Item 1</li>
+                                                    <li>Item 2</li>
+                                                    <li>Item 3</li>
+                                                </ul>
+                                            </li>
+                                            <li>Вятскополянский
+                                                <ul>
+                                                    <li>Вятскополянский 2</li>
+                                                    <li>Вятскополянский Центральный</li>
+                                                </ul>
+                                            </li>
+                                            <li>Даровский
+                                                <ul>
+                                                    <li>Зуевский</li>
+                                                </ul>
+                                            </li>
+                                            <li>Кирово-Чепецкий
+                                                <ul>
+                                                    <li>Item 1</li>
+                                                    <li>Item 2</li>
+                                                    <li>Item 3</li>
+                                                </ul>
+                                            </li>
+                                            <li>Кировский
+                                                <ul>
+                                                    <li>Item 1</li>
+                                                    <li>Item 2</li>
+                                                    <li>Item 3</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>по Московской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Ленинградской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Ростовской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Нижегородской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Саратовской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Самарской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Оренбургской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Пензенской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Амурской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Архангельской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>по Брянской области
+                                        <ul>
+                                            <li>Item 1</li>
+                                            <li>Item 2</li>
+                                            <li>Item 3</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <p>Вариант на чистом css</p>
+                            <ul class="tree">
+                                <li>
+                                    <input type="checkbox" checked id="c1" />
+                                    <label class="tree-label" for="c1">по Кировской области</label>
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" id="c2-1" />
+                                            <label for="c2-1" class="tree-label">Арбатский</label>
+                                            <ul>
+                                                <li>
+                                                    <label class="tree-label">Item 1</label>
+                                                </li>
+                                                <li>
+                                                    <label class="tree-label">Item 2</label>
+                                                </li>
+                                                <li>
+                                                    <label class="tree-label">Item 3</label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" checked id="c2-2" />
+                                            <label for="c2-2" class="tree-label">Афанасьевский</label>
+                                            <ul>
+                                                <li class="tree-selected">
+                                                    <label class="tree-label">Богородский</label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="c2-3" />
+                                            <label for="c2-3" class="tree-label">Верхнекамский</label>
+                                            <ul>
+                                                <li><label class="tree-label">Item 1</label></li>
+                                                <li><label class="tree-label">Item 2</label></li>
+                                                <li><label class="tree-label">Item 3</label></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="c2-4" />
+                                            <label for="c2-4" class="tree-label">Вятскополянский</label>
+                                            <ul>
+                                                <li><label class="tree-label">Вятскополянский 2</label></li>
+                                                <li><label class="tree-label">Вятскополянский Центральный</label></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="c2-5" />
+                                            <label for="c2-5" class="tree-label">Даровский</label>
+                                            <ul>
+                                                <li><label class="tree-label">Зуевский</label></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="c2-6" />
+                                            <label for="c2-6" class="tree-label">Кирово-Чепецкий</label>
+                                            <ul>
+                                                <li><label class="tree-label">Item 1</label></li>
+                                                <li><label class="tree-label">Item 2</label></li>
+                                                <li><label class="tree-label">Item 3</label></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="c2-7" />
+                                            <label for="c2-7" class="tree-label">Кировский</label>
+                                            <ul>
+                                                <li><label class="tree-label">Item 1</label></li>
+                                                <li><label class="tree-label">Item 2</label></li>
+                                                <li><label class="tree-label">Item 3</label></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c5" />
+                                    <label class="tree-label" for="c5">по Московской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c2" />
+                                    <label class="tree-label" for="c2">по Ленинградской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c3" />
+                                    <label class="tree-label" for="c3">по Ростовской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c4" />
+                                    <label class="tree-label" for="c4">по Нижегородской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c5" />
+                                    <label class="tree-label" for="c5">по Саратовской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c6" />
+                                    <label class="tree-label" for="c6">по Самарской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c7" />
+                                    <label class="tree-label" for="c7">по Оренбургской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c8" />
+                                    <label class="tree-label" for="c8">по Пензенской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c8" />
+                                    <label class="tree-label" for="c8">по Амурской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c9" />
+                                    <label class="tree-label" for="c9">по Архангельской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="c10" />
+                                    <label class="tree-label" for="c11">по Брянской области</label>
+                                    <ul>
+                                        <li><label class="tree-label">Item 1</label></li>
+                                        <li><label class="tree-label">Item 2</label></li>
+                                        <li><label class="tree-label">Item 3</label></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                            <div class="footer-copyrights">&copy; Chamel<sup>on</sup>, 2021</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+{% block scripts %}
+
+{% endblock %}
+
+</body>
+</html>

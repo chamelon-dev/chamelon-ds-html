@@ -1,0 +1,14 @@
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+// Width
+.w-100vw { width: 100vw !important; }
+.w-max-100 { max-width: 100% !important; }
+.w-min-100 { min-width: 100vw !important; }
+
+// Height
+.h-100vh { height: 100vh !important; }
+.h-max-100 { max-height: 100% !important; }
+.h-min-100 { min-height: 100vh !important; }

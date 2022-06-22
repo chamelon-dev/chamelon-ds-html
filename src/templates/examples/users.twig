@@ -1,0 +1,353 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set heder_menu_active_item = 'examples' %}
+{% block title %}Список пользователей{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="/" class="breadcrumbs-link">Начало</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="{{ app.request.getBaseURL() }}/examples/index.html" class="breadcrumbs-link">Примеры</a>
+            </li>
+            <li class="breadcrumbs-item">
+                <a href="users.html" class="breadcrumbs-link">Список пользователей</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+    <div class="title">
+        <h1>Список пользователей</h1>
+        <a href="../preview/users.html" class="button button button-solid button-primary" target="_blank">Просмотр</a>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>Список пользователей</title>
+        <script defer src="//sitename/js/theme.js"></script>
+        <link href="//sitename/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="layout-center">
+        <div class="wrapper-outer">
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <nav class="navbar">
+                                    <div class="logo">
+                                        <a href="#">Управа</a>
+                                    </div>
+                                    <button class="button button-icon" data-toggle-header>
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    <nav class="horizontal-menu">
+                                        <div class="menu-left">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-page menu-prefix"></i>
+                                                        <span class="menu-label">Записи</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-map-tree menu-prefix"></i>
+                                                        <span class="menu-label">Формирования</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-classifiers menu-prefix"></i>
+                                                        <span class="menu-label">Классификаторы</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="active" href="#">
+                                                        <i class="icon icon-users menu-prefix"></i>
+                                                        <span class="menu-label">Пользователи</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-right">
+                                            <ul>
+                                                <li tabindex="0">
+                                                    <a href="#">
+                                                        <i class="icon icon-user menu-prefix"></i>
+                                                        <span class="menu-label">Администратор</span>
+                                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Профиль</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Выход</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="breadcrumbs">
+                                    <ul class="breadcrumbs-list">
+                                        <li class="breadcrumbs-item">
+                                            <a class="breadcrumbs-link" href="#">Главная</a>
+                                        </li>
+                                        <li class="breadcrumbs-item">
+                                            <a class="breadcrumbs-link" href="#">Пользователи</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="title">
+                                    <h1>Пользователи</h1>
+                                    <button class="button button-solid button-primary" type="button">Добавить пользователя
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex align-items-start justify-content-end mb-24">
+                                            <button class="button button-icon" data-filter="#filter" data-toggle-filter type="button">
+                                                <i class="icon icon-filters"></i>
+                                                <span class="button-counter">2</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="filter d-none" id="filter">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <div class="field mb-16">
+                                                            <div class="field-icon field-icon-prefix">
+                                                                <i class="icon icon-search field-icon-start"></i>
+                                                                <input type="search" placeholder="Найти" name="field_name" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="mb-16">
+                                                            <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                                <option label="Select a state"></option>
+                                                                <option>one</option>
+                                                                <option>two</option>
+                                                                <option>tree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="field mb-16">
+                                                            <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                                <option label="Select a state"></option>
+                                                                <option>one</option>
+                                                                <option>two</option>
+                                                                <option>tree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="field mb-16">
+                                                            <div class="field-icon field-icon-prefix">
+                                                                <i class="icon icon-search field-icon-start"></i>
+                                                                <input type="search" placeholder="Найти" name="field_name" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="mb-16">
+                                                            <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                                <option label="Select a state"></option>
+                                                                <option>one</option>
+                                                                <option>two</option>
+                                                                <option>tree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="field mb-16">
+                                                            <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                                <option label="Select a state"></option>
+                                                                <option>one</option>
+                                                                <option>two</option>
+                                                                <option>tree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="field mb-16">
+                                                            <div class="field-icon field-icon-prefix">
+                                                                <i class="icon icon-search field-icon-start"></i>
+                                                                <input type="search" placeholder="Найти" name="field_name" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="mb-16">
+                                                            <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                                <option label="Select a state"></option>
+                                                                <option>one</option>
+                                                                <option>two</option>
+                                                                <option>tree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="field mb-16">
+                                                            <select class="ds-select" name="field_name" data-placeholder="Select a state" data-select2-width="100%">
+                                                                <option label="Select a state"></option>
+                                                                <option>one</option>
+                                                                <option>two</option>
+                                                                <option>tree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="filed mb-16">
+                                                            <button type="submit" class="button button-solid button-secondary">Найти</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-container">
+                                    <table data-fix-right-col="true">
+                                        <thead>
+                                            <tr>
+                                            <th>Логин</th>
+                                            <th>ФИО</th>
+                                            <th>Формирование</th>
+                                            <th>Должность</th>
+                                            <th>ID СЭД</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>alekseev</td>
+                                                <td>Алексеев Игорь</td>
+                                                <td>Арбатский</td>
+                                                <td>Начальник пожарной части</td>
+                                                <td>9012 3456 9012 3456</td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>alekseev</td>
+                                                <td>Алексеев Игорь</td>
+                                                <td>Арбатский</td>
+                                                <td>Начальник пожарной части</td>
+                                                <td>9012 3456 9012 3456</td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>alekseev</td>
+                                                <td>Алексеев Игорь</td>
+                                                <td>Арбатский</td>
+                                                <td>Начальник пожарной части</td>
+                                                <td>9012 3456 9012 3456</td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>alekseev</td>
+                                                <td>Алексеев Игорь</td>
+                                                <td>Арбатский</td>
+                                                <td>Начальник пожарной части</td>
+                                                <td>9012 3456 9012 3456</td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>alekseev</td>
+                                                <td>Алексеев Игорь</td>
+                                                <td>Арбатский</td>
+                                                <td>Начальник пожарной части</td>
+                                                <td>9012 3456 9012 3456</td>
+                                                <td class="text-right pv-8">
+                                                    <a href="#" class="td-link"><i class="icon icon-pencil"></i></a>
+                                                    <a href="#" class="td-link"><i class="icon icon-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="footer-copyrights">&copy; Chamel<sup>on</sup>, 2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}

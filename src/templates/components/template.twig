@@ -1,0 +1,436 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'template' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Базовые шаблоны{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="/" class="breadcrumbs-link">Начало</a>
+            </li>
+            <li class="breadcrumbs-item">Компоненты</li>
+            <li class="breadcrumbs-item">
+                <a href="template.html" class="breadcrumbs-link">Базовые шаблоны</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Базовые шаблоны</h1>
+    <span class="tagline">Базовые шаблоны разметки, доступные в настоящей дизайн-системе</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Фиксированный</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Резиновый</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Резиновый + сайдбар</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Темы</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Фиксированный</h2>
+            <p>Шаблон фиксированной ширины, выровненный по центру страницы</p>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<body class="layout-center">
+    <div class="wrapper-outer">
+        <div class="wrapper">
+            <header class="header">
+                &lt;!-- Содержимое компонента &laquo;Шапка&raquo; --&gt;
+            </header>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        &lt;!-- Контент --&gt;
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                &lt;!-- Содержимое компонента &laquo;Футер&raquo; --&gt;
+            </footer>
+        </div>
+    </div>
+</body>
+
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Layout, Content, Wrapper} from "./components/Layout";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Layout layout="center"&gt;
+    &lt;Wrapper&gt;
+        &lt;!--Здесь должен располагаться компонент <Header />, при наличии--&gt;
+        &lt;Content&gt;
+            &lt;!--Здесь должен располагаться основной контент--&gt;
+        &lt;/Content&gt;
+        &lt;!--Здесь должен компонент <Bottom />, при наличии--&gt;
+        &lt;!--Здесь должен компонент <Footer />, при наличии--&gt;
+    &lt;/Wrapper>
+&lt;/Layout>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Резиновый</h2>
+            <p>Резиновый шаблон, который занимает 100% ширины страницы</p>
+        </div>
+        <div class="components-tabs">
+                <div class="tabs">
+                    <nav class="tabs-menu">
+                        <ul>
+                            <li class="active">
+                                <a href="#tab-html-2-1">HTML</a>
+                            </li>
+                            <li>
+                                <a href="#tab-react-2-2">React</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="tabs-content">
+                        <div class="tab active" id="tab-html-2-1">
+                            <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<body class="layout-fluid">
+    <div class="wrapper-outer">
+        <div class="wrapper">
+            <header class="header">
+                &lt;!-- Содержимое компонента &laquo;Шапка&raquo; --&gt;
+            </header>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        &lt;!-- Контент --&gt;
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                &lt;!-- Содержимое компонента &laquo;Футер&raquo; --&gt;
+            </footer>
+        </div>
+    </div>
+</body>
+
+</textarea>
+                            </code>
+                        </pre>
+                            </div>
+
+                        </div>
+                        <div class="tab" id="tab-react-2-2">
+                            <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Layout, Content, Wrapper} from "./components/Layout";
+</textarea>
+                            </code>
+                        </pre>
+                                <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Layout layout="fluid"&gt;
+    &lt;Wrapper&gt;
+        &lt;!--Здесь должен располагаться компонент <Header />, при наличии--&gt;
+        &lt;Content&gt;
+            &lt;!--Здесь должен располагаться основной контент--&gt;
+        &lt;/Content&gt;
+        &lt;!--Здесь должен компонент <Bottom />, при наличии--&gt;
+        &lt;!--Здесь должен компонент <Footer />, при наличии--&gt;
+    &lt;/Wrapper&gt;
+&lt;/Layout&gt;
+</textarea>
+                            </code>
+                        </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Резиновый + сайдбар</h2>
+            <p>Резиновый шаблон, который занимает 100% ширины страницы и имеет фиксированный слева сайдбар</p>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<body class="layout-sidebar">
+    <div class="wrapper-outer">
+        <aside class="sidebar sidebar-open">
+            &lt;!-- Содержимое компонента &laquo;Сайдбар&raquo; --&gt;
+        </aside>
+        <div class="wrapper">
+            <header class="header">
+               &lt;!-- Содержимое компонента &laquo;Шапка&raquo; --&gt;
+            </header>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        &lt;!-- Контент --&gt;
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                &lt;!-- Содержимое компонента &laquo;Футер&raquo; --&gt;
+            </footer>
+        </div>
+    </div>
+</body>
+</textarea>
+                </code>
+            </pre>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Layout, Content, Wrapper} from "./components/Layout";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Layout layout="sidebar"&gt;
+    &lt;!--Здесь должен располагаться компонент <Sidebar /> --&gt;
+    &lt;Wrapper&gt;
+        &lt;!--Здесь должен располагаться компонент <Header />, при наличии--&gt;
+        &lt;Content&gt;
+            &lt;!--Здесь должен располагаться основной контент--&gt;
+        &lt;/Content&gt;
+        &lt;!--Здесь должен компонент <Bottom />, при наличии--&gt;
+        &lt;!--Здесь должен компонент <Footer />, при наличии--&gt;
+    &lt;/Wrapper&gt;
+&lt;/Layout&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Темы</h2>
+            <p>Применение различных цветовых схем. По-умолчанию, в системе предустановлено три темы - &laquo;Aqua&raquo;, &laquo;Flavum&raquo; и &laquo;Ferrum&raquo;</p>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+&lt;!-- Тема &laquo;Flavum&raquo; --&gt;
+<body class="flavum">
+...
+</body>
+
+&lt;!-- Тема &laquo;Ferrum&raquo; --&gt;
+<body class="ferrum">
+...
+</body>
+</textarea>
+                </code>
+            </pre>
+                        </div>
+                        <div class="components-options">
+                            <p>Установка цветовой темы производится путем добавления специального класса к элементу <em>body</em> в дополнение к существующим классам (при наличии)</p>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Тема</th>
+                                        <th>Класс</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Aqua</td>
+                                        <td>(пусто)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Flavum</td>
+                                        <td><code>.flavum</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ferrum</td>
+                                        <td><code>.ferrum</code></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Layout, Content, Wrapper} from "./components/Layout";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Тема &laquo;Flavum&raquo; --&gt;
+&lt;Layout theme="flavum"&gt;
+...
+&lt;/Layout&gt;
+
+&lt;!-- Тема &laquo;Ferrum&raquo; --&gt;
+&lt;Layout theme="ferrum"&gt;
+...
+&lt;/Layout&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>theme</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Устанавливает цветовую тему<br>
+                                            <code>flavum</code> - цветовая схема &laquo;Flavum&raquo;<br>
+                                            <code>ferrum</code> - цветовая схема &laquo;Ferrum&raquo;
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

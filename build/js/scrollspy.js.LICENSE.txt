@@ -1,0 +1,5 @@
+/*!
+ * Scrollspy Plugin
+ * Author: r3plica
+ * Licensed under the MIT license
+ */

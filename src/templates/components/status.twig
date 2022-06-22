@@ -1,0 +1,313 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'status' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Статусы{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="status.html" class="breadcrumbs-link">Статусы</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Статусы</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс различных статусов и состояний.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Обычные статусы</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Статусы с иконками</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Статусы</h2>
+            <p>Пример обычных статусов</p>
+        </div>
+        <div class="components-preview">
+            <span class="status status-default">В архиве</span>
+            <span class="status status-success">Активный</span>
+            <span class="status status-danger">Удалён</span>
+            <span class="status status-warning">В ожидании</span>
+            <span class="status status-neutral">Нейтральный</span>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<span class="status status-default">В архиве</span>
+<span class="status status-success">Активный</span>
+<span class="status status-danger">Удалён</span>
+<span class="status status-warning">В ожидании</span>
+<span class="status status-neutral">Нейтральный</span>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_status.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Status from "./components/Status";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Status text="В архиве" /&gt;
+&lt;Status text="Активный" type="success" /&gt;
+&lt;Status text="Удален" type="danger" /&gt;
+&lt;Status text="В ожидании" type="warning" /&gt;
+&lt;Status text="Нейтральный" type="neutral" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Текст статуса</td>
+                                    </tr>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>default</td>
+                                        <td>
+                                            Цветовой тип статуса<br><br>
+                                            <code>default</code> - серый<br>
+                                            <code>success</code> - зеленый<br>
+                                            <code>danger</code> - красный<br>
+                                            <code>warning</code> - желтый<br>
+                                            <code>neutral</code> - прозрачный<br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_status.scss</code> и <code>components/Status.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Статусы с иконками</h2>
+            <p>Пример различных статусов с иконками. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <span class="status status-default"><i class="icon icon-check-circle"></i>В архиве</span>
+            <span class="status status-success"><i class="icon icon-check-circle"></i>Активный</span>
+            <span class="status status-danger"><i class="icon icon-times-circle"></i>Удален</span>
+            <span class="status status-warning"><i class="icon icon-history-circle"></i>В ожидании</span>
+            <span class="status status-neutral"><i class="icon icon-minus-circle"></i>Нейтральный</span>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<span class="status status-default">
+    <i class="icon icon-check-circle"></i>В архиве
+</span>
+<span class="status status-success">
+    <i class="icon icon-check-circle"></i>Активный
+</span>
+<span class="status status-danger">
+    <i class="icon icon-times-circle"></i>Удален
+</span>
+<span class="status status-warning">
+    <i class="icon icon-history-circle"></i>В ожидании
+</span>
+<span class="status status-neutral">
+    <i class="icon icon-minus-circle"></i>Нейтральный
+</span>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_status.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Status from "./components/Status";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Status text="В архиве" icon="check-circle" /&gt;
+&lt;Status text="Активный" type="success" icon="check-circle" /&gt;
+&lt;Status text="Удален" type="danger" icon="times-circle" /&gt;
+&lt;Status text="В ожидании" type="warning" icon="history-circle" /&gt;
+&lt;Status text="Нейтральный" type="neutral" icon="minus-circle" /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>text</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Текст статуса</td>
+                                    </tr>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>default</td>
+                                        <td>
+                                            Цветовой тип статуса<br><br>
+                                            <code>default</code> - серый<br>
+                                            <code>success</code> - зеленый<br>
+                                            <code>danger</code> - красный<br>
+                                            <code>warning</code> - желтый<br>
+                                            <code>neutral</code> - прозрачный<br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>icon</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название иконки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_status.scss</code> и <code>components/Status.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

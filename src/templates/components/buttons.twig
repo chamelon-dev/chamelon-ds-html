@@ -1,0 +1,765 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'button' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Кнопки{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="buttons.html" class="breadcrumbs-link">Кнопки</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Кнопки</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс стилизованных кнопок.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Кнопки, сплошные</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Отключенный кнопки, сплошные</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Кнопки с обводкой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Отключенные кнопки, с обводкой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Кнопки-ссылки, сплошные</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-6">
+                <span class="menu-label">Кнопки-ссылки, с обводкой</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-7">
+                <span class="menu-label">Кнопки с иконками</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Кнопки, сплошные</h2>
+            <p>Пример кнопок со сплошной заливкой</p>
+        </div>
+        <div class="components-preview">
+            <button type="button" class="button button-solid button-primary">Первичная кнопка</button>
+            <button type="button" class="button button-solid button-secondary">Вторичная кнопка</button>
+            <button type="button" class="button button-solid button-danger">Ошибка</button>
+            <button type="button" class="button button-solid button-success">Успех</button>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-react-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-react-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<button type="button" class="button button-solid button-primary">Первичная кнопка</button>
+<button type="button" class="button button-solid button-secondary">Вторичная кнопка</button>
+<button type="button" class="button button-solid button-danger">Ошибка</button>
+<button type="button" class="button button-solid button-success">Успех</button>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_buttons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Button from "./components/Button";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Button color="primary"&gt;Первичная кнопка&lt;/Button&gt;
+&lt;Button color="secondary"&gt;Вторичная кнопка&lt;/Button&gt;
+&lt;Button color="danger"&gt;Ошибка&lt;/Button>
+&lt;Button color="success"&gt;Успех&lt;/Button>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>color</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>primary</td>
+                                        <td>
+                                            Цветовое оформление кнопки<br><br>
+                                            <code>primary</code> - синий<br>
+                                            <code>secondary</code> - серый<br>
+                                            <code>danger</code> - красный<br>
+                                            <code>success</code> - зеленый
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onClick</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>Функция-обработчик клика</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Button.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Отключенные кнопки, сплошные</h2>
+            <p>Пример отключенных кнопок со сплошной заливкой</p>
+        </div>
+        <div class="components-preview">
+            <button type="button" class="button button-solid" disabled>Первичная кнопка</button>
+            <button type="button" class="button button-solid" disabled>Вторичная кнопка</button>
+            <button type="button" class="button button-solid" disabled>Ошибка</button>
+            <button type="button" class="button button-solid" disabled>Успех</button>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<button type="button" class="button button-solid" disabled>Первичная кнопка</button>
+<button type="button" class="button button-solid" disabled>Вторичная кнопка</button>
+<button type="button" class="button button-solid" disabled>Ошибка</button>
+<button type="button" class="button button-solid" disabled>Успех</button>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_buttons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Button from "./components/Button";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Button disabled={true}&gt;Первичная кнопка&lt;/Button&gt;
+&lt;Button disabled={true}&gt;Вторичная кнопка&lt;/Button&gt;
+&lt;Button disabled={true}&gt;Ошибка&lt;/Button&gt;
+&lt;Button disabled={true}&gt;Успех&lt;/Button&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>disabled</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Блокирует доступ к кнопке и её изменение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Button.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Кнопки с обводкой</h2>
+            <p>Пример кнопок с обводкой</p>
+        </div>
+        <div class="components-preview">
+            <button type="button" class="button button-outline button-primary">Первичная кнопка</button>
+            <button type="button" class="button button-outline button-secondary">Вторичная кнопка</button>
+            <button type="button" class="button button-outline button-danger">Ошибка</button>
+            <button type="button" class="button button-outline button-success">Успех</button>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<button type="button" class="button button-outline button-primary">Первичная кнопка</button>
+<button type="button" class="button button-outline button-secondary">Вторичная кнопка</button>
+<button type="button" class="button button-outline button-danger">Ошибка</button>
+<button type="button" class="button button-outline button-success">Успех</button>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_buttons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Button from "./components/Button";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Button color="primary" variant="outline"&gt;Первичная кнопка&lt;/Button&gt;
+&lt;Button color="secondary" variant="outline"&gt;Вторичная кнопка&lt;/Button&gt;
+&lt;Button color="danger" variant="outline"&gt;Ошибка&lt;/Button&gt;
+&lt;Button color="success" variant="outline"&gt;Успех&lt;/Button&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>color</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>primary</td>
+                                        <td>
+                                            Цветовое оформление кнопки<br><br>
+                                            <code>primary</code> - синий<br>
+                                            <code>secondary</code> - серый<br>
+                                            <code>danger</code> - красный<br>
+                                            <code>success</code> - зеленый
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onClick</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>Функция-обработчик клика</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Button.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Отключенные кнопки с обводкой</h2>
+            <p>Пример отключенных кнопок с обводкой</p>
+        </div>
+        <div class="components-preview">
+            <button type="button" class="button button-outline" disabled>Первичная кнопка</button>
+            <button type="button" class="button button-outline" disabled>Вторичная кнопка</button>
+            <button type="button" class="button button-outline" disabled>Ошибка</button>
+            <button type="button" class="button button-outline" disabled>Успех</button>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-4-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-4-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-4-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<button type="button" class="button button-outline" disabled>Первичная кнопка</button>
+<button type="button" class="button button-outline" disabled>Вторичная кнопка</button>
+<button type="button" class="button button-outline" disabled>Ошибка</button>
+<button type="button" class="button button-outline" disabled>Успех</button>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_buttons.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-4-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Button from "./components/Button";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Button variant="outline" disabled={true}&gt;Первичная кнопка&lt;/Button&gt;
+&lt;Button variant="outline" disabled={true}&gt;Вторичная кнопка&lt;/Button&gt;
+&lt;Button variant="outline" disabled={true}&gt;Ошибка&lt;/Button&gt;
+&lt;Button variant="outline" disabled={true}&gt;Успех&lt;/Button&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>disabled</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Блокирует доступ к кнопке и её изменение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onClick</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>Функция-обработчик клика</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Button.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Кнопки-ссылки, сплошные</h2>
+            <p>Пример ссылок, стилизованных под кнопки со сплошной заливкой</p>
+        </div>
+        <div class="components-preview">
+            <a href="#" class="button button-solid button-primary">Первичная кнопка-ссылка</a>
+            <a href="#" class="button button-solid button-secondary">Вторичная кнопка-ссылка</a>
+            <a href="#" class="button button-solid button-danger">Ошибка-ссылка</a>
+            <a href="#" class="button button-solid button-success">Успех-ссылка</a>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<a href="#" class="button button-solid button-primary">Первичная кнопка-ссылка</a>
+<a href="#" class="button button-solid button-secondary">Вторичная кнопка-ссылка</a>
+<a href="#" class="button button-solid button-danger">Ошибка-ссылка</a>
+<a href="#" class="button button-solid button-success">Успех-ссылка</a>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/components/_buttons.scss</code>
+        </div>
+    </section>
+
+    <section id="s-6">
+        <div class="components-title">
+            <h2>Кнопки-ссылки, с обводкой</h2>
+            <p>Пример ссылок, стилизованных под кнопки с обводкой</p>
+        </div>
+        <div class="components-preview">
+            <a href="#" class="button button-outline button-primary">Первичная кнопка-ссылка</a>
+            <a href="#" class="button button-outline button-secondary">Вторичная кнопка-ссылка</a>
+            <a href="#" class="button button-outline button-danger">Ошибка-ссылка</a>
+            <a href="#" class="button button-outline button-success">Успех-ссылка</a>
+        </div>
+        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<a href="#" class="button button-outline button-primary">Первичная кнопка-ссылка</a>
+<a href="#" class="button button-outline button-secondary">Вторичная кнопка-ссылка</a>
+<a href="#" class="button button-outline button-danger">Ошибка-ссылка</a>
+<a href="#" class="button button-outline button-success">Успех-ссылка</a>
+</textarea>
+                </code>
+            </pre>
+        </div>
+        <div class="components-source">
+            Исходный код этого компонента находится по пути <code>sass/components/_buttons.scss</code>
+        </div>
+    </section>
+
+    <section id="s-7">
+        <div class="components-title">
+            <h2>Кнопки с иконками</h2>
+            <p>Пример кнопок с иконками</p>
+        </div>
+        <div class="components-preview">
+            <div class="mb-56">
+                <button type="button" class="button button-icon">
+                    <i class="icon icon-dots"></i>
+                </button>
+                <button type="button" class="button button-icon">
+                    <i class="icon icon-pencil"></i>
+                </button>
+                <button type="button" class="button button-icon">
+                    <i class="icon icon-trash"></i>
+                </button>
+                <button type="button" class="button button-icon button-active">
+                    <i class="icon icon-eye"></i>
+                </button>
+            </div>
+            <div>
+                <button type="button" class="button button-icon">
+                    <i class="icon icon-dots"></i>
+                    <span class="button-counter">1</span>
+                </button>
+                <button type="button" class="button button-icon">
+                    <i class="icon icon-pencil"></i>
+                    <span class="button-counter">2</span>
+                </button>
+                <button type="button" class="button button-icon">
+                    <i class="icon icon-trash"></i>
+                    <span class="button-counter">3</span>
+                </button>
+                <button type="button" class="button button-icon button-active">
+                    <i class="icon icon-eye"></i>
+                    <span class="button-counter">10</span>
+                </button>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-react-7-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-7-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-react-7-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Обычные кнопки с иконками --&gt;
+<button type="button" class="button button-icon">
+    <i class="icon icon-dots"></i>
+</button>
+<button type="button" class="button button-icon">
+    <i class="icon icon-pencil"></i>
+</button>
+<button type="button" class="button button-icon">
+    <i class="icon icon-trash"></i>
+</button>
+<button type="button" class="button button-icon button-active">
+    <i class="icon icon-eye"></i>
+</button>
+
+&lt;!-- Кнопки с иконками и счетчиком --&gt;
+<button type="button" class="button button-icon">
+    <i class="icon icon-dots"></i>
+    <span class="button-counter">1</span>
+</button>
+<button type="button" class="button button-icon">
+    <i class="icon icon-pencil"></i>
+    <span class="button-counter">2</span>
+</button>
+<button type="button" class="button button-icon">
+    <i class="icon icon-trash"></i>
+    <span class="button-counter">3</span>
+</button>
+<button type="button" class="button button-icon button-active">
+    <i class="icon icon-eye"></i>
+    <span class="button-counter">10</span>
+</button>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_buttons.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-7-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Button from "./components/Button";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;!-- Обычные кнопки с иконками --&gt;
+&lt;Button variant="icon" icon="dots" /&gt;
+&lt;Button variant="icon" icon="pencil" /&gt;
+&lt;Button variant="icon" icon="trash" /&gt;
+&lt;Button variant="icon" icon="eye" /&gt;
+
+&lt;!-- Кнопки с иконками и счетчиком --&gt;
+&lt;Button variant="icon" counter={1} icon="dots" /&gt;
+&lt;Button variant="icon" counter={2} icon="pencil" /&gt;
+&lt;Button variant="icon" counter={3} icon="trash" /&gt;
+&lt;Button variant="icon" counter={10} icon="eye" /&gt;
+
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>disabled</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Блокирует доступ к кнопке и её изменение</td>
+                                    </tr>
+                                    <tr>
+                                        <td>icon</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название иконки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>counter</td>
+                                        <td>Строка / Число</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Счетчик</td>
+                                    </tr>
+                                    <tr>
+                                        <td>onClick</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>Функция-обработчик клика</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_badge.scss</code> и <code>components/Button.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

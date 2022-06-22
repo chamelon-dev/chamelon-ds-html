@@ -1,0 +1,1228 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'infoblock' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Инфоблок{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="infoblock.html" class="breadcrumbs-link">Инфоблок</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Инфоблок</h1>
+    <span class="tagline">Инфоблоки предназначены для добавления в интерфейс блоков с различными типами содержимого</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Инфоблок</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Инфоблок в режиме редактирования</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Инфоблок со списком из чекбоксов</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Инфоблок</h2>
+            <p>Примеры инфоблока содержащего различные типы содержимого</p>
+        </div>
+        <div class="components-preview">
+            <div class="infoblock accent">
+                <div class="infoblock-title">
+                    <h3>Запрос</h3>
+                </div>
+                <div class="infoblock-content">
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-4"><strong>Заявление</strong></div>
+                            <div class="col-8">Заявление № данные-03-64</div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-4"><strong>Файлы</strong></div>
+                            <div class="col-8">
+                                <ul class="infoblock-list">
+                                    <li>
+                                        <a href="#">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-4"><strong>Разрешённые районы плавания</strong></div>
+                            <div class="col-8">
+                                <ul class="infoblock-list infoblock-list-bullet">
+                                    <li>
+                                        Внутренние воды
+                                    </li>
+                                    <li>
+                                        Внутренние водные пути Российской Федерации
+                                    </li>
+                                    <li>
+                                        Внутренние морские воды и территории
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-4"><strong>Документы</strong></div>
+                            <div class="col-8">
+                                <ul class="infoblock-list">
+                                    <li>
+                                        <span class="text-success">Шкипарев лк.pdf</span> (608,13КБ)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-4"><strong>Фотография</strong></div>
+                            <div class="col-8">
+                                <div class="avatar avatar-80">
+                                    <img src="../images/photo.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-4"><strong>Данные ответа</strong></div>
+                            <div class="col-8">
+                                <div class="json">
+                                    <pre>
+    {
+        "querytype": "VS486468v884",
+        "systemId": "1",
+        "uuid": “789979852-fg95+9-466dfg5-956-xdd6468468dx64684d68”,
+        "OriginalUuid": "х",
+        "Response": {
+            "changeOrderInfo": {
+                "OrderId": 864454688468,
+                "statusCode": 3,
+                "comment": "Государственная услуга оказана"
+            },
+            "cancelResponse": null,
+            "textResponse": null
+            }
+        },
+        "AttachmentHeaderList": [
+            {
+                "AttachmentHeader": {
+                    "Id": null,
+                }
+            }
+         }
+    }                               </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="infoblock accent">
+    <div class="infoblock-title">
+        <h3>Запрос</h3>
+    </div>
+    <div class="infoblock-content">
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-4"><strong>Заявление</strong></div>
+                <div class="col-8">Заявление № данные-03-64</div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-4"><strong>Файлы</strong></div>
+                <div class="col-8">
+                    <ul class="infoblock-list">
+                        <li>
+                            <a href="#">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf</a>
+                        </li>
+                        <li>
+                            <a href="#">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-4"><strong>Разрешённые районы плавания</strong></div>
+                <div class="col-8">
+                    <ul class="infoblock-list infoblock-list-bullet">
+                        <li>Внутренние воды</li>
+                        <li>Внутренние водные пути Российской Федерации</li>
+                        <li>Внутренние морские воды и территории</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-4"><strong>Документы</strong></div>
+                <div class="col-8">
+                    <ul class="infoblock-list">
+                        <li>
+                            <span class="text-success">Шкипарев лк.pdf</span> (608,13КБ)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-4"><strong>Фотография</strong></div>
+                <div class="col-8">
+                    <div class="avatar avatar-80">
+                        <img src="../images/photo.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-4"><strong>Данные ответа</strong></div>
+                <div class="col-8">
+                    <div class="json">
+                        <pre>
+{
+"querytype": "VS486468v884",
+"systemId": "1",
+"uuid": “789979852-fg95+9-466dfg5-956-xdd6468468dx64684d68”,
+"OriginalUuid": "х",
+"Response": {
+"changeOrderInfo": {
+    "OrderId": 864454688468,
+    "statusCode": 3,
+    "comment": "Государственная услуга оказана"
+},
+"cancelResponse": null,
+"textResponse": null
+}
+},
+"AttachmentHeaderList": [
+{
+    "AttachmentHeader": {
+        "Id": null,
+    }
+}
+}
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_infoblock.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Infoblock, InfoblockRow} from "../components/Infoblock";
+const response = [
+    {
+        "querytype": "VS486468v884",
+        "systemId": "1",
+        "uuid": "789979852-fg95+9-466dfg5-956-xdd6468468dx64684d68",
+        "OriginalUuid": "х",
+        "Response": {
+            "changeOrderInfo": {
+                "OrderId": 864454688468,
+                "statusCode": 3,
+                "comment": "Государственная услуга оказана"
+            },
+            "cancelResponse": null,
+            "textResponse": null
+        },
+        "AttachmentHeaderList" : [
+            {
+                "AttachmentHeader": {
+                    "Id": null,
+                }
+            }
+        ]
+    }
+];
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Infoblock title="Запрос"&gt;
+    &lt;InfoblockRow title="Заявление"&gt;
+        Заявление № данные-03-64
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow title="Файлы"&gt;
+        &lt;ul className="infoblock-list"&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href="#"&gt;удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow title="Разрешённые районы плавания"&gt;
+        &lt;ul className="infoblock-list infoblock-list-bullet"&gt;
+            &lt;li&gt;Внутренние воды&lt;/li&gt;
+            &lt;li&gt;Внутренние водные пути Российской Федерации&lt;/li&gt;
+            &lt;li&gt;Внутренние морские воды и территории&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow title="Документы"&gt;
+        &lt;ul className="infoblock-list"&gt;
+            &lt;li&gt;&lt;span className="text-success"&gt;Шкипарев лк.pdf&lt;/span&gt; (608,13КБ)&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow title="Фотография"&gt;
+        &lt;Avatar src="/static/images/photo.jpg" alt="Шкипарев Дмитрий Владимирович" title="Шкипарев Дмитрий Владимирович"/&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow title="Данные ответа"&gt;
+        &lt;Json json={response} /&gt;
+    &lt;/InfoblockRow&gt;
+&lt;/Infoblock&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            В компоненте <code>&lt;Infoblock&gt;</code> - заголовок инфоблока<br>
+                                            В компоненте <code>&lt;InfoblockRow&gt;</code> - заголовок строки. В режиме редактирования будет проигнорирован
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_infoblock.scss</code> и <code>components/Infoblock.js</code>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Инфоблок в режиме редактирования</h2>
+            <p>Примеры инфоблока, переназначенного для редактирования некоторых данных</p>
+        </div>
+        <div class="components-preview">
+            <div class="infoblock accent infoblock-editable">
+                <div class="infoblock-title">
+                    <h3>Запрос</h3>
+                </div>
+                <div class="infoblock-content">
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="field pb-16">
+                                    <label for="LA7mW6w">Заявление</label>
+                                    <div class="field-icon field-icon-postfix">
+                                        <input type="text" placeholder="Заявление" id="LA7mW6w" name="application" value="Заявление № данные-03-64">
+                                        <button type="button" class="field-button field-button-end" data-clear-field>
+                                            <i class="icon icon-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="uploader pb-16">
+                                    <label>Файлы</label>
+                                    <div class="uploader-area">
+                                        Перетащите файл сюда или
+                                        <label class="uploader-label">
+                                            загрузите
+                                            <input type="file" name="avatar1" accept="image/png,image/jpeg,image/jpg" class="uploader-input">
+                                        </label>
+                                        с устройства
+                                    </div>
+                                    <div class="uploader-filelist uploader-exist">
+                                        <ul>
+                                            <li>
+                                                <i class="icon icon-file"></i>
+                                                <a href="#" title="удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf"><span class="uploader-filename">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf</span></a> &nbsp;<span class="uploader-filesize">(1021 Б)</span>
+                                                <button type="button" class="button button-icon" data-tooltip title="Удалить">
+                                                    <i class="icon icon-trash"></i>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <i class="icon icon-file"></i>
+                                                <a href="#" title="удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s.pdf"><span class="uploader-filename">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s</span></a> &nbsp;<span class="uploader-filesize">(1021 Б)</span>
+                                                <button type="button" class="button button-icon" data-tooltip title="Удалить">
+                                                    <i class="icon icon-trash"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="uploader-filelist">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="uploader-errors text-danger"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="field pb-16">
+                                    <label for="LA7mW6a">Разрешённые районы плавания</label>
+                                    <select name="region" multiple data-select2-width="100%" id="LA7mW6a">
+                                        <option value="1" selected>Внутренние воды</option>
+                                        <option value="2" selected>Внутренние водные пути Российской Федерации</option>
+                                        <option value="3" selected>Внутренние морские воды и территории</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="uploader pb-16">
+                                    <label>Документы</label>
+                                    <div class="uploader-area">
+                                        Перетащите файл сюда или
+                                        <label class="uploader-label">
+                                            загрузите
+                                            <input type="file" name="avatar1" accept="image/png,image/jpeg,image/jpg" class="uploader-input">
+                                        </label>
+                                        с устройства
+                                    </div>
+                                    <div class="uploader-filelist uploader-exist">
+                                        <ul>
+                                            <li>
+                                                <i class="icon icon-file"></i>
+                                                <a href="#" title="Шкипарев лк.pdf"><span class="uploader-filename">Шкипарев лк.pdf</span></a> &nbsp;<span class="uploader-filesize">(1021 Б)</span>
+                                                <button type="button" class="button button-icon" data-tooltip title="Удалить">
+                                                    <i class="icon icon-trash"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="uploader-filelist">
+                                        <ul></ul>
+                                    </div>
+                                    <div class="uploader-errors text-danger"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="uploader pb-16">
+                                    <label>Фото</label>
+                                    <div class="uploader-area">
+                                        Перетащите файл сюда или
+                                        <label class="uploader-label">
+                                            загрузите
+                                            <input type="file" name="avatar" class="uploader-input">
+                                        </label>с устройства.
+                                    </div>
+                                    <div class="uploader-filelist">
+                                        <ul>
+                                            <li>
+                                                <div class="avatar avatar-24 avatar-rounded mv-4 mr-4">
+                                                    <img src="/images/photo.jpg" alt="Photo555.jpg" title="Photo555.jpg">
+                                                </div>
+                                                <a href="#" title="Photo555.jpg"><span class="uploader-filename">Photo555.jpg</span></a> &nbsp;<span class="uploader-filesize">(10 КБ)</span>
+                                                <button type="button" class="button button-icon" data-tooltip title="Удалить">
+                                                    <i class="icon icon-trash"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="pb-16">
+                                    <label>Данные ответа</label>
+                                    <div class="json">
+                                        <pre>
+{
+    "querytype": "VS486468v884",
+    "systemId": "1",
+    "uuid": “789979852-fg95+9-466dfg5-956-xdd6468468dx64684d68”,
+    "OriginalUuid": "х",
+    "Response": {
+        "changeOrderInfo": {
+            "OrderId": 864454688468,
+            "statusCode": 3,
+            "comment": "Государственная услуга оказана"
+        },
+        "cancelResponse": null,
+        "textResponse": null
+        }
+    },
+    "AttachmentHeaderList": [
+        {
+            "AttachmentHeader": {
+                "Id": null,
+            }
+        }
+     }
+}
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="infoblock accent infoblock-editable">
+    <div class="infoblock-title">
+        <h3>Запрос</h3>
+    </div>
+    <div class="infoblock-content">
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="field pb-16">
+                        <label for="LA7mW6w">Заявление</label>
+                        <div class="field-icon field-icon-postfix">
+                            <input type="text" placeholder="Заявление" id="LA7mW6w" name="application" value="Заявление № данные-03-64">
+                            <button type="button" class="field-button filed-button-end" data-clear-field>
+                                <i class="icon icon-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="uploader pb-16">
+                        <label>Файлы</label>
+                        <div class="uploader-area">
+                            Перетащите файл сюда или
+                            <label class="uploader-label">
+                                загрузите
+                                <input type="file" name="avatar1" accept="image/png,image/jpeg,image/jpg" class="uploader-input">
+                            </label>
+                            с устройства
+                        </div>
+                        <div class="uploader-filelist uploader-exist">
+                            <ul>
+                                <li>
+                                    <i class="icon icon-file"></i>
+                                    <a href="#" title="удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf"><span class="uploader-filename">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf</span></a> &nbsp;<span class="uploader-filesize">(1021 Б)</span>
+                                    <button type="button" class="button button-icon"data-tooltip title="Удалить">
+                                        <i class="icon icon-trash"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <i class="icon icon-file"></i>
+                                    <a href="#" title="удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s.pdf"><span class="uploader-filename">удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s</span></a> &nbsp;<span class="uploader-filesize">(1021 Б)</span>
+                                    <button type="button" class="button button-icon"data-tooltip title="Удалить">
+                                        <i class="icon icon-trash"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="uploader-filelist">
+                            <ul></ul>
+                        </div>
+                        <div class="uploader-errors text-danger"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="field pb-16">
+                        <label for="LA7mW6a">Разрешённые районы плавания</label>
+                        <select name="region" multiple data-select2-width="100%" id="LA7mW6a">
+                            <option value="1" selected>Внутренние воды</option>
+                            <option value="2" selected>Внутренние водные пути Российской Федерации</option>
+                            <option value="3" selected>Внутренние морские воды и территории</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="uploader pb-16">
+                        <label>Документы</label>
+                        <div class="uploader-area">
+                            Перетащите файл сюда или
+                            <label class="uploader-label">
+                                загрузите
+                                <input type="file" name="avatar1" accept="image/png,image/jpeg,image/jpg" class="uploader-input">
+                            </label>
+                            с устройства
+                        </div>
+                        <div class="uploader-filelist uploader-exist">
+                            <ul>
+                                <li>
+                                    <i class="icon icon-file"></i>
+                                    <a href="#" title="Шкипарев лк.pdf"><span class="uploader-filename">Шкипарев лк.pdf</span></a> &nbsp;<span class="uploader-filesize">(1021 Б)</span>
+                                    <button type="button" class="button button-icon"data-tooltip title="Удалить">
+                                        <i class="icon icon-trash"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="uploader-filelist">
+                            <ul></ul>
+                        </div>
+                        <div class="uploader-errors text-danger"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="uploader pb-16">
+                        <label>Фото</label>
+                        <div class="uploader-area">
+                            Перетащите файл сюда или
+                            <label class="uploader-label">
+                                загрузите
+                                <input type="file" name="avatar" class="uploader-input">
+                            </label>с устройства.
+                        </div>
+                        <div class="uploader-filelist">
+                            <ul>
+                                <li>
+                                    <div class="avatar avatar-24 avatar-rounded mv-4 mr-4">
+                                        <img src="/images/photo.jpg" alt="Photo555.jpg" title="Photo555.jpg">
+                                    </div>
+                                    <a href="#" title="Photo555.jpg"><span class="uploader-filename">Photo555.jpg</span></a> &nbsp;<span class="uploader-filesize">(10 КБ)</span>
+                                    <button type="button" class="button button-icon" data-tooltip title="Удалить">
+                                        <i class="icon icon-trash"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-12">
+                    <div class="pb-16">
+                        <label>Данные ответа</label>
+                        <div class="json">
+                            <pre>
+{
+    "querytype": "VS486468v884",
+    "systemId": "1",
+    "uuid": “789979852-fg95+9-466dfg5-956-xdd6468468dx64684d68”,
+    "OriginalUuid": "х",
+    "Response": {
+        "changeOrderInfo": {
+            "OrderId": 864454688468,
+            "statusCode": 3,
+            "comment": "Государственная услуга оказана"
+        },
+        "cancelResponse": null,
+        "textResponse": null
+        }
+    },
+    "AttachmentHeaderList": [
+        {
+            "AttachmentHeader": {
+                "Id": null,
+            }
+        }
+    }
+}                           </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_infoblock.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Infoblock, InfoblockRow} from "../components/Infoblock";
+const response = [
+    {
+        "querytype": "VS486468v884",
+        "systemId": "1",
+        "uuid": "789979852-fg95+9-466dfg5-956-xdd6468468dx64684d68",
+        "OriginalUuid": "х",
+        "Response": {
+            "changeOrderInfo": {
+                "OrderId": 864454688468,
+                "statusCode": 3,
+                "comment": "Государственная услуга оказана"
+            },
+            "cancelResponse": null,
+            "textResponse": null
+        },
+        "AttachmentHeaderList" : [
+            {
+                "AttachmentHeader": {
+                    "Id": null,
+                }
+            }
+        ]
+    }
+];
+
+const attachedFiles = [
+    {
+        file_id: 414,
+        name: 'удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).pdf',
+        size: '10210',
+        link: '#',
+        type: 'application/pdf'
+    },
+    {
+        file_id: 4143,
+        name: 'удостоверение_на_право_управления_маломерным_судном_(Денисов Денис Дмитриевич).p7s',
+        size: '10210',
+        link: '#',
+        type: 'application/p7s'
+    },
+]
+
+const attachedDocs = [
+    {
+        file_id: 499,
+        name: 'Шкипарев лк.pdf',
+        size: '622725',
+        link: '#',
+        type: 'application/pdf'
+    }
+]
+
+const attachedAvatar = [
+    {
+        file_id: 52,
+        name: 'Photo555.jpg',
+        size: '10245',
+        link: '#',
+        type: 'image/jpeg',
+        src: '/static/images/photo.jpg'
+    }
+]
+
+const regions = [
+    {
+        text: 'Внутренние воды',
+        id: 'internal_1'
+    },
+    {
+        text: 'Внутренние морские воды и территории',
+        id: 'internal_2'
+    },
+    {
+        text: 'Внутренние водные пути Российской Федерации',
+        id: 'internal_3'
+    },
+    {
+        text: 'Что-то еще',
+        id: 'internal_4'
+    },
+    {
+        text: 'И кое-что еще',
+        id: 'internal_5'
+    }
+]
+
+const selected_regions = ['internal_1', 'internal_2', 'internal_3']
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Infoblock title="Запрос" editable={true}&gt;
+    &lt;InfoblockRow&gt;
+    &lt;Field utils="pb-16"&gt;
+        &lt;FieldLabel id="application">Заявление&lt;/FieldLabel&gt;
+        &lt;FieldGroup iconPosition="postfix"&gt;
+            &lt;FieldInput type="text" placeholder="Заявление" value="Заявление № данные-03-64" name="application" clearable={true} id="application" /&gt;
+        &lt;/FieldGroup&gt;
+    &lt;/Field>
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow&gt;
+        &lt;Uploader name="files" label="Файлы" files={attachedFiles} utils="mb-16" /&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow&gt;
+        &lt;Field utils="mb-16"&gt;
+            &lt;FieldLabel&gt;Разрешённые районы плавания&lt;/FieldLabel&gt;
+            &lt;Select multiple={true} placeholder="Разрешённые районы плавания" data={regions} width="100%" value={selected_regions} name="regions" /&gt;
+        &lt;/Field&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow&gt;
+        &lt;Uploader name="docs" label="Документы" files={attachedDocs} utils="mb-16" /&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow&gt;
+        &lt;Uploader name="avatar" label="Фото" files={attachedAvatar} utils="mb-16" /&gt;
+    &lt;/InfoblockRow&gt;
+    &lt;InfoblockRow&gt;
+        <label>Данные ответа</label>
+        &lt;Json json={response} /&gt;
+    &lt;/InfoblockRow&gt;
+&lt;/Infoblock&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>editable</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Задает особое оформление блока для режима редактирования</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_infoblock.scss</code> и <code>components/Infoblock.js</code>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Инфоблок со списком из чекбоксов</h2>
+            <p>Примеры инфоблока со списками из чекбоксов. Компонент составной и содержит в себе компоненты <a href="grid.html">сетки</a>, и <a href="checkbox.html#s-6">списка из чекбоксов</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="infoblock accent infoblock-editable">
+                <div class="infoblock-title">
+                    <h3>Права</h3>
+                </div>
+                <div class="infoblock-content">
+                    <div class="infoblock-row">
+                        <div class="row">
+                            <div class="col-4">
+                                <ul class="checkbox-list">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Первый пункт</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Второй пункт</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Третий пункт</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <ul class="checkbox-list">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Первый пункт</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Второй пункт</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Третий пункт</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <ul class="checkbox-list">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Первый пункт</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Второй пункт</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="name" class="checkbox-input">
+                                            <span class="checkbox-check"></span>
+                                            <span class="checkbox-text">Третий пункт</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="infoblock accent infoblock-editable">
+    <div class="infoblock-title">
+        <h3>Права</h3>
+    </div>
+    <div class="infoblock-content">
+        <div class="infoblock-row">
+            <div class="row">
+                <div class="col-4">
+                    <ul class="checkbox-list">
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Первый пункт</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Второй пункт</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Третий пункт</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul class="checkbox-list">
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Первый пункт</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Второй пункт</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Третий пункт</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul class="checkbox-list">
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Первый пункт</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Второй пункт</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox">
+                                <input type="checkbox" name="name" class="checkbox-input">
+                                <span class="checkbox-check"></span>
+                                <span class="checkbox-text">Третий пункт</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            При верстке этого компонента рекомендуется компоновать списки из чекбоксов в 2, 3 или 4 колонки
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_infoblock.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Infoblock, InfoblockRow} from "./components/Infoblock";
+import {Row, Column} from "./components/Grid";
+import {Checkbox, CheckboxList} from "./components/Checkbox";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Infoblock title="Права" editable={true}&gt;
+    &lt;InfoblockRow&gt;
+        &lt;Row&gt;
+            &lt;Column col="4"&gt;
+                &lt;CheckboxList&gt;
+                    &lt;Checkbox text="Первый пункт" /&gt;
+                    &lt;Checkbox text="Второй пункт" /&gt;
+                    &lt;Checkbox text="Третий пункт" /&gt;
+                &lt;/CheckboxList&gt;
+            &lt;/Column&gt;
+            &lt;Column col="4"&gt;
+                &lt;CheckboxList&gt;
+                    &lt;Checkbox text="Первый пункт" /&gt;
+                    &lt;Checkbox text="Второй пункт" /&gt;
+                    &lt;Checkbox text="Третий пункт" /&gt;
+                &lt;/CheckboxList&gt;
+            &lt;/Column&gt;
+            &lt;Column col="4"&gt;
+                &lt;CheckboxList&gt;
+                    &lt;Checkbox text="Первый пункт" /&gt;
+                    &lt;Checkbox text="Второй пункт" /&gt;
+                    &lt;Checkbox text="Третий пункт" /&gt;
+                &lt;/CheckboxList&gt;
+            &lt;/Column&gt;
+        &lt;/Row&gt;
+    &lt;/InfoblockRow&gt;
+&lt;/Infoblock&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            При верстке этого компонента рекомендуется компоновать списки из чекбоксов в 2, 3 или 4 колонки
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_infoblock.scss</code> и <code>components/Infoblock.js</code>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

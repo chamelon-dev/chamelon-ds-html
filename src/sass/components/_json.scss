@@ -1,0 +1,8 @@
+.json {
+  overflow: auto;
+  @include scrollbar;
+  pre {
+    line-height: rem(16);
+    font-size: rem(13);
+  }
+}

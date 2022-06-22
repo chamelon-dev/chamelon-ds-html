@@ -1,0 +1,236 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'sort' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Сортировка{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="sort.html" class="breadcrumbs-link">Сортировка</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Сортировка</h1>
+    <span class="tagline">Создание блоков с перетаскиваемыми элементами</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Сортировка</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с перемещаемыми элементами списка</p>
+        </div>
+        <div class="components-options">
+            <p>Если список содержит один перетаскиваемый элемент, иконка перетаскивания должна быть скрыта (например, присвоением класс <code>.d-none</code> утилиты <a href="../utils/display.html">Отображения</a>) или удалена из разметки</p>
+            <p>При динамическом добавлении элементов в список также стоит учитывать отображение иконки перетаскивания: если список содержит более одного перетаскиваемого элемента, иконки перетаскивания должны быть отображены у всех этих элементов (например, путем удаления класса <code>.d-none</code> утилиты <a href="../utils/display.html">Отображения</a> или путем динамического добавления)</p>
+            <p>При динамическом добавлении элементов, содержащих текстовые поля, в обязательном порядке должна быть предусмотрена иконка удаления (<code>.icon-trash</code>) вновь добавленного элемента их списка</p>
+            <p>При заполнении текстового поля иконка удаления элемента списка из набора должна быть заменена на иконку очистки поля</p>
+            <p>По-умолчанию, элементы списка имеет отступ снизу в 16px, кроме последнего</p>
+            <p>Классы <code>.sortable</code>, <code>.sortable-item</code>, <code>.sortable-ghost</code>, <code>.sortable-chosen</code> являются зарезервированными</p>
+            <p>Демонстрационный пример расположен <a href="../preview/sort.html" target="_blank">здесь</a></p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Сортировка</h2>
+            <p>Пример компонента, в котором текстовые поля являются перетаскиваемыми в пределах своего родительского блока</p>
+        </div>
+        <div class="components-preview">
+            <div class="sortable" data-sortable>
+                <div class="sortable-item">
+                    <i class="icon icon-dnd"></i>
+                    <div class="field">
+                        <div class="field-icon field-icon-both">
+                            <i class="icon icon-search field-icon-start"></i>
+                            <input type="search" name="last_name" value="Иванов" placeholder="Фамилия">
+                            <button class="field-button field-button-end d-none" data-clear-field>
+                                <i class="icon icon-times"></i>
+                            </button>
+{#                            <button class="field-button field-button-end" data-sortable-remove>#}
+{#                                <i class="icon icon-trash"></i>#}
+{#                            </button>#}
+                        </div>
+                    </div>
+                </div>
+                <div class="sortable-item">
+                    <i class="icon icon-dnd"></i>
+                    <div class="field">
+                        <div class="field-icon field-icon-both">
+                            <i class="icon icon-search field-icon-start"></i>
+                            <input type="search" name="last_name" value="Пётр" placeholder="Фамилия">
+                            <button class="field-button field-button-end d-none" data-clear-field>
+                                <i class="icon icon-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sortable-item">
+                    <i class="icon icon-dnd"></i>
+                    <div class="field">
+                        <div class="field-icon field-icon-both">
+                            <i class="icon icon-search field-icon-start"></i>
+                            <input type="search" name="last_name" value="" placeholder="Фамилия">
+                            <button class="field-button field-button-end d-none" data-clear-field>
+                                <i class="icon icon-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+            <pre>
+                <code class="language-html">
+<textarea>
+<div class="sortable" data-sortable>
+    <div class="sortable-item">
+        <i class="icon icon-dnd"></i>
+        <div class="field">
+            <div class="field-icon field-icon-both">
+                <i class="icon icon-search field-icon-start"></i>
+                <input type="search" name="last_name" value="Иванов" placeholder="Фамилия">
+                <button class="field-button field-button-end d-none" data-clear-field>
+                    <i class="icon icon-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="sortable-item">
+        <i class="icon icon-dnd"></i>
+        <div class="field">
+            <div class="field-icon field-icon-both">
+                <i class="icon icon-search field-icon-start"></i>
+                <input type="search" name="first_name" value="Пётр" placeholder="Имя">
+                <button class="field-button field-button-end d-none" data-clear-field>
+                    <i class="icon icon-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="sortable-item">
+        <i class="icon icon-dnd"></i>
+        <div class="field">
+            <div class="field-icon field-icon-both">
+                <i class="icon icon-search field-icon-start"></i>
+                <input type="search" name="middle_name" placeholder="Отчество">
+                <button class="field-button field-button-end d-none" data-clear-field>
+                    <i class="icon icon-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                </code>
+            </pre>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        Coming soon
+                        <div class="components-code d-none">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Accent from "./components/Accent";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Accent&gt;[Контент или компонент]&lt;/Accent&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options d-none">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source d-none">
+                            Исходный код этого компонента находится по пути <code>components/Accent.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

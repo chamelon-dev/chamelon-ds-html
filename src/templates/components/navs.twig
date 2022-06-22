@@ -1,0 +1,1232 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'menu' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Меню{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="menus.html" class="breadcrumbs-link">Меню</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Навигационное меню</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс навигационных меню различной глубины вложенности и направления.</span>
+</div>
+{% endblock %}
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Горизонтальное меню</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Вертикальное меню</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Фиксированное меню</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при работе с навигационными меню</p>
+        </div>
+        <div class="components-options">
+            <p>Пункты меню верхнего уровня должны содержать смысловую иконку. В случае отсутствия таковой, рекомендуется использовать иконку «page» из компонента <a href="icons.html#4">иконок</a>, группы &laquo;Иллюстрации&raquo;. Эти иконки должны находиться перед текстовым названием пункта меню и иметь класс <code>.menu-prefix</code></p>
+            <p>Все текстовые названия пунктов меню и подменю должны быть обернуты в элемент<code>&laquo;span class="menu-label"&raquo;...&laquo;/span&raquo;</code></p>
+            <p>Пункты подменю, содержащие в себе другие подменю, должны содержать иконку «chevron-right» (для фиксированных меню) / «chevron-down» (для горизонтальных и вертикальных меню) из компонента <a href="icons.html#s-1">иконок</a>, группы «Иконки форм». Эта иконка должна находиться после текстового названия пункта меню и иметь класс <code>.menu-postfix</code></p>
+            <p>Блоки, содержащие подменю, должны быть обернуты в элемент<code>&lt;div class="menu-submenu"&gt;...&lt;/div&gt;</code></p>
+            <p>Ссылки, которые не осуществляют переход на какие-либо страницы, должны содержать атрибут <code>data-prevent</code> для предотвращения поведения по-умолчанию</p>
+            <p>Элемент, который содержит в себе подменю и является прямым родителем для него, в обязательном порядке должен содержать атрибут <code>tabindex="0"</code>для корректной работы в браузере Safari</p>
+            <p>Использование предваряющих иконок в пунктах подменю для <a href="#s1">горизонтального меню</a> не допускается</p>
+            <p>Глубина вложенности для всех типов меню (кроме <a href="#s-3">фиксированного меню</a>) ограничена лишь физическими размерами устройства и фантазией разработчика, но в зависимости от ситуации рекомендуется использовать не более трех уровней вложенности</p>
+            <p>По-умолчанию, ширина выпадающего меню равна 240 пикс., для увеличения ширины до 400 пикс. используется дополнительный класс <code>.menu-submenu-wide</code>, который должен быть примененн к блоку <code>&lt;div class="menu-submenu"&gt;...&lt;/div&gt;</code></p>
+            <p>Фиксированные меню предназначены для использования совместно с компонентом <a href="sidebar.html">Сайдбара</a>. Использование этого типа меню во всех других случаях недопустимо</p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Горизонтальное меню</h2>
+            <p>Горизонтальное меню c тремя уровнями вложенности и активным пунктом меню. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="horizontal-menu ph-16" style="height: 64px;">
+                        <div class="menu-left">
+                            <ul>
+                                <li tabindex="0">
+                                    <a href="#" data-prevent>
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Записи</span>
+                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                    </a>
+                                    <div class="menu-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="menu-label">Уровень 1</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="menu-label">Уровень 1</span>
+                                                </a>
+                                            </li>
+                                            <li tabindex="0">
+                                                <a href="#" data-prevent>
+                                                    <span class="menu-label">Уровень 1</span>
+                                                    <i class="icon icon-chevron-down menu-postfix"></i>
+                                                </a>
+                                                <div class="menu-submenu">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="menu-label">Уровень 2</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="menu-label">Уровень 2</span>
+                                                            </a>
+                                                        </li>
+                                                        <li tabindex="0">
+                                                            <a href="#" data-prevent>
+                                                                <span class="menu-label">Уровень 2</span>
+                                                                <i class="icon icon-chevron-down menu-postfix"></i>
+                                                            </a>
+                                                            <div class="menu-submenu">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <span class="menu-label">Уровень 3</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <span class="menu-label">Уровень 3</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <span class="menu-label">Уровень 3</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <span class="menu-label">Уровень 2</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="menu-label">Уровень 1</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" data-prevent>
+                                        <i class="icon icon-map-tree menu-prefix"></i>
+                                        <span class="menu-label">Формирования</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="active" data-prevent>
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Классификаторы</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-right">
+                            <ul>
+                                <li tabindex="0">
+                                    <a href="#" data-prevent>
+                                        <i class="icon icon-user menu-prefix"></i>
+                                        <span class="menu-label">Администратор</span>
+                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                    </a>
+                                    <div class="menu-submenu has-children">
+                                        <ul>
+                                            <li tabindex="0">
+                                                <a href="#" data-prevent>
+                                                    <span class="menu-label">Профиль</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="menu-label">Выход</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<nav class="horizontal-menu">
+    <div class="menu-left">
+        <ul>
+            <li tabindex="0">
+                <a href="#" data-prevent>
+                    <i class="icon icon-page menu-prefix"></i>
+                    <span class="menu-label">Записи</span>
+                    <i class="icon icon-chevron-down menu-postfix"></i>
+                </a>
+                <div class="menu-submenu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="menu-label">Уровень 1</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-label">Уровень 1</span>
+                            </a>
+                        </li>
+                        <li tabindex="0">
+                            <a href="#" data-prevent>
+                                <span class="menu-label">Уровень 1</span>
+                                <i class="icon icon-chevron-down menu-postfix"></i>
+                            </a>
+                            <div class="menu-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="menu-label">Уровень 2</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="menu-label">Уровень 2</span>
+                                        </a>
+                                    </li>
+                                    <li tabindex="0">
+                                        <a href="#" data-prevent>
+                                            <span class="menu-label">Уровень 2</span>
+                                            <i class="icon icon-chevron-down menu-postfix"></i>
+                                        </a>
+                                        <div class="menu-submenu">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="menu-label">Уровень 3</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="menu-label">Уровень 3</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="menu-label">Уровень 3</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="menu-label">Уровень 2</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-label">Уровень 1</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#" data-prevent>
+                    <i class="icon icon-map-tree menu-prefix"></i>
+                    <span class="menu-label">Формирования</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="active" data-prevent>
+                    <i class="icon icon-page menu-prefix"></i>
+                    <span class="menu-label">Классификаторы</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu-right">
+        <ul>
+            <li tabindex="0">
+                <a href="#" data-prevent>
+                    <i class="icon icon-user menu-prefix"></i>
+                    <span class="menu-label">Администратор</span>
+                    <i class="icon icon-chevron-down menu-postfix"></i>
+                </a>
+                <div class="menu-submenu">
+                    <ul>
+                        <li tabindex="0">
+                            <a href="#" data-prevent>
+                                <span class="menu-label">Профиль</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="menu-label">Выход</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_menu.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Nav, NavItem, NavLeft, NavRight, NavSubmenu} from "../components/Nav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Nav&gt;
+    &lt;NavLeft&gt;
+        &lt;NavItem icon="page" link="#" title="Записи" nonClickable={true}&gt;
+            &lt;NavSubmenu&gt;
+                &lt;NavItem link="#" title="Уровень 1" /&gt;
+                &lt;NavItem link="#" title="Уровень 1" /&gt;
+                &lt;NavItem link="#" title="Уровень 1" nonClickable={true}&gt;
+                    &lt;NavSubmenu&gt;
+                        &lt;NavItem link="#" title="Уровень 2" /&gt;
+                        &lt;NavItem link="#" title="Уровень 2" /&gt;
+                        &lt;NavItem link="#" title="Уровень 2" nonClickable={true}&gt;
+                            &lt;NavSubmenu&gt;
+                                &lt;NavItem link="#" title="Уровень 3" /&gt;
+                                &lt;NavItem link="#" title="Уровень 3" /&gt;
+                                &lt;NavItem link="#" title="Уровень 3" /&gt;
+                            &lt;/NavSubmenu&gt;
+                        &lt;/NavItem&gt;
+                        &lt;NavItem link="#" title="Уровень 2" /&gt;
+                    &lt;/NavSubmenu&gt;
+                &lt;/NavItem&gt;
+                &lt;NavItem link="#" title="Уровень 1" /&gt;
+            &lt;/NavSubmenu&gt;
+        &lt;/NavItem&gt;
+        &lt;NavItem icon="map-tree" link="#" title="Формирования" /&gt;
+        &lt;NavItem icon="classifiers" link="#" title="Классификаторы" isActive={true} /&gt;
+    &lt;/NavLeft&gt;
+    &lt;NavRight&gt;
+        &lt;NavItem icon="user" link="#" title="Администратор" nonClickable={true}&gt;
+            &lt;NavSubmenu&gt;
+                &lt;NavItem link="#" title="Профиль" nonClickable={true}&gt;
+                    &lt;NavSubmenu&gt;
+                        &lt;NavItem link="#" title="Уровень 3" /&gt;
+                        &lt;NavItem link="#" title="Уровень 3" /&gt;
+                        &lt;NavItem link="#" title="Уровень 3" /&gt;
+                    &lt;/NavSubmenu&gt;
+                &lt;/NavItem&gt;
+                &lt;NavItem link="#" title="Выход" /&gt;
+            &lt;/NavSubmenu&gt;
+        &lt;/NavItem&gt;
+    &lt;/NavRight&gt;
+&lt;/Nav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                        <tr>
+                                            <th>Свойство</th>
+                                            <th>Тип</th>
+                                            <th>Обязательно</th>
+                                            <th>По-умолчанию</th>
+                                            <th>Описание</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>width</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>auto</td>
+                                            <td>
+                                                Ширина выпадающего подменю<br/>
+                                                <code>auto</code> - 240 пикс.<br>
+                                                <code>wide</code> - 400 пикс.<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NavSubmenu /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>icon</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td>(пусто)</td>
+                                            <td>
+                                                Имя иконки<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>Строка</td>
+                                            <td>Да</td>
+                                            <td>#</td>
+                                            <td>
+                                                Ссылка<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>title</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название пункта меню<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>isActive</td>
+                                            <td>Логический</td>
+                                            <td>Нет</td>
+                                            <td>false</td>
+                                            <td>
+                                                Флаг активного пункта меню<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>nonClickable</td>
+                                            <td>Логический</td>
+                                            <td>Нет</td>
+                                            <td>false</td>
+                                            <td>
+                                                Запрет клика<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>onClick</td>
+                                            <td>Функция</td>
+                                            <td>Нет</td>
+                                            <td>null</td>
+                                            <td>
+                                                Функция-обработчик клика<br/>
+                                                В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>utils</td>
+                                            <td>Строка</td>
+                                            <td>Нет</td>
+                                            <td></td>
+                                            <td>
+                                                Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                                В данном компоненте применимо только к родительскому компоненту <code>&lt;Nav /&gt;</code>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_menu.scss</code> и <code>sass/components/Nav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Вертикальное меню</h2>
+            <p>Вертикального меню с двумя уровнями вложенности и активным пунктом меню. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview">
+            <nav class="vertical-menu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="icon icon-page menu-prefix"></i>
+                            <span class="menu-label">Записи</span>
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#" data-prevent>
+                            <i class="icon icon-map-tree menu-prefix"></i>
+                            <span class="menu-label">Формирования</span>
+                            <i class="icon icon-chevron-down menu-postfix"></i>
+                        </a>
+                        <div class="menu-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon icon-image menu-prefix"></i>
+                                        <span class="menu-label">Уровень 1</span>
+                                    </a>
+                                </li>
+                                <li tabindex="0">
+                                    <a href="#" data-prevent>
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 1</span>
+                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                    </a>
+                                    <div class="menu-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 2</span>
+                                                </a>
+                                            </li>
+                                            <li tabindex="0">
+                                                <a href="#" data-prevent>
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 2</span>
+                                                    <i class="icon icon-chevron-down menu-postfix"></i>
+                                                </a>
+                                                <div class="menu-submenu">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="icon icon-page menu-prefix"></i>
+                                                                <span class="menu-label">Уровень 3</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="icon icon-page menu-prefix"></i>
+                                                                <span class="menu-label">Уровень 3</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <i class="icon icon-page menu-prefix"></i>
+                                                                <span class="menu-label">Уровень 3</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 2</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 1</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="active">
+                            <i class="icon icon-page menu-prefix"></i>
+                            <span class="menu-label">Классификаторы</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#">
+                <i class="icon icon-page menu-prefix"></i>
+                <span class="menu-label">Записи</span>
+            </a>
+        </li>
+        <li tabindex="0">
+            <a href="#" data-prevent>
+                <i class="icon icon-map-tree menu-prefix"></i>
+                <span class="menu-label">Формирования</span>
+                <i class="icon icon-chevron-down menu-postfix"></i>
+            </a>
+            <div class="menu-submenu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="icon icon-image menu-prefix"></i>
+                            <span class="menu-label">Уровень 1</span>
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#" data-prevent>
+                            <i class="icon icon-page menu-prefix"></i>
+                            <span class="menu-label">Уровень 1</span>
+                            <i class="icon icon-chevron-down menu-postfix"></i>
+                        </a>
+                        <div class="menu-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 2</span>
+                                    </a>
+                                </li>
+                                <li tabindex="0">
+                                    <a href="#" data-prevent>
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 2</span>
+                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                    </a>
+                                    <div class="menu-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 3</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 3</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 3</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon icon-page menu-prefix"></i>
+                            <span class="menu-label">Уровень 1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="#" class="active">
+                <i class="icon icon-page menu-prefix"></i>
+                <span class="menu-label">Классификаторы</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_menu.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Nav, NavItem, NavSubmenu} from "../components/Nav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Nav variant="vertical"&gt;
+   &lt;NavItem title="Записи" link="#" icon="page" /&gt;
+    &lt;NavItem title="Формирования" link="#" icon="map-tree" nonClickable={true}&gt;
+        &lt;NavSubmenu&gt;
+            &lt;NavItem title="Уровень 1" link="#" icon="image" /&gt;
+            &lt;NavItem title="Уровень 1" link="#" icon="page" nonClickable={true}&gt;
+                &lt;NavSubmenu&gt;
+                    &lt;NavItem title="Уровень 2" link="#" icon="image" /&gt;
+                    &lt;NavItem title="Уровень 2" link="#" icon="image" nonClickable={true}&gt;
+                        &lt;NavSubmenu&gt;
+                            &lt;NavItem title="Уровень 3" link="#" icon="image" /&gt;
+                            &lt;NavItem title="Уровень 3" link="#" icon="image" /&gt;
+                            &lt;NavItem title="Уровень 3" link="#" icon="image" /&gt;
+                        &lt;/NavSubmenu&gt;
+                    &lt;/NavItem&gt;
+                    &lt;NavItem title="Уровень 2" link="#" icon="image" /&gt;
+                &lt;/NavSubmenu&gt;
+            &lt;/NavItem&gt;
+            &lt;NavItem title="Уровень 1" link="#" icon="page" /&gt;
+        &lt;/NavSubmenu&gt;
+    &lt;/NavItem&gt;
+   &lt;NavItem title="Классификаторы" link="#" icon="page" isActive={true} /&gt;
+&lt;/Nav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>icon</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Имя иконки<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>link</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td>#</td>
+                                        <td>
+                                            Ссылка<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название пункта меню<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>isActive</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Флаг активного пункта меню<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>nonClickable</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Запрет клика<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onClick</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик клика<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Nav /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_menu.scss</code> и <code>sass/components/Nav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Фиксированное меню</h2>
+            <p>Пример простейшего фиксированного меню с тремя уровнями вложенности и активным пунктом меню. В этом типе меню вложенные подменю растягиваются на всю высоту родителя, фиксируются слева и используют автоматическую прокрутку, если пунктов меню во вложенных меню больше, чем позволяет высота контейнера. Компонент составной и содержит в себе компонент <a href="icons.html">иконок</a></p>
+        </div>
+        <div class="components-preview" style="overflow-x: auto">
+            <nav class="fixed-menu p-16" style="position: relative; height: 500px; width: 260px">
+                    <ul>
+                        <li tabindex="0">
+                            <a href="#" data-prevent>
+                                <i class="icon icon-page menu-prefix"></i>
+                                <span class="menu-label">Записи</span>
+                                <i class="icon icon-chevron-right menu-postfix"></i>
+                            </a>
+                            <div class="menu-submenu ph-16" style="position: absolute; left: 100%; overflow: initial">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon icon-page menu-prefix"></i>
+                                            <span class="menu-label">Уровень 1</span>
+                                        </a>
+                                    </li>
+                                    <li tabindex="0">
+                                        <a href="#" data-prevent>
+                                            <i class="icon icon-page menu-prefix"></i>
+                                            <span class="menu-label">Уровень 1</span>
+                                            <i class="icon icon-chevron-right menu-postfix"></i>
+                                        </a>
+                                        <div class="menu-submenu ph-16" style="position: absolute; left: 100%; overflow: initial">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-page menu-prefix"></i>
+                                                        <span class="menu-label">Уровень 2</span>
+                                                    </a>
+                                                </li>
+                                                <li tabindex="0">
+                                                    <a href="#" data-prevent>
+                                                        <i class="icon icon-page menu-prefix"></i>
+                                                        <span class="menu-label">Уровень 2</span>
+                                                        <i class="icon icon-chevron-right menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu ph-16" style="position: absolute; left: 100%;">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="icon icon-page menu-prefix"></i>
+                                                                    <span class="menu-label">Уровень 3</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="icon icon-page menu-prefix"></i>
+                                                                    <span class="menu-label">Уровень 3</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="icon icon-page menu-prefix"></i>
+                                                                    <span class="menu-label">Уровень 3</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="icon icon-page menu-prefix"></i>
+                                                        <span class="menu-label">Уровень 2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="icon icon-page menu-prefix"></i>
+                                            <span class="menu-label">Уровень 1</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-map-tree menu-prefix"></i>
+                                <span class="menu-label">Формирования</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="active">
+                                <i class="icon icon-classifiers menu-prefix"></i>
+                                <span class="menu-label">Классификаторы</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+ <nav class="fixed-menu">
+    <ul>
+        <li tabindex="0">
+            <a href="#" data-prevent>
+                <i class="icon icon-page menu-prefix"></i>
+                <span class="menu-label">Записи</span>
+                <i class="icon icon-chevron-right menu-postfix"></i>
+            </a>
+            <div class="menu-submenu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="icon icon-page menu-prefix"></i>
+                            <span class="menu-label">Уровень 1</span>
+                        </a>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#" data-prevent>
+                            <i class="icon icon-page menu-prefix"></i>
+                            <span class="menu-label">Уровень 1</span>
+                            <i class="icon icon-chevron-right menu-postfix"></i>
+                        </a>
+                        <div class="menu-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 2</span>
+                                    </a>
+                                </li>
+                                <li tabindex="0">
+                                    <a href="#" data-prevent>
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 2</span>
+                                        <i class="icon icon-chevron-right menu-postfix"></i>
+                                    </a>
+                                    <div class="menu-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 2</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 3</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="icon icon-page menu-prefix"></i>
+                                                    <span class="menu-label">Уровень 3</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon icon-page menu-prefix"></i>
+                                        <span class="menu-label">Уровень 2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon icon-page menu-prefix"></i>
+                            <span class="menu-label">Уровень 1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                <i class="icon icon-map-tree menu-prefix"></i>
+                <span class="menu-label">Формирования</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="active">
+                <i class="icon icon-classifiers menu-prefix"></i>
+                <span class="menu-label">Классификаторы</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_menu.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Nav, NavItem, NavSubmenu} from "../components/Nav";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Nav variant="fixed"&gt;
+    &lt;NavItem icon="page" link="#" title="Записи" nonClickable={true} onClick={openSidebar}&gt;
+        &lt;NavSubmenu&gt;
+            &lt;NavItem link="#" title="Уровень 1" /&gt;
+            &lt;NavItem link="#" title="Уровень 1" nonClickable={true}&gt;
+                &lt;NavSubmenu&gt;
+                    &lt;NavItem link="#" title="Уровень 2" /&gt;
+                    &lt;NavItem link="#" title="Уровень 2" nonClickable={true} &gt;
+                        &lt;NavSubmenu&gt;
+                            &lt;NavItem link="#" title="Уровень 3" /&gt;
+                            &lt;NavItem link="#" title="Уровень 3" /&gt;
+                            &lt;NavItem link="#" title="Уровень 3" /&gt;
+                        &lt;/NavSubmenu&gt;
+                    &lt;/NavItem&gt;
+                    &lt;NavItem link="#" title="Уровень 2" /&gt;
+                &lt;/NavSubmenu&gt;
+            &lt;/NavItem&gt;
+            &lt;NavItem link="#" title="Уровень 1" /&gt;
+        &lt;/NavSubmenu&gt;
+    &lt;/NavItem&gt;
+    &lt;NavItem icon="map-tree" link="#" title="Формирования" /&gt;
+    &lt;NavItem icon="classifiers" link="#" title="Классификаторы" isActive={true} /&gt;
+&lt;/Nav&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>icon</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>(пусто)</td>
+                                        <td>
+                                            Имя иконки<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>link</td>
+                                        <td>Строка</td>
+                                        <td>Да</td>
+                                        <td>#</td>
+                                        <td>
+                                            Ссылка<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название пункта меню<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>isActive</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Флаг активного пункта меню<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>nonClickable</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>
+                                            Запрет клика<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onClick</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик клика<br/>
+                                            В данном компоненте применимо только к дочернему компоненту <code>&lt;NavItem /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br/>
+                                            В данном компоненте применимо только к родительскому компоненту <code>&lt;Nav /&gt;</code>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_menu.scss</code> и <code>sass/components/Nav.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

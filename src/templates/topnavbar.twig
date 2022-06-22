@@ -1,0 +1,57 @@
+{% set basePath = (base) ? '' : '../' %}
+<nav class="horizontal-menu">
+    <div class="menu-left">
+        <ul>
+            <li>
+                <a href="{{ basePath }}index.html" {% if heder_menu_active_item == 'start' %}class="active"{% endif %}>
+                    <span class="menu-label">Начало</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ basePath }}components/template.html" {% if heder_menu_active_item == 'components' %}class="active"{% endif %}>
+                    <span class="menu-label">Компоненты</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ basePath }}utils/margins.html" {% if heder_menu_active_item == 'utils' %}class="active"{% endif %}>
+                    <span class="menu-label">Утилиты</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ basePath }}examples/index.html" {% if heder_menu_active_item == 'examples' %}class="active"{% endif %}>
+                    <span class="menu-label">Примеры</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu-right">
+        <div class="switcher">
+            <div data-tooltip="Aqua (по-умолчанию)" data-placement="bottom">
+                <label class="switcher-label theme-default">
+                    <input type="radio" name="theme" value="default" class="switcher-input" checked />
+                    <span class="switcher-check"></span>
+                </label>
+            </div>
+            <div data-tooltip="Flavum" data-placement="bottom">
+                <label class="switcher-label theme-flavum">
+                    <input type="radio" name="theme" value="flavum" class="switcher-input" />
+                    <span class="switcher-check"></span>
+                </label>
+            </div>
+            <div data-tooltip="Ferrum" data-placement="bottom">
+                <label class="switcher-label theme-ferrum">
+                    <input type="radio" name="theme" value="ferrum" class="switcher-input" />
+                    <span class="switcher-check"></span>
+                </label>
+            </div>
+        </div>
+        <div class="version">
+            <span class="d-inline-block mr-8">HTML</span>
+            <label class="toggle">
+                <input type="checkbox" name="version" class="toggle-input">
+                <span class="toggle-check"></span>
+            </label>
+            <span class="d-inline-block ml-8">React</span>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,724 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'prefooter' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Префутер{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="prefooter.html" class="breadcrumbs-link">Префутер</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Префутер, фиксированный макет</h1>
+    <span class="tagline">Предназначен для вывода любой информации в нижней части страницы, но до футера в шаблонах с фиксированным центрированным макетом</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Префутер, фиксированный макет</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Префутер, резиновый макет</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Префутер, фиксированный макет</h2>
+            <p>Предназначен для вывода любой информации в нижней части страницы, но до футера в шаблонах с фиксированным центрированным макетом</p>
+        </div>
+        <div class="components-preview">
+            <div class="bottom" style="margin: 0 -30px; padding-left: 30px; padding-right: 30px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i> Заголовок 1</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 2</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 3</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 4</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 5</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 6</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-preview">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i> Заголовок 1</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 2</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 3</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 4</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 5</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 6</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_bottom.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Bottom from "./components/Bottom";
+const groups = [
+    {
+        title: 'Заголовок 1', // Заголовок группы, опционально
+        items: [
+            {
+                text: 'Пункт меню 1', // Текст
+                link: '#' // Ссылка, опционально
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 2',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 3',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 4',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 5',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 6',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            }
+        ]
+    }
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Bottom groups={groups} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>groups</td>
+                                        <td>Массив объектов</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащий группы данных</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_bottom.scss</code> и <code>components/Bottom.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Префутер, резиновый макет</h2>
+            <p>Предназначен для вывода любой информации в нижней части страницы, но до футера в шаблонах с резиновым макетом и макетах с сайдбаром</p>
+        </div>
+        <div class="components-preview">
+            <div class="bottom" style="margin: 0 -30px; padding-left: 30px; padding-right: 30px">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i> Заголовок 1</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 2</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 3</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 4</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 5</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="bottom-group">
+                                <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 6</h6>
+                                <ul>
+                                    <li>
+                                        <a href="" class="bottom-link">Пункт меню 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-preview">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i> Заголовок 1</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 2</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 3</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 4</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 5</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="bottom-group">
+                    <h6 class="bottom-title"><i class="icon icon-chevron-down"></i>Заголовок 6</h6>
+                    <ul>
+                        <li>
+                            <a href="" class="bottom-link">Пункт меню 1</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_bottom.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Bottom from "./components/Bottom";
+const groups = [
+    {
+        title: 'Заголовок 1', // Заголовок группы, опционально
+        items: [
+            {
+                text: 'Пункт меню 1', // Текст
+                link: '#' // Ссылка, опционально
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 2',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 3',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 4',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 5',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            },
+            {
+                text: 'Пункт меню 2',
+                link: '#'
+            }
+        ]
+    },
+    {
+        title: 'Заголовок 6',
+        items: [
+            {
+                text: 'Пункт меню 1',
+                link: '#'
+            }
+        ]
+    }
+]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Bottom fluid={true} groups={groups} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>fluid</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Указывает, что компонент будет растягиваться на 100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>groups</td>
+                                        <td>Массив объектов</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Массив объектов, содержащий группы данных</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_bottom.scss</code> и <code>components/Bottom.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

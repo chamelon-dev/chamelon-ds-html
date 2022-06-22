@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+        <title>{% block title %}Демо{% endblock %}</title>
+    {% endblock %}
+
+</head>
+
+<body class="layout-center">
+    <div class="wrapper-outer">
+        <div class="wrapper">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="sortable mt-56" data-sortable id="demo-1">
+                                <div class="sortable-item">
+                                    <i class="icon icon-dnd d-none"></i>
+                                    <div class="field">
+                                        <div class="field-icon field-icon-both">
+                                            <i class="icon icon-search field-icon-start"></i>
+                                            <input type="search" name="last_name" value="Иванов" placeholder="Фамилия">
+                                            <button class="field-button field-button-end d-none" data-clear-field>
+                                                <i class="icon icon-times"></i>
+                                            </button>
+{#                                            <button class="field-button field-button-end" data-sortable-remove>#}
+{#                                                <i class="icon icon-trash"></i>#}
+{#                                            </button>#}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" id="sortableTest" class="mt-16 d-inline-block">Добавить</a>
+                        </div>
+                        <div class="col-6">
+                            <div class="sortable mt-56" data-sortable id="demo-2">
+                                <div class="sortable-item">
+                                    <i class="icon icon-dnd"></i>
+                                    <div class="field">
+                                        <div class="field-group field-group-combo">
+                                            <select data-select2-width="100%" data-placeholder="Выберите из списка">
+                                                <option value=""></option>
+                                            </select>
+                                            <div class="field-group-postfix">
+                                                <button type="button" class="button button-icon" data-add>
+                                                    <i class="icon icon-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" id="multipleTest" class="mt-16 d-inline-block">Добавить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                            <div class="footer-copyrights">&copy; Chamel<sup>on</sup>, 2021</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+{% block scripts %}
+    <script defer src="../js/docs.js"></script>
+{% endblock %}
+
+</body>
+</html>

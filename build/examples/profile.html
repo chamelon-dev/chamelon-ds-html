@@ -1,0 +1,214 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Профиль пользователя - Design Sys</title><link rel="stylesheet" href="../css/docs.css"><style>.show-loader{overflow:hidden;padding-right:17px;}.preloader{background-color:#fff;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000}.preloader-loader{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%)}.preloader-loader .logo{margin:0}.preloader .logo a{padding:12px 48px;color:#fff;background:linear-gradient(to right,#818997 0,#fff 10%,#818997 20%);background-position:0;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s infinite linear;animation-fill-mode:forwards;-webkit-text-size-adjust:none;font-weight:600;text-decoration:none;white-space:nowrap;font-size:36px}.preloader .logo a span{vertical-align:super;top:-.5em;font-size:75%}.preloader .logo+p{text-align:center;color:#dbdfe6}@-moz-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-webkit-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@-o-keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}@keyframes shine{0%{background-position:0}60%{background-position:270px}100%{background-position:270px}}</style><script defer="defer" src="../js/theme.js"></script><link href="../css/style.css" rel="stylesheet"></head><body class="layout-sidebar show-loader"><div class="preloader"><div class="preloader-loader"><div class="logo"><a href="/">Design<span>sys</span></a></div><p>Пожалуйста, подождите...</p></div></div><div class="wrapper-outer"><div class="wrapper"><header class="header"><div class="container-fluid"><div class="row"><div class="col-12"><div class="navbar"><div class="logo"><a href="../index.html">Design<sup>sys</sup></a></div><button data-toggle-header class="button button-icon"><i class="icon icon-bars"></i></button><nav class="horizontal-menu"><div class="menu-left"><ul><li><a href="../index.html"><span class="menu-label">Начало</span></a></li><li><a href="../components/template.html"><span class="menu-label">Компоненты</span></a></li><li><a href="../utils/margins.html"><span class="menu-label">Утилиты</span></a></li><li><a href="../examples/index.html" class="active"><span class="menu-label">Примеры</span></a></li></ul></div><div class="menu-right"><div class="switcher"><div data-tooltip="Aqua (по-умолчанию)" data-placement="bottom"><label class="switcher-label theme-default"><input type="radio" name="theme" value="default" class="switcher-input" checked="checked"/> <span class="switcher-check"></span></label></div><div data-tooltip="Flavum" data-placement="bottom"><label class="switcher-label theme-flavum"><input type="radio" name="theme" value="flavum" class="switcher-input"/> <span class="switcher-check"></span></label></div><div data-tooltip="Ferrum" data-placement="bottom"><label class="switcher-label theme-ferrum"><input type="radio" name="theme" value="ferrum" class="switcher-input"/> <span class="switcher-check"></span></label></div></div><div class="version"><span class="d-inline-block mr-8">HTML</span> <label class="toggle"><input type="checkbox" name="version" class="toggle-input"> <span class="toggle-check"></span></label> <span class="d-inline-block ml-8">React</span></div></div></nav></div></div></div></div></header><div class="content"><div class="container h-100"><div class="row h-100"><div class="col-12"><div class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a href="/" class="breadcrumbs-link">Начало</a></li><li class="breadcrumbs-item"><a href="/examples/index.html" class="breadcrumbs-link">Примеры</a></li><li class="breadcrumbs-item"><a href="profile.html" class="breadcrumbs-link">Профиль пользователя</a></li></ul></div></div><div class="col-12"><div class="title"><h1>Профиль пользователя</h1><a href="../preview/profile.html" class="button button button-solid button-primary" target="_blank">Просмотр</a></div></div><div class="col-12 h-100"><section id="s-1"><div class="components-code"><pre>
+                <code class="language-html">
+<textarea>
+
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Профиль</title>
+        <script defer="defer" src="//ds.dev.cgu.iac.mchs.ru/js/theme.js"></script>
+        <link href="//ds.dev.cgu.iac.mchs.ru/css/style.css" rel="stylesheet">
+    </head>
+
+    <body class="layout-center">
+        <div class="wrapper-outer">
+            <div class="wrapper">
+                <header class="header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="navbar">
+                                    <div class="logo">
+                                        <a href="#">Паспортная система</a>
+                                    </div>
+                                    <button data-toggle-header class="button button-icon">
+                                        <i class="icon icon-bars"></i>
+                                    </button>
+                                    <nav class="horizontal-menu">
+                                        <div class="menu-right">
+                                            <ul>
+                                                <li tabindex="0">
+                                                    <a href="#">
+                                                        <i class="icon icon-user menu-prefix"></i>
+                                                        <span class="menu-label">Администратор</span>
+                                                        <i class="icon icon-chevron-down menu-postfix"></i>
+                                                    </a>
+                                                    <div class="menu-submenu">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="active">
+                                                                    <span class="menu-label">Профиль</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span class="menu-label">Выход</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="title">
+                                    <h1 class="d-flex align-items-center">
+                                        Профиль
+                                        <a href="#" class="button button-icon ml-8">
+                                            <i class="icon icon-pencil"></i>
+                                        </a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <div class="infoblock accent mb-16">
+                                            <div class="infoblock-title">
+                                                <h3>Данные пользователя</h3>
+                                            </div>
+                                            <div class="infoblock-content">
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="avatar avatar-80">
+                                                                <img src="/images/no-photo.svg" alt="Фото профиля отсутствует"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Логин</strong></div>
+                                                        <div class="col-8">administrator</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Ldap ФИО</strong></div>
+                                                        <div class="col-8">Лисицин Юрий Алексеевич</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="infoblock accent mb-16">
+                                            <div class="infoblock-title">
+                                                <h3>Персональные данные</h3>
+                                            </div>
+                                            <div class="infoblock-content">
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Имя</strong></div>
+                                                        <div class="col-8">Иван</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Фамилия</strong></div>
+                                                        <div class="col-8">Иванов</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Отчество</strong></div>
+                                                        <div class="col-8">Иванович</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Подразделение</strong></div>
+                                                        <div class="col-8">ГУ МЧС России по г. Москве</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Должность</strong></div>
+                                                        <div class="col-8">Руководитель</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Дата рождения</strong></div>
+                                                        <div class="col-8">19.01.2021</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="infoblock accent mb-16">
+                                            <div class="infoblock-title">
+                                                <h3>Контакты</h3>
+                                            </div>
+                                            <div class="infoblock-content">
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (моб.)</strong></div>
+                                                        <div class="col-8">+79213675448</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Факс</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (раб. внутр.)</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (раб. внеш.)</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Телефон (раб. моб.)</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="infoblock-row">
+                                                    <div class="row">
+                                                        <div class="col-4"><strong>Адрес</strong></div>
+                                                        <div class="col-8">-</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-xxl-6 order-2 order-xxl-1">
+                                <div class="footer-copyrights">&copy; Design<sup>sys</sup>, 2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+</textarea>
+                </code>
+            </pre></div></section></div></div></div></div><footer class="footer"><div class="container-fluid"><div class="row"><div class="col-12 col-xxl-6 order-2 order-xxl-1"><div class="footer-copyrights">© Design<sup>sys</sup>, 2022</div></div></div></div></footer></div><div class="scroll-top"><a href="#" class="button button-solid button-primary" data-prevent><i class="icon icon-arrow-up"></i></a></div></div><script defer="defer" src="../js/prism.js"></script><script defer="defer" src="../js/docs.js"></script></body></html>

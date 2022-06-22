@@ -1,0 +1,43 @@
+.status {
+  border-radius: var(--status-border-radius);
+  font-size: rem(13);
+  padding: 0 rem(12);
+  line-height: rem(32);
+  display: inline-block;
+  align-items: center;
+  height: rem(32);
+  white-space: nowrap;
+  .icon {
+    margin: 0 0 0 rem(-12);
+  }
+  &-neutral {
+    background-color: transparent;
+    .icon {
+      color: var(--status-default-color)
+    }
+  }
+  &-default {
+    background-color: var(--status-default-bg);
+    .icon {
+      color: var(--status-default-color);
+    }
+  }
+  &-success {
+    background-color: var(--status-success-bg);
+    .icon {
+      color: var(--status-success-color);
+    }
+  }
+  &-danger {
+    background-color: var(--status-danger-bg);
+    .icon {
+      color: var(--status-danger-color);
+    }
+  }
+  &-warning {
+    background-color: var(--status-warning-bg);
+    .icon {
+      color: var(--status-warning-color);
+    }
+  }
+}

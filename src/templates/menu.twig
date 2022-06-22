@@ -1,0 +1,300 @@
+{% set basePath = (base) ? '' : '../' %}
+
+{% if heder_menu_active_item == 'components' %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="{{ basePath }}components/template.html" {% if sidebar_menu_active_item == 'template' %} class="active"{% endif %} title="Базовые шаблоны">
+                <span class="menu-label">Базовые шаблоны</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/grid.html" {% if sidebar_menu_active_item == 'grid' %} class="active"{% endif %} title="Сетка">
+                <span class="menu-label">Сетка</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/accent.html" {% if sidebar_menu_active_item == 'accent' %} class="active"{% endif %} title="Акцент">
+                <span class="menu-label">Акцент</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/typography.html" {% if sidebar_menu_active_item == 'typography' %} class="active"{% endif %} title="Типографика">
+                <span class="menu-label">Типографика</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/icons.html" {% if sidebar_menu_active_item == 'icons' %} class="active"{% endif %} title="Иконки">
+                <span class="menu-label">Иконки</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/logo.html" {% if sidebar_menu_active_item == 'logo' %} class="active"{% endif %} title="Логотип">
+                <span class="menu-label">Логотип</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/avatar.html" {% if sidebar_menu_active_item == 'avatar' %} class="active"{% endif %} title="Аватар">
+                <span class="menu-label">Аватар</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/navs.html" {% if sidebar_menu_active_item == 'menu' %} class="active"{% endif %} title="Навигационное меню">
+                <span class="menu-label">Навигационное меню</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/header.html" {% if sidebar_menu_active_item == 'header' %} class="active"{% endif %} title="Шапка">
+                <span class="menu-label">Шапка</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/alerts.html" {% if sidebar_menu_active_item == 'alerts' %} class="active"{% endif %} title="Алерты">
+                <span class="menu-label">Алерты</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/accordion.html" {% if sidebar_menu_active_item == 'accordion' %} class="active"{% endif %} title="Аккордеон">
+                <span class="menu-label">Аккордеон</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/sidebar.html" {% if sidebar_menu_active_item == 'sidebar' %} class="active"{% endif %} title="Сайдбар">
+                <span class="menu-label">Сайдбар</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/infoblock.html" {% if sidebar_menu_active_item == 'infoblock' %} class="active"{% endif %} title="Инфоблок">
+                <span class="menu-label">Инфоблок</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/json.html" {% if sidebar_menu_active_item == 'json' %} class="active"{% endif %} title="JSON">
+                <span class="menu-label">JSON</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/fields.html" {% if sidebar_menu_active_item == 'fields' %} class="active"{% endif %} title="Текстовые поля">
+                <span class="menu-label">Текстовые поля</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/autocomplete.html" {% if sidebar_menu_active_item == 'autocomplete' %} class="active"{% endif %} title="Автозаполнение">
+                <span class="menu-label">Автозаполнение</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/number.html" {% if sidebar_menu_active_item == 'number' %} class="active"{% endif %} title="Числовые поля">
+                <span class="menu-label">Числовые поля</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/select.html" {% if sidebar_menu_active_item == 'select' %} class="active"{% endif %} title="Селекты">
+                <span class="menu-label">Селекты</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/checkbox.html" {% if sidebar_menu_active_item == 'checkbox' %} class="active"{% endif %} title="Чекбоксы">
+                <span class="menu-label">Чекбоксы</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/toggle.html" {% if sidebar_menu_active_item == 'toggle' %} class="active"{% endif %} title="Переключатель">
+                <span class="menu-label">Переключатель</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/radio.html" {% if sidebar_menu_active_item == 'radio' %} class="active"{% endif %} title="Радиокнопки">
+                <span class="menu-label">Радиокнопки</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/buttons.html" {% if sidebar_menu_active_item == 'button' %} class="active"{% endif %} title="Кнопки">
+                <span class="menu-label">Кнопки</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/uploader.html" {% if sidebar_menu_active_item == 'uploader' %} class="active"{% endif %} title="Файловый загрузчик">
+                <span class="menu-label">Файловый загрузчик</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/calendar.html" {% if sidebar_menu_active_item == 'calendar' %} class="active"{% endif %} title="Выбор даты">
+                <span class="menu-label">Выбор даты</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/color.html" {% if sidebar_menu_active_item == 'color' %} class="active"{% endif %} title="Выбор цвета">
+                <span class="menu-label">Выбор цвета</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/range.html" {% if sidebar_menu_active_item == 'range' %} class="active"{% endif %} title="Выбор из диапазона">
+                <span class="menu-label">Выбор из диапазона</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/fieldgroup.html" {% if sidebar_menu_active_item == 'fieldgroup' %} class="active"{% endif %} title="Группы элементов форм">
+                <span class="menu-label">Группы элементов форм</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/sort.html" {% if sidebar_menu_active_item == 'sort' %} class="active"{% endif %} title="Сортировка">
+                <span class="menu-label">Сортировка</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/facets.html" {% if sidebar_menu_active_item == 'facets' %} class="active"{% endif %} title="Фасеты">
+                <span class="menu-label">Фасеты</span>
+            </a>
+        </li>
+        <li class="d-none">
+            <a href="{{ basePath }}components/range.html" {% if sidebar_menu_active_item == 'color' %} class="active"{% endif %} title="Выбор цвета">
+                <span class="menu-label">Выбор цвета</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/title.html" {% if sidebar_menu_active_item == 'title' %} class="active"{% endif %} title="Заголовки страниц">
+                <span class="menu-label">Заголовки страниц</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/breadcrumbs.html" {% if sidebar_menu_active_item == 'breadcrumbs' %} class="active"{% endif %} title="Хлебные крошки">
+                <span class="menu-label">Хлебные крошки</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/dropdown.html" {% if sidebar_menu_active_item == 'dropdown' %} class="active"{% endif %} title="Выпадающее меню">
+                <span class="menu-label">Выпадающее меню</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/notify.html" {% if sidebar_menu_active_item == 'notify' %} class="active"{% endif %} title="Уведомления">
+                <span class="menu-label">Уведомления</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/tabs.html" {% if sidebar_menu_active_item == 'tabs' %} class="active"{% endif %} title="Табы">
+                <span class="menu-label">Табы</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/tabnavs.html" {% if sidebar_menu_active_item == 'tabnavs' %} class="active"{% endif %} title="Таб-навигация">
+                <span class="menu-label">Таб-навигация</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/wizard.html" {% if sidebar_menu_active_item == 'wizard' %} class="active"{% endif %} title="Мастер">
+                <span class="menu-label">Мастер</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/modal.html" {% if sidebar_menu_active_item == 'modal' %} class="active"{% endif %} title="Модальные окна">
+                <span class="menu-label">Модальные окна</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/cards.html" {% if sidebar_menu_active_item == 'cards' %} class="active"{% endif %} title="Карточки">
+                <span class="menu-label">Карточки</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/tree.html" {% if sidebar_menu_active_item == 'tree' %} class="active"{% endif %} title="Дерево">
+                <span class="menu-label">Дерево</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/tooltip.html" {% if sidebar_menu_active_item == 'tooltip' %} class="active"{% endif %} title="Подсказки">
+                <span class="menu-label">Подсказки</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/status.html" {% if sidebar_menu_active_item == 'status' %} class="active"{% endif %} title="Статусы">
+                <span class="menu-label">Статусы</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/badges.html" {% if sidebar_menu_active_item == 'badges' %} class="active"{% endif %} title="Ярлыки">
+                <span class="menu-label">Ярлыки</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/tables.html" {% if sidebar_menu_active_item == 'table' %} class="active"{% endif %} title="Таблицы">
+                <span class="menu-label">Таблицы</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/tabulator.html" {% if sidebar_menu_active_item == 'tabulator' %} class="active"{% endif %} title="Табулатор">
+                <span class="menu-label">Табулатор</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/pagination.html" {% if sidebar_menu_active_item == 'pagination' %} class="active"{% endif %} title="Пагинация">
+                <span class="menu-label">Пагинация</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/pagenav.html" {% if sidebar_menu_active_item == 'pagenav' %} class="active"{% endif %} title="Страничный навигатор">
+                <span class="menu-label">Страничный навигатор</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/prefooter.html" {% if sidebar_menu_active_item == 'prefooter' %} class="active"{% endif %} title="Префутер">
+                <span class="menu-label">Префутер</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}components/footer.html" {% if sidebar_menu_active_item == 'footer' %} class="active"{% endif %} title="Футер">
+                <span class="menu-label">Футер</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endif %}
+
+{% if heder_menu_active_item == 'utils' %}
+<nav class="fixed-menu">
+    <ul>
+        <li>
+            <a href="{{ basePath }}utils/margins.html" {% if sidebar_menu_active_item == 'margin' %} class="active"{% endif %} title="Отступы">
+                <span class="menu-label">Отступы</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}utils/display.html" {% if sidebar_menu_active_item == 'display' %} class="active"{% endif %} title="Отображение">
+                <span class="menu-label">Отображение</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}utils/size.html" {% if sidebar_menu_active_item == 'size' %} class="active"{% endif %} title="Размеры">
+                <span class="menu-label">Размеры</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}utils/flex.html" {% if sidebar_menu_active_item == 'flex' %} class="active"{% endif %} title="Флексбокс">
+                <span class="menu-label">Флексбокс</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}utils/float.html" {% if sidebar_menu_active_item == 'float' %} class="active"{% endif %} title="Плавающий просмотр">
+                <span class="menu-label">Обтекание</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}utils/overflow.html" {% if sidebar_menu_active_item == 'overflow' %} class="active"{% endif %} title="Переполнение">
+                <span class="menu-label">Переполнение</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}utils/position.html" {% if sidebar_menu_active_item == 'position' %} class="active"{% endif %} title="Позиционирование">
+                <span class="menu-label">Позиционирование</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ basePath }}utils/ratio.html" {% if sidebar_menu_active_item == 'ratio' %} class="active"{% endif %} title="Соотношение сторон">
+                <span class="menu-label">Соотношение сторон</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endif %}

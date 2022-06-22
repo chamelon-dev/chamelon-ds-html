@@ -1,0 +1,757 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'grid' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Сетка{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="grid.html" class="breadcrumbs-link">Сетка</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Сетка</h1>
+    <span class="tagline">Гибкая сетка, для создания макетов всех форм и размеров благодаря системе из двенадцати столбцов и семи точек останова</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-0">
+                <span class="menu-label">Общие правила</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Контейнер</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-2">
+                <span class="menu-label">Фиксированные колонки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-3">
+                <span class="menu-label">Автоматические колонки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-4">
+                <span class="menu-label">Вложенные колонки</span>
+            </a>
+        </li>
+        <li>
+            <a href="#s-5">
+                <span class="menu-label">Параметры сетки</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-0">
+        <div class="components-title">
+            <h2>Общие правила</h2>
+            <p>Общие правила при построении сеток</p>
+        </div>
+        <div class="components-options">
+            <p>1. Все колонки (сколько бы их не существовало на странице) выравниваются по горизонтали и имеют одинаковую высоту</p>
+            <p>2. Колонки (элементы с классом <code>.col-*</code> и <code>.col</code> / компонент <code>&lt;Column /&gt;</code>) должны являться прямыми потомками строк. Не допускается использование колонок вне строк</p>
+            <p>3. Строки (элементы с классом <code>.row</code> / компонент <code>&lt;Row /&gt;</code>) должны являться прямыми потомками контейнера. Не допускается использование строк вне контейнера</p>
+            <p>4. Контейнеры (элементы с классом <code>.container</code>  / компонент <code>&lt;Grid /&gt;</code> для <a href="template.html#s-1">фиксированных центрированных макетов</a> и элементы с классом <code>.container-fluid</code>  / компонент <code>&lt;Grid /&gt;</code> со значением <code>true</code> свойства <code>fluid</code> для <a href="template.html#s-2">резиновых макетов</a> и <a href="template.html#s-3">резиновых макетов с сайдбаром</a>) являются прямыми родителями всей сетки. Не допускается использование контейнера внутри контейнера</p>
+            <p>5. Допускается вкладывание в колонки других колонок. Добавьте новый <code>.row</code> / компонент <code>&lt;Row /&gt;</code> и набор <code>.col-*</code> столбцов / компонент <code>&lt;Column /&gt;</code> в существующую <code>.col-*</code> колонку / компонент <code>&lt;Column /&gt;</code>. Вложенные строки должны включать набор колонок, которые в сумме составляют до 12 или меньше.</p>
+        </div>
+    </section>
+
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Контейнер</h2>
+            <p>Контейнеры являются основным элементом в системе сеток</p>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-0-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-0-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-0-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+// Фиксированная ширина, по центру
+<div class="container"> ... </div>
+
+// 100% ширина
+<div class="container-fluid"> ... </div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_grid.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-0-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Column, Grid, Row} from "./components/Grid";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+// Фиксированная ширина, по центру
+&lt;Grid /&gt;
+
+// 100% ширина
+&lt;Grid fluid={true} /&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>fluid</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Указывает, будет ли сетка иметь фиксированную ширину или растягиваться на 100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                            В данном компоненте применимо родительскому компоненту и к дочерним
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_grid.scss</code> и <code>components/Grid.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-2">
+        <div class="components-title">
+            <h2>Фиксированные колонки</h2>
+            <p>Примеры сетки с фиксированными колонками</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-12">
+                    <div class="grid-block p-28 mb-24">col-12</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="grid-block p-28 mb-24">col-6</div>
+                </div>
+                <div class="col-6">
+                    <div class="grid-block p-28 mb-24">col-6</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="grid-block p-28 mb-24">col-4</div>
+                </div>
+                <div class="col-4">
+                    <div class="grid-block p-28 mb-24">col-4</div>
+                </div>
+                <div class="col-4">
+                    <div class="grid-block p-28 mb-24">col-4</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="grid-block p-28 mb-24">col-3</div>
+                </div>
+                <div class="col-3">
+                    <div class="grid-block p-28 mb-24">col-3</div>
+                </div>
+                <div class="col-3">
+                    <div class="grid-block p-28 mb-24">col-3</div>
+                </div>
+                <div class="col-3">
+                    <div class="grid-block p-28 mb-24">col-3</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="grid-block p-28 mb-24">col-2</div>
+                </div>
+                <div class="col-2">
+                    <div class="grid-block p-28 mb-24">col-2</div>
+                </div>
+                <div class="col-2">
+                    <div class="grid-block p-28 mb-24">col-2</div>
+                </div>
+                <div class="col-2">
+                    <div class="grid-block p-32 mb-24">col-2</div>
+                </div>
+                <div class="col-2">
+                    <div class="grid-block p-32 mb-24">col-2</div>
+                </div>
+                <div class="col-2">
+                    <div class="grid-block p-32 mb-24">col-2</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+                <div class="col-1">
+                    <div class="grid-block p-32 mb-24">col-1</div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-12">col-12</div>
+</div>
+<div class="row">
+    <div class="col-6">col-6</div>
+    <div class="col-6">col-6</div>
+</div>
+<div class="row">
+    <div class="col-4">col-4</div>
+    <div class="col-4">col-4</div>
+    <div class="col-4">col-4</div>
+</div>
+<div class="row">
+    <div class="col-3">col-3</div>
+    <div class="col-3">col-3</div>
+    <div class="col-3">col-3</div>
+    <div class="col-3">col-3</div>
+</div>
+<div class="row">
+    <div class="col-2">col-2</div>
+    <div class="col-2">col-2</div>
+    <div class="col-2">col-2</div>
+    <div class="col-2">col-2</div>
+    <div class="col-2">col-2</div>
+    <div class="col-2">col-2</div>
+</div>
+<div class="row">
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+    <div class="col-1">col-1</div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_grid.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Column, Grid, Row} from "./components/Grid";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={12}&gt;col-12&lt;/Column&gt;
+&lt;/Row&gt;
+&lt;Row&gt;
+    &lt;Column col={6}&gt;col-6&lt;/Column&gt;
+    &lt;Column col={6}&gt;col-6&lt;/Column&gt;
+&lt;/Row>
+&lt;Row&gt;
+    &lt;Column col={4}&gt;col-4&lt;/Column&gt;
+    &lt;Column col={4}&gt;col-4&lt;/Column&gt;
+    &lt;Column col={4}&gt;col-4&lt;/Column&gt;
+&lt;/Row&gt;
+&lt;Row&gt;
+    &lt;Column col={3}&gt;col-3&lt;/Column&gt;
+    &lt;Column col={3}&gt;col-3&lt;/Column&gt;
+    &lt;Column col={3}&gt;col-3&lt;/Column&gt;
+    &lt;Column col={3}&gt;col-3&lt;/Column&gt;
+&lt;/Row&gt;
+&lt;Row&gt;
+    &lt;Column col={2}&gt;col-2&lt;/Column&gt;
+    &lt;Column col={2}&gt;col-2&lt;/Column&gt;
+    &lt;Column col={2}&gt;col-2&lt;/Column&gt;
+    &lt;Column col={2}&gt;col-2&lt;/Column&gt;
+    &lt;Column col={2}&gt;col-2&lt;/Column&gt;
+    &lt;Column col={2}&gt;col-2&lt;/Column&gt;
+&lt;/Row&gt;
+&lt;Row&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+    &lt;Column col={1}&gt;col-1&lt;/Column&gt;
+&lt;/Row&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>col</td>
+                                        <td>Число</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>
+                                            Число колонок<br>
+                                            Значение задается цифрой от 1 до 12
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом<br>
+                                            В данном компоненте применимо родительскому компоненту и к дочерним
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_grid.scss</code> и <code>components/Grid.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-3">
+        <div class="components-title">
+            <h2>Автоматические колонки</h2>
+            <p>Примеры сетки с автоматическими колонками. В примере ниже показаны 7 колонок одинаковой ширины </p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col">
+                    <div class="grid-block p-28 mb-24">col</div>
+                </div>
+                <div class="col">
+                    <div class="grid-block p-28 mb-24">col</div>
+                </div>
+                <div class="col">
+                    <div class="grid-block p-28 mb-24">col</div>
+                </div>
+                <div class="col">
+                    <div class="grid-block p-28 mb-24">col</div>
+                </div>
+                <div class="col">
+                    <div class="grid-block p-28 mb-24">col</div>
+                </div>
+                <div class="col">
+                    <div class="grid-block p-28 mb-24">col</div>
+                </div>
+                <div class="col">
+                    <div class="grid-block p-28 mb-24">col</div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-2-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-2-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-2-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+    <div class="col">col</div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_grid.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-2-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Column, Grid, Row} from "./components/Grid";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Row>
+    &lt;Column auto&gt;col&lt;/Column&gt;
+    &lt;Column auto&gt;col&lt;/Column&gt;
+    &lt;Column auto&gt;col&lt;/Column&gt;
+    &lt;Column auto&gt;col&lt;/Column&gt;
+    &lt;Column auto&gt;col&lt;/Column&gt;
+    &lt;Column auto&gt;col&lt;/Column&gt;
+    &lt;Column auto&gt;col&lt;/Column&gt;
+&lt;/Row&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_grid.scss</code> и <code>components/Grid.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-4">
+        <div class="components-title">
+            <h2>Вложенные колонки</h2>
+            <p>Примеры сетки с вложенными друг в друга колонками</p>
+        </div>
+        <div class="components-preview">
+            <div class="row">
+                <div class="col-3">
+                    <div class="grid-block p-28" style="height: 130px"> Уровень 1: .col-3</div>
+                </div>
+                <div class="col-9">
+                    <div class="grid-block p-28">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="grid-block p-28">Уровень 2: .col-3</div>
+                            </div>
+                            <div class="col-9">
+                                <div class="grid-block p-28">Уровень 2: .col-9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-3-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-3-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-3-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="row">
+    <div class="col-3">Уровень 1: .col-3</div>
+    <div class="col-9">
+        <div class="row">
+            <div class="col-3">Уровень 2: .col-3</div>
+            <div class="col-9">Уровень 2: .col-9</div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/global/_grid.scss</code>
+                        </div>
+
+                    </div>
+                    <div class="tab" id="tab-react-3-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import {Column, Grid, Row} from "./components/Grid";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Row&gt;
+    &lt;Column col={3}&gt;Уровень 1: .col-3&lt;/Column&gt;
+    &lt;Column col={9}&gt;
+        &lt;Row&gt;
+            &lt;Column col={3}&gt;Уровень 2: .col-3&lt;/Column&gt;
+            &lt;Column col={9}&gt;Уровень 2: .col-9&lt;/Column&gt;
+        &lt;/Row&gt;
+    &lt;/Column&gt;
+&lt;/Row&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_grid.scss</code> и <code>components/Grid.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="s-5">
+        <div class="components-title">
+            <h2>Параметры сетки</h2>
+        </div>
+        <div class="components-options">
+            <p>Система сеток может адаптироваться ко всем семи точкам останова по умолчанию. Семь уровней сетки по умолчанию следующие:</p>
+            <ul class="list-styled">
+                <li>Очень маленький (xs)</li>
+                <li>Маленький (sm)</li>
+                <li>Средний (md)</li>
+                <li>Большой (lg)</li>
+                <li>Очень большой (xl)</li>
+                <li>Очень очень большой (xxl)</li>
+                <li>Очень очень большой (xxxl)</li>
+            </ul>
+
+            <p>Каждая из этих точек останова имеет собственный уникальный префикс класса. Вот как меняется сетка в этих точках останова:</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="text-center">
+                                xs<br>&lt;576px
+                            </th>
+                            <th class="text-center">
+                                sm<br>≥576px
+                            </th>
+                            <th class="text-center">
+                                md<br>≥768 пикселей
+                            </th>
+                            <th class="text-center">
+                                lg<br>≥992px
+                            </th>
+                            <th class="text-center">
+                                xl<br>≥1200 пикселей
+                            </th>
+                            <th class="text-center">
+                                xxl<br>≥1600px
+                            </th>
+                            <th class="text-center">
+                                xxxl<br>≥1920px
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Контейнер (<code class="fw-normal">max-width</code>)</td>
+                            <td class="text-center">Нет (авто)</td>
+                            <td class="text-center">540px</td>
+                            <td class="text-center">720px</td>
+                            <td class="text-center">960px</td>
+                            <td class="text-center">1140px</td>
+                            <td class="text-center">1540 пикселей</td>
+                            <td class="text-center">1880 пикселей</td>
+                        </tr>
+                        <tr>
+                            <td>Префикс класса</td>
+                            <td class="text-center"><code>.col-</code></td>
+                            <td class="text-center"><code>.col-sm-</code></td>
+                            <td class="text-center"><code>.col-md-</code></td>
+                            <td class="text-center"><code>.col-lg-</code></td>
+                            <td class="text-center"><code>.col-xl-</code></td>
+                            <td class="text-center"><code>.col-xxl-</code></td>
+                            <td class="text-center"><code>.col-xxxl-</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Свойство компонента <code>&lt;Column /&gt;</code>
+                            </td>
+                            <td class="text-center"><code>col</code></td>
+                            <td class="text-center"><code>sm</code></td>
+                            <td class="text-center"><code>md</code></td>
+                            <td class="text-center"><code>lg</code></td>
+                            <td class="text-center"><code>xl</code></td>
+                            <td class="text-center"><code>xxl</code></td>
+                            <td class="text-center"><code>xxxl</code></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Количество столбцов/<br>
+                                значение свойства компонента
+                            </td>
+                            <td colspan="7" class="text-center">от 1 до 12</td>
+                        </tr>
+                        <tr>
+                            <td>Ширина желоба</td>
+                            <td colspan="7" class="text-center">1rem (0.5 rem слева и справа)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

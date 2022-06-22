@@ -1,0 +1,374 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'pagenav' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Страничный навигатор{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="pagenav.html" class="breadcrumbs-link">Страничный навигатор</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Страничный навигатор</h1>
+    <span class="tagline">Предназначен для разбиения больших данных на страницы, вывода количества результатов и выбора количества отображаемых элементов на данной странице.</span>
+</div>
+{% endblock %}
+
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Страничный навигатор</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Страничный навигатор</h2>
+            <p>Пример страничного навигатора. Компонент составной и содержит в себе компоненты <a href="grid.html">сетки</a>, <a href="select.html">селекта</a> и <a href="pagination.html">пагинации</a></p>
+        </div>
+        <div class="components-preview">
+            <div class="pagenav">
+                <div class="row">
+                    <div class="col-12 col-xl-6">
+                        <div class="pagenav-counter">Страница 1 из 21</div>
+                        <div class="pagenav-results">
+                            Результатов на странице
+                            <select name="name" id="select-10" data-placeholder="Выберите из списка" data-select2-search="false" data-width="80px">
+                                <option value="7">7</option>
+                                <option value="14">14</option>
+                                <option value="all">Все</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-6">
+                        <div class="pagenav-pagination">
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <span class="page-link">&amp;laquo;&nbsp;Назад</span>
+                                    </li>
+                                    <li class="page-item active">
+                                        <span class="page-link">1</span>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item page-skip" tabindex="0">
+                                        <button type="button" class="page-link">...</button>
+                                        <ul class="page-skip-list">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">4</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">5</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">6</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">7</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">8</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">9</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">10</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">11</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">12</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">13</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">14</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">15</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">16</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">17</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">18</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">19</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">20</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">21</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" rel="next" href="#">Вперед&amp;nbsp;&amp;raquo;</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="pagenav">
+    <div class="row">
+        <div class="col-12 col-xl-6">
+            <div class="pagenav-counter">Страница 1 из 21</div>
+            <div class="pagenav-results">
+                Результатов на странице
+                <select name="" id="select-10" data-placeholder="Выберите из списка" data-select2-search="false" data-width="80px">
+                    <option value="7">7</option>
+                    <option value="14">14</option>
+                    <option value="all">Все</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6">
+            <div class="pagenav-pagination">
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <span class="page-link">&amp;laquo;&nbsp;Назад</span>
+                        </li>
+                        <li class="page-item active">
+                            <span class="page-link">1</span>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item page-skip" tabindex="0">
+                            <button type="button" class="page-link">...</button>
+                            <ul class="page-skip-list">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">6</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">7</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">8</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">9</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">10</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">11</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">12</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">13</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">14</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">15</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">16</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">17</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">18</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">19</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">20</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">21</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" rel="next" href="#">Вперед&amp;nbsp;&amp;raquo;</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_pagenav.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Pagenav from "./components/Pagenav";
+const pageCountSelect = [7, 14]
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+<Pagenav total={21} pageCountSelect={pageCountSelect} skippable={true} />
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>total</td>
+                                        <td>Число</td>
+                                        <td>Да</td>
+                                        <td></td>
+                                        <td>Общее количество страниц</td>
+                                    </tr>
+                                    <tr>
+                                        <td>skippable</td>
+                                        <td>Логический</td>
+                                        <td>Нет</td>
+                                        <td>false</td>
+                                        <td>Включает/отключает пропуск элементов, кроме первого двух и последнего двух в пагинации</td>
+                                    </tr>
+                                    <tr>
+                                        <td>current</td>
+                                        <td>Число</td>
+                                        <td>Нет</td>
+                                        <td>1</td>
+                                        <td>Активная страница</td>
+                                    </tr>
+                                    <tr>
+                                        <td>pageCountSelect</td>
+                                        <td>Массив</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>
+                                            Массив значений для селекта выбора количества результатов на странице<br>
+                                            Не должен содержать значение, равное общему количеству страниц total
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>onPageSelect</td>
+                                        <td>Функция</td>
+                                        <td>Нет</td>
+                                        <td>null</td>
+                                        <td>
+                                            Функция-обработчик изменения количества результатов на странице<br>
+                                            В качестве аргумента принимает выбранное значение количества результатов на странице
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_pagination.scss</code> и <code>components/Pagination.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

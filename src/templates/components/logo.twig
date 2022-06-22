@@ -1,0 +1,159 @@
+{% extends "../base.twig" %}
+{% set base = false %}
+{% set sidebar = true %}
+{% set secondary_sidebar = true %}
+{% set sidebar_menu_active_item = 'logo' %}
+{% set heder_menu_active_item = 'components' %}
+{% block title %}Логотип{% endblock %}
+
+{% block head %}
+
+    {{ parent() }}
+{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+            <a href="/" class="breadcrumbs-link">Начало</a>
+        </li>
+        <li class="breadcrumbs-item">Компоненты</li>
+        <li class="breadcrumbs-item">
+            <a href="logo.html" class="breadcrumbs-link">Логотип</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block pagetitle %}
+<div class="title d-block">
+    <h1>Логотип</h1>
+    <span class="tagline">Компонент предназначен для добавления в интерфейс логотипа.</span>
+</div>
+{% endblock %}
+
+{% block secondary_sidebar %}
+<nav class="vertical-menu">
+    <ul>
+        <li>
+            <a href="#s-1">
+                <span class="menu-label">Текстовый логотип</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+    <section id="s-1">
+        <div class="components-title">
+            <h2>Текстовый логотип</h2>
+            <p>Пример текстового логотипа</p>
+        </div>
+        <div class="components-preview">
+            <div class="logo">
+                <a href="/">Паспортная система</a>
+            </div>
+        </div>
+        <div class="components-tabs">
+            <div class="tabs">
+                <nav class="tabs-menu">
+                    <ul>
+                        <li class="active">
+                            <a href="#tab-html-1-1">HTML</a>
+                        </li>
+                        <li>
+                            <a href="#tab-react-1-2">React</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="tabs-content">
+                    <div class="tab active" id="tab-html-1-1">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-html">
+<textarea>
+<div class="logo">
+    <a href="/">Паспортная система</a>
+</div>
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_logo.scss</code>
+                        </div>
+                    </div>
+                    <div class="tab" id="tab-react-1-2">
+                        <div class="components-code">
+                        <pre>
+                            <code class="language-js">
+<textarea>
+import Logo from "./components/Logo";
+</textarea>
+                            </code>
+                        </pre>
+                            <pre>
+                            <code class="language-html">
+<textarea>
+&lt;Logo&gt;Паспортная система&lt;/Logo&gt;
+</textarea>
+                            </code>
+                        </pre>
+                        </div>
+                        <div class="components-options">
+                            <div class="table-container">
+                                <table class="table-empty-cells">
+                                    <thead>
+                                    <tr>
+                                        <th>Свойство</th>
+                                        <th>Тип</th>
+                                        <th>Обязательно</th>
+                                        <th>По-умолчанию</th>
+                                        <th>Описание</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>url</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>/</td>
+                                        <td>Ссылка. По-умолчанию ведет на главную страницу</td>
+                                    </tr>
+                                    <tr>
+                                        <td>target</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td>_self</td>
+                                        <td>
+                                            Указывает, где открывать ссылку <br>
+                                            <code>_blank</code> - открыть в новом окне/вкладке,<br>
+                                            <code>_self</code> - открыть в текущем окне/вкладке,<br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>utils</td>
+                                        <td>Строка</td>
+                                        <td>Нет</td>
+                                        <td></td>
+                                        <td>Название <a href="../utils/margins.html">CSS-утилит</a>, разделенных пробелом</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="components-source">
+                            Исходный код этого компонента находится по пути <code>sass/components/_logo.scss</code> и <code>components/Logo.js</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+
+{% endblock %}

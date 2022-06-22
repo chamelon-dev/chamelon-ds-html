@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+        <title>{% block title %}Ошибка 402{% endblock %}</title>
+    {% endblock %}
+
+</head>
+
+<body class="layout-fluid">
+    <div class="wrapper-outer">
+        <div class="wrapper">
+            <div class="content">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col-12 h-100">
+                            <div class="e402">
+                                <div class="e402-top">
+                                    <div class="row h-100">
+                                        <div class="col-12 col-md-10 offset-md-1 col-xl-8 offset-xl-3">
+                                            <div class="e402-image">
+                                                <img src="/images/e402.svg" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="e402-bottom">
+                                    <div class="row">
+                                        <div class="col-12 col-xl-10 offset-xl-1">
+                                            <div class="e402-title">Утром — деньги, вечером — стулья</div>
+                                            <div class="e402-description">Вы обязательно попадёте на эту страницу после оплаты</div>
+                                            <div class="e402-button">
+                                                <a href="#" class="button button-solid button-primary">Оплатить</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
