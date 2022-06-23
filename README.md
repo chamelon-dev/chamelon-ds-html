@@ -1,4 +1,4 @@
-# **Design system guideline**
+# **Chamel-on design system guideline**
 #
 
 ## **Instalation**
