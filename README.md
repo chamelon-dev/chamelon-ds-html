@@ -1,11 +1,11 @@
-# **Chamel-on design system guideline**
+# **Chamel-on дизайн система**
 #
 
-## **Instalation**
+## **Установка**
 
 <pre>
     <code>
-        git clone git@gitlab.iac.mchs.ru:frontend/design-guideline.git
+        git clone git@github.com:chamelon-dev/chamelon-ds-html.git
         npm i или yarn install (предпочтительно)
         npm run start (запуск режима разработки)
         npm run build (собрать библиотеку)
